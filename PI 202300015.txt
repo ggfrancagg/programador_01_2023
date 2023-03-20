@@ -1,0 +1,40 @@
+Farm - PI turma 202300015
+
+- Tema: Cadastro de animais (Cavalo, Ovelha e Vaca)
+
+Estrutura:
+
+---- Farm ----
+
+>CSS
+	principal.css
+>img
+	logo.png (Leoncides)
+>js
+	mensagem.js
+>model
+	Vaca.php
+	Ovelha.php
+	Cavalo.php
+	Vacina.php
+	Veterinario.php
+	Usuário.php
+>persistence
+	Banco.php (Leoncides)
+
+ index.php (Priscila)
+ principal.php
+ home.php
+ cabecalho.php (Julia)
+ cadastrarCavalo.php
+ cadastrarOvelha.php
+ cadastrarVaca.php
+ cadastrarVeterinario.php
+ listarCavalo.php
+ listarOvelha.php
+ listarVaca.php
+ listarVeterinario.php
+ aplicacaoVacina.php
+ informacao.php
+ sair.php
+
