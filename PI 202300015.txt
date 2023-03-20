@@ -19,6 +19,7 @@ Estrutura:
 	Vacina.php
 	Veterinario.php
 	Usuário.php
+	Vermifugo.php
 >persistence
 	Banco.php (Leoncides)
 
@@ -35,6 +36,7 @@ Estrutura:
  listarVaca.php
  listarVeterinario.php
  aplicacaoVacina.php
+ aplicacaoVermifugo.php
  informacao.php
  sair.php
 
