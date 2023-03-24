@@ -14,7 +14,7 @@ Estrutura:
 	mensagem.js
 >model
 	Vaca.php
-	Ovelha.php
+	Ovelha.php (Lidiane)
 	Cavalo.php
 	Vacina.php
 	Veterinario.php
@@ -28,14 +28,14 @@ Estrutura:
  home.php
  cabecalho.php (Julia)
  cadastrarCavalo.php
- cadastrarOvelha.php
+ cadastrarOvelha.php (Lidiane)
  cadastrarVaca.php
- cadastrarVeterinario.php
+ cadastrarVeterinario.php (Lidiane)
  listarCavalo.php
- listarOvelha.php
+ listarOvelha.php 
  listarVaca.php
  listarVeterinario.php
- aplicacaoVacina.php
+ aplicacaoVacina.php (Lidiane)
  aplicacaoVermifugo.php
  informacao.php
  sair.php
