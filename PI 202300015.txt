@@ -13,13 +13,13 @@ Estrutura:
 >js
 	mensagem.js (Leoncides)
 >model
-	Vaca.php
+	Vaca.php (Yasmim)
 	Ovelha.php (Lidiane)
 	Cavalo.php (Leonardo)
-	Vacina.php
-	Veterinario.php
+	Vacina.php (Priscila)
+	Veterinario.php (Nataly)
 	Usuário.php(Leoncides)
-	Vermifugo.php
+	Vermifugo.php (Priscila)
 >persistence
 	Banco.php (Leoncides)
 
@@ -29,11 +29,11 @@ Estrutura:
  cabecalho.php (Julia)
  cadastrarCavalo.php (Leonardo)
  cadastrarOvelha.php (Lidiane)
- cadastrarVaca.php
+ cadastrarVaca.php (Julia)
  cadastrarVeterinario.php (Lidiane)
  listarCavalo.php  (Leonardo)
- listarOvelha.php 
- listarVaca.php
+ listarOvelha.php (Leonardo) 
+ listarVaca.php (Julia)
  listarVeterinario.php
  aplicacaoVacina.php (Lidiane)
  aplicacaoVermifugo.php
