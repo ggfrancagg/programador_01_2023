@@ -7,7 +7,7 @@ Estrutura:
 ---- Farm ----
 
 >CSS
-	principal.css
+	principal.css (Priscila)
 >img
 	logo.png (Leoncides)
 >js
@@ -24,8 +24,8 @@ Estrutura:
 	Banco.php (Leoncides)
 
  index.php (Priscila)
- principal.php
- home.php
+ principal.php (Priscila)
+ home.php (Yasmim)
  cabecalho.php (Julia)
  cadastrarCavalo.php (Leonardo)
  cadastrarOvelha.php (Lidiane)
@@ -34,9 +34,9 @@ Estrutura:
  listarCavalo.php  (Leonardo)
  listarOvelha.php (Leonardo) 
  listarVaca.php (Julia)
- listarVeterinario.php
+ listarVeterinario.php (Nataly)
  aplicacaoVacina.php (Lidiane)
- aplicacaoVermifugo.php
+ aplicacaoVermifugo.php (Priscila)
  informacao.php
  sair.php
 
