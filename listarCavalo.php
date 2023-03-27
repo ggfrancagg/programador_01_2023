@@ -31,7 +31,7 @@ if(!$consulta){
 		echo "<td>".$linha['Racapai_cav']."</td>";
 		echo "<td>".$linha['Altura_cav']."</td>";
 		echo "<td>".$linha['Racamae_cav'];
-		echo "<tr>";
+		echo "</tr>";
 	}
 }
 
