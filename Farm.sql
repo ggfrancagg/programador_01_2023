@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Mar-2023 às 19:53
+-- Generation Time: 27-Mar-2023 às 20:07
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -174,7 +174,7 @@ DROP TABLE IF EXISTS `vacina_cav`;
 CREATE TABLE `vacina_cav` (
   `IDvac_cav` int(11) NOT NULL,
   `Dataapli_cav` date DEFAULT NULL,
-  `proximaali_cav` date DEFAULT NULL,
+  `proximaapli_cav` date DEFAULT NULL,
   `Tipovasc_cav` varchar(30) DEFAULT NULL,
   `Nomevasc_cav` varchar(30) DEFAULT NULL,
   `Identificacao_cav` int(11) DEFAULT NULL
@@ -191,7 +191,8 @@ CREATE TABLE `vacina_ovl` (
   `IDvasc_ovl` int(10) NOT NULL,
   `Nomevasc_ovl` varchar(40) NOT NULL,
   `Tipovasc_ovl` varchar(40) NOT NULL,
-  `Dataapli_ovl` date NOT NULL
+  `Dataapli_ovl` date NOT NULL,
+  `proximaapli_ovl` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -205,7 +206,8 @@ CREATE TABLE `vacina_vac` (
   `IDvasc_vac` int(11) NOT NULL,
   `Nomevasc_vac` varchar(50) DEFAULT NULL,
   `Tipovasc_vac` varchar(50) DEFAULT NULL,
-  `Dataapli_vac` date DEFAULT NULL
+  `Dataapli_vac` date DEFAULT NULL,
+  `proximaapli_vac` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
