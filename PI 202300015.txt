@@ -37,6 +37,6 @@ Estrutura:
  listarVeterinario.php (Nataly)
  aplicacaoVacina.php (Lidiane)
  aplicacaoVermifugo.php (Priscila)
- informacao.php
+ informacao.php (Leoncides)
  sair.php
 
