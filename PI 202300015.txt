@@ -7,36 +7,36 @@ Estrutura:
 ---- Farm ----
 
 >CSS
-	principal.css
+	principal.css (Priscila)
 >img
 	logo.png (Leoncides)
 >js
-	mensagem.js
+	mensagem.js (Leoncides)
 >model
-	Vaca.php
+	Vaca.php (Yasmim)
 	Ovelha.php (Lidiane)
-	Cavalo.php
-	Vacina.php
-	Veterinario.php
-	Usuário.php
-	Vermifugo.php
+	Cavalo.php (Leonardo)
+	Vacina.php (Priscila)
+	Veterinario.php (Nataly)
+	Usuário.php(Leoncides)
+	Vermifugo.php (Priscila)
 >persistence
 	Banco.php (Leoncides)
 
  index.php (Priscila)
- principal.php
- home.php
+ principal.php (Priscila)
+ home.php (Yasmim)
  cabecalho.php (Julia)
- cadastrarCavalo.php
+ cadastrarCavalo.php (Leonardo)
  cadastrarOvelha.php (Lidiane)
- cadastrarVaca.php
+ cadastrarVaca.php (Julia)
  cadastrarVeterinario.php (Lidiane)
- listarCavalo.php
- listarOvelha.php 
- listarVaca.php
- listarVeterinario.php
+ listarCavalo.php  (Leonardo)
+ listarOvelha.php (Leonardo) 
+ listarVaca.php (Julia)
+ listarVeterinario.php (Nataly)
  aplicacaoVacina.php (Lidiane)
- aplicacaoVermifugo.php
- informacao.php
+ aplicacaoVermifugo.php (Priscila)
+ informacao.php (Leoncides)
  sair.php
 
