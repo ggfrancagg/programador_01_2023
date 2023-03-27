@@ -38,5 +38,5 @@ Estrutura:
  aplicacaoVacina.php (Lidiane)
  aplicacaoVermifugo.php (Priscila)
  informacao.php (Leoncides)
- sair.php
+ sair.php (Lidiane)
 

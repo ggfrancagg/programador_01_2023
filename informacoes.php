@@ -1,0 +1,64 @@
+<?php require_once 'cabecalho.php' ?>
+
+<h1> Informações e linckes uteis</h1>
+<br/><br/><br/>
+<h2>Esquema Vacinal - Vacas, Cavalos e Ovelhas</h2>
+<br/><br/>
+<p>Vaca (bovino)</p>
+<ol>Vacinas obrigatórias:
+	<li>Febre Aftosa - anual</li>
+	<li>B19: Brucelose - 3 a 8 meses de idade, reforço após 7 anos.</li>
+	<li>Raiva: anual (obrigatória dependendo de ocorrências).</li>
+</ol>
+<ol>Outras Vacinas:
+	<li>Clostridioses - duas doses iniciais com intervalo de 30 dias, após isso anual.</li>
+	<li>IBR/BVD: semestral (animais em reprodução)</li>
+	<li>Leptospirose: semestral (animais em reprodução)</li>
+	<li>Mastite: bimestral (vacas em lactação)</li>
+	<li>Pneumoenterite: dose única (gestante: 7o mês de gestação e bezerros: 1 mês após
+	nascimento).</li>
+</ol>
+<ol>Exames:
+	<li>Tuberculose: semestral.</li>
+	<li>Brucelose: semestral.</li>
+	<li>Teste Matite: semanal.</li>
+</ol>
+
+
+<br/><br/>
+<h2>Cavalo (equino)</h2>
+	<ol>Vacinas:
+		<li>Tétano: anual (primeira dose a partir de 4 meses)</li>
+		<li>Influenza: anual (primeira dose a partir de 4 meses)</li>
+		<li>Encefalomielite: anual (primeira dose a partir de 4 meses)</li>
+		<li>Herpes Vírus: anual</li>
+		<li>Raiva: anual</li>
+		<li>Garrotilho: semestral</li>
+	</ol>
+
+<h2>Ovelha (ovinos)</h2>
+	<ol>Vacinas:
+		<li>Raiva: anual (a partir de 4 meses)</li>
+		<li>Clostridiose: anual (a partir de 2 meses e gestantes 3 semanas antes do parto)</li>
+		<li>Linfadenite caseosa: anual (3 meses com reforço 30 dias após a primeira dose)</li>
+	</ol>
+	<p>OBS: febre aftosa para ovinos somente com autorização do Ministério da Agricultura.</p>
+
+
+<form id="linkes">
+	<h2>Linkes</h2>
+<p><a href="http://www.coamo.com.br/jornalcoamo/janfev07/pecuaria.html">Coamo</a></p>
+<p><a href="https://www.milkpoint.com.br/img/artigo/conteudo/102038/"></a>Milkpoint</p>
+<p><a href="https://www.educapoint.com.br/blog/pecuaria-geral/vacinas-obrigatorias-bovinos/">Educapoint</a></p>
+<p><a href="https://dicas.boisaude.com.br/calendario-sanitario-para-bovinos/">Dicas Boisaude</a></p>
+<p><a href="https://www.ourofinosaudeanimal.com/perguntas-frequentes/equinos/qual-e-o-calendario-va
+cinal-em-equinos/">Ouro Fino Saude Animal</a></p>
+<p><a href="https://wp.ufpel.edu.br/labvir/files/2019/11/VACINAS-EM-EQUINOS.pdf">UFEPEL</a></p>
+<p><a href="https://www.unoeste.br/site/CursoGraduacao/cursos/9/documentos/Manejo%20Sanitario%2
+0ovinos.pdf">UNOESTE</a></p>
+<p><a href="https://www.embrapa.br/busca-de-noticias/-/noticia/12353077/vacinacao-de-ovinos-saiba-co
+mo-e-quando-utiliza-las">Embrapa</a></p>
+</form>
+
+</body>
+</html>
