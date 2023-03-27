@@ -11,11 +11,11 @@ Estrutura:
 >img
 	logo.png (Leoncides)
 >js
-	mensagem.js
+	mensagem.js (Leoncides)
 >model
 	Vaca.php
 	Ovelha.php (Lidiane)
-	Cavalo.php
+	Cavalo.php (Leonardo)
 	Vacina.php
 	Veterinario.php
 	Usuário.php
@@ -27,11 +27,11 @@ Estrutura:
  principal.php
  home.php
  cabecalho.php (Julia)
- cadastrarCavalo.php
+ cadastrarCavalo.php (Leonardo)
  cadastrarOvelha.php (Lidiane)
  cadastrarVaca.php
  cadastrarVeterinario.php (Lidiane)
- listarCavalo.php
+ listarCavalo.php  (Leonardo)
  listarOvelha.php 
  listarVaca.php
  listarVeterinario.php
