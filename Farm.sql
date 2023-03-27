@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Mar-2023 às 19:18
+-- Generation Time: 27-Mar-2023 às 19:53
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -183,6 +183,20 @@ CREATE TABLE `vacina_cav` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `vacina_ovl`
+--
+
+DROP TABLE IF EXISTS `vacina_ovl`;
+CREATE TABLE `vacina_ovl` (
+  `IDvasc_ovl` int(10) NOT NULL,
+  `Nomevasc_ovl` varchar(40) NOT NULL,
+  `Tipovasc_ovl` varchar(40) NOT NULL,
+  `Dataapli_ovl` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `vacina_vac`
 --
 
@@ -314,6 +328,12 @@ ALTER TABLE `vaca`
 ALTER TABLE `vacina_cav`
   ADD PRIMARY KEY (`IDvac_cav`),
   ADD KEY `Identificacao_cav` (`Identificacao_cav`);
+
+--
+-- Indexes for table `vacina_ovl`
+--
+ALTER TABLE `vacina_ovl`
+  ADD PRIMARY KEY (`IDvasc_ovl`);
 
 --
 -- Indexes for table `vacina_vac`
