@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Mar-2023 às 19:05
+-- Generation Time: 27-Mar-2023 às 19:18
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -128,6 +128,20 @@ CREATE TABLE `reproducao_cav` (
   `IDrepr_cav` int(11) NOT NULL,
   `Datacio_cav` varchar(30) DEFAULT NULL,
   `Ciclocio_cav` varchar(30) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE `usuario` (
+  `cpf` int(20) NOT NULL,
+  `nome` varchar(75) NOT NULL,
+  `datanaci` date NOT NULL,
+  `senha` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -281,6 +295,12 @@ ALTER TABLE `reprodução_vac`
 --
 ALTER TABLE `reproducao_cav`
   ADD PRIMARY KEY (`IDrepr_cav`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`cpf`);
 
 --
 -- Indexes for table `vaca`
