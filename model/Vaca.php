@@ -30,23 +30,16 @@ function retornaUltimaVaca(){
 	}
 
 
-function listarVaca($ordem){
-  $banco=new Banco();
-		if($ordem==""||$ordem=="Identificacao"){
-			$sql="select * from vaca order by Identificacao_vac";
-		}else if($ordem=="Nome"){
-			$sql="select * from vaca order by Nome_vac";
-		}else if($ordem=="Datanasc"){
-			$sql="select * from vaca order by Datanasc_vac";
-		}
-		$consulta=$banco->consultar($sql);
-		if(!$consulta){
-			return false;
-		}else{
-			return $consulta;
-		}
+function listarVaca(){
+	$banco=new Banco();
+	$sql="select * from vaca order by Identificacao_vac";
+	$consulta=$banco->consultar($sql);
+	if(!$consulta){
+		return false;
+	}else{
+		return $consulta;
 	}
-
+}
 function verificarVacina($idvasc){
 		$banco=new Banco();
 		$sql="select Nome_vac from vaca where IDvasc_vac in(select IDvasc_vac from vacina_vac where Dataapli_vac=$idvasc)";
