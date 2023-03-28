@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Mar-2023 às 19:06
+-- Generation Time: 28-Mar-2023 às 21:22
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -38,6 +38,11 @@ CREATE TABLE `alimentação` (
   `Identificacao_vac` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `alimentação`
+--
+
+TRUNCATE TABLE `alimentação`;
 -- --------------------------------------------------------
 
 --
@@ -54,6 +59,11 @@ CREATE TABLE `alimentacao_cav` (
   `Identificacao_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `alimentacao_cav`
+--
+
+TRUNCATE TABLE `alimentacao_cav`;
 -- --------------------------------------------------------
 
 --
@@ -73,6 +83,11 @@ CREATE TABLE `cavalo` (
   `Racamae_cav` varchar(30) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `cavalo`
+--
+
+TRUNCATE TABLE `cavalo`;
 -- --------------------------------------------------------
 
 --
@@ -91,6 +106,11 @@ CREATE TABLE `ovelhas` (
   `altura_ovl` double(11,10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `ovelhas`
+--
+
+TRUNCATE TABLE `ovelhas`;
 -- --------------------------------------------------------
 
 --
@@ -104,6 +124,11 @@ CREATE TABLE `periodo_cav` (
   `IDrepr_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `periodo_cav`
+--
+
+TRUNCATE TABLE `periodo_cav`;
 -- --------------------------------------------------------
 
 --
@@ -117,6 +142,11 @@ CREATE TABLE `reprodução_vac` (
   `IDperiodo_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `reprodução_vac`
+--
+
+TRUNCATE TABLE `reprodução_vac`;
 -- --------------------------------------------------------
 
 --
@@ -130,6 +160,11 @@ CREATE TABLE `reproducao_cav` (
   `Ciclocio_cav` varchar(30) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `reproducao_cav`
+--
+
+TRUNCATE TABLE `reproducao_cav`;
 -- --------------------------------------------------------
 
 --
@@ -144,6 +179,11 @@ CREATE TABLE `usuario` (
   `senha` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `usuario`
+--
+
+TRUNCATE TABLE `usuario`;
 --
 -- Extraindo dados da tabela `usuario`
 --
@@ -172,6 +212,11 @@ CREATE TABLE `vaca` (
   `sexo_vac` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `vaca`
+--
+
+TRUNCATE TABLE `vaca`;
 -- --------------------------------------------------------
 
 --
@@ -188,6 +233,11 @@ CREATE TABLE `vacina_cav` (
   `Identificacao_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `vacina_cav`
+--
+
+TRUNCATE TABLE `vacina_cav`;
 -- --------------------------------------------------------
 
 --
@@ -203,6 +253,11 @@ CREATE TABLE `vacina_ovl` (
   `proximaapli_ovl` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `vacina_ovl`
+--
+
+TRUNCATE TABLE `vacina_ovl`;
 -- --------------------------------------------------------
 
 --
@@ -218,6 +273,11 @@ CREATE TABLE `vacina_vac` (
   `proximaapli_vac` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `vacina_vac`
+--
+
+TRUNCATE TABLE `vacina_vac`;
 -- --------------------------------------------------------
 
 --
@@ -236,6 +296,11 @@ CREATE TABLE `vermifugo_cav` (
   `proximaapli_verm` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `vermifugo_cav`
+--
+
+TRUNCATE TABLE `vermifugo_cav`;
 -- --------------------------------------------------------
 
 --
@@ -254,6 +319,11 @@ CREATE TABLE `vermifugo_ovl` (
   `proximaapli_verm` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `vermifugo_ovl`
+--
+
+TRUNCATE TABLE `vermifugo_ovl`;
 -- --------------------------------------------------------
 
 --
@@ -272,6 +342,11 @@ CREATE TABLE `vermifugo_vac` (
   `proximaapli_verm` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `vermifugo_vac`
+--
+
+TRUNCATE TABLE `vermifugo_vac`;
 -- --------------------------------------------------------
 
 --
@@ -280,7 +355,7 @@ CREATE TABLE `vermifugo_vac` (
 
 DROP TABLE IF EXISTS `veterinário_ovl`;
 CREATE TABLE `veterinário_ovl` (
-  `id_vet` int(11) NOT NULL,
+  `CFMV` int(11) NOT NULL,
   `nome_vet` varchar(60) NOT NULL,
   `nasc_vet` date NOT NULL,
   `tel_vet` varchar(30) NOT NULL,
@@ -288,6 +363,11 @@ CREATE TABLE `veterinário_ovl` (
   `cuidados_vet` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `veterinário_ovl`
+--
+
+TRUNCATE TABLE `veterinário_ovl`;
 -- --------------------------------------------------------
 
 --
@@ -306,6 +386,11 @@ CREATE TABLE `veterinario_cav` (
   `Identificacao_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `veterinario_cav`
+--
+
+TRUNCATE TABLE `veterinario_cav`;
 -- --------------------------------------------------------
 
 --
@@ -324,6 +409,11 @@ CREATE TABLE `veterinario_vac` (
   `Identificacao_vac` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Truncate table before insert `veterinario_vac`
+--
+
+TRUNCATE TABLE `veterinario_vac`;
 --
 -- Indexes for dumped tables
 --
@@ -427,7 +517,7 @@ ALTER TABLE `vermifugo_vac`
 -- Indexes for table `veterinário_ovl`
 --
 ALTER TABLE `veterinário_ovl`
-  ADD PRIMARY KEY (`id_vet`);
+  ADD PRIMARY KEY (`CFMV`);
 
 --
 -- Indexes for table `veterinario_cav`
