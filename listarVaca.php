@@ -2,7 +2,7 @@
 require_once 'cabecalho.php';
 require_once 'model/Vaca.php';
 
-$consulta=listarVaca();
+$consulta=listarVaca("");
 if(!$consulta){
 	echo "<h2>Nenhuma vaquinha cadastrada!";
 }else{
