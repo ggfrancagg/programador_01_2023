@@ -3,13 +3,13 @@
 
 	function login($usuario,$senha){
 		$banco= new Banco();
-		$sql="select usuario,senha from usuarios";
+		$sql="select cpf,senha from usuario";
 		$consulta=$banco->consultar($sql);
 		if(!$consulta){
 			return false;
 		}else{
 			while ($linha=$consulta->fetch_assoc()) {
-				if($linha['usuario']==$usuario){
+				if($linha['cpf']==$usuario){
 					if($linha['senha']==$senha){
 						return true;
 					}else{
@@ -23,7 +23,7 @@
 	}
 	function criarSessao($teste,$usuario){
 		if ($teste) {
-			setcookie('usuario',$usuario);//setcookie('usuario',$usuario,time()+172800);
+			setcookie('usuario',$usuario);
 		}else{
 			return false;
 		}
