@@ -37,7 +37,7 @@ require_once 'cabecalho.php';
 			<li>Veterinário
 				<ol>
 					<li><a href="cadastrarVeterinario.php" target="quadro">Cadastrar &#9877;</a></li>
-					<li><a href="listarVeterinario.php" target="quadro">Listar &#9877;</a></li>
+					<li><a href="listarVet.php" target="quadro">Listar &#9877;</a></li>
 				</ol>
 				
 			</li>
