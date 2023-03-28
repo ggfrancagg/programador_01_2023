@@ -11,7 +11,7 @@ require_once 'cabecalho.php';
 
 <div id="topo">
 	<div id="logo">
-		<img src="img/logo1.png">
+		<img src="img/logo1.jpg">
 	</div>
 	<div id="menu">
 		<ul class="nav">
