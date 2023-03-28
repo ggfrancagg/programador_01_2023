@@ -50,16 +50,14 @@ if(isset($_POST['enviar'])){
 	$racamae_vac=$_POST['racamae'];
 	$racapai_vac=$_POST['racapai'];
 	$altura_vac=$_POST['alt'];
-	$IDrepr_vac=$_POST['repr'];
-	$IDvasc_vac=$_POST['vasc'];
-    $sexo_vac=$_POST['sexo'];
+    	$sexo_vac=$_POST['sexo'];
 
 
 require_once 'model/Vaca.php';
 $identificacao_vac=retornaUltimaVaca();
 	if($cod_vac>+0){
 		$cod_vac++;
-		$resp=cadastrar($identificacao_vac, $nome_vac, $raca_vac, $peso_vac, $datanasc_vac, $racamae, $racapai_vac, $altura_vac, $IDrepr_vac, $IDvasc_vac, $sexo_vac);
+		$resp=cadastrar($identificacao_vac, $nome_vac, $raca_vac, $peso_vac, $datanasc_vac, $racamae, $racapai_vac, $altura_vac, $sexo_vac);
 	if(!$resp){
 		echo "<h2>Erro na tentativa de cadastro!!!</h2>";
 	}else{
