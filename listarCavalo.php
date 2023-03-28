@@ -10,14 +10,14 @@ if(!$consulta){
 	echo "<table>";
 	echo "<tr>";
 	echo "<th>Identificação</th>";
-	echo "<th>Nome";
-	echo "<th>Raça";
-	echo "<th>Data de nascimento";
-	echo "<th>Sexo";
-	echo "<th>Peso";
-	echo "<th>Raça do Pai";
-	echo "<th>Altura";
-	echo "Raça da Mãe";
+	echo "<th>Nome</th";
+	echo "<th>Raça</th>";
+	echo "<th>Data de nascimento</th>";
+	echo "<th>Sexo</th>";
+	echo "<th>Peso</th>";
+	echo "<th>Raça do Pai</th>";
+	echo "<th>Altura</th>";
+	echo "<th>Raça da Mãe</th>";
 	echo "</tr>";
 
 
@@ -30,9 +30,10 @@ if(!$consulta){
 		echo "<td>".$linha['Peso']."</td>";
 		echo "<td>".$linha['Racapai_cav']."</td>";
 		echo "<td>".$linha['Altura_cav']."</td>";
-		echo "<td>".$linha['Racamae_cav'];
+		echo "<td>".$linha['Racamae_cav']."</td>";
 		echo "</tr>";
 	}
+	
 }
 
 
