@@ -57,7 +57,7 @@ if(isset($_POST['enviar'])){
 
 
 require_once 'model/Vaca.php';
-$cod_gat=retornaUltimaVaca();
+$cod_vac=retornaUltimaVaca();
 	if($cod_vac>+0){
 		$cod_vac++;
 		$resp=cadastrar($identificacao_vac, $nome_vac, $raca_vac, $peso_vac, $datanasc_vac, $racamae, $racapai_vac, $altura_vac, $IDrepr_vac, $IDrepr_vac, $sexo_vac);
