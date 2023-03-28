@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Mar-2023 às 20:49
+-- Generation Time: 28-Mar-2023 às 19:06
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -143,6 +143,13 @@ CREATE TABLE `usuario` (
   `datanaci` date NOT NULL,
   `senha` varchar(30) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`cpf`, `nome`, `datanaci`, `senha`) VALUES
+(799906651, 'Josekly Amaral Salva Pinto Junior', '1985-05-22', 'Admin');
 
 -- --------------------------------------------------------
 
