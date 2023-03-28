@@ -26,8 +26,7 @@
 
 <p>Altura:<input type="text" name="alt" pattern="[0-9]{1,8}\[0-9]{2}" placeholder="00.00" title="Somente números, centrimetros obrigatórios, ponto e não vírgula EX: 01.50 de altura" required>cm</p>
 
-    <p>ID reprodução:<input type="text" name="repr" required></p>
-    <p>ID vacinação:<input type="text" name="vasc" required></p>
+   
 
 <p>Sexo:<input type="radio" id="sexo-m" name="sexo" value="Masculino" required>
 	<label for="sexo-m">Macho</label>
@@ -57,10 +56,10 @@ if(isset($_POST['enviar'])){
 
 
 require_once 'model/Vaca.php';
-$cod_vac=retornaUltimaVaca();
+$identificacao_vac=retornaUltimaVaca();
 	if($cod_vac>+0){
 		$cod_vac++;
-		$resp=cadastrar($identificacao_vac, $nome_vac, $raca_vac, $peso_vac, $datanasc_vac, $racamae, $racapai_vac, $altura_vac, $IDrepr_vac, $IDrepr_vac, $sexo_vac);
+		$resp=cadastrar($identificacao_vac, $nome_vac, $raca_vac, $peso_vac, $datanasc_vac, $racamae, $racapai_vac, $altura_vac, $IDrepr_vac, $IDvasc_vac, $sexo_vac);
 	if(!$resp){
 		echo "<h2>Erro na tentativa de cadastro!!!</h2>";
 	}else{
