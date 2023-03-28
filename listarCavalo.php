@@ -33,6 +33,7 @@ if(!$consulta){
 		echo "<td>".$linha['Racamae_cav']."</td>";
 		echo "</tr>";
 	}
+	
 }
 
 
