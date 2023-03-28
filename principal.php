@@ -17,16 +17,16 @@ require_once 'cabecalho.php';
 		<ul class="nav">
 			<li>Cadastrar Animal
 				<ol>
-					<li><a href="cadastrarVaca.php" target="quadro">Bovino &#128046;</a></li>
-					<li><a href="cadastrarCavalo.php" target="quadro">Equino &#128052;</a></li>
-					<li><a href="cadastrarOvelha.php" target="quadro">Ovino &#128017;</a></li>
+					<li><a href="cadastrarVaca.php" target="quadro" onclick="mostra()">Bovino &#128046;</a></li>
+					<li><a href="cadastrarCavalo.php" target="quadro" onclick="mostra()">Equino &#128052;</a></li>
+					<li><a href="cadastrarOvelha.php" target="quadro" onclick="mostra()">Ovino &#128017;</a></li>
 			</ol>
 			</li>
 			<li>Listar Animais
 				<ol>
-					<li><a href="listarVaca.php" target="quadro" onclick="aguarde()">Bovinos &#128046;</a></li> 
-					<li><a href="listarCavalo.php" target="quadro" onclick="aguarde()">Equinos &#128052;</a></li>
-					<li><a href="listarOvelha.php" target="quadro" onclick="aguarde()">Ovinos &#128017;</a></li>
+					<li><a href="listarVaca.php" target="quadro" onclick="mostra()">Bovinos &#128046;</a></li> 
+					<li><a href="listarCavalo.php" target="quadro" onclick="mostra()">Equinos &#128052;</a></li>
+					<li><a href="listarOvelha.php" target="quadro" onclick="mostra()">Ovinos &#128017;</a></li>
 				</ol>
 			</li>
 			<li>Buscar Animal
@@ -66,7 +66,7 @@ require_once 'cabecalho.php';
 	</div>
 	<div id="principal">
 	<iframe src="home.php" name="quadro" onload="esconde()"></iframe>
-<span id="mensagem"></span>
+<span id="load" class="invisivel"></span>
 </div>
 
 <div id="rodape">
