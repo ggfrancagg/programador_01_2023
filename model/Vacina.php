@@ -36,6 +36,44 @@ function vacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$pro
 	}
 }
 
+
+//GERAR CÓDIGO DE ID
+
+
+function retornaUltimoCavalo($IDvac_cav){ 
+	$banco=new Banco();
+	$sql="select IDvac_cav from cavalo where IDvac_cav=$IDvac_cav";
+	$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+function retornaUltimaVaca($IDvasc_vac){ 
+	$banco=new Banco();
+	$sql="select IDvasc_vac from vaca where IDvasc_vac=$IDvasc_vac";
+	$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function retornaUltimaOvelha($IDvasc_ovl){ 
+	$banco=new Banco();
+	$sql="select IDvasc_ovl from ovelha where IDvasc_ovl=$IDvasc_ovl";
+	$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
 //ALERTA DE DATA DA VACINA
 
 function verificarVacinaVaca($vacina_vaca){

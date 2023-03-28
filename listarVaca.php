@@ -15,7 +15,7 @@ if(!$consulta){
 	echo "<th>Data de nascimento</th>";
 	echo "<th>Sexo</th>";
 	echo "<th>Raça do Mãe</th>";
-	echo "Raça da Pai</th>";
+	echo "<th>Raça da Pai</th>";
 	echo "<th>Altura</th>";
 	echo "<th>ID reprodução</th>";
 	echo "<th>ID vacina</th>";	

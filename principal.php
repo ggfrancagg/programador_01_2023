@@ -45,7 +45,6 @@ require_once 'cabecalho.php';
 				<ol>
 					<li><a href="aplicacaoVacina.php" target="quadro">Vacinas</a></li>
 					<li><a href="aplicacaoVermifugo.php" target="quadro">Vermifugação</a></li>
-					<li><a href="aplicacaoVermifugo.php" target="quadro">Vermifugação</a></li>
 				</ol>
 			</li>
 			<li>Informações

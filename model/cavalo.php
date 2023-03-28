@@ -41,6 +41,16 @@ function retornaUltimoCodigo(){
 		}
 }
 
+function verificarVacina($idvasc){
+		$banco=new Banco();
+		$sql="select Nome_cav from cavalo where IDvac_cav in(select IDvac_cav from vacina_cav where Dataapli_cav=$idvasc)";
+		$consulta=$banco->consultar($sql);
+		if(!$consulta){
+			return false;
+		}else{
+			return $consulta;
+		}
+	}	
 
 ?>
 </body>
