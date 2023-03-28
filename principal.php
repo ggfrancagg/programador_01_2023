@@ -64,8 +64,19 @@ require_once 'cabecalho.php';
 	</div>
 	</div>
 	<div id="principal">
+
 	<iframe src="home.php" name="quadro" onload="esconde()"></iframe>
-<span id="load" class="invisivel"></span>
+
+	<div id="load">
+  <div>G</div>
+  <div>N</div>
+  <div>I</div>
+  <div>D</div>
+  <div>A</div>
+  <div>O</div>
+  <div>L</div>
+</div>
+
 </div>
 
 <div id="rodape">
