@@ -1,13 +1,12 @@
 <?php
-//	id_vet	nome_vet nasc_vet tel_vet data_visita cuidados_vet
-require_once 'cabecalho.php';
-require_once './persistence/Banco.php';
 
-function Veterinario(){
+require_once'./persistence/Banco.php';
+
+function Veterinario($CFMV,$nome_vet,$nasc_vet,$tel_vet,$data_visita,$cuidados_vet){
 	$banco=new Banco();
-	$sql="insert into veterinario_ovl values($id_vet,$nome_vet,$nasc_vet,$tel_vet,$data_visita,$cuidados_vet)";
+	$sql="insert into veterinario_ovl values($CFMV,'$nome_vet',$nasc_vet,$tel_vet,$data_visita,'$cuidados_vet')";
 		$resp=$banco->executar($sql);
-		if (!$resp) {
+		if (!$resp){
 			return false;
 		}else{
 			return true;
@@ -24,7 +23,7 @@ function retornaUltimoVet(){
 		while ($linha=$consulta->fetch_assoc()) {
 		$codigo=$linha['max(id_vet)'];
 	}
-		if ($codigo==NULL) {
+		if ($codigo==NULL){
 			$codigo=0;
 		} 
 			return $codigo;
@@ -34,7 +33,7 @@ function retornaUltimoVet(){
 function listarVet($ordem){
   $banco=new Banco();
 		if($ordem==""||$ordem=="id"){
-			$sql="select * from veterinario_ovl order by id_vet";
+			$sql="select * from veterinario_ovl order by CFMW";
 		}else if($ordem=="nome"){
 			$sql="select * from veterinario_ovl order by nome_vet";
 		}else if($ordem=="nasc"){
