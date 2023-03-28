@@ -1,7 +1,7 @@
 <?php require_once 'cabecalho.php';
 
-echo "<h1>Home - Inicio</h1>";
-echo "<p>Hoje é ".date("d/m/Y")."</p>";
+echo "<h1 id='home'>Home - Inicio</h1>";
+echo "<p id='home'>Hoje é ".date("d/m/Y")."</p>";
 
 require_once 'model/Vaca.php';
 $consulta=verificarVacina(date("Y-m-d"));

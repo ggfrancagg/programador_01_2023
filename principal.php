@@ -11,7 +11,7 @@ require_once 'cabecalho.php';
 
 <div id="topo">
 	<div id="logo">
-		<img src="img/logo.png">
+		<img src="img/logo1.jpg">
 	</div>
 	<div id="menu">
 		<ul class="nav">
@@ -68,15 +68,7 @@ require_once 'cabecalho.php';
 	<iframe src="home.php" name="quadro" onload="esconde()"></iframe>
 <span id="mensagem"></span>
 </div>
-
-<div id="rodape">
-	<div id="endereco">
-		<p>Rua X de Y, 1228</p>
-		<p>CEP 84053-444</p>
-		<p>Tel: (42) 3232-3434</p>
-		<p>Ponta Grossa - PR</p>
-</br>
-	</div>
+<div id=rodape>
 	<div id="sobre">
 		<p>Projeto Integrador do curso Programador de Sistemas turma 202300015 - SENAC&reg;</p>
 	</div>
