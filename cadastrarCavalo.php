@@ -26,9 +26,7 @@
 
 			require_once 'model/cavalo.php';
 			$codigo=retornaUltimoCodigo();
-			if(!$codigo){
-				echo "<h2>Não tem cavalo cadastrado!";
-			}else{
+			if($codigo>=0){
 				$codigo++;
 				$resposta=cadastrarCavalo($codigo,$Nome_cav,$Raca_cav,$Datanasc_cav,$Sexo_cav,$Peso,$Racapai_cav,$Altura_cav,$Racamae_cav);
 				if(!$resposta){
@@ -36,6 +34,10 @@
 				}else{
 					echo "<h2>Cadastrado com sucesso!</h2>";
 				}
+				
+			}else{
+				echo "<h2>Não tem cavalo cadastrado!";
+				
 			}
 
 		}	

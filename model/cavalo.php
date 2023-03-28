@@ -36,6 +36,9 @@ function retornaUltimoCodigo(){
 		while($linha=$consulta->fetch_assoc()){
 			$ultimo=$linha['max(Identificacao_cav)'];
 		}
+		if ($ultimo==null) {
+			$ultimo=0;
+		}
 	return $ultimo;
 
 		}
