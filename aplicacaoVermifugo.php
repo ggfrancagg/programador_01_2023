@@ -182,6 +182,14 @@ if (isset($_POST['nome'])) {
 		}else echo "<h2> Cadastro de aplicação realizado com sucesso!</h2>";
 	}
 }
+
+
+function criarMinimo($hoje){
+	$ano=substr($hoje,0,4);
+	$ano-=25;
+	return $ano."-01-01";
+}
+
 ?>
 
 </body>
