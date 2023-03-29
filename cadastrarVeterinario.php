@@ -8,15 +8,17 @@
 </head>
 <body>
 
-	<form action="cadastrarVeterinario.php">
-		<h1>Veterinário</h1>
-		<p>Identitadade do Veterinário:<input type="number" name="id" size="20" maxlength="20" required></p>
-		<p>Nome do Veterinário:<input type="text" name="nome" size="80" maxlength="80" required></p>
+	<form action="cadastrarVeterinario.php" id="veterinario">
+		<h1>&#9877; Veterinário &#9877;</h1>
+		</br>
+		<p>Identidade do Veterinário: <input type="number" name="id" size="20" maxlength="20" required></p>
+		<p>Nome do Veterinário: <input type="text" name="nome" size="80" maxlength="80" required></p>
 		<p>Nascimento: <input type="date" name="nasc" required></p>
 		<p>Telefone: <input type="text" name="tel" placeholder="(99)9999-9999" required></p>
-		<p>Data da visita do Veterinário:<input type="date" name="data" required></p>
+		<p>Data da visita do Veterinário: <input type="date" name="data" required></p>
 		<p>Cuidados: <input type="text" name="cuidados" size="80" maxlength="80" required></p>
-				<p><input type="submit" name="enviar" value="Agendar"></p>
+		</br>
+				<h3><input type="submit" name="enviar" value="cadastrar"></h3>
 
 
 <?php
@@ -45,5 +47,7 @@
 		
 ?>
 	</form>
+
+
 </body>
 </html>

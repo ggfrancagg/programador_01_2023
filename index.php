@@ -3,7 +3,7 @@ require_once 'cabecalho.php';
 ?>
 
 
-<form action="index.php" method="POST" class="login">
+<form action="index.php" method="POST" id="login">
 	<h1>Login</h1>
 	</br>
 	<p>Usuário: <input type="text" name="usuario" size="30" maxlength="30" placeholder="CPF" required></p>

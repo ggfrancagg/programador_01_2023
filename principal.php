@@ -4,7 +4,7 @@ require_once 'model/Usuario.php';
 
 $estalog=estaLogado();
 	if(!$estalog){ 
-	echo "<h2>Você não está logado, favor logar!</h2>";
+	echo "<h5>Você não está logado, favor logar!</h5>";
 	echo "<a href='//localhost/profGabriel/ProjetoIntegrador/'>Voltar</a>";
 }else{ 
 ?>

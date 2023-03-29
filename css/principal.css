@@ -171,9 +171,11 @@ h2{
 	text-shadow: 1px 1px 3px #FFDA00;
 }
 
+
+
 /*index.php*/
 
-form.login{
+#login{
 	min-height: 15vh;
 	background:linear-gradient(#D9A362,#593B16);
 	border-radius: 140px;
@@ -183,11 +185,11 @@ form.login{
 	margin-top: 10vh;
 }
 
-form.login h3{
+#login h3{
 	margin-left: 25vw;
 }
 
-form.login h1{
+#login h1{
 	font-family: 'Alata', sans-serif;
 	font-size: 2.5rem;
 	color: #593B16;
@@ -197,7 +199,7 @@ form.login h1{
 
 }
 
-form.login p{
+#login p{
 
 	font-family: 'News Cycle', sans-serif;
 	font-size: 1.5rem;
@@ -248,3 +250,173 @@ h5{
 	padding-top: 10vh;
 
 }
+
+/*cadastrar animais*/
+
+#cadastro{
+
+	width: 60vw;
+	margin-left: 20vw;
+	min-height: 20vh;
+	border: 3px inset  #FA5D5D;
+	border-radius: 22px;
+	margin-top: 15vh;
+	color: #A65F46;
+	background: #BF7950;
+}
+
+#cadastro h1{
+	font-family: 'Alata', sans-serif;
+	font-size: 2rem;
+	color: #BF5630;
+	text-shadow: 1px 1px 3px #FFDA00;
+	text-align: center;
+	padding-top: 1vh;
+}
+
+#cadastro p{
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: #593B16;
+	text-align: left;
+	margin-left: 2vw;
+	text-shadow: 1px 1px 2px #FF7001;
+}
+
+#cadastro h3{
+	text-align: center;
+	padding-bottom: 2vh;
+}
+
+/*cadastrar vet*/
+
+#veterinario{
+	width: 60vw;
+	margin-left: 20vw;
+	min-height: 20vh;
+	border: 3px inset  #FA5D5D;
+	border-radius: 22px;
+	margin-top: 15vh;
+	color: #A65F46;
+	background: #BF7950;
+}
+
+#veterinario h1{
+	font-family: 'Alata', sans-serif;
+	font-size: 2rem;
+	color: #BF5630;
+	text-shadow: 1px 1px 3px #FFDA00;
+	text-align: center;
+	padding-top: 1vh;
+}
+
+#veterinario p{
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: #593B16;
+	text-align: left;
+	margin-left: 2vw;
+	text-shadow: 1px 1px 2px #FF7001;
+
+}
+
+#veterinario h3{
+	text-align: center;
+	padding-bottom: 2vh;
+}
+
+/*aplicacaoVermifugo.php*/
+
+#vermifugo{
+	background: #BF7950;
+	border: 3px inset #FA5D5D;
+	border-radius: 20px;
+	width: 50vw;
+	margin-top: 2vh;
+	margin-left: 25vw;
+}
+#vermifugo h1{
+	font-size: 2rem;
+}
+
+#vermifugo h2{
+	font-size: 1.2rem;
+	text-shadow: none;
+	color: #593B16;
+}
+#vermifugo p{
+	font-size: 1.2rem;
+	color: #593B16;
+}
+#vermifugo h3{
+	text-align: center;
+	padding-bottom: 1vh;
+}
+
+#animalcadas{
+	background: #BF7950;
+	border: 3px inset #FA5D5D;
+	border-radius: 20px;
+	width: 50vw;
+	margin-top: 2vh;
+	margin-left: 25vw;
+	height: 15vh;
+}
+
+#animalcadas h1{
+	font-size: 2rem;
+}
+
+#animalcadas h2{
+	font-size: 1.2rem;
+	text-shadow: none;
+	color: #593B16;
+}
+#animalcadasp{
+	font-size: 1.2rem;
+	color: #593B16;
+}
+#animalcadas h3{
+	text-align: center;
+	padding-bottom: 1vh;
+}
+
+#cadanimal{
+
+	width: 60vw;
+	margin-left: 20vw;
+	min-height: 25vh;
+	border: 3px inset  #FA5D5D;
+	border-radius: 22px;
+	margin-top: 15vh;
+	color: #A65F46;
+	background: #BF7950;
+	padding-top: 2vh;
+}
+
+#cadanimal h1{
+	font-family: 'Alata', sans-serif;
+	font-size: 2rem;
+	color: #BF5630;
+	text-shadow: 1px 1px 3px #FFDA00;
+	text-align: center;
+	padding-top: 1vh;
+}
+
+#cadanimal p{
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: #593B16;
+	text-align: left;
+	margin-left: 2vw;
+	text-shadow: 1px 1px 2px #FF7001;
+}
+
+#cadanimal h3{
+	text-align: center;
+	padding-bottom: 2vh;
+}
+
