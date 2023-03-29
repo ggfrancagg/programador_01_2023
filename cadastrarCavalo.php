@@ -1,15 +1,15 @@
 <?php require_once 'cabecalho.php'; ?>
 <form action="cadastrarCavalo.php" method="POST">
 	<h1>Cadastro de Cavalo</h1>
-	<p>Nome do Cavalo:<input type="text" name="nome" size="30" maxlength="30" pattern="[A-Za-z]{2,30}" required></p>
-	<p>Raça do Cavalo:<input type="text" name="raca" size="30" maxlength="30" pattern="[A-Za-z]{2,30}" required></p>
+	<p>Nome do Cavalo:<input type="text" name="nome" size="30" maxlength="30" pattern="[A-Za-záÁçÇãÂ]{2,30}" required></p>
+	<p>Raça do Cavalo:<input type="text" name="raca" size="30" maxlength="30" pattern="[A-Za-záÁçÇãÂ]{2,30}" required></p>
 	<p>Data de Nascimento:<input type="date" name="datanasc" min="2000-01-01" max="2030-01-01" required></p>
 	<p>Sexo do Cavalo:<input type="radio" name="sexo" value="cavalho"> Cavalo<input type="radio" name="sexo" value="egua"/>Egua
 		</p>
 		<p>Peso:<input type="text" name="peso" pattern="[0-9]{1-4}[0-9]{2}" placeholder="99.99" title="Somente números, use ponto e não virgula ex:99.99" required></p>
-		<p>Raça do Pai: <input type="text" name="racadopai" size="30" maxlength="30" required> </p>
-		<p>Altura: <input type="text" name="altura_cav" pattern="[0-9]{1-3}[0-9]{2}" placeholder="9.99" title="use punto e não virgula ex:9.99" required></p>
-		<p>Raça da Mãe: <input type="text" name="racadamae" size="30" maxlength="30" required></p>
+		<p>Raça do Pai: <input type="text" name="racadopai" size="30" maxlength="30" pattern="[A-Za-záÁçÇãÂ]{2,30}" required> </p>
+		<p>Altura: <input type="text" name="altura_cav" pattern="[0-9]{1-3}[0-9]{2}"  placeholder="9.99" title="use punto e não virgula ex:9.99" required></p>
+		<p>Raça da Mãe: <input type="text" name="racadamae" size="30" maxlength="30" pattern="[A-Za-záÁçÇãÂ]{2,30}" required></p>
 		<p> <input type="submit" name="enviar" value="cadastrar"></p>
 
 		<?php

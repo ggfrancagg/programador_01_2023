@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Mar-2023 às 21:22
+-- Generation Time: 29-Mar-2023 às 20:00
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -31,25 +31,18 @@ USE `farm`;
 -- Estrutura da tabela `alimentação`
 --
 
-DROP TABLE IF EXISTS `alimentação`;
 CREATE TABLE `alimentação` (
   `IDali_vac` int(11) NOT NULL,
   `Tiposali_vac` varchar(50) DEFAULT NULL,
   `Identificacao_vac` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `alimentação`
---
-
-TRUNCATE TABLE `alimentação`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `alimentacao_cav`
 --
 
-DROP TABLE IF EXISTS `alimentacao_cav`;
 CREATE TABLE `alimentacao_cav` (
   `IDali_cav` int(11) NOT NULL,
   `Tiposali_cav` varchar(50) DEFAULT NULL,
@@ -59,18 +52,12 @@ CREATE TABLE `alimentacao_cav` (
   `Identificacao_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `alimentacao_cav`
---
-
-TRUNCATE TABLE `alimentacao_cav`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `cavalo`
 --
 
-DROP TABLE IF EXISTS `cavalo`;
 CREATE TABLE `cavalo` (
   `Identificacao_cav` int(11) NOT NULL,
   `Nome_cav` varchar(30) DEFAULT NULL,
@@ -84,17 +71,18 @@ CREATE TABLE `cavalo` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Truncate table before insert `cavalo`
+-- Extraindo dados da tabela `cavalo`
 --
 
-TRUNCATE TABLE `cavalo`;
+INSERT INTO `cavalo` (`Identificacao_cav`, `Nome_cav`, `Raca_cav`, `Datanasc_cav`, `Sexo_cav`, `Peso`, `Racapai_cav`, `Altura_cav`, `Racamae_cav`) VALUES
+(1, 'Coquinho', 'Arabe', '2022-06-15', 'cavalho', 320.45, 'Arabe', 1.87, 'Arabe');
+
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `ovelhas`
 --
 
-DROP TABLE IF EXISTS `ovelhas`;
 CREATE TABLE `ovelhas` (
   `id_ovl` int(11) NOT NULL,
   `nome_ovl` varchar(70) NOT NULL,
@@ -102,76 +90,59 @@ CREATE TABLE `ovelhas` (
   `raca_ovl` varchar(50) NOT NULL,
   `sexo_ovl` char(1) NOT NULL,
   `cor_ovl` varchar(30) NOT NULL,
-  `peso_ovl` double(11,10) NOT NULL,
-  `altura_ovl` double(11,10) NOT NULL
+  `peso_ovl` double NOT NULL,
+  `altura_ovl` double NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Truncate table before insert `ovelhas`
+-- Extraindo dados da tabela `ovelhas`
 --
 
-TRUNCATE TABLE `ovelhas`;
+INSERT INTO `ovelhas` (`id_ovl`, `nome_ovl`, `idade_ovl`, `raca_ovl`, `sexo_ovl`, `cor_ovl`, `peso_ovl`, `altura_ovl`) VALUES
+(1, 'Alphasema', 2, 'textel', 'F', 'marrom', 35.2, 56.04);
+
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `periodo_cav`
 --
 
-DROP TABLE IF EXISTS `periodo_cav`;
 CREATE TABLE `periodo_cav` (
   `IDperiodo_cav` int(11) NOT NULL,
   `Identificacao_cav` int(11) DEFAULT NULL,
   `IDrepr_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `periodo_cav`
---
-
-TRUNCATE TABLE `periodo_cav`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `reprodução_vac`
 --
 
-DROP TABLE IF EXISTS `reprodução_vac`;
 CREATE TABLE `reprodução_vac` (
   `IDrepr_vac` int(11) NOT NULL,
   `Datarepr_vac` date DEFAULT NULL,
   `IDperiodo_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `reprodução_vac`
---
-
-TRUNCATE TABLE `reprodução_vac`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `reproducao_cav`
 --
 
-DROP TABLE IF EXISTS `reproducao_cav`;
 CREATE TABLE `reproducao_cav` (
   `IDrepr_cav` int(11) NOT NULL,
   `Datacio_cav` varchar(30) DEFAULT NULL,
   `Ciclocio_cav` varchar(30) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `reproducao_cav`
---
-
-TRUNCATE TABLE `reproducao_cav`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `cpf` int(20) NOT NULL,
   `nome` varchar(75) NOT NULL,
@@ -180,16 +151,11 @@ CREATE TABLE `usuario` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Truncate table before insert `usuario`
---
-
-TRUNCATE TABLE `usuario`;
---
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`cpf`, `nome`, `datanaci`, `senha`) VALUES
-(799906651, 'Josekly Amaral Salva Pinto Junior', '1985-05-22', 'Admin');
+(12345678, 'Josekly Amaral Salva Pinto Junior', '1985-05-22', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -197,7 +163,6 @@ INSERT INTO `usuario` (`cpf`, `nome`, `datanaci`, `senha`) VALUES
 -- Estrutura da tabela `vaca`
 --
 
-DROP TABLE IF EXISTS `vaca`;
 CREATE TABLE `vaca` (
   `Identificacao_vac` int(11) NOT NULL,
   `Nome_vac` varchar(40) DEFAULT NULL,
@@ -212,18 +177,12 @@ CREATE TABLE `vaca` (
   `sexo_vac` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `vaca`
---
-
-TRUNCATE TABLE `vaca`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `vacina_cav`
 --
 
-DROP TABLE IF EXISTS `vacina_cav`;
 CREATE TABLE `vacina_cav` (
   `IDvac_cav` int(11) NOT NULL,
   `Dataapli_cav` date DEFAULT NULL,
@@ -233,58 +192,42 @@ CREATE TABLE `vacina_cav` (
   `Identificacao_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `vacina_cav`
---
-
-TRUNCATE TABLE `vacina_cav`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `vacina_ovl`
 --
 
-DROP TABLE IF EXISTS `vacina_ovl`;
 CREATE TABLE `vacina_ovl` (
   `IDvasc_ovl` int(10) NOT NULL,
   `Nomevasc_ovl` varchar(40) NOT NULL,
   `Tipovasc_ovl` varchar(40) NOT NULL,
   `Dataapli_ovl` date NOT NULL,
-  `proximaapli_ovl` date NOT NULL
+  `proximaapli_ovl` date NOT NULL,
+  `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `vacina_ovl`
---
-
-TRUNCATE TABLE `vacina_ovl`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `vacina_vac`
 --
 
-DROP TABLE IF EXISTS `vacina_vac`;
 CREATE TABLE `vacina_vac` (
   `IDvasc_vac` int(11) NOT NULL,
   `Nomevasc_vac` varchar(50) DEFAULT NULL,
   `Tipovasc_vac` varchar(50) DEFAULT NULL,
   `Dataapli_vac` date DEFAULT NULL,
-  `proximaapli_vac` date NOT NULL
+  `proximaapli_vac` date NOT NULL,
+  `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `vacina_vac`
---
-
-TRUNCATE TABLE `vacina_vac`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `vermifugo_cav`
 --
 
-DROP TABLE IF EXISTS `vermifugo_cav`;
 CREATE TABLE `vermifugo_cav` (
   `Id_verm` int(11) NOT NULL,
   `Nome_verm` varchar(30) DEFAULT NULL,
@@ -293,21 +236,16 @@ CREATE TABLE `vermifugo_cav` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `Identificacao_cav` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `vermifugo_cav`
---
-
-TRUNCATE TABLE `vermifugo_cav`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `vermifugo_ovl`
 --
 
-DROP TABLE IF EXISTS `vermifugo_ovl`;
 CREATE TABLE `vermifugo_ovl` (
   `Id_verm` int(11) NOT NULL,
   `Nome_verm` varchar(30) DEFAULT NULL,
@@ -316,21 +254,16 @@ CREATE TABLE `vermifugo_ovl` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `vermifugo_ovl`
---
-
-TRUNCATE TABLE `vermifugo_ovl`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `vermifugo_vac`
 --
 
-DROP TABLE IF EXISTS `vermifugo_vac`;
 CREATE TABLE `vermifugo_vac` (
   `Id_verm` int(11) NOT NULL,
   `Nome_verm` varchar(30) DEFAULT NULL,
@@ -339,21 +272,16 @@ CREATE TABLE `vermifugo_vac` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `vermifugo_vac`
---
-
-TRUNCATE TABLE `vermifugo_vac`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `veterinário_ovl`
 --
 
-DROP TABLE IF EXISTS `veterinário_ovl`;
 CREATE TABLE `veterinário_ovl` (
   `CFMV` int(11) NOT NULL,
   `nome_vet` varchar(60) NOT NULL,
@@ -363,18 +291,12 @@ CREATE TABLE `veterinário_ovl` (
   `cuidados_vet` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `veterinário_ovl`
---
-
-TRUNCATE TABLE `veterinário_ovl`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `veterinario_cav`
 --
 
-DROP TABLE IF EXISTS `veterinario_cav`;
 CREATE TABLE `veterinario_cav` (
   `CFMV` int(11) NOT NULL,
   `Tosa_cav` date DEFAULT NULL,
@@ -386,18 +308,12 @@ CREATE TABLE `veterinario_cav` (
   `Identificacao_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `veterinario_cav`
---
-
-TRUNCATE TABLE `veterinario_cav`;
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `veterinario_vac`
 --
 
-DROP TABLE IF EXISTS `veterinario_vac`;
 CREATE TABLE `veterinario_vac` (
   `CFMV` varchar(20) NOT NULL,
   `Datavisita_vac` date DEFAULT NULL,
@@ -409,11 +325,6 @@ CREATE TABLE `veterinario_vac` (
   `Identificacao_vac` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Truncate table before insert `veterinario_vac`
---
-
-TRUNCATE TABLE `veterinario_vac`;
 --
 -- Indexes for dumped tables
 --
@@ -487,31 +398,36 @@ ALTER TABLE `vacina_cav`
 -- Indexes for table `vacina_ovl`
 --
 ALTER TABLE `vacina_ovl`
-  ADD PRIMARY KEY (`IDvasc_ovl`);
+  ADD PRIMARY KEY (`IDvasc_ovl`),
+  ADD KEY `id_ovl` (`id_ovl`);
 
 --
 -- Indexes for table `vacina_vac`
 --
 ALTER TABLE `vacina_vac`
-  ADD PRIMARY KEY (`IDvasc_vac`);
+  ADD PRIMARY KEY (`IDvasc_vac`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
 -- Indexes for table `vermifugo_cav`
 --
 ALTER TABLE `vermifugo_cav`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`);
 
 --
 -- Indexes for table `vermifugo_ovl`
 --
 ALTER TABLE `vermifugo_ovl`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `id_ovl` (`id_ovl`);
 
 --
 -- Indexes for table `vermifugo_vac`
 --
 ALTER TABLE `vermifugo_vac`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
 -- Indexes for table `veterinário_ovl`
