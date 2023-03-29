@@ -43,21 +43,23 @@
 
 
 if(isset($_POST['nome'])){
-	$nome_vac=$_POST['nome'];
-	$raca_vac=$_POST['raca'];
-	$peso_vac=$_POST['peso'];	
-	$datanasc_vac=$_POST['nasci'];
-	$racamae_vac=$_POST['racamae'];
-	$racapai_vac=$_POST['racapai'];
-	$altura_vac=$_POST['alt'];
+
+	$Nome_vac=$_POST['nome'];
+	$Raca_vac=$_POST['raca'];
+	$Peso_vac=$_POST['peso'];	
+	$Datanasc_vac=$_POST['nasci'];
+	$Racamae_vac=$_POST['racamae'];
+	$Racapai_vac=$_POST['racapai'];
+	$Altura_vac=$_POST['alt'];
     	$sexo_vac=$_POST['sexo'];
 
 
 require_once 'model/Vaca.php';
-$identificacao_vac=retornaUltimaVaca();
-	if($identificacao_vac>+0){
-		$identificacao_vac++;
-		$resp=cadastrar($identificacao_vac, $nome_vac, $raca_vac, $peso_vac, $datanasc_vac, $racamae, $racapai_vac, $altura_vac, $sexo_vac);
+$Identificacao_vac=retornaUltimaVaca();
+
+	if($Identificacao_vac>=0){
+		$Identificacao_vac++;
+		$resp=cadastrarVaca($Identificacao_vac,$Nome_vac,$Raca_vac,$Peso_vac,$Datanasc_vac,$Racamae_vac,$Racapai_vac,$Altura_vac,$sexo_vac);
 	if(!$resp){
 		echo "<h2>Erro na tentativa de cadastro!!!</h2>";
 	}else{
@@ -71,7 +73,6 @@ function criarMinimo($hoje){
 	$ano=substr($hoje, 0,4);
 	$ano-=25;
 	return $ano."-01-01";
-
 }
 
 ?>

@@ -3,7 +3,7 @@ require_once './persistence/Banco.php';
 	                                      
 function cadastrarVaca($Identificacao_vac,$Nome_vac,$Raca_vac,$Peso_vac,$Datanasc_vac,$Racamae_vac,$Racapai_vac,$Altura_vac,$sexo_vac){
 $banco=new Banco();
-$sql="insert into vaca values($Identificacao_vac,'$Nome_vac',$Raca_vac,$Peso_vac,'$Datanasc_vac',$Racamae_vac,$Racapai_vac,$Altura_vac,$sexo_vac)";
+$sql="insert into vaca values($Identificacao_vac,'$Nome_vac','$Raca_vac',$Peso_vac,'$Datanasc_vac','$Racamae_vac','$Racapai_vac',$Altura_vac,'$sexo_vac')";
 		$resp=$banco->executar($sql);
 		if (!$resp) {
 			return false;
