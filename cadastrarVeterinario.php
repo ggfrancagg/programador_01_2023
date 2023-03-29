@@ -33,7 +33,7 @@
 				echo "<h2>Não tem Veterinario cadastrado!";
 			}else{
 				$codigo++;
-				$resposta=cadastrarVeterinario($id_vet,$nome_vet,$nasc_vet,$tel_vet);
+				$resposta=cadastrarVeterinario($CFMV,$nome_vet,$nasc_vet,$tel_vet);
 				if(!$resposta){
 					echo "<h2>Falha na tentativa de cadastro!</h2>";
 				}else{
