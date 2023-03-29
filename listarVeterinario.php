@@ -4,7 +4,7 @@ require_once 'model/Veterinario.php';
 
 $consulta=listarVet("");
 if(!$consulta){
-	echo "<h2>Nenhum Veterinario cadastrado!";
+	echo "<h2>Não há nenhum Veterinario cadastrado!";
 }else{
 
 	echo "<table>";

@@ -17,8 +17,12 @@
 		<p>Telefone: <input type="text" name="tel" placeholder="(99)9999-9999" required></p>
 		<p>Data da visita do Veterinário: <input type="date" name="data" required></p>
 		<p>Cuidados: <input type="text" name="cuidados" size="80" maxlength="80" required></p>
+<<<<<<< HEAD
 		</br>
 				<h3><input type="submit" name="enviar" value="cadastrar"></h3>
+=======
+				<p><input type="submit" name="enviar" value="Cadastrar"></p>
+>>>>>>> 89e9e2169c410e4a5f76ec41d7bb057e1b28fd73
 
 
 <?php

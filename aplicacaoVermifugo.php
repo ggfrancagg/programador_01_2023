@@ -28,7 +28,7 @@ if (isset($_POST['animal'])) {
 			echo "<h2>Equinos Cadastrados: </h2>";
 			echo "<p>Escolha o animal: <select name='cavalo'>";
 		while($linha=$cavalo->fetch_assoc()){
-			echo "<option value='".$linha['Nome_cav']."'>";
+			echo "<option value='".$linha['Identificacao_cav']."'>";
 			echo $linha['Nome_cav'];
 			echo "</option>";
 		}
@@ -78,7 +78,11 @@ if (isset($_POST['animal'])) {
 if(isset($_POST['cavalo'])){
 ?>
 
+<<<<<<< HEAD
 <form id="cadanimal">
+=======
+<form action="aplicacaoVermifugo.php" method="POST">
+>>>>>>> 89e9e2169c410e4a5f76ec41d7bb057e1b28fd73
 
 <p>Nome vermífugo: <input type="text" name="nome"  size="30" required></p>
 <p>Marca vermífugo: <input type="text" name="marca"  size="30" required></p>
@@ -86,12 +90,18 @@ if(isset($_POST['cavalo'])){
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+<<<<<<< HEAD
 <h3><input type="submit" value="Cadastrar" class="botao"></h3>
+=======
+<p><input type="hidden" name="idcavalo" value="<?php echo $_POST['cavalo']; ?>">
+<input type="submit" value="Cadastrar" class="botao">
+>>>>>>> 89e9e2169c410e4a5f76ec41d7bb057e1b28fd73
 </form>
 
 	<?php
 }
 if (isset($_POST['nome'])) {
+	$Identificacao_cav=$_POST['idcavalo']
 	$nome_verm=$_POST['nome'];
 	$marca_verm=$_POST['marca'];
 	$lote_verm=$_POST['lote'];
@@ -104,7 +114,7 @@ if (isset($_POST['nome'])) {
 		echo "<h5>Não existem medicamentos cadastrados!</h5>";
 	}else{
 		$codigo++;
-		$resposta=aplicarVermCavalo($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm);
+		$resposta=aplicarVermCavalo($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$Identificacao_cav);
 		if (!$resposta) {
 			echo "<h5>Falha ao registrar aplicação!</h5>";
 		}else echo "<h5> Cadastro de aplicação realizado com sucesso!</h5>";

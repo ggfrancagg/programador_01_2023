@@ -2,7 +2,7 @@
 require_once './persistence/Banco.php'; 
 
 
-function aplicarVermVaca($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm){ 
+function aplicarVermVaca($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm,$Identificacao_vac){ 
 	$banco=new Banco();
 	$sql="insert into vermifugo_vac values($ID_vermifugo,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proxima_verm')";
 	$resp=$banco->executar($sql);
@@ -14,7 +14,7 @@ function aplicarVermVaca($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabric
 }
 
 
-function aplicarVermCavalo($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm){ 
+function aplicarVermCavalo($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm,$Identificacao_cav){ 
 	$banco=new Banco();
 	$sql="insert into vermifugo_cav values($ID_vermifugo,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proxima_verm')";
 	$resp=$banco->executar($sql);
@@ -25,7 +25,7 @@ function aplicarVermCavalo($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabr
 	}
 }
 
-function aplicarVermOvelha($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm){ 
+function aplicarVermOvelha($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm,$id_ovl){ 
 	$banco=new Banco();
 	$sql="insert into vermifugo_ovl values($ID_vermifugo,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proxima_verm')";
 	$resp=$banco->executar($sql);
