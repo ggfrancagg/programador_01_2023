@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Mar-2023 às 22:21
+-- Generation Time: 29-Mar-2023 às 18:55
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -155,7 +155,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cpf`, `nome`, `datanaci`, `senha`) VALUES
-(799906651, 'Josekly Amaral Salva Pinto Junior', '1985-05-22', 'Admin');
+(12345678, 'Josekly Amaral Salva Pinto Junior', '1985-05-22', 'Admin');
 
 -- --------------------------------------------------------
 
