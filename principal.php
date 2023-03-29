@@ -1,12 +1,12 @@
 <?php
 require_once 'cabecalho.php';
-//require_once 'model/Usuario.php';
+require_once 'model/Usuario.php';
 
-//$estalog=estaLogado();
-//	if(!$estalog){ 
-//	echo "<h2>Você não está logado, favor logar!</h2>";
-//	echo "<a href='//localhost/profGabriel/ProjetoIntegrador/'>Voltar</a>";//COLOCAR O ENDEREÇO CORRETO
-//}else{ 
+$estalog=estaLogado();
+	if(!$estalog){ 
+	echo "<h2>Você não está logado, favor logar!</h2>";
+	echo "<a href='//localhost/profGabriel/ProjetoIntegrador/'>Voltar</a>";
+}else{ 
 ?>
 
 <div id="topo">
@@ -86,7 +86,7 @@ require_once 'cabecalho.php';
 </div>
 
 <?php 
-//} 
+} 
 ?>
 <script src="js/mensagem.js"></script>
 
