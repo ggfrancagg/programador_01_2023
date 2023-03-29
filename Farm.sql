@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Mar-2023 às 18:55
+-- Generation Time: 29-Mar-2023 às 20:00
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -203,7 +203,8 @@ CREATE TABLE `vacina_ovl` (
   `Nomevasc_ovl` varchar(40) NOT NULL,
   `Tipovasc_ovl` varchar(40) NOT NULL,
   `Dataapli_ovl` date NOT NULL,
-  `proximaapli_ovl` date NOT NULL
+  `proximaapli_ovl` date NOT NULL,
+  `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -217,7 +218,8 @@ CREATE TABLE `vacina_vac` (
   `Nomevasc_vac` varchar(50) DEFAULT NULL,
   `Tipovasc_vac` varchar(50) DEFAULT NULL,
   `Dataapli_vac` date DEFAULT NULL,
-  `proximaapli_vac` date NOT NULL
+  `proximaapli_vac` date NOT NULL,
+  `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -234,7 +236,8 @@ CREATE TABLE `vermifugo_cav` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `Identificacao_cav` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -251,7 +254,8 @@ CREATE TABLE `vermifugo_ovl` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -268,7 +272,8 @@ CREATE TABLE `vermifugo_vac` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -393,31 +398,36 @@ ALTER TABLE `vacina_cav`
 -- Indexes for table `vacina_ovl`
 --
 ALTER TABLE `vacina_ovl`
-  ADD PRIMARY KEY (`IDvasc_ovl`);
+  ADD PRIMARY KEY (`IDvasc_ovl`),
+  ADD KEY `id_ovl` (`id_ovl`);
 
 --
 -- Indexes for table `vacina_vac`
 --
 ALTER TABLE `vacina_vac`
-  ADD PRIMARY KEY (`IDvasc_vac`);
+  ADD PRIMARY KEY (`IDvasc_vac`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
 -- Indexes for table `vermifugo_cav`
 --
 ALTER TABLE `vermifugo_cav`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`);
 
 --
 -- Indexes for table `vermifugo_ovl`
 --
 ALTER TABLE `vermifugo_ovl`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `id_ovl` (`id_ovl`);
 
 --
 -- Indexes for table `vermifugo_vac`
 --
 ALTER TABLE `vermifugo_vac`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
 -- Indexes for table `veterinário_ovl`
