@@ -16,7 +16,7 @@
 		<p>Telefone: <input type="text" name="tel" placeholder="(99)9999-9999" required></p>
 		<p>Data da visita do Veterinário:<input type="date" name="data" required></p>
 		<p>Cuidados: <input type="text" name="cuidados" size="80" maxlength="80" required></p>
-				<p><input type="submit" name="enviar" value="Cadastrar"></p>
+				<p><input type="submit" onclick="mostra()" name="enviar" value="Cadastrar"></p>
 
 
 <?php
@@ -45,5 +45,16 @@
 		
 ?>
 	</form>
+
+	<div id="load">
+  <div>G</div>
+  <div>N</div>
+  <div>I</div>
+  <div>D</div>
+  <div>A</div>
+  <div>O</div>
+  <div>L</div>
+</div>
+	<script src="js/mensagem.js"></script>
 </body>
 </html>

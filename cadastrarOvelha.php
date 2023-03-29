@@ -3,6 +3,7 @@
 <head>
 	<title>Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="css/cadastro.css">
+	<link rel="stylesheet" type="text/css" href="css/js.css">
 </head>
 <body>
 
@@ -25,8 +26,17 @@
     <p>Altura: 
     <input type="text" name="altura" required></p>
     <br>
-    <p><input type="submit" class="enviar" value="Cadastrar"></p>
+    <p><input type="submit" onclick="mostra()" class="enviar" value="Cadastrar"></p>
 </form>
+<div id="load">
+  <div>G</div>
+  <div>N</div>
+  <div>I</div>
+  <div>D</div>
+  <div>A</div>
+  <div>O</div>
+  <div>L</div>
+</div>
 
 <?php
 if(isset($_POST['nome'])){
@@ -53,6 +63,8 @@ if(isset($_POST['nome'])){
 }
 
 ?>
+
+<script src="js/mensagem.js"></script>
 
 </body>
 </form>

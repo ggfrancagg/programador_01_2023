@@ -82,7 +82,7 @@ if(isset($_POST['cavalo'])){
 <p>Data de validade: <input type="date" name="vali" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p><input type="hidden" name="idcavalo" value="<?php echo $_POST['cavalo']; ?>">
-<input type="submit" value="Cadastrar" class="botao">
+<input type="submit" onclick="mostra()" value="Cadastrar" class="botao">
 </form>
 
 	<?php
@@ -120,7 +120,7 @@ if(isset($_POST['ovelha'])){
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
-<input type="submit" value="Cadastrar" class="botao">
+<input type="submit" onclick="mostra()" value="Cadastrar" class="botao">
 </form>
 
 
@@ -159,7 +159,7 @@ if(isset($_POST['vaca'])){
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
-<input type="submit" value="Cadastrar" class="botao">
+<input type="submit" onclick="mostra()" value="Cadastrar" class="botao">
 </form>
 
 
@@ -193,6 +193,18 @@ function criarMinimo($hoje){
 }
 
 ?>
+
+<div id="load">
+  <div>G</div>
+  <div>N</div>
+  <div>I</div>
+  <div>D</div>
+  <div>A</div>
+  <div>O</div>
+  <div>L</div>
+</div>
+
+<script src="js/mensagem.js"></script>
 
 </body>
 </html>

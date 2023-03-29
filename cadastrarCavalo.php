@@ -11,7 +11,7 @@
 		<p>Altura: <input type="text" name="altura_cav" pattern="[0-9]{1-3}[0-9]{2}"  placeholder="9.99" title="use punto e não virgula ex:9.99" required></p>
 		<p>Raça da Mãe: <input type="text" name="racadamae" size="30" maxlength="30" pattern="[A-Za-záÁçÇãÂ]{2,30}" required></p>
 		</br>
-		<p> <input type="submit" name="enviar" value="cadastrar"></p>
+		<p> <input type="submit" onclick="mostra()" name="enviar" value="cadastrar"></p>
 
 		<?php
 		if(isset($_POST['nome'])){
@@ -46,8 +46,19 @@
 
 
 		?>
+		<div id="load">
+  <div>G</div>
+  <div>N</div>
+  <div>I</div>
+  <div>D</div>
+  <div>A</div>
+  <div>O</div>
+  <div>L</div>
+</div>
 
 
+
+<script src="js/mensagem.js"></script>
 
 	</form>
 	</html>
