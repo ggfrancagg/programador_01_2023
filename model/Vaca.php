@@ -29,7 +29,7 @@ function retornaUltimaVaca(){
 		}
 	}
 
-
+//teste
 function listarVaca(){
 	$banco=new Banco();
 	$sql="select * from vaca order by Identificacao_vac";
