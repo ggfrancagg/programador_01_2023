@@ -80,15 +80,8 @@ require_once 'cabecalho.php';
 </div>
 
 <div id="rodape">
-	<div id="endereco">
-		<p>Rua X de Y, 1228</p>
-		<p>CEP 84053-444</p>
-		<p>Tel: (42) 3232-3434</p>
-		<p>Ponta Grossa - PR</p>
-</br>
-	</div>
 	<div id="sobre">
-		<p>Projeto Integrador do curso Programador de Sistemas turma 202300015 - SENAC&reg;</p>
+		<h4>Projeto Integrador do curso Programador de Sistemas turma 202300015 - SENAC&reg;</h4>
 	</div>
 </div>
 
