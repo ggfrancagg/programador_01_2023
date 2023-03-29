@@ -14,7 +14,7 @@ if(!$consulta){
 	echo "<th>Nascimento</th>";
 	echo "<th>Telefone</th>";
 	echo "<th>Data da Visita</th>";
-	echo "<th>Cuidados do Veterinario</th>";
+	echo "<th>Cuidados do Veterinário</th>";
 	echo "</tr>";
 
 
