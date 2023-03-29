@@ -43,7 +43,7 @@ function retornaUltimoCodigo(){
 		}
 }
 
-function verificarVacina($idvasc){
+function verificarVacinaCavalo($idvasc){
 		$banco=new Banco();
 		$sql="select cavalo.Nome_cav from cavalo inner join vacina_cav where cavalo.Identificacao_cav=vacina_cav.Identificacao_cav and vacina_cav.Dataapli_vac='$idvasc'";
 		$consulta=$banco->consultar($sql);
