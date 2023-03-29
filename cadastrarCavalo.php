@@ -31,13 +31,13 @@
 				$codigo++;
 				$resposta=cadastrarCavalo($codigo,$Nome_cav,$Raca_cav,$Datanasc_cav,$Sexo_cav,$Peso,$Racapai_cav,$Altura_cav,$Racamae_cav);
 				if(!$resposta){
-					echo "<h2>Falha na tentativa de cadastro!</h2>";
+					echo "<h5>Falha na tentativa de cadastro!</h5>";
 				}else{
-					echo "<h2>Cadastrado com sucesso!</h2>";
+					echo "<h5>Cadastrado com sucesso!</h5>";
 				}
 				
 			}else{
-				echo "<h2>Não há equino cadastrado!";
+				echo "<h5>Não há equino cadastrado!</h5>";
 				
 			}
 
