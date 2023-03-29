@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Mar-2023 às 22:21
+-- Generation Time: 29-Mar-2023 às 20:16
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -122,7 +122,8 @@ CREATE TABLE `periodo_cav` (
 CREATE TABLE `reprodução_vac` (
   `IDrepr_vac` int(11) NOT NULL,
   `Datarepr_vac` date DEFAULT NULL,
-  `IDperiodo_vac` int(11) NOT NULL
+  `IDperiodo_vac` int(11) NOT NULL,
+  `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -134,7 +135,8 @@ CREATE TABLE `reprodução_vac` (
 CREATE TABLE `reproducao_cav` (
   `IDrepr_cav` int(11) NOT NULL,
   `Datacio_cav` varchar(30) DEFAULT NULL,
-  `Ciclocio_cav` varchar(30) DEFAULT NULL
+  `Ciclocio_cav` varchar(30) DEFAULT NULL,
+  `Identificacao_cav` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -155,7 +157,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cpf`, `nome`, `datanaci`, `senha`) VALUES
-(799906651, 'Josekly Amaral Salva Pinto Junior', '1985-05-22', 'Admin');
+(12345678, 'Josekly Amaral Salva Pinto Junior', '1985-05-22', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -172,8 +174,6 @@ CREATE TABLE `vaca` (
   `Racamae_vac` varchar(30) DEFAULT NULL,
   `Racapai_vac` varchar(30) DEFAULT NULL,
   `Altura_vac` double DEFAULT NULL,
-  `IDrepr_vac` int(11) DEFAULT NULL,
-  `IDvasc_vac` int(11) DEFAULT NULL,
   `sexo_vac` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -203,7 +203,8 @@ CREATE TABLE `vacina_ovl` (
   `Nomevasc_ovl` varchar(40) NOT NULL,
   `Tipovasc_ovl` varchar(40) NOT NULL,
   `Dataapli_ovl` date NOT NULL,
-  `proximaapli_ovl` date NOT NULL
+  `proximaapli_ovl` date NOT NULL,
+  `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -217,7 +218,8 @@ CREATE TABLE `vacina_vac` (
   `Nomevasc_vac` varchar(50) DEFAULT NULL,
   `Tipovasc_vac` varchar(50) DEFAULT NULL,
   `Dataapli_vac` date DEFAULT NULL,
-  `proximaapli_vac` date NOT NULL
+  `proximaapli_vac` date NOT NULL,
+  `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -234,7 +236,8 @@ CREATE TABLE `vermifugo_cav` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `Identificacao_cav` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -251,7 +254,8 @@ CREATE TABLE `vermifugo_ovl` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -268,7 +272,8 @@ CREATE TABLE `vermifugo_vac` (
   `Fabricação_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
-  `proximaapli_verm` date DEFAULT NULL
+  `proximaapli_verm` date DEFAULT NULL,
+  `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -355,20 +360,22 @@ ALTER TABLE `ovelhas`
 --
 ALTER TABLE `periodo_cav`
   ADD PRIMARY KEY (`IDperiodo_cav`),
-  ADD KEY `Identificacao_cav` (`Identificacao_cav`),
-  ADD KEY `IDrepr_cav` (`IDrepr_cav`);
+  ADD KEY `IDrepr_cav` (`IDrepr_cav`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`);
 
 --
 -- Indexes for table `reprodução_vac`
 --
 ALTER TABLE `reprodução_vac`
-  ADD PRIMARY KEY (`IDrepr_vac`,`IDperiodo_vac`);
+  ADD PRIMARY KEY (`IDrepr_vac`,`IDperiodo_vac`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
 -- Indexes for table `reproducao_cav`
 --
 ALTER TABLE `reproducao_cav`
-  ADD PRIMARY KEY (`IDrepr_cav`);
+  ADD PRIMARY KEY (`IDrepr_cav`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`);
 
 --
 -- Indexes for table `usuario`
@@ -393,31 +400,36 @@ ALTER TABLE `vacina_cav`
 -- Indexes for table `vacina_ovl`
 --
 ALTER TABLE `vacina_ovl`
-  ADD PRIMARY KEY (`IDvasc_ovl`);
+  ADD PRIMARY KEY (`IDvasc_ovl`),
+  ADD KEY `id_ovl` (`id_ovl`);
 
 --
 -- Indexes for table `vacina_vac`
 --
 ALTER TABLE `vacina_vac`
-  ADD PRIMARY KEY (`IDvasc_vac`);
+  ADD PRIMARY KEY (`IDvasc_vac`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
 -- Indexes for table `vermifugo_cav`
 --
 ALTER TABLE `vermifugo_cav`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`);
 
 --
 -- Indexes for table `vermifugo_ovl`
 --
 ALTER TABLE `vermifugo_ovl`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `id_ovl` (`id_ovl`);
 
 --
 -- Indexes for table `vermifugo_vac`
 --
 ALTER TABLE `vermifugo_vac`
-  ADD PRIMARY KEY (`Id_verm`);
+  ADD PRIMARY KEY (`Id_verm`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
 -- Indexes for table `veterinário_ovl`

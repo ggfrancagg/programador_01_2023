@@ -4,20 +4,20 @@ require_once 'model/cavalo.php';
 
 $consulta=listarCavalo();
 if(!$consulta){
-	echo "<h2>Nenhum cavalo cadastrado!";
+	echo "<h5 id='texto'>Nenhum cavalo cadastrado!</h5>";
 }else{
 
-	echo "<table>";
+	echo "<table id='listarbicho'>";
 	echo "<tr>";
-	echo "<th>Identificação</th>";
-	echo "<th>Nome</th";
-	echo "<th>Raça</th>";
-	echo "<th>Data de nascimento</th>";
-	echo "<th>Sexo</th>";
-	echo "<th>Peso</th>";
-	echo "<th>Raça do Pai</th>";
-	echo "<th>Altura</th>";
-	echo "<th>Raça da Mãe</th>";
+	echo "<th> Identificação </th>";
+	echo "<th> Nome </th";
+	echo "<th> Raça </th>";
+	echo "<th> Data de nascimento </th>";
+	echo "<th> Sexo </th>";
+	echo "<th> Peso </th>";
+	echo "<th> Raça do Pai </th>";
+	echo "<th> Altura </th>";
+	echo "<th> Raça da Mãe </th>";
 	echo "</tr>";
 
 
@@ -33,7 +33,7 @@ if(!$consulta){
 		echo "<td>".$linha['Racamae_cav']."</td>";
 		echo "</tr>";
 	}
-	
+	echo "</table>";
 }
 
 

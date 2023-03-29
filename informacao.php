@@ -1,6 +1,6 @@
 <?php require_once 'cabecalho.php' ?>
 
-<h1> Informações e linckes uteis</h1>
+<h1> Informações e links uteis</h1>
 <br/><br/><br/>
 <h2>Esquema Vacinal - Vacas, Cavalos e Ovelhas</h2>
 <br/><br/>
