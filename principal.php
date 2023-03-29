@@ -81,7 +81,7 @@ $estalog=estaLogado();
 
 <div id="rodape">
 	<div id="sobre">
-		<p>Projeto Integrador do curso Programador de Sistemas turma 202300015 - SENAC&reg;</p>
+		<h4>Projeto Integrador do curso Programador de Sistemas turma 202300015 - SENAC&reg;</h4>
 	</div>
 </div>
 
