@@ -43,7 +43,7 @@ function listarOvelha(){
 
 function verificarVacinaOvelha($idvasc){
 		$banco=new Banco();
-		$sql="select ovelha.Nome_olv from ovelha inner join vacina_olv where ovelha.id_olv=vacina_olv.id_ovl and vacina_olv.Dataapli_vac='$idvasc'";
+		$sql="select ovelhas.Nome_ovl from ovelhas inner join vacina_ovl where ovelhas.id_ovl=vacina_ovl.id_ovl and vacina_ovl.Dataapli_ovl='$idvasc'";
 		$consulta=$banco->consultar($sql);
 		if(!$consulta){
 			return false;
