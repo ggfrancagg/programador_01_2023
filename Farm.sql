@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Mar-2023 às 20:07
+-- Generation Time: 27-Mar-2023 às 20:49
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -154,14 +154,15 @@ DROP TABLE IF EXISTS `vaca`;
 CREATE TABLE `vaca` (
   `Identificacao_vac` int(11) NOT NULL,
   `Nome_vac` varchar(40) DEFAULT NULL,
-  `Raca_va` varchar(30) DEFAULT NULL,
+  `Raca_vac` varchar(30) DEFAULT NULL,
   `Peso_vac` double DEFAULT NULL,
   `Datanasc_va` date DEFAULT NULL,
   `Racamae_vac` varchar(30) DEFAULT NULL,
   `Racapai_vac` varchar(30) DEFAULT NULL,
   `Altura_vac` double DEFAULT NULL,
   `IDrepr_vac` int(11) DEFAULT NULL,
-  `IDvasc_vac` int(11) DEFAULT NULL
+  `IDvasc_vac` int(11) DEFAULT NULL,
+  `sexo_vac` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -208,6 +209,60 @@ CREATE TABLE `vacina_vac` (
   `Tipovasc_vac` varchar(50) DEFAULT NULL,
   `Dataapli_vac` date DEFAULT NULL,
   `proximaapli_vac` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vermifugo_cav`
+--
+
+DROP TABLE IF EXISTS `vermifugo_cav`;
+CREATE TABLE `vermifugo_cav` (
+  `Id_verm` int(11) NOT NULL,
+  `Nome_verm` varchar(30) DEFAULT NULL,
+  `Marca_verm` varchar(30) DEFAULT NULL,
+  `Lote_verm` varchar(40) DEFAULT NULL,
+  `Fabricação_verm` date DEFAULT NULL,
+  `Validade_verm` date DEFAULT NULL,
+  `aplicacao_verm` date DEFAULT NULL,
+  `proximaapli_verm` date DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vermifugo_ovl`
+--
+
+DROP TABLE IF EXISTS `vermifugo_ovl`;
+CREATE TABLE `vermifugo_ovl` (
+  `Id_verm` int(11) NOT NULL,
+  `Nome_verm` varchar(30) DEFAULT NULL,
+  `Marca_verm` varchar(30) DEFAULT NULL,
+  `Lote_verm` varchar(40) DEFAULT NULL,
+  `Fabricação_verm` date DEFAULT NULL,
+  `Validade_verm` date DEFAULT NULL,
+  `aplicacao_verm` date DEFAULT NULL,
+  `proximaapli_verm` date DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `vermifugo_vac`
+--
+
+DROP TABLE IF EXISTS `vermifugo_vac`;
+CREATE TABLE `vermifugo_vac` (
+  `Id_verm` int(11) NOT NULL,
+  `Nome_verm` varchar(30) DEFAULT NULL,
+  `Marca_verm` varchar(30) DEFAULT NULL,
+  `Lote_verm` varchar(40) DEFAULT NULL,
+  `Fabricação_verm` date DEFAULT NULL,
+  `Validade_verm` date DEFAULT NULL,
+  `aplicacao_verm` date DEFAULT NULL,
+  `proximaapli_verm` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -342,6 +397,24 @@ ALTER TABLE `vacina_ovl`
 --
 ALTER TABLE `vacina_vac`
   ADD PRIMARY KEY (`IDvasc_vac`);
+
+--
+-- Indexes for table `vermifugo_cav`
+--
+ALTER TABLE `vermifugo_cav`
+  ADD PRIMARY KEY (`Id_verm`);
+
+--
+-- Indexes for table `vermifugo_ovl`
+--
+ALTER TABLE `vermifugo_ovl`
+  ADD PRIMARY KEY (`Id_verm`);
+
+--
+-- Indexes for table `vermifugo_vac`
+--
+ALTER TABLE `vermifugo_vac`
+  ADD PRIMARY KEY (`Id_verm`);
 
 --
 -- Indexes for table `veterinário_ovl`
