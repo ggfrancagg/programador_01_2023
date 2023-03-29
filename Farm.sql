@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Mar-2023 às 20:00
+-- Generation Time: 29-Mar-2023 às 20:16
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -122,7 +122,8 @@ CREATE TABLE `periodo_cav` (
 CREATE TABLE `reprodução_vac` (
   `IDrepr_vac` int(11) NOT NULL,
   `Datarepr_vac` date DEFAULT NULL,
-  `IDperiodo_vac` int(11) NOT NULL
+  `IDperiodo_vac` int(11) NOT NULL,
+  `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -134,7 +135,8 @@ CREATE TABLE `reprodução_vac` (
 CREATE TABLE `reproducao_cav` (
   `IDrepr_cav` int(11) NOT NULL,
   `Datacio_cav` varchar(30) DEFAULT NULL,
-  `Ciclocio_cav` varchar(30) DEFAULT NULL
+  `Ciclocio_cav` varchar(30) DEFAULT NULL,
+  `Identificacao_cav` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -172,8 +174,6 @@ CREATE TABLE `vaca` (
   `Racamae_vac` varchar(30) DEFAULT NULL,
   `Racapai_vac` varchar(30) DEFAULT NULL,
   `Altura_vac` double DEFAULT NULL,
-  `IDrepr_vac` int(11) DEFAULT NULL,
-  `IDvasc_vac` int(11) DEFAULT NULL,
   `sexo_vac` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -360,20 +360,22 @@ ALTER TABLE `ovelhas`
 --
 ALTER TABLE `periodo_cav`
   ADD PRIMARY KEY (`IDperiodo_cav`),
-  ADD KEY `Identificacao_cav` (`Identificacao_cav`),
-  ADD KEY `IDrepr_cav` (`IDrepr_cav`);
+  ADD KEY `IDrepr_cav` (`IDrepr_cav`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`);
 
 --
 -- Indexes for table `reprodução_vac`
 --
 ALTER TABLE `reprodução_vac`
-  ADD PRIMARY KEY (`IDrepr_vac`,`IDperiodo_vac`);
+  ADD PRIMARY KEY (`IDrepr_vac`,`IDperiodo_vac`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
 -- Indexes for table `reproducao_cav`
 --
 ALTER TABLE `reproducao_cav`
-  ADD PRIMARY KEY (`IDrepr_cav`);
+  ADD PRIMARY KEY (`IDrepr_cav`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`);
 
 --
 -- Indexes for table `usuario`
