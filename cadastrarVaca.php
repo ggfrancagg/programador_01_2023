@@ -2,7 +2,7 @@
 
 
 
-<form id="push" action="cadastrarVaca.php" method="POST" enctype="multipart/form-data">
+<form id="push" action="cadastrarVaca.php" method="POST" >
 
 	<h2>Cadastro de vacas</h2>
 
@@ -20,8 +20,8 @@
 		<input type="date" name="nasci" max="<?php echo date ("Y-m-d");?>" min="<?php echo criarMinimo(date("Y-m-d")); ?>" required></p>
 	
 
-<p> Raça da mãe: <input type="text" name="racamae" required>
-<p> Raça do pai: <input type="text" name="racapai" required>
+<p> Raça da mãe: <input type="text" name="racamae" required></p>
+<p> Raça do pai: <input type="text" name="racapai" required></p>
 
 
 <p>Altura:<input type="text" name="alt" pattern="[0-9]{1,8}\[0-9]{2}" placeholder="00.00" title="Somente números, centrimetros obrigatórios, ponto e não vírgula EX: 01.50 de altura" required>cm</p>
@@ -32,8 +32,9 @@
 	<label for="sexo-m">Macho</label>
 	<input type="radio" id="sexo-f" name="sexo" value="Feminino">
 	<label for="sexo-f">Fêmea</label>
+</p>
 
-	<p><input type="submit" name="enviar" value="Cadastre"></p>
+	<p><input type="submit" onclick="mostra()" name="enviar" value="Cadastre"></p>
 </form>
 
 <?php 
@@ -41,8 +42,7 @@
 
 
 
-if(isset($_POST['enviar'])){
-	$identificacao_vac=$_POST['ident'];
+if(isset($_POST['nome'])){
 	$nome_vac=$_POST['nome'];
 	$raca_vac=$_POST['raca'];
 	$peso_vac=$_POST['peso'];	
@@ -55,8 +55,8 @@ if(isset($_POST['enviar'])){
 
 require_once 'model/Vaca.php';
 $identificacao_vac=retornaUltimaVaca();
-	if($cod_vac>+0){
-		$cod_vac++;
+	if($identificacao_vac>+0){
+		$identificacao_vac++;
 		$resp=cadastrar($identificacao_vac, $nome_vac, $raca_vac, $peso_vac, $datanasc_vac, $racamae, $racapai_vac, $altura_vac, $sexo_vac);
 	if(!$resp){
 		echo "<h2>Erro na tentativa de cadastro!!!</h2>";
@@ -75,5 +75,6 @@ function criarMinimo($hoje){
 }
 
 ?>
+<script src="js/mensagem.js"></script>
 </body>
 </html>
