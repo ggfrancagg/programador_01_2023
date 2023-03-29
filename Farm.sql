@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Mar-2023 às 20:16
+-- Generation Time: 29-Mar-2023 às 22:02
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -170,12 +170,19 @@ CREATE TABLE `vaca` (
   `Nome_vac` varchar(40) DEFAULT NULL,
   `Raca_vac` varchar(30) DEFAULT NULL,
   `Peso_vac` double DEFAULT NULL,
-  `Datanasc_va` date DEFAULT NULL,
+  `Datanasc_vac` date DEFAULT NULL,
   `Racamae_vac` varchar(30) DEFAULT NULL,
   `Racapai_vac` varchar(30) DEFAULT NULL,
   `Altura_vac` double DEFAULT NULL,
   `sexo_vac` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `vaca`
+--
+
+INSERT INTO `vaca` (`Identificacao_vac`, `Nome_vac`, `Raca_vac`, `Peso_vac`, `Datanasc_vac`, `Racamae_vac`, `Racapai_vac`, `Altura_vac`, `sexo_vac`) VALUES
+(1, 'Mimosa', 'Holandesa', 320.45, '2020-02-11', 'Holandesa', 'Holandes', 135.25, 'Feminino');
 
 -- --------------------------------------------------------
 
