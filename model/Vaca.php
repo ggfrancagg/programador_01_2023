@@ -1,9 +1,9 @@
 <?php
 require_once './persistence/Banco.php';
 	                                      
-function cadastrarVaca($Identificacao_vac,$Nome_vac,$Raca_vac,$Peso_vac,$Datanasc_vac,$Racamae_vac,$Racapai_vac,$Altura_vac,$IDrepr_vac,$IDvasc_vac);
+function cadastrarVaca($Identificacao_vac,$Nome_vac,$Raca_vac,$Peso_vac,$Datanasc_vac,$Racamae_vac,$Racapai_vac,$Altura_vac,$IDrepr_vac,$IDvasc_vac,$sexo_vac){
 $banco=new Banco();
-$sql="insert into vaca values($Identificacao_vac,'$Nome_vac',$Raca_vac,$Peso_vac,'$Datanasc_vac',$Racamae_vac,$Racapai_vac,$Altura_vac,'$IDrepr_vac',$IDvasc_vac)";
+$sql="insert into vaca values($Identificacao_vac,'$Nome_vac',$Raca_vac,$Peso_vac,'$Datanasc_vac',$Racamae_vac,$Racapai_vac,$Altura_vac,'$IDrepr_vac',$IDvasc_vac,$sexo_vac)";
 		$resp=$banco->executar($sql);
 		if (!$resp) {
 			return false;
@@ -11,7 +11,6 @@ $sql="insert into vaca values($Identificacao_vac,'$Nome_vac',$Raca_vac,$Peso_vac
 			return true;
 		}
 	}
-}	
 
 function retornaUltimaVaca(){
 	$banco=new Banco();
@@ -30,24 +29,17 @@ function retornaUltimaVaca(){
 		}
 	}
 
-
-function listarVaca($ordem){
-  $banco=new Banco();
-		if($ordem==""||$ordem=="Identificacao"){
-			$sql="select * from vaca order by Identificacao_vac";
-		}else if($ordem=="Nome"){
-			$sql="select * from vaca order by Nome_vac";
-		}else if($ordem=="Datanasc"){
-			$sql="select * from vaca order by Datanasc_vac";
-		}
-		$consulta=$banco->consultar($sql);
-		if(!$consulta){
-			return false;
-		}else{
-			return $consulta;
-		}
+//teste
+function listarVaca(){
+	$banco=new Banco();
+	$sql="select * from vaca order by Identificacao_vac";
+	$consulta=$banco->consultar($sql);
+	if(!$consulta){
+		return false;
+	}else{
+		return $consulta;
 	}
-
+}
 function verificarVacina($idvasc){
 		$banco=new Banco();
 		$sql="select Nome_vac from vaca where IDvasc_vac in(select IDvasc_vac from vacina_vac where Dataapli_vac=$idvasc)";

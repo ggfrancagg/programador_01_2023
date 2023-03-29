@@ -17,6 +17,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/principal.css">
+<link rel="stylesheet" type="text/css" href="css/js.css">
 
 
 

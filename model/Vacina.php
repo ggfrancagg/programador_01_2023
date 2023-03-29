@@ -1,46 +1,10 @@
 <?php
-<<<<<<< HEAD
-require_once './persistence/Banco.php';
-
-function cadastrarVacina($id_vac,$nome_vac,$marca_vac,$lote_vac,$fabricacao_vac,$validade_vac){
-	$banco=new Banco();
-	$sql="insert into vacina values($id_vac,'$nome_vac','$marca_vac',$lote_vac,'$fabricacao_vac','$validade_vac')";
-	$resposta=$banco->executar($sql);
-	if(!$resposta){
-		return false;
-	}else{
-		return true;
-	}
-}
-
-function retornaUltimaVacina(){
-	$banco=new Banco();
-	$sql="select max(id_vac) from vacina";
-	$consulta=$banco->consultar($sql);
-	if(!$consulta){
-		return false;
-	}else{
-		while($linha=$consulta->fetch_assoc()){
-			$codigo=$linha['max(id_vac)'];
-		}
-		if($codigo==null){
-			$codigo=0;
-	} return $codigo;
-
-}
-
-function listarVacina(){
-	$banco=new Banco();
-	$sql="select * from vacina order by id_vac";
-	$consulta=$banco->consultar($sql);
-	if(!$consulta){
-=======
 require_once './persistence/Banco.php'; 
 
 
-function vacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proximaapli_vac){ 
+function vacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proximaapli_vac,$Identificacao_vac){ 
 	$banco=new Banco();
-	$sql="insert into vaca values($IDvasc_vac,'$Nomevasc_vac','$Tipovasc_vac','$Dataapli_vac')";
+	$sql="insert into vaca values($IDvasc_vac,'$Nomevasc_vac','$Tipovasc_vac','$Dataapli_vac',$Identificacao_vac)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -50,9 +14,9 @@ function vacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proxi
 }
 
 
-function vacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$Nomevasc_cav){ 
+function vacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$Nomevasc_cav,$Identificacao_cav){ 
 	$banco=new Banco();
-	$sql="insert into cavalo values($IDvac_cav,'$Dataapli_cav','$proximaali_cav','$Tipovasc_cav','$Nomevasc_cav')";
+	$sql="insert into cavalo values($IDvac_cav,'$Dataapli_cav','$proximaali_cav','$Tipovasc_cav','$Nomevasc_cav',$Identificacao_cav)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -61,9 +25,9 @@ function vacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$N
 	}
 }
 
-function vacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$proximaapli_ovl){
+function vacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$proximaapli_ovl,$id_ovl){
 	$banco=new Banco();
-	$sql="insert into ovelha values($IDvasc_ovl,'$Nomevasc_ovl','$Tipovasc_ovl','$Dataapli_ovl','$proximaapli_ovl')";
+	$sql="insert into ovelha values($IDvasc_ovl,'$Nomevasc_ovl','$Tipovasc_ovl','$Dataapli_ovl','$proximaapli_ovl',$id_ovl)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -71,6 +35,44 @@ function vacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$pro
 		return false;
 	}
 }
+
+
+//GERAR CÓDIGO DE ID
+
+
+function retornaUltimaVacCavalo($IDvac_cav){ 
+	$banco=new Banco();
+	$sql="select IDvac_cav from cavalo where IDvac_cav=$IDvac_cav";
+	$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+function retornaUltimaVacVaca($IDvasc_vac){ 
+	$banco=new Banco();
+	$sql="select IDvasc_vac from vaca where IDvasc_vac=$IDvasc_vac";
+	$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function retornaUltimaVacOvelha($IDvasc_ovl){ 
+	$banco=new Banco();
+	$sql="select IDvasc_ovl from ovelha where IDvasc_ovl=$IDvasc_ovl";
+	$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
 
 //ALERTA DE DATA DA VACINA
 
@@ -79,16 +81,10 @@ function verificarVacinaVaca($vacina_vaca){
 	$sql="select vaca.nome_vac from vaca where proximaapli_vac='$vacina_vaca'";
 	$consulta=$banco->consultar($sql);
 	if (!$consulta) {
->>>>>>> c916643ff8c8c3253a24c1c56ea30d49ed6e601b
 		return false;
 	}else{
 		return $consulta;
 	}
-<<<<<<< HEAD
-}
-}
-?>
-=======
 } 
 
 function verificarVacinaCavalo($vacina_cavalo){
@@ -114,4 +110,7 @@ function verificarVacinaOvelha($vacina_ovelha){
 } 
 
 ?>
->>>>>>> c916643ff8c8c3253a24c1c56ea30d49ed6e601b
+
+
+</body>
+</html>

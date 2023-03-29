@@ -2,5 +2,5 @@
 setcookie("usuario","");
 ?>
 <script>
-	window.open('//localhost/SistemaEscola','_top');
+	window.open('//localhost/ProfGabriel/SistemaFarm','_top');
 </script>
