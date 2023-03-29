@@ -40,4 +40,16 @@ function listarOvelha(){
 		return $consulta;
 	}
 }
+
+function verificarVacina($idvasc){
+		$banco=new Banco();
+		$sql="select ovelha.Nome_olv from ovelha inner join vacina_olv where ovelha.id_olv=vacina_olv.id_ovl and vacina_olv.Dataapli_vac='$idvasc'";
+		$consulta=$banco->consultar($sql);
+		if(!$consulta){
+			return false;
+		}else{
+			return $consulta;
+		}
+	}	
+
 ?>
