@@ -4,6 +4,8 @@ echo "<h1>Home - Inicio</h1>";
 echo "<p>Hoje é ".date("d/m/Y")."</p>";
 
 require_once 'model/Vaca.php';
+require_once 'model/Cavalo.php';
+require_once 'model/Ovelha.php';
 $consulta=verificarVacina(date("Y-m-d"));
 if (!$consulta) {
 	echo "<div id='push'>";
