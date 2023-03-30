@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Mar-2023 às 19:46
+-- Generation Time: 30-Mar-2023 às 20:48
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -76,6 +76,48 @@ CREATE TABLE `cavalo` (
 
 INSERT INTO `cavalo` (`Identificacao_cav`, `Nome_cav`, `Raca_cav`, `Datanasc_cav`, `Sexo_cav`, `Peso`, `Racapai_cav`, `Altura_cav`, `Racamae_cav`) VALUES
 (1, 'Coquinho', 'Arabe', '2022-06-15', 'cavalho', 320.45, 'Arabe', 1.87, 'Arabe');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `consultar_cav`
+--
+
+CREATE TABLE `consultar_cav` (
+  `ID_consulta` int(11) NOT NULL,
+  `Identificacao_cav` int(11) NOT NULL,
+  `CFMV` varchar(20) NOT NULL,
+  `Datacolsu_cav` date NOT NULL,
+  `Horariocons_cav` time NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `consultar_ovl`
+--
+
+CREATE TABLE `consultar_ovl` (
+  `ID_consulta` int(11) NOT NULL,
+  `id_ovl` int(11) NOT NULL,
+  `CFMV` varchar(20) NOT NULL,
+  `Datacolsu_cav` date NOT NULL,
+  `Horariocons_cav` time NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `consultar_vac`
+--
+
+CREATE TABLE `consultar_vac` (
+  `ID_consulta` int(11) NOT NULL,
+  `Identificacao_vac` int(11) NOT NULL,
+  `CFMV` varchar(20) NOT NULL,
+  `Datacolsu_vac` date NOT NULL,
+  `Horariocons_vac` time NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -182,7 +224,8 @@ CREATE TABLE `vaca` (
 --
 
 INSERT INTO `vaca` (`Identificacao_vac`, `Nome_vac`, `Raca_vac`, `Peso_vac`, `Datanasc_vac`, `Racamae_vac`, `Racapai_vac`, `Altura_vac`, `sexo_vac`) VALUES
-(1, 'Mimosa', 'Holandesa', 320.45, '2020-02-11', 'Holandesa', 'Holandes', 135.25, 'Feminino');
+(1, 'Mimosa', 'Holandesa', 320.45, '2020-02-11', 'Holandesa', 'Holandes', 135.25, 'Feminino'),
+(2, 'Costelinha', 'Brahman', 460.87, '2019-03-30', 'Holandesa', 'Brahman', 186.04, 'Masculino');
 
 -- --------------------------------------------------------
 
@@ -391,6 +434,30 @@ ALTER TABLE `alimentacao_cav`
 --
 ALTER TABLE `cavalo`
   ADD PRIMARY KEY (`Identificacao_cav`);
+
+--
+-- Indexes for table `consultar_cav`
+--
+ALTER TABLE `consultar_cav`
+  ADD PRIMARY KEY (`ID_consulta`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`),
+  ADD KEY `CFMV` (`CFMV`);
+
+--
+-- Indexes for table `consultar_ovl`
+--
+ALTER TABLE `consultar_ovl`
+  ADD PRIMARY KEY (`ID_consulta`),
+  ADD KEY `id_ovl` (`id_ovl`),
+  ADD KEY `CFMV` (`CFMV`);
+
+--
+-- Indexes for table `consultar_vac`
+--
+ALTER TABLE `consultar_vac`
+  ADD PRIMARY KEY (`ID_consulta`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`),
+  ADD KEY `CFMV` (`CFMV`);
 
 --
 -- Indexes for table `ovelhas`
