@@ -6,7 +6,7 @@
 <form action="cadastrarVaca.php" method="POST" enctype="multipart/form-data" id="cadastro">
 =======
 <form id="push" action="cadastrarVaca.php" method="POST" >
->>>>>>> 89e9e2169c410e4a5f76ec41d7bb057e1b28fd73
+
 
 	<h1>&#128046; Cadastro de Bovino &#128046;</h1>
 </br>
@@ -35,16 +35,14 @@
 <p>Sexo: <input type="radio" id="sexo-m" name="sexo" value="Masculino" required>
 	<label for="sexo-m"> Macho </label>
 	<input type="radio" id="sexo-f" name="sexo" value="Feminino">
-<<<<<<< HEAD
-	<label for="sexo-f"> Fêmea </label>
-</br>
-	<h3><input type="submit" name="enviar" value="Cadastre"></h3>
-=======
-	<label for="sexo-f">Fêmea</label>
-</p>
 
-	<p><input type="submit" onclick="mostra()" name="enviar" value="Cadastre"></p>
->>>>>>> 89e9e2169c410e4a5f76ec41d7bb057e1b28fd73
+	<label for="sexo-f"> Fêmea </label></p>
+</br>
+
+
+
+	<h3><input type="submit" onclick="mostra()" name="enviar" value="Cadastre"></h3>
+
 </form>
 
 <?php 
