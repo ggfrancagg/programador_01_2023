@@ -138,6 +138,7 @@ ul.nav li ol li a:hover{
 	width: 72%;
 	margin-left: 10vw;
 	padding-top: 1.5vh;
+	text-shadow: none;
 
 }
 
@@ -434,10 +435,12 @@ h4{
 #obs{
 	text-shadow: 0px;
 	font-family: 'News Cycle', sans-serif;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	text-decoration: none;
 	color: #BF5630;
-	text-align: center;
+	text-align: left;
+	margin-left: 3vw;
+	padding-top: 2vh;
 	
 }
 
@@ -452,9 +455,82 @@ h4{
 
 #informa{
 	font-family: 'Lexend', sans-serif;
-	font-size: 1rem;
+	font-size: 2rem;
 	text-decoration: none;
 	color: #BF5630;
 	text-align: center;
 	text-shadow: 1px 1px 3px #FFDA00;
+	padding-top: 3vh;
+}
+
+#curio{
+	font-family: 'Alata', sans-serif;
+	font-size: 1.4rem;
+	color: #BF5630;
+	text-align: left;
+	padding-top: 1vh;
+	margin-left: 5vw;
+
+}
+
+#subt{
+	font-family: 'Alata', sans-serif;
+	font-size: 1.5rem;
+	color: #BF5630;
+	text-align: left;
+	padding-top: 1vh;
+	margin-left: 0vw;
+	text-shadow: 1px 1px 3px #FFDA00;
+}
+
+hr{
+	background-color: #BF5630;
+	height: 0.5vh;
+	padding-top: 1vh;
+	border: 1px dashed #FFDA00;
+	width: 99vw;
+	margin-bottom: 1vh;
+}
+
+#linkes{
+	width: 60vw;
+	margin-left: 20vw;
+	min-height: 20vh;
+	border: 3px inset  #BF5630;
+	border-radius: 22px;
+	margin-top: 5vh;
+	color: #A65F46;
+	background: #BF7950;
+}
+
+#linkes p{
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #593B16;
+	text-align: center;
+	padding-bottom: 1vh;
+}
+
+#linkes a{
+	text-decoration: none;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #593B16;
+	text-align: center;
+}
+
+#linkes p:hover{
+	color: #FFFE57;
+	font-weight: bolder;
+	text-shadow: 0px 0px 2px #FFFE57;
+}
+
+
+#cada{
+	height: 0.5vh;
+	border: 1px dashed #F2BE5C;
+	width: 20vw;
+	margin-left: 20vw;
+	margin-bottom: 1vh;
+	margin-top: 0.5vh;
 }
