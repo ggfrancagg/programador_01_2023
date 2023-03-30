@@ -11,11 +11,9 @@
 		<p>Altura: <input type="text" name="altura_cav" pattern="[0-9]{1-3}[0-9]{2}"  placeholder="9.99" title="use punto e não virgula ex:9.99" required></p>
 		<p>Raça da Mãe: <input type="text" name="racadamae" size="30" maxlength="30" pattern="[A-Za-záÁçÇãÂ]{2,30}" required></p>
 		</br>
-<<<<<<< HEAD
-		<p> <input type="submit" onclick="mostra()" name="enviar" value="cadastrar"></p>
-=======
-		<h3> <input type="submit" name="enviar" value="cadastrar"></h3>
->>>>>>> 6212e129b8348027d204f2798c203f345a574891
+
+		<h3> <input type="submit" onclick="mostra()" name="enviar" value="cadastrar"></h3>
+
 
 		<?php
 		if(isset($_POST['nome'])){
@@ -35,13 +33,13 @@
 				$codigo++;
 				$resposta=cadastrarCavalo($codigo,$Nome_cav,$Raca_cav,$Datanasc_cav,$Sexo_cav,$Peso,$Racapai_cav,$Altura_cav,$Racamae_cav);
 				if(!$resposta){
-					echo "<h2>Falha na tentativa de cadastro!</h2>";
+					echo "<h5>Falha na tentativa de cadastro!</h5>";
 				}else{
-					echo "<h2>Cadastrado com sucesso!</h2>";
+					echo "<h5>Cadastrado com sucesso!</h5>";
 				}
 				
 			}else{
-				echo "<h2>Não há equino cadastrado!";
+				echo "<h5>Não há equino cadastrado!</h5>";
 				
 			}
 

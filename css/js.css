@@ -15,8 +15,8 @@
 
 #load div {
   position: absolute;
-  width: 20px;
-  height: 36px;
+  width: 22px;
+  height: 38px;
   opacity: 0;
   font-family: Helvetica, Arial, sans-serif;
   animation: move 2s linear infinite;
@@ -27,7 +27,10 @@
   -o-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
-  color: #35C4F0;
+  color: #44E3D3;
+  font-size: 1.9rem;
+  font-weight: bold;
+  text-shadow: 2px 3px #737373;
 }
 
 #load div:nth-child(2) {

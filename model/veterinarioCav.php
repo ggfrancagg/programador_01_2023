@@ -20,7 +20,7 @@ function retornaUltimoVetCav(){
 	if (!$consulta) {
 		return false;
 	}else{	
-		while ($linha=$consulta->fetch_assoc()) {
+		while ($linha=$consulta->fetch_assoc()){
 		$codigo=$linha['max(Identificacao_cav)'];
 	}
 		if ($codigo==NULL){

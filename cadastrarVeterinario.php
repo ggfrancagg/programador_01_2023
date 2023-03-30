@@ -66,6 +66,9 @@ if(isset($_POST['nome'])){
 		<p>Nome do Veterinário: <input type="text" name="nome" size="80" maxlength="80" required></p>
 		<p>Nascimento: <input type="date" name="nasc" required></p>
 		<p>Telefone: <input type="text" name="tel" placeholder="(99)9999-9999" required></p>
+<<<<<<< HEAD
+
+=======
 		<p>Data da visita do Veterinário: <input type="date" name="data" required></p>
 		<p>Cuidados: <input type="text" name="cuidados" size="80" maxlength="80" required></p>
 <<<<<<< HEAD
@@ -75,6 +78,7 @@ if(isset($_POST['nome'])){
 		</br>
 				<h3><input type="submit" name="enviar" value="cadastrar"></h3>
 =======
+>>>>>>> b82e56fc747dd4a109e9c39c588898dc16820921
 				<p><input type="submit" name="enviar" value="Cadastrar"></p>
 >>>>>>> 89e9e2169c410e4a5f76ec41d7bb057e1b28fd73
 >>>>>>> 6212e129b8348027d204f2798c203f345a574891
@@ -85,8 +89,6 @@ if(isset($_POST['nome'])){
 		$nome_vet=$_POST['nome'];
 		$nasc_vet=$_POST['nasc'];
 		$tel_vet=$_POST['tel'];
-		$data_visita=$_POST['data'];
-		$cuidados_vet=$_POST['cuidados'];
 
 		require_once 'model/Veterinario.php';
 			$codigo=retornaUltimoVet();
@@ -94,7 +96,7 @@ if(isset($_POST['nome'])){
 				echo "<h2>Não tem Veterinario cadastrado!";
 			}else{
 				$codigo++;
-				$resposta=cadastrarVeterinario($id_vet,$nome_vet,$nasc_vet,$tel_vet);
+				$resposta=cadastrarVeterinario($CFMV,$nome_vet,$nasc_vet,$tel_vet);
 				if(!$resposta){
 					echo "<h2>Falha na tentativa de cadastro!</h2>";
 				}else{
