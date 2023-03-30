@@ -14,8 +14,7 @@
 		<p>Nome do Veterinário:<input type="text" name="nome" size="80" maxlength="80" required></p>
 		<p>Nascimento: <input type="date" name="nasc" required></p>
 		<p>Telefone: <input type="text" name="tel" placeholder="(99)9999-9999" required></p>
-		<p>Data da visita do Veterinário:<input type="date" name="data" required></p>
-		<p>Cuidados: <input type="text" name="cuidados" size="80" maxlength="80" required></p>
+
 				<p><input type="submit" name="enviar" value="Cadastrar"></p>
 
 
@@ -24,8 +23,6 @@
 		$nome_vet=$_POST['nome'];
 		$nasc_vet=$_POST['nasc'];
 		$tel_vet=$_POST['tel'];
-		$data_visita=$_POST['data'];
-		$cuidados_vet=$_POST['cuidados'];
 
 		require_once 'model/Veterinario.php';
 			$codigo=retornaUltimoVet();
