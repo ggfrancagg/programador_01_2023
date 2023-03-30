@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Mar-2023 às 20:48
+-- Generation Time: 30-Mar-2023 às 22:14
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -365,21 +365,6 @@ CREATE TABLE `vermifugo_vac` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `veterinário_ovl`
---
-
-CREATE TABLE `veterinário_ovl` (
-  `CFMV` int(11) NOT NULL,
-  `nome_vet` varchar(60) NOT NULL,
-  `nasc_vet` date NOT NULL,
-  `tel_vet` varchar(30) NOT NULL,
-  `data_visita` date NOT NULL,
-  `cuidados_vet` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `veterinario_cav`
 --
 
@@ -392,6 +377,21 @@ CREATE TABLE `veterinario_cav` (
   `Cuidados_cav` varchar(100) DEFAULT NULL,
   `Datavisi_cav` date DEFAULT NULL,
   `Identificacao_cav` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `veterinario_ovl`
+--
+
+CREATE TABLE `veterinario_ovl` (
+  `CFMV` int(11) NOT NULL,
+  `nome_vet` varchar(60) NOT NULL,
+  `nasc_vet` date NOT NULL,
+  `tel_vet` varchar(30) NOT NULL,
+  `data_visita` date NOT NULL,
+  `cuidados_vet` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -542,17 +542,17 @@ ALTER TABLE `vermifugo_vac`
   ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
--- Indexes for table `veterinário_ovl`
---
-ALTER TABLE `veterinário_ovl`
-  ADD PRIMARY KEY (`CFMV`);
-
---
 -- Indexes for table `veterinario_cav`
 --
 ALTER TABLE `veterinario_cav`
   ADD PRIMARY KEY (`CFMV`),
   ADD KEY `Identificacao_cav` (`Identificacao_cav`);
+
+--
+-- Indexes for table `veterinario_ovl`
+--
+ALTER TABLE `veterinario_ovl`
+  ADD PRIMARY KEY (`CFMV`);
 
 --
 -- Indexes for table `veterinario_vac`

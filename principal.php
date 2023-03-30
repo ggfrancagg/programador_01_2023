@@ -31,30 +31,30 @@ $estalog=estaLogado();
 			</li>
 			<li>Buscar Animal
 				<ol class="menu2">
-				<li><a href="buscar.php" target="quadro">Dados</a></li>
+				<li><a href="buscar.php" target="quadro">Dados &#128269;</a></li>
 				</ol>
 			</li>
 			<li class="altura">Veterinário
 				<ol class="menu2">
-					<li><a href="cadastrarVeterinario.php" target="quadro">Cadastrar &#9877;</a></li>
-					<li><a href="listarVeterinario.php" target="quadro">Listar &#9877;</a></li>
+					<li><a href="cadastrarVeterinario.php" target="quadro">Cadastrar &#129658;</a></li>
+					<li><a href="listarVeterinario.php" target="quadro">Listar &#129658;</a></li>
 				</ol>
 				
 			</li>
 			<li>Saúde Animal
 				<ol class="menu2">
-					<li><a href="aplicacaoVacina.php" target="quadro">Vacinas</a></li>
-					<li><a href="aplicacaoVermifugo.php" target="quadro">Vermifugação</a></li>
+					<li><a href="aplicacaoVacina.php" target="quadro">Vacinas &#128137;</a></li>
+					<li><a href="aplicacaoVermifugo.php" target="quadro">Vermifugação &#128138;</a></li>
 				</ol>
 			</li>
 			<li>Informações
 				<ol class="menu2">
-				<li><a href="informacao.php" target="quadro">Curiosidades</a></li>
+				<li><a href="informacao.php" target="quadro">Curiosidades &#128269;</a></li>
 				</ol>
 			</li>
 			<li>Sair
 				<ol class="menu2">
-					<li><a href="sair.php" target="quadro">Deslogar</a></li>
+					<li><a href="sair.php" target="quadro">Deslogar &#128244;</a></li>
 				</ol>
 			</li>
 		</ul>
