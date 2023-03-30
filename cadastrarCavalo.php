@@ -12,9 +12,7 @@
 		<p>Raça da Mãe: <input type="text" name="racadamae" size="30" maxlength="30" pattern="[A-Za-záÁçÇãÂ]{2,30}" required></p>
 		</br>
 
-		<p> <input type="submit" onclick="mostra()" name="enviar" value="cadastrar"></p>
-
-		<h3> <input type="submit" name="enviar" value="cadastrar"></h3>
+		<h3> <input type="submit" onclick="mostra()" name="enviar" value="cadastrar"></h3>
 
 
 		<?php
