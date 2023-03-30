@@ -2,9 +2,9 @@
 
 
 
-<<<<<<< HEAD
+
 <form action="cadastrarVaca.php" method="POST" enctype="multipart/form-data" id="cadastro">
-=======
+
 <form id="push" action="cadastrarVaca.php" method="POST" >
 
 
@@ -84,6 +84,7 @@ function criarMinimo($hoje){
 }
 
 ?>
+
 <div id="load">
   <div>G</div>
   <div>N</div>
@@ -93,6 +94,8 @@ function criarMinimo($hoje){
   <div>O</div>
   <div>L</div>
 </div>
+
 <script src="js/mensagem.js"></script>
+
 </body>
 </html>
