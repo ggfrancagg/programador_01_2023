@@ -90,16 +90,8 @@ if(isset($_POST['cavalo'])){
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
-<<<<<<< HEAD
-<h3><input type="submit" value="Cadastrar" class="botao"></h3>
-=======
 <p><input type="hidden" name="idcavalo" value="<?php echo $_POST['cavalo']; ?>">
-<<<<<<< HEAD
 <input type="submit" onclick="mostra()" value="Cadastrar" class="botao">
-=======
-<input type="submit" value="Cadastrar" class="botao">
->>>>>>> 89e9e2169c410e4a5f76ec41d7bb057e1b28fd73
->>>>>>> 6212e129b8348027d204f2798c203f345a574891
 </form>
 
 	<?php

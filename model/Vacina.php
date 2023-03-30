@@ -4,7 +4,7 @@ require_once './persistence/Banco.php';
 
 function vacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proximaapli_vac,$Identificacao_vac){ 
 	$banco=new Banco();
-	$sql="insert into vaca values($IDvasc_vac,'$Nomevasc_vac','$Tipovasc_vac','$Dataapli_vac',$Identificacao_vac)";
+	$sql="insert into vacina_vac values($IDvasc_vac,'$Nomevasc_vac','$Tipovasc_vac','$Dataapli_vac','$proximaapli_vac',$Identificacao_vac)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -16,7 +16,7 @@ function vacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proxi
 
 function vacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$Nomevasc_cav,$Identificacao_cav){ 
 	$banco=new Banco();
-	$sql="insert into cavalo values($IDvac_cav,'$Dataapli_cav','$proximaali_cav','$Tipovasc_cav','$Nomevasc_cav',$Identificacao_cav)";
+	$sql="insert into vacina_cav values($IDvac_cav,'$Dataapli_cav','$proximaapli_cav','$Tipovasc_cav','$Nomevasc_cav',$Identificacao_cav)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -27,7 +27,7 @@ function vacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$N
 
 function vacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$proximaapli_ovl,$id_ovl){
 	$banco=new Banco();
-	$sql="insert into ovelha values($IDvasc_ovl,'$Nomevasc_ovl','$Tipovasc_ovl','$Dataapli_ovl','$proximaapli_ovl',$id_ovl)";
+	$sql="insert into vacina_ovl values($IDvasc_ovl,'$Nomevasc_ovl','$Tipovasc_ovl','$Dataapli_ovl','$proximaapli_ovl',$id_ovl)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -40,74 +40,58 @@ function vacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$pro
 //GERAR CÓDIGO DE ID
 
 
-function retornaUltimaVacCavalo($IDvac_cav){ 
+function retornaUltimaVacCavalo(){ 
 	$banco=new Banco();
-	$sql="select IDvac_cav from cavalo where IDvac_cav=$IDvac_cav";
+	$sql="select max(IDvac_cav) from vacina_cav";
 	$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
 		}else{
-			return $consulta;
+			while($linha=$consulta->fetch_assoc()){
+				$codigo=$linha['max(IDvac_cav)'];
+			}
+			if($codigo==NULL){
+				$codigo=0;
+			}
+			return $codigo;
 		}
 	}
 
 
-function retornaUltimaVacVaca($IDvasc_vac){ 
+function retornaUltimaVacVaca(){ 
 	$banco=new Banco();
-	$sql="select IDvasc_vac from vaca where IDvasc_vac=$IDvasc_vac";
+	$sql="select max(IDvasc_vac) from vacina_vac";
 	$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
 		}else{
-			return $consulta;
+			while($linha=$consulta->fetch_assoc()){
+				$codigo=$linha['max(IDvasc_vac)'];
+			}
+			if($codigo==NULL){
+				$codigo=0;
+			}
+			return $codigo;
 		}
 	}
 
-	function retornaUltimaVacOvelha($IDvasc_ovl){ 
+	function retornaUltimaVacOvelha(){ 
 	$banco=new Banco();
-	$sql="select IDvasc_ovl from ovelha where IDvasc_ovl=$IDvasc_ovl";
+	$sql="select max(IDvasc_ovl) from vacina_ovl";
 	$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
 		}else{
-			return $consulta;
+			while($linha=$consulta->fetch_assoc()){
+				$codigo=$linha['max(IDvasc_ovl)'];
+			}
+			if($codigo==NULL){
+				$codigo=0;
+			}
+			return $codigo;
 		}
 	}
 
-//ALERTA DE DATA DA VACINA
-
-function verificarVacinaVaca($vacina_vaca){
-	$banco=new Banco();
-	$sql="select vaca.nome_vac from vaca where proximaapli_vac='$vacina_vaca'";
-	$consulta=$banco->consultar($sql);
-	if (!$consulta) {
-		return false;
-	}else{
-		return $consulta;
-	}
-} 
-
-function verificarVacinaCavalo($vacina_cavalo){
-	$banco=new Banco();
-	$sql="select cavalo.nome_cav from cavalo where proximaapli_cav='$vacina_cavalo'";
-	$consulta=$banco->consultar($sql);
-	if (!$consulta) {
-		return false;
-	}else{
-		return $consulta;
-	}
-} 
-
-function verificarVacinaOvelha($vacina_ovelha){
-	$banco=new Banco();
-	$sql="select ovelha.nome_ovl from ovelha where proximaapli_ovl='$vacina_ovelha'";
-	$consulta=$banco->consultar($sql);
-	if (!$consulta) {
-		return false;
-	}else{
-		return $consulta;
-	}
-} 
 
 ?>
 
