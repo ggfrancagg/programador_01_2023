@@ -1,6 +1,6 @@
 <?php
 require_once 'cabecalho.php';
-require_once 'model/cavalo.php';
+require_once 'model/Cavalo.php';
 
 $consulta=listarCavalo();
 if(!$consulta){
