@@ -30,10 +30,9 @@
     <p>Altura:  
     <input type="text" name="altura" required></p>
     <br>
-    <p><input type="submit" onclick="mostra()" class="enviar" value="Cadastrar"></p>
 
     </br>
-    <h3><input type="submit" class="enviar" value="Cadastrar"></h3>
+    <h3><input type="submit" onclick="mostra()" class="enviar" value="Cadastrar"></h3>
 
 </form>
 <div id="load">
