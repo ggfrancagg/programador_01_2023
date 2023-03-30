@@ -4,7 +4,7 @@ require_once 'model/Usuario.php';
 
 $estalog=estaLogado();
 	if(!$estalog){ 
-	echo "<h2>Você não está logado, favor logar!</h2>";
+	echo "<h5>Você não está logado, favor logar!</h5>";
 	echo "<a href='//localhost/profGabriel/ProjetoIntegrador/'>Voltar</a>";
 }else{ 
 ?>
@@ -37,7 +37,7 @@ $estalog=estaLogado();
 			<li>Veterinário
 				<ol>
 					<li><a href="cadastrarVeterinario.php" target="quadro">Cadastrar &#9877;</a></li>
-					<li><a href="listarVet.php" target="quadro">Listar &#9877;</a></li>
+					<li><a href="listarVeterinario.php" target="quadro">Listar &#9877;</a></li>
 				</ol>
 				
 			</li>
@@ -81,7 +81,7 @@ $estalog=estaLogado();
 
 <div id="rodape">
 	<div id="sobre">
-		<p>Projeto Integrador do curso Programador de Sistemas turma 202300015 - SENAC&reg;</p>
+		<h4>Projeto Integrador do curso Programador de Sistemas turma 202300015 - SENAC&reg;</h4>
 	</div>
 </div>
 

@@ -1,9 +1,9 @@
 <?php
 require_once './persistence/Banco.php';
 	                                      
-function cadastrarVaca($Identificacao_vac,$Nome_vac,$Raca_vac,$Peso_vac,$Datanasc_vac,$Racamae_vac,$Racapai_vac,$Altura_vac,$IDrepr_vac,$IDvasc_vac,$sexo_vac){
+function cadastrarVaca($Identificacao_vac,$Nome_vac,$Raca_vac,$Peso_vac,$Datanasc_vac,$Racamae_vac,$Racapai_vac,$Altura_vac,$sexo_vac){
 $banco=new Banco();
-$sql="insert into vaca values($Identificacao_vac,'$Nome_vac',$Raca_vac,$Peso_vac,'$Datanasc_vac',$Racamae_vac,$Racapai_vac,$Altura_vac,'$IDrepr_vac',$IDvasc_vac,$sexo_vac)";
+$sql="insert into vaca values($Identificacao_vac,'$Nome_vac','$Raca_vac',$Peso_vac,'$Datanasc_vac','$Racamae_vac','$Racapai_vac',$Altura_vac,'$sexo_vac')";
 		$resp=$banco->executar($sql);
 		if (!$resp) {
 			return false;
@@ -40,9 +40,10 @@ function listarVaca(){
 		return $consulta;
 	}
 }
-function verificarVacina($idvasc){
+
+function verificarVacinaVaca($idvasc){
 		$banco=new Banco();
-		$sql="select Nome_vac from vaca where IDvasc_vac in(select IDvasc_vac from vacina_vac where Dataapli_vac=$idvasc)";
+		$sql="select vaca.Nome_vac from vaca inner join vacina_vac where vaca.Identificacao_vac=vacina_vac.Identificacao_vac and vacina_vac.Dataapli_vac='$idvasc'";
 		$consulta=$banco->consultar($sql);
 		if(!$consulta){
 			return false;
