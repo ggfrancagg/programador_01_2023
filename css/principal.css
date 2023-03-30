@@ -215,8 +215,8 @@ h2{
 #listarbicho{
 
 	margin-top: 10vh;
-	max-width: 60vw;
-	margin-left: 25vw;
+	max-width: 80vw;
+	margin-left: 10vw;
 	border: 2px inset #FF7001;
 
 }
@@ -420,3 +420,41 @@ h5{
 	padding-bottom: 2vh;
 }
 
+/*informacao.php*/
+
+h4{
+	font-family: 'Alata', sans-serif;
+	font-size: 2rem;
+	color: #BF5630;
+	text-shadow: 1px 1px 3px #FFDA00;
+	text-align: center;
+	padding-top: 1vh;
+}
+
+#obs{
+	text-shadow: 0px;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1rem;
+	text-decoration: none;
+	color: #BF5630;
+	text-align: center;
+	
+}
+
+#info{
+	font-family: 'Lexend', sans-serif;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: #BF5630;
+	text-align: center;
+	text-shadow: 1px 1px 3px #FFDA00;
+}
+
+#informa{
+	font-family: 'Lexend', sans-serif;
+	font-size: 1rem;
+	text-decoration: none;
+	color: #BF5630;
+	text-align: center;
+	text-shadow: 1px 1px 3px #FFDA00;
+}
