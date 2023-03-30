@@ -1,6 +1,6 @@
 <?php
 require_once 'cabecalho.php';
-require_once 'model/ovelha.php';
+require_once 'model/Ovelha.php';
 
 $consulta=ListarOvelha();
 if(!$consulta){
@@ -24,6 +24,7 @@ if(!$consulta){
 		echo "<tr>";
 		echo "<td>".$linha['id_ovl']."</td>";
 		echo "<td>".$linha['nome_ovl']."</td>";
+		echo "<td>".$linha['idade_ovl']."</td>";
 		echo "<td>".$linha['raca_ovl']."</td>";
 		echo "<td>".$linha['sexo_ovl']."</td>";
 		echo "<td>".$linha['cor_ovl']."</td>";

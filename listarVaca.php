@@ -10,9 +10,9 @@ if(!$consulta){
 	echo "<table id='listarbicho'>";
 	echo "<tr>";
 	echo "<th> Identificação </th>";
-	echo "<th> Nome </th>";
-	echo "<th> Raça </th>";
-	echo "<th> Data de nascimento </th>";
+	echo "<th> Nome</th>";
+	echo "<th> Raça</th>";
+	echo "<th> Data de nascimento</th>";
 	echo "<th> Sexo </th>";
 	echo "<th> Raça do Mãe </th>";
 	echo "<th> Raça da Pai </th>";
@@ -25,7 +25,7 @@ if(!$consulta){
 		echo "<tr>";
 		echo "<td>".$linha['Identificacao_vac']."</td>";
 		echo "<td>".$linha['Nome_vac']."</td>";
-		echo "<td>".$linha['Raca_vac']."</td";
+		echo "<td>".$linha['Raca_vac']."</td>";
 		echo "<td>".$linha['Datanasc_vac']."</td>";
 		echo "<td>".$linha['sexo_vac']."</td>";		
 		echo "<td>".$linha['Racamae_vac']."</td>";	

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Mar-2023 às 22:02
+-- Generation Time: 30-Mar-2023 às 19:46
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -199,6 +199,18 @@ CREATE TABLE `vacina_cav` (
   `Identificacao_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `vacina_cav`
+--
+
+INSERT INTO `vacina_cav` (`IDvac_cav`, `Dataapli_cav`, `proximaapli_cav`, `Tipovasc_cav`, `Nomevasc_cav`, `Identificacao_cav`) VALUES
+(1, '2003-03-30', '2023-05-30', 'Filhote', 'Tétano', 1),
+(2, '2023-02-28', '2024-02-28', 'Filhote', 'Influenza', 1),
+(3, '2003-01-10', '2024-03-10', 'Geral', 'Encefalomielite', 1),
+(4, '2023-01-10', '2024-01-10', 'Geral', 'Herpes Vírus', 1),
+(5, '2023-02-01', '2024-02-01', 'Geral', 'Raiva', 1),
+(6, '2023-03-03', '2024-02-03', 'Geral', 'Garrotilho', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -214,6 +226,15 @@ CREATE TABLE `vacina_ovl` (
   `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `vacina_ovl`
+--
+
+INSERT INTO `vacina_ovl` (`IDvasc_ovl`, `Nomevasc_ovl`, `Tipovasc_ovl`, `Dataapli_ovl`, `proximaapli_ovl`, `id_ovl`) VALUES
+(1, 'Raiva', 'Geral', '2022-05-20', '2023-05-20', 1),
+(2, 'Clostridiose', 'Filhote', '2022-03-20', '2023-03-20', 1),
+(3, 'Linfadenite caseosa', 'Geral', '2023-03-15', '2023-03-15', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -228,6 +249,21 @@ CREATE TABLE `vacina_vac` (
   `proximaapli_vac` date NOT NULL,
   `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `vacina_vac`
+--
+
+INSERT INTO `vacina_vac` (`IDvasc_vac`, `Nomevasc_vac`, `Tipovasc_vac`, `Dataapli_vac`, `proximaapli_vac`, `Identificacao_vac`) VALUES
+(1, 'Febre Aftosa', 'Obrigatoria', '2023-03-20', '2024-03-20', 1),
+(2, 'B19: Brucelose ', 'Obrigatoria', '2023-01-20', '2029-03-20', 1),
+(3, 'Raiva', 'Obrigatoria', '2023-03-20', '2024-03-20', 1),
+(4, 'Febre Aftosa', 'Obrigatoria', '2022-11-20', '2023-11-20', 1),
+(5, 'Clostridioses', 'Geral', '2023-02-02', '2024-03-06', 1),
+(6, 'IBR/BVD', 'Geral', '2022-07-12', '2023-01-12', 1),
+(7, 'Leptospirose', 'Geral', '2023-01-13', '2024-07-09', 1),
+(8, 'Mastite', 'Geral', '2022-12-02', '2024-03-02', 1),
+(9, 'Pneumoenterite', 'Unica', '2023-02-02', '2023-02-02', 1);
 
 -- --------------------------------------------------------
 
