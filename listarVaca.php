@@ -16,9 +16,7 @@ if(!$consulta){
 	echo "<th> Sexo </th>";
 	echo "<th> Raça do Mãe </th>";
 	echo "<th> Raça da Pai </th>";
-	echo "<th> Altura </th>";
-	echo "<th> ID reprodução </th>";
-	echo "<th> ID vacina </th>";	
+	echo "<th> Altura </th>";	
 	echo "<th> Peso </th>";
 	echo "</tr>";
 
@@ -27,14 +25,12 @@ if(!$consulta){
 		echo "<tr>";
 		echo "<td>".$linha['Identificacao_vac']."</td>";
 		echo "<td>".$linha['Nome_vac']."</td>";
-		echo "<td>".$linha['raca_vac']."</td";
+		echo "<td>".$linha['Raca_vac']."</td";
 		echo "<td>".$linha['Datanasc_vac']."</td>";
-		echo "<td>".$linha['Sexo_vac']."</td>";		
+		echo "<td>".$linha['sexo_vac']."</td>";		
 		echo "<td>".$linha['Racamae_vac']."</td>";	
 		echo "<td>".$linha['Racapai_vac']."</td>";
 		echo "<td>".$linha['Altura_vac']."</td>";
-		echo "<td>".$linha['IDrepr_vac']."</td>";
-		echo "<td>".$linha['IDvasc_vac']."</td>";
 		echo "<td>".$linha['Peso_vac']."</td>";
 		echo "</tr>";
 
@@ -45,5 +41,6 @@ if(!$consulta){
 
 
 ?>
+
 </body>
 </html>

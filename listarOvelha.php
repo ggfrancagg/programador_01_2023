@@ -23,9 +23,9 @@ if(!$consulta){
 	while ($linha=$consulta->fetch_assoc()) {
 		echo "<tr>";
 		echo "<td>".$linha['id_ovl']."</td>";
-		echo "<td>".$linha['Nome_ovl']."</td>";
+		echo "<td>".$linha['nome_ovl']."</td>";
 		echo "<td>".$linha['raca_ovl']."</td>";
-		echo "<td>".$linha['Sexo_ovl']."</td>";
+		echo "<td>".$linha['sexo_ovl']."</td>";
 		echo "<td>".$linha['cor_ovl']."</td>";
 		echo "<td>".$linha['peso_ovl']."</td>";
 		echo "<td>".$linha['altura_ovl']."</td>";
