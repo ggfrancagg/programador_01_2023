@@ -2,9 +2,9 @@
 require_once './persistence/Banco.php'; 
 
 
-function vacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proximaapli_vac){ 
+function vacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proximaapli_vac,$Identificacao_vac){ 
 	$banco=new Banco();
-	$sql="insert into vaca values($IDvasc_vac,'$Nomevasc_vac','$Tipovasc_vac','$Dataapli_vac')";
+	$sql="insert into vaca values($IDvasc_vac,'$Nomevasc_vac','$Tipovasc_vac','$Dataapli_vac',$Identificacao_vac)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -14,9 +14,9 @@ function vacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proxi
 }
 
 
-function vacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$Nomevasc_cav){ 
+function vacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$Nomevasc_cav,$Identificacao_cav){ 
 	$banco=new Banco();
-	$sql="insert into cavalo values($IDvac_cav,'$Dataapli_cav','$proximaali_cav','$Tipovasc_cav','$Nomevasc_cav')";
+	$sql="insert into cavalo values($IDvac_cav,'$Dataapli_cav','$proximaali_cav','$Tipovasc_cav','$Nomevasc_cav',$Identificacao_cav)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -25,9 +25,9 @@ function vacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$N
 	}
 }
 
-function vacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$proximaapli_ovl){
+function vacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$proximaapli_ovl,$id_ovl){
 	$banco=new Banco();
-	$sql="insert into ovelha values($IDvasc_ovl,'$Nomevasc_ovl','$Tipovasc_ovl','$Dataapli_ovl','$proximaapli_ovl')";
+	$sql="insert into ovelha values($IDvasc_ovl,'$Nomevasc_ovl','$Tipovasc_ovl','$Dataapli_ovl','$proximaapli_ovl',$id_ovl)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
