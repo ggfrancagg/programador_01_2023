@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="css/js.css">
 </head>
 <body>
-=======
+
 <?php require_once 'cabecalho.php'; ?>
->>>>>>> 6212e129b8348027d204f2798c203f345a574891
+
 
 <form action="cadastrarOvelha.php" method="POST" id="cadastro">
 	<h1>&#128017; Cadastro de Ovino &#128017;</h1>
@@ -29,13 +29,12 @@
     <input type="text" name="peso" required></p>
     <p>Altura:  
     <input type="text" name="altura" required></p>
-<<<<<<< HEAD
     <br>
     <p><input type="submit" onclick="mostra()" class="enviar" value="Cadastrar"></p>
-=======
+
     </br>
     <h3><input type="submit" class="enviar" value="Cadastrar"></h3>
->>>>>>> 6212e129b8348027d204f2798c203f345a574891
+
 </form>
 <div id="load">
   <div>G</div>
