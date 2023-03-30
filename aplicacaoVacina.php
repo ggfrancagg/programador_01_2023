@@ -56,13 +56,13 @@ if(isset($_POST['animal'])){
 	}else if ($animal=="vaca") {
 		require_once "model/Vaca.php";
 			echo "<form id='vac' action='aplicacaoVacina.php' method='POST'>";
-		$vaca=listarVaca("");
+		$vaca=listarVaca();
 		if (!$vaca) {
 			echo "<h2>Não existem animais cadastrados!</h2>";
 		}else{
 			echo "<h2>Bovinos Cadastrados: </h2>";
 			echo "<p>Escolha o animal: <select name='vaca'>";
-		while($linha=$ovelha->fetch_assoc()){
+		while($linha=$vaca->fetch_assoc()){
 			echo "<option value='".$linha['Identificacao_vac']."'>";
 			echo $linha['Nome_vac'];
 			echo "</option>";
@@ -209,7 +209,7 @@ if(isset($_POST['nomevacvaca'])){
 	$codigo=retornaUltimaVacVaca();
 	if($codigo>=0){
 		$codigo++;
-		$resposta=vacinaVaca($codigo,$nome,$tipo,$aplicacao,$identificacaovac,$proximaapli);
+		$resposta=vacinaVaca($codigo,$nome,$tipo,$aplicacao,$proximaapli,$identificacaovac);
 		if(!$resposta){
 			echo "<h5>Falha na tentativa de cadastro!</h5>";
 		}else{
