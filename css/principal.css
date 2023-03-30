@@ -63,7 +63,6 @@ ul.nav li{
 	
 }
 
-
 ul.nav li ol{
 	display: none;
 	list-style-type: none;
@@ -86,9 +85,6 @@ ul.nav li ol li{
 	width: 100%;
 	height: auto;
 
-	
-	
-
 }
 
 ul.nav li ol li a{
@@ -98,14 +94,19 @@ ul.nav li ol li a{
 	color: #39362F;
 	text-decoration: none;
 	text-shadow: 0px 0px 0px;
-
-
 }
 
 ul.nav li ol li a:hover{
 	color: #195C00;
 	text-shadow: 0px 0px 0px;
+}
 
+ol.menu2{
+	margin-top: 5vh;
+}
+
+
+li.altura{
 
 }
 
@@ -125,7 +126,6 @@ ul.nav li ol li a:hover{
 	height: 5.1vh;
 	background: #A65F46;
 	margin-top: 0.4vh;
-
 
 }
 

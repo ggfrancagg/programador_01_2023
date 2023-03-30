@@ -16,44 +16,44 @@ $estalog=estaLogado();
 	<div id="menu">
 		<ul class="nav">
 			<li>Cadastrar Animal
-				<ol>
+				<ol class="menu">
 					<li><a href="cadastrarVaca.php" target="quadro" onclick="mostra()">Bovino &#128046;</a></li>
 					<li><a href="cadastrarCavalo.php" target="quadro" onclick="mostra()">Equino &#128052;</a></li>
 					<li><a href="cadastrarOvelha.php" target="quadro" onclick="mostra()">Ovino &#128017;</a></li>
 			</ol>
 			</li>
 			<li>Listar Animais
-				<ol>
+				<ol class="menu2">
 					<li><a href="listarVaca.php" target="quadro" onclick="mostra()">Bovinos &#128046;</a></li> 
 					<li><a href="listarCavalo.php" target="quadro" onclick="mostra()">Equinos &#128052;</a></li>
 					<li><a href="listarOvelha.php" target="quadro" onclick="mostra()">Ovinos &#128017;</a></li>
 				</ol>
 			</li>
 			<li>Buscar Animal
-				<ol>
+				<ol class="menu2">
 				<li><a href="buscar.php" target="quadro">Dados</a></li>
 				</ol>
 			</li>
-			<li>Veterinário
-				<ol>
+			<li class="altura">Veterinário
+				<ol class="menu2">
 					<li><a href="cadastrarVeterinario.php" target="quadro">Cadastrar &#9877;</a></li>
 					<li><a href="listarVeterinario.php" target="quadro">Listar &#9877;</a></li>
 				</ol>
 				
 			</li>
 			<li>Saúde Animal
-				<ol>
+				<ol class="menu2">
 					<li><a href="aplicacaoVacina.php" target="quadro">Vacinas</a></li>
 					<li><a href="aplicacaoVermifugo.php" target="quadro">Vermifugação</a></li>
 				</ol>
 			</li>
 			<li>Informações
-				<ol>
+				<ol class="menu2">
 				<li><a href="informacao.php" target="quadro">Curiosidades</a></li>
 				</ol>
 			</li>
 			<li>Sair
-				<ol>
+				<ol class="menu2">
 					<li><a href="sair.php" target="quadro">Deslogar</a></li>
 				</ol>
 			</li>
