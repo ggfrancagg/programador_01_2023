@@ -7,28 +7,21 @@
 </head>
 <body>
 	<form action="Cadastrarconsultas.php">
-		<h1> Cadastrar Consultas </h1>
-	
+		<h1> Cadastrar consultas </h1>
+		<p>Id consulta:<input type="number" name="consulta" size="11"></p>
+		<p>Id do animal:<input type="number" name="animal" size="11"></p>
+		<p>CFMV:<input type="text" name="cfmv" size="20"></p>
+		<p>Data da consulta:<input type="date" name="data"></p>
+		<p> Horario da consulta<input type="time" name="horario"></p>
 		<p><input type="submit" name="enviar" value="Cadastrar"></p>
-	
-<?php
-		if(isset($_POST['enviar'])){
-	
-		require_once 'model/consulta.php';
-			$codigo=retornaUltimaConsulta();
-			if(!$codigo){
-				echo "<h2>Não há consultas cadastradas!";
-			}else{
-				$codigo++;
-				$resposta=cadastrarConsulta();
-				if(!$resposta){
-					echo "<h2>Falha na tentativa de cadastro!</h2>";
-				}else{
-					echo "<h2>Sua consulta foi cadastrada com sucesso!</h2>";
-				}
-			}
 
-		}	
+<?php 
+	if (isset($_POST['enviar'])) {
+		$idC=$_POST['consulta'];
+		$idA=$_POST['animal'];
+		$code=$_POST['cfmv'];
+		$Data=$_POST['data'];
+		$Hora=$_POST['horario'];
 		
-?>
-	</form>
+
+	
