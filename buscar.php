@@ -40,7 +40,7 @@
 	$tipo=$_GET['tipo'];
 	if ($tipo=="bovino") {
 		require_once 'model/Vaca.php';
-		$consulta=buscarVaca($busca);
+		$consulta=buscarBovino($busca);
 		if (!$consulta) {
 			echo "<h2>Nenhum bovino correspondente</h2>";
 		}else{
