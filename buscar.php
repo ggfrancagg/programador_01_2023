@@ -118,39 +118,7 @@ while ($linha=$consulta->fetch_assoc()) {
 	}
 		echo "</table>";
 			}
-		}else{
-
-		echo "<table>";
-				echo "<tr>";
-				echo "<th>Código</th>";
-				echo "<th>Nome</th>";
-				echo "<th>Raça</th>";
-				echo "<th>Data de nascimento</th>";
-				echo "<th>Sexo</th>";
-				echo "<th>Peso</th>";
-				echo "<th>Raça do Pai</th>";
-				echo "<th>Altura</th>";
-				echo "<th>Raça do Mãe</th>";
-				echo "<th>Alterar?</th>";
-				echo "</tr>";
-
-	while ($linha=$dados->fetch_assoc()) {
-		echo "<tr>";
-		echo "<td>".$linha['Identificacao_cav']."</td>";
-		echo "<td>".$linha['Nome_cav']."</td>";
-		echo "<td>".$linha['Raca_cav']."</td>";
-		echo "<td>".$linha['Datanasc_cav']."</td>";
-		echo "<td>".$linha['Sexo_cav']."</td>";
-		echo "<td>".$linha['Peso']."</td>";
-		echo "<td>".$linha['Racapai_cav']."</td>";
-		echo "<td>".$linha['Altura_cav']."</td>";
-		echo "<td>".$linha['Racamae_cav']."</td>";
-		echo "<td><form id='alterar' action='alterar.php' method='POST'><input type='hidden' name='Identificacao_cav' 
-			value='".$linha['Identificacao_cav']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
-		echo "</tr>";
-	}
-		echo "</table>";
-			}
+		
 		}else if ($tipo=='ovino') {
 			require_once 'model/Ovelha.php';
 
@@ -548,7 +516,7 @@ while ($linha=$consulta->fetch_assoc()) {
 			}
 		}
 	}
-	
+
 ?>
 <script src="js/mensagem.js"></script>
 
