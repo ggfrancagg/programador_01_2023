@@ -2,10 +2,11 @@
 require_once './persistence/Banco.php'; 
 
 
-function aplicarVermVaca($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm,$Identificacao_vac){ 
+function aplicarVermVaca($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$Identificacao_vac){ 
 	$banco=new Banco();
-	$sql="insert into vermifugo_vac values($ID_vermifugo,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proxima_verm')";
+	$sql="insert into vermifugo_vac(Id_verm,Nome_verm,Marca_verm,Lote_verm,Fabricacao_verm,Validade_verm,aplicacao_verm,Identificacao_vac) values($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm',$Identificacao_vac)";
 	$resp=$banco->executar($sql);
+	echo $sql;
 	if($resp){
 		return true;
 	}else{
@@ -14,10 +15,11 @@ function aplicarVermVaca($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabric
 }
 
 
-function aplicarVermCavalo($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm,$Identificacao_cav){ 
+function aplicarVermCavalo($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$Identificacao_cav){ 
 	$banco=new Banco();
-	$sql="insert into vermifugo_cav values($ID_vermifugo,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proxima_verm')";
+	$sql="insert into vermifugo_cav(Id_verm,Nome_verm,Marca_verm,Lote_verm,Fabricacao_verm,Validade_verm,aplicacao_verm,Identificacao_cav) values ($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm',$Identificacao_cav)";
 	$resp=$banco->executar($sql);
+	echo $sql;
 	if($resp){
 		return true;
 	}else{
@@ -25,9 +27,9 @@ function aplicarVermCavalo($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabr
 	}
 }
 
-function aplicarVermOvelha($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proxima_verm,$id_ovl){ 
+function aplicarVermOvelha($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$id_ovl){ 
 	$banco=new Banco();
-	$sql="insert into vermifugo_ovl values($ID_vermifugo,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proxima_verm')";
+	$sql="insert into vermifugo_ovl(Id_verm,Nome_verm,Marca_verm,Lote_verm,Fabricacao_verm,Validade_verm,aplicacao_verm,id_ovl) values($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm',$id_ovl)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -39,35 +41,54 @@ function aplicarVermOvelha($ID_vermifugo,$nome_verm,$marca_verm,$lote_verm,$fabr
 //CONTINUAR NUMERAÇÃO
 
 
-function ultimoVermCavalo($Id_verm){ 
+function ultimoVermCavalo(){ 
 	$banco=new Banco();
-	$sql="select Id_verm from vermifugo_cav where Id_verm=$Id_verm";
+	$sql="select max(Id_verm) from vermifugo_cav";
 	$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
 		}else{
-			return $consulta;
+			while ($linha=$consulta->fetch_assoc()) {
+		$codigo=$linha['max(Id_verm)'];
+	}
+		if ($codigo==NULL) {
+			$codigo=0;
+		} 
+			return $codigo;
 		}
 	}
 
-function ultimoVermVaca($Id_verm){ 
+function ultimoVermVaca(){ 
 	$banco=new Banco();
-	$sql="select Id_verm from vermifugo_vac where Id_verm=$Id_verm";
+	$sql="select max(Id_verm) from vermifugo_vac";
 	$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
 		}else{
-			return $consulta;
+			while ($linha=$consulta->fetch_assoc()) {
+		$codigo=$linha['max(Id_verm)'];
+	}
+		if ($codigo==NULL) {
+			$codigo=0;
+		} 
+			return $codigo;
 		}
 	}
-function ultimoVermOvelha($Id_verm){ 
+
+function ultimoVermOvelha(){ 
 	$banco=new Banco();
-	$sql="select Id_verm from vermifugo_ovl where Id_verm=$Id_verm";
+	$sql="select max(Id_verm) from vermifugo_ovl";
 	$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
 		}else{
-			return $consulta;
+			while ($linha=$consulta->fetch_assoc()) {
+		$codigo=$linha['max(Id_verm)'];
+	}
+		if ($codigo==NULL) {
+			$codigo=0;
+		} 
+			return $codigo;
 		}
 	}
 

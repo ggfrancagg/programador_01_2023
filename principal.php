@@ -29,9 +29,14 @@ $estalog=estaLogado();
 					<li><a href="listarOvelha.php" target="quadro" onclick="mostra()">Ovinos &#128017;</a></li>
 				</ol>
 			</li>
-			<li>Buscar Animal
+			<li>Buscar
 				<ol class="menu2">
-				<li><a href="buscar.php" target="quadro">Dados &#128269;</a></li>
+				<li><a href=".php" target="quadro">Bovinos &#128046;</a></li>
+				<li><a href=".php" target="quadro">Equinos &#128052;</a></li>
+				<li><a href=".php" target="quadro">Ovinos &#128017;</a></li>
+				<li><a href=".php" target="quadro">Veterinário</a></li>
+				<li><a href=".php" target="quadro">Vacina</a></li>
+				<li><a href=".php" target="quadro">Vermífugo</a></li>
 				</ol>
 			</li>
 			<li class="altura">Veterinário
@@ -43,13 +48,16 @@ $estalog=estaLogado();
 			</li>
 			<li>Saúde Animal
 				<ol class="menu2">
-					<li><a href="aplicacaoVacina.php" target="quadro">Vacinas &#128137;</a></li>
-					<li><a href="aplicacaoVermifugo.php" target="quadro">Vermifugação &#128138;</a></li>
+					<li><a href="aplicacaoVacina.php" target="quadro">Vacinas</a></li>
+					<li><a href="aplicacaoVermifugo.php" target="quadro">Vermifugação</a></li>
+					<li><a href="aplicacaoVermifugo.php" target="quadro">Consultas</a></li>
+
 				</ol>
 			</li>
 			<li>Informações
 				<ol class="menu2">
-				<li><a href="informacao.php" target="quadro">Curiosidades &#128269;</a></li>
+				<li><a href="informacao.php" target="quadro">Vacina</a></li>
+				<li><a href="informacaoVerm.php" target="quadro">Vermifugação</a></li>
 				</ol>
 			</li>
 			<li>Sair
