@@ -2,9 +2,9 @@
 
 require_once'./persistence/Banco.php';
 
-function cadastrarConsultaCav($ID_consulta,$Identificacao_cav,$CFMV,$Datacolsu_cav,$Horariocons_cav){
+function cadastrarConsultaCav($ID_consulta,$Identificacao_cav,$CFMV,$Datacolsu_cav,$Horariocons_cav,$prontuario_cav){
 	$banco=new Banco();
-	$sql="insert into consultar_cav values($ID_consulta,$Identificacao_cav,'$CFMV',$Datacolsu_cav,$Horariocons_cav)";
+	$sql="insert into consultar_cav values($ID_consulta,$Identificacao_cav,'$CFMV','$Datacolsu_cav','$Horariocons_cav','$prontuario_cav')";
 		$resp=$banco->executar($sql);
 		if (!$resp){ 
 			return false;

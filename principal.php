@@ -50,7 +50,7 @@ $estalog=estaLogado();
 				<ol class="menu2">
 					<li><a href="aplicacaoVacina.php" target="quadro">Vacinas</a></li>
 					<li><a href="aplicacaoVermifugo.php" target="quadro">Vermifugação</a></li>
-					<li><a href="aplicacaoVermifugo.php" target="quadro">Consultas</a></li>
+					<li><a href="cadastrarConsultas.php" target="quadro">Consultas</a></li>
 
 				</ol>
 			</li>
