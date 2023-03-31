@@ -375,7 +375,7 @@ h5{
 	text-shadow: none;
 	color: #593B16;
 }
-#animalcadasp{
+#animalcadas p{
 	font-size: 1.2rem;
 	color: #593B16;
 }
@@ -533,4 +533,8 @@ hr{
 	margin-left: 20vw;
 	margin-bottom: 1vh;
 	margin-top: 0.5vh;
+}
+
+#animalcadas p input.subm{
+	margin-left: 50vw;
 }

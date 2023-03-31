@@ -1,7 +1,7 @@
 <?php require_once 'cabecalho.php'; ?>
 
 <form id="vermifugo" action="aplicacaoVermifugo.php" method="POST">
-	<h1>&#8853; Vermifugação &#8853;</h1>
+	<h1>&#128138; Vermifugação &#128138;</h1>
 </br>
 <?php	
 
@@ -13,6 +13,7 @@
 	echo "</br>";
 	echo "<h3><input type='submit' value='Enviar'></h3>";
 	echo "</form>";
+	echo "</br>";
 
 if (isset($_POST['animal'])) {
 	$animal=$_POST['animal'];
@@ -33,7 +34,7 @@ if (isset($_POST['animal'])) {
 			echo "</option>";
 		}
 			echo "</select></p>";
-			echo "<input type='submit' id='botao' value='Escolher'>";
+			echo "<p><input class='subm' type='submit' value='Escolher'></p>";
 	}echo "</form>";
 	}else if ($animal=="ovelha") {
 		require_once "model/Ovelha.php";
@@ -51,7 +52,7 @@ if (isset($_POST['animal'])) {
 			echo "</option>";
 		}
 		echo "</select></p>";
-		echo "<input type='submit' id='botao' value='Escolher'>";
+		echo "<p><input class='subm' type='submit' value='Escolher'></p>";
 	}echo "</form>";
 	}else if ($animal=="vaca") {
 		require_once "model/Vaca.php";
@@ -69,7 +70,7 @@ if (isset($_POST['animal'])) {
 			echo "</option>";
 		}
 			echo "</select></p>";
-			echo "<input type='submit'id='botao' value='Escolher'>";
+			echo "<p><input class='subm' type='submit' value='Escolher'></p>";;
 		}echo "</form>";
 	}
 }

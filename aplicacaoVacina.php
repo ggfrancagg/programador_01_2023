@@ -1,7 +1,7 @@
 <?php require_once 'cabecalho.php';?>
 
-<form action="aplicacaoVacina.php" method="POST">
-	<h1>&#8853; Vacinação &#8853;</h1>
+<form id="vermifugo" action="aplicacaoVacina.php" method="POST">
+	<h1>&#128137; Vacinação &#128137;</h1>
 	<br>
 	<?php
 
@@ -13,6 +13,7 @@
 	echo "</br>";
 	echo "<h3><input type='submit'id='botao' value='Enviar'></h3>";
 	echo "</form>";
+	echo "</br>";
 
 if(isset($_POST['animal'])){
 	$animal=$_POST['animal'];
@@ -22,7 +23,7 @@ if(isset($_POST['animal'])){
 			echo "<form id='vac' action='aplicacaoVacina.php' method='POST'>";
 		$cavalo=listarCavalo();
 		if (!$cavalo) {
-			echo "<h2>Não existem animais cadastrados!</h2>";
+			echo "<h5>Não existem animais cadastrados!</h5>";
 		}else{
 			echo "<form id='animalcadas'>";
 			echo "<h2>Equinos Cadastrados: </h2>";
@@ -33,7 +34,7 @@ if(isset($_POST['animal'])){
 			echo "</option>";
 		}
 			echo "</select></p>";
-			echo "<h3><input type='submit' value='Escolher'></h3>";
+			echo "<p><input class='subm' type='submit' value='Escolher'></p>";
 			}echo "</form>";
 	}else if ($animal=="ovelha"){
 		require_once "model/Ovelha.php";
@@ -51,7 +52,7 @@ if(isset($_POST['animal'])){
 			echo "</option>";
 		}
 		echo "</select></p>";
-		echo "<h3><input type='submit'id='botao' value='Escolher'></h3>";
+		echo "<p><input class='subm' type='submit' value='Escolher'></p>";
 	}echo "</form>";
 	}else if ($animal=="vaca") {
 		require_once "model/Vaca.php";
@@ -68,7 +69,7 @@ if(isset($_POST['animal'])){
 			echo "</option>";
 		}
 			echo "</select></p>";
-			echo "<h3><input type='submit'id='botao' value='Escolher'></h3>";
+			echo "<p><input class='subm' type='submit' value='Escolher'></p>";
 		}echo "</form>";
 	}
 }
