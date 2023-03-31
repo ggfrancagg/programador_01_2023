@@ -5,7 +5,7 @@ require_once 'model/Usuario.php';
 $estalog=estaLogado();
 	if(!$estalog){ 
 	echo "<h5>Você não está logado, favor logar!</h5>";
-	echo "<a href='//localhost/profGabriel/ProjetoIntegrador/'>Voltar</a>";
+	echo "<h5><a href='//localhost/profGabriel/ProjetoIntegrador/'>Voltar</a></h5>";
 }else{ 
 ?>
 
@@ -57,7 +57,7 @@ $estalog=estaLogado();
 			<li>Informações
 				<ol class="menu2">
 				<li><a href="informacao.php" target="quadro">Vacina</a></li>
-				<li><a href="informacaoVerm.php" target="quadro">Vermifugação</a></li>
+				<li><a href="informacaoVerm.php" target="quadro">Outros cuidados</a></li>
 				</ol>
 			</li>
 			<li>Sair

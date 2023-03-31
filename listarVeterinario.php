@@ -1,33 +1,10 @@
 <?php
 require_once 'cabecalho.php';
-require_once 'model/Veterinario.php';
-
-$consulta=listarVet("");
-if(!$consulta){
-	echo "<h2>Não há nenhum Veterinario cadastrado!";
-}else{
-
-	echo "<table>";
-	echo "<tr>";
-	echo "<th>Identificação</th>";
-	echo "<th>Nome</th>";
-	echo "<th>Nascimento</th>";
-	echo "<th>Telefone</th>";
-	echo "</tr>";
-
-
-	while ($linha=$consulta->fetch_assoc()){
-		echo "<tr>";
-		echo "<td>".$linha['CFMV']."</td>";
-		echo "<td>".$linha['nome_vet']."</td>";
-		echo "<td>".$linha['nasc_vet']."</td>";
-		echo "<td>".$linha['tel_vet']."</td>";
-		echo "</tr>";
-	}
-		echo "</table>";
-}
-
-
 ?>
+<h1>Veterinários</h1>
+<a href="listarVeterinarioOvelha.php">Ovelha</a><br>
+ <a href="listarVeterinarioVaca.php">Vaca</a><br>
+<a href="listarVeterinarioCavalo.php">Cavalo</a><br>
+
 </body>
 </html>

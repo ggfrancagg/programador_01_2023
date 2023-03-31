@@ -1,10 +1,11 @@
 <?php
-
+require_once 'cabecalho.php';
 require_once'./persistence/Banco.php';
 
-function VeterinarioVac($CFMV,$Datavisita_vac,$Nomevet_vac,$Telefone_vac,$nascvet_vac,$Cuidados_vac,$Identificacao_vac){
+function VeterinarioVac($CFMV,$Datavisita_vac,$Nomevet_vac,$Telefonevet_vac,$nascvet_vac,$Cuidados_vac,$Casqueamento_vac,$Identificacao_vac){
 	$banco=new Banco();
-	$sql="insert into veterinario_cav values($CFMV,$Datavisita_vac,'$Nomevet_vac','$Telefone_vac',$nascvet_vac,'$Cuidados_vac',$Casqueamento_vac,$Identificacao_vac)";
+	$sql="insert into veterinario_vac values($CFMV,'$Datavisita_vac','$Nomevet_vac','$Telefonevet_vac','$nascvet_vac','$Cuidados_vac','$Casqueamento_vac',$Identificacao_vac)";
+	
 		$resp=$banco->executar($sql);
 		if (!$resp){
 			return false;
@@ -34,21 +35,21 @@ function listarVetVac($ordem){
   $banco=new Banco();
 		if($ordem==""||$ordem=="veterinario_vac"){
 			$sql="select * from veterinario_vac order by CFMV";
-		}else if($ordem==""){
+		}else if($ordem=="datavac"){
 			$sql="select * from veterinario_vac order by Datavisita_vac";
-		}else if($ordem==""){
+		}else if($ordem=="nomevac"){
 			$sql="select * from veterinario_vac order by Nomevet_vac";
-		}else if($ordem==""){
-			$sql="select * from veterinario_vac order by Telefone_vac";
-		}else if($ordem==""){
+		}else if($ordem=="telvac"){
+			$sql="select * from veterinario_vac order by Telefonevet_vac";
+		}else if($ordem=="nascvac"){
 			$sql="select * from veterinario_vac order by nascvet_vac";
-		}else if($ordem==""){
+		}else if($ordem=="cuidadosvac"){
 			$sql="select * from veterinario_vac order by  Cuidados_vac";
-		}else if($ordem==""){
+		}else if($ordem=="casvac"){
 			$sql="select * from veterinario_vac order by Casqueamento_vac";
-		}else if($ordem==""){
+		}else if($ordem=="idvac"){
 			$sql="select * from veterinario_vac order by Identificacao_vac";
-
+}
 		
 		$consulta=$banco->consultar($sql);
 		if(!$consulta){
@@ -70,5 +71,6 @@ function buscarVeterinarioVac($busca){
 		}
 	}
 
-
 ?>	
+</body> 
+	</html>

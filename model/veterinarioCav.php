@@ -4,7 +4,8 @@ require_once'./persistence/Banco.php';
 
 function VeterinarioCav($CFMV,$Tosa_cav,$Nomevet_cav,$Casqueamento_cav,$Telefone_cav,$Cuidados_cav,$Datavisi_cav,$Identificacao_cav){
 	$banco=new Banco();
-	$sql="insert into veterinario_cav values($CFMV,$Tosa_cav,'$Nomevet_cav',$Casqueamento_cav,'$Telefone_cav','$Cuidados_cav',$Datavisi_cav,$Identificacao_cav)";
+	$sql="insert into veterinario_cav values($CFMV,'$Tosa_cav','$Nomevet_cav','$Casqueamento_cav','$Telefone_cav','$Cuidados_cav','$Datavisi_cav',$Identificacao_cav)";
+
 		$resp=$banco->executar($sql);
 		if (!$resp){
 			return false;
@@ -34,22 +35,21 @@ function listarVetCav($ordem){
   $banco=new Banco();
 		if($ordem==""||$ordem=="veterinario_cav"){
 			$sql="select * from veterinario_cav order by CFMV";
-		}else if($ordem==""){
+		}else if($ordem=="tosa"){	
 			$sql="select * from veterinario_cav order by Tosa_cav";
-		}else if($ordem==""){
+		}else if($ordem=="nomevetcav"){
 			$sql="select * from veterinario_cav order by Nomevet_cav";
-		}else if($ordem==""){
+		}else if($ordem=="casc"){
 			$sql="select * from veterinario_cav order by Casqueamento_cav";
-		}else if($ordem==""){
+		}else if($ordem=="telcav"){
 			$sql="select * from veterinario_cav order by Telefonevet_cav";
-		}else if($ordem==""){
+		}else if($ordem=="cuidadoscav"){
 			$sql="select * from veterinario_cav order by  Cuidados_cav";
-		}else if($ordem==""){
+		}else if($ordem=="datavisi"){
 			$sql="select * from veterinario_cav order by Datavisi_cav";
-		}else if($ordem==""){
-			$sql="select * from veterinario_cav order by Identificacao_cav";
-
+		}
 		
+
 		$consulta=$banco->consultar($sql);
 		if(!$consulta){
 			return false;
@@ -69,6 +69,5 @@ function buscarVeterinarioCav($busca){
 			return $consulta;
 		}
 	}
-
 
 ?>	
