@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Mar-2023 às 22:14
+-- Generation Time: 31-Mar-2023 às 18:51
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -88,7 +88,8 @@ CREATE TABLE `consultar_cav` (
   `Identificacao_cav` int(11) NOT NULL,
   `CFMV` varchar(20) NOT NULL,
   `Datacolsu_cav` date NOT NULL,
-  `Horariocons_cav` time NOT NULL
+  `Horariocons_cav` time NOT NULL,
+  `prontuario_cav` text
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -102,7 +103,8 @@ CREATE TABLE `consultar_ovl` (
   `id_ovl` int(11) NOT NULL,
   `CFMV` varchar(20) NOT NULL,
   `Datacolsu_cav` date NOT NULL,
-  `Horariocons_cav` time NOT NULL
+  `Horariocons_cav` time NOT NULL,
+  `prontuario_ovl` text
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -116,7 +118,8 @@ CREATE TABLE `consultar_vac` (
   `Identificacao_vac` int(11) NOT NULL,
   `CFMV` varchar(20) NOT NULL,
   `Datacolsu_vac` date NOT NULL,
-  `Horariocons_vac` time NOT NULL
+  `Horariocons_vac` time NOT NULL,
+  `prontuario_vac` text
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
