@@ -55,7 +55,7 @@ function verificarVacinaOvelha($idvasc){
 	function buscarOvelha($busca){
 		$banco=new Banco();
 		$sql="select * from ovelhas where id_ovl='$busca' or nome_ovl like '%$busca%' or idade_ovl='$busca' or raca_ovl='$busca' or
-		Datanasc_cav='$busca' or Sexo_cav='$busca' or Peso like '%$busca%' or Racapai_cav like '%$busca%' or Altura_cav '%$busca%' or sexo_ovl like '%$busca%' or cor_ovl like '%$busca%' or peso_ovl '%$busca%'";
+		Datanasc_cav='$busca' or Sexo_cav='$busca' or Peso like '%$busca%' or Racapai_cav like '%$busca%' or Altura_cav like '%$busca%' or sexo_ovl like '%$busca%' or cor_ovl like '%$busca%' or peso_ovl '%$busca%'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;

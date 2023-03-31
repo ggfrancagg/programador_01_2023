@@ -61,7 +61,7 @@ function listarVetCav($ordem){
 function buscarVeterinarioCav($busca){
 		$banco=new Banco();
 		$sql="select * from veterinario_cav where CFMV='$busca' or Tosa_cav like '%$busca%' or Nomevet_cav='$busca' or Casqueamento_cav='$busca' or
-		Telefonevet_cav='$busca' or Cuidados_cav='$busca' or Datavisi_cav '%$busca%' or dentificacao_cav '%$busca%'";
+		Telefonevet_cav='$busca' or Cuidados_cav='$busca' or Datavisi_cav '%$busca%' or dentificacao_cav like '%$busca%'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;

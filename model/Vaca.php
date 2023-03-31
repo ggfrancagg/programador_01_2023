@@ -55,7 +55,7 @@ function verificarVacinaVaca($idvasc){
 	function buscarBovino($busca){
 		$banco=new Banco();
 		$sql="select * from vaca where Identificacao_vac='$busca' or Nome_vac like '%$busca%' or Raca_vac='$busca' or Peso_vac='$busca' or
-		Datanasc_vac='$busca' or Racamae_vac='$busca' or Racapai_vac like '%$busca%' or Altura_vac like '%$busca%' or sexo_vac '%$busca%'";
+		Datanasc_vac='$busca' or Racamae_vac='$busca' or Racapai_vac like '%$busca%' or Altura_vac like '%$busca%' or sexo_vac like '%$busca%'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;

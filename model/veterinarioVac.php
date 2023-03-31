@@ -58,6 +58,17 @@ function listarVetVac($ordem){
 		}
 	}
 
+function buscarVeterinarioVac($busca){
+		$banco=new Banco();
+		$sql="select * from veterinario_vac where CFMV='$busca' or Datavisita_vac like '%$busca%' or Nomevet_vac='$busca' or Casqueamento_cav='$busca' or
+		Telefonevet_vac='$busca' or nascvet_vac='$busca' or Casqueamento_vac like '%$busca%' or dentificacao_vac like '%$busca%'";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
 
 
 ?>	
