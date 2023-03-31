@@ -82,8 +82,6 @@ while ($linha=$consulta->fetch_assoc()) {
 		require_once 'model/Cavalo.php';
 		
 
-		$consulta=nomeOuCodigo($busca);
-		if (!$consulta) {
 			$consulta=buscarCavalo($busca);
 			if (!$consulta) {
 				echo "<h2>Nenhum equino correspondente!</h2>";
@@ -121,7 +119,6 @@ while ($linha=$consulta->fetch_assoc()) {
 		echo "</table>";
 			}
 		}else{
-			$dados=retornaDadosCavalo($consulta);
 
 		echo "<table>";
 				echo "<tr>";

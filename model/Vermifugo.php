@@ -105,4 +105,40 @@ function ultimoVermOvelha(){
 	}
 } 
 
+
+function buscarVermifugoVac($busca){
+		$banco=new Banco();
+		$sql="select * from vermifugo_vac where Id_verm='$busca' or Nome_verm like '%$busca%' or Lote_verm='$busca' or Fabricacao_verm='$busca' or
+		Validade_verm='$busca' or aplicacao_verm='$busca' or proximaapli_verm='$busca' or Identificacao_vac='$busca'";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function buscarVermifugoCav($busca){
+		$banco=new Banco();
+		$sql="select * from vermifugo_cav where Id_verm='$busca' or Nome_verm like '%$busca%' or Lote_verm='$busca' or Fabricacao_verm='$busca' or
+		Validade_verm='$busca' or aplicacao_verm='$busca' or proximaapli_verm='$busca' or Identificacao_cav='$busca'";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function buscarVermifugoOvl($busca){
+		$banco=new Banco();
+		$sql="select * from vermifugo_cav where Id_verm='$busca' or Nome_verm like '%$busca%' or Lote_verm='$busca' or Fabricacao_verm='$busca' or
+		Validade_verm='$busca' or aplicacao_verm='$busca' or proximaapli_verm='$busca' or id_ovl='$busca'";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
 ?>
