@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Mar-2023 às 19:34
+-- Generation Time: 31-Mar-2023 às 20:57
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -322,7 +322,7 @@ CREATE TABLE `vermifugo_cav` (
   `Nome_verm` varchar(30) DEFAULT NULL,
   `Marca_verm` varchar(30) DEFAULT NULL,
   `Lote_verm` varchar(40) DEFAULT NULL,
-  `Fabricação_verm` date DEFAULT NULL,
+  `Fabricacao_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
   `proximaapli_verm` date DEFAULT NULL,
@@ -340,7 +340,7 @@ CREATE TABLE `vermifugo_ovl` (
   `Nome_verm` varchar(30) DEFAULT NULL,
   `Marca_verm` varchar(30) DEFAULT NULL,
   `Lote_verm` varchar(40) DEFAULT NULL,
-  `Fabricação_verm` date DEFAULT NULL,
+  `Fabricacao_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
   `proximaapli_verm` date DEFAULT NULL,
@@ -358,7 +358,7 @@ CREATE TABLE `vermifugo_vac` (
   `Nome_verm` varchar(30) DEFAULT NULL,
   `Marca_verm` varchar(30) DEFAULT NULL,
   `Lote_verm` varchar(40) DEFAULT NULL,
-  `Fabricação_verm` date DEFAULT NULL,
+  `Fabricacao_verm` date DEFAULT NULL,
   `Validade_verm` date DEFAULT NULL,
   `aplicacao_verm` date DEFAULT NULL,
   `proximaapli_verm` date DEFAULT NULL,
