@@ -84,9 +84,9 @@ if(isset($_POST['cavalo'])){
 <form action="aplicacaoVermifugo.php" method="POST">
 >>>>>>> 89e9e2169c410e4a5f76ec41d7bb057e1b28fd73
 
-<p>Nome vermífugo: <input type="text" name="nome"  size="30" required></p>
-<p>Marca vermífugo: <input type="text" name="marca"  size="30" required></p>
-<p>Lote vermífugo: <input type="text" name="lote"  size="40" required></p>
+<p>Nome vermífugo: <input type="text" name="nome"  size="30" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
+<p>Marca vermífugo: <input type="text" name="marca"  size="30" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
+<p>Lote vermífugo: <input type="text" name="lote"  size="40" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
@@ -123,8 +123,8 @@ if(isset($_POST['ovelha'])){
 
 <form id="cadanimal">
 
-<p>Nome vermífugo: <input type="text" name="nome"  size="30" required></p>
-<p>Marca vermífugo: <input type="text" name="marca"  size="30" required></p>
+<p>Nome vermífugo: <input type="text" name="nome"  size="30" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
+<p>Marca vermífugo: <input type="text" name="marca"  size="30" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
 <p>Lote vermífugo: <input type="text" name="lote"  size="40" required></p>
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>

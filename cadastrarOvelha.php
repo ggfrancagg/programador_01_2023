@@ -15,14 +15,14 @@
 	<h1>&#128017; Cadastro de Ovino &#128017;</h1>
 	</br>
 	<p>Nome: 
-	<input type="text" name="nome" size="80" maxlength="80"></p>
+	<input type="text" name="nome" size="80" maxlength="80" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
 	<p>Idade: 
 	<input type="number" name="idade" size="75" maxlength="75" required></p>
 	<p>Sexo: 
    	<input type="radio" name="sexo" value="F"> Fêmea
 	<input type="radio" name="sexo" value="M"> Macho </p>
     <p>Raça: 
-    <input type="text" name="raca" size="75" maxlength="75" required></p>
+    <input type="text" name="raca" size="75" maxlength="75" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
     <p>Cor: 
     <input type="text" name="cor" required></p>
     <p>Peso:  

@@ -10,9 +10,9 @@
 
 	<h1>&#128046; Cadastro de Bovino &#128046;</h1>
 </br>
-<p>Nome: <input type="text" name="nome" size="40" maxlength="40" pattern="[A-Za-z]{2,40}" required></p>
+<p>Nome: <input type="text" name="nome" size="40" maxlength="40" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
 
-<p>Raça: <input type="text" name="raca" required></p>
+<p>Raça: <input type="text" name="raca" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
 	
 	
 
@@ -24,11 +24,11 @@
 		<input type="date" name="nasci" max="<?php echo date ("Y-m-d");?>" min="<?php echo criarMinimo(date("Y-m-d")); ?>" required></p>
 	
 
-<p> Raça da mãe: <input type="text" name="racamae" required></p>
-<p> Raça do pai: <input type="text" name="racapai" required></p>
+<p> Raça da mãe: <input type="text" name="racamae" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
+<p> Raça do pai: <input type="text" name="racapai" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
 
 
-<p>Altura: <input type="text" name="alt" pattern="[0-9]{1,8}\[0-9]{2}" placeholder="00.00" title="Somente números, centrimetros obrigatórios, ponto e não vírgula EX: 01.50 de altura" required>cm</p>
+<p>Altura: <input type="text" name="alt" pattern="[0-9]{1,8}\[0-9]{2}" placeholder="00.00" title="Somente números, centrimetros obrigatórios, ponto e não vírgula EX: 01.50 de altura" required> cm</p>
 
    
 
