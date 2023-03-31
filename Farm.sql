@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Mar-2023 às 22:02
+-- Generation Time: 31-Mar-2023 às 18:51
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -76,6 +76,51 @@ CREATE TABLE `cavalo` (
 
 INSERT INTO `cavalo` (`Identificacao_cav`, `Nome_cav`, `Raca_cav`, `Datanasc_cav`, `Sexo_cav`, `Peso`, `Racapai_cav`, `Altura_cav`, `Racamae_cav`) VALUES
 (1, 'Coquinho', 'Arabe', '2022-06-15', 'cavalho', 320.45, 'Arabe', 1.87, 'Arabe');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `consultar_cav`
+--
+
+CREATE TABLE `consultar_cav` (
+  `ID_consulta` int(11) NOT NULL,
+  `Identificacao_cav` int(11) NOT NULL,
+  `CFMV` varchar(20) NOT NULL,
+  `Datacolsu_cav` date NOT NULL,
+  `Horariocons_cav` time NOT NULL,
+  `prontuario_cav` text
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `consultar_ovl`
+--
+
+CREATE TABLE `consultar_ovl` (
+  `ID_consulta` int(11) NOT NULL,
+  `id_ovl` int(11) NOT NULL,
+  `CFMV` varchar(20) NOT NULL,
+  `Datacolsu_cav` date NOT NULL,
+  `Horariocons_cav` time NOT NULL,
+  `prontuario_ovl` text
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `consultar_vac`
+--
+
+CREATE TABLE `consultar_vac` (
+  `ID_consulta` int(11) NOT NULL,
+  `Identificacao_vac` int(11) NOT NULL,
+  `CFMV` varchar(20) NOT NULL,
+  `Datacolsu_vac` date NOT NULL,
+  `Horariocons_vac` time NOT NULL,
+  `prontuario_vac` text
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -182,7 +227,8 @@ CREATE TABLE `vaca` (
 --
 
 INSERT INTO `vaca` (`Identificacao_vac`, `Nome_vac`, `Raca_vac`, `Peso_vac`, `Datanasc_vac`, `Racamae_vac`, `Racapai_vac`, `Altura_vac`, `sexo_vac`) VALUES
-(1, 'Mimosa', 'Holandesa', 320.45, '2020-02-11', 'Holandesa', 'Holandes', 135.25, 'Feminino');
+(1, 'Mimosa', 'Holandesa', 320.45, '2020-02-11', 'Holandesa', 'Holandes', 135.25, 'Feminino'),
+(2, 'Costelinha', 'Brahman', 460.87, '2019-03-30', 'Holandesa', 'Brahman', 186.04, 'Masculino');
 
 -- --------------------------------------------------------
 
@@ -199,6 +245,18 @@ CREATE TABLE `vacina_cav` (
   `Identificacao_cav` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `vacina_cav`
+--
+
+INSERT INTO `vacina_cav` (`IDvac_cav`, `Dataapli_cav`, `proximaapli_cav`, `Tipovasc_cav`, `Nomevasc_cav`, `Identificacao_cav`) VALUES
+(1, '2003-03-30', '2023-05-30', 'Filhote', 'Tétano', 1),
+(2, '2023-02-28', '2024-02-28', 'Filhote', 'Influenza', 1),
+(3, '2003-01-10', '2024-03-10', 'Geral', 'Encefalomielite', 1),
+(4, '2023-01-10', '2024-01-10', 'Geral', 'Herpes Vírus', 1),
+(5, '2023-02-01', '2024-02-01', 'Geral', 'Raiva', 1),
+(6, '2023-03-03', '2024-02-03', 'Geral', 'Garrotilho', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -214,6 +272,15 @@ CREATE TABLE `vacina_ovl` (
   `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `vacina_ovl`
+--
+
+INSERT INTO `vacina_ovl` (`IDvasc_ovl`, `Nomevasc_ovl`, `Tipovasc_ovl`, `Dataapli_ovl`, `proximaapli_ovl`, `id_ovl`) VALUES
+(1, 'Raiva', 'Geral', '2022-05-20', '2023-05-20', 1),
+(2, 'Clostridiose', 'Filhote', '2022-03-20', '2023-03-20', 1),
+(3, 'Linfadenite caseosa', 'Geral', '2023-03-15', '2023-03-15', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -228,6 +295,21 @@ CREATE TABLE `vacina_vac` (
   `proximaapli_vac` date NOT NULL,
   `Identificacao_vac` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `vacina_vac`
+--
+
+INSERT INTO `vacina_vac` (`IDvasc_vac`, `Nomevasc_vac`, `Tipovasc_vac`, `Dataapli_vac`, `proximaapli_vac`, `Identificacao_vac`) VALUES
+(1, 'Febre Aftosa', 'Obrigatoria', '2023-03-20', '2024-03-20', 1),
+(2, 'B19: Brucelose ', 'Obrigatoria', '2023-01-20', '2029-03-20', 1),
+(3, 'Raiva', 'Obrigatoria', '2023-03-20', '2024-03-20', 1),
+(4, 'Febre Aftosa', 'Obrigatoria', '2022-11-20', '2023-11-20', 1),
+(5, 'Clostridioses', 'Geral', '2023-02-02', '2024-03-06', 1),
+(6, 'IBR/BVD', 'Geral', '2022-07-12', '2023-01-12', 1),
+(7, 'Leptospirose', 'Geral', '2023-01-13', '2024-07-09', 1),
+(8, 'Mastite', 'Geral', '2022-12-02', '2024-03-02', 1),
+(9, 'Pneumoenterite', 'Unica', '2023-02-02', '2023-02-02', 1);
 
 -- --------------------------------------------------------
 
@@ -286,21 +368,6 @@ CREATE TABLE `vermifugo_vac` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `veterinário_ovl`
---
-
-CREATE TABLE `veterinário_ovl` (
-  `CFMV` int(11) NOT NULL,
-  `nome_vet` varchar(60) NOT NULL,
-  `nasc_vet` date NOT NULL,
-  `tel_vet` varchar(30) NOT NULL,
-  `data_visita` date NOT NULL,
-  `cuidados_vet` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `veterinario_cav`
 --
 
@@ -313,6 +380,21 @@ CREATE TABLE `veterinario_cav` (
   `Cuidados_cav` varchar(100) DEFAULT NULL,
   `Datavisi_cav` date DEFAULT NULL,
   `Identificacao_cav` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `veterinario_ovl`
+--
+
+CREATE TABLE `veterinario_ovl` (
+  `CFMV` int(11) NOT NULL,
+  `nome_vet` varchar(60) NOT NULL,
+  `nasc_vet` date NOT NULL,
+  `tel_vet` varchar(30) NOT NULL,
+  `data_visita` date NOT NULL,
+  `cuidados_vet` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -355,6 +437,30 @@ ALTER TABLE `alimentacao_cav`
 --
 ALTER TABLE `cavalo`
   ADD PRIMARY KEY (`Identificacao_cav`);
+
+--
+-- Indexes for table `consultar_cav`
+--
+ALTER TABLE `consultar_cav`
+  ADD PRIMARY KEY (`ID_consulta`),
+  ADD KEY `Identificacao_cav` (`Identificacao_cav`),
+  ADD KEY `CFMV` (`CFMV`);
+
+--
+-- Indexes for table `consultar_ovl`
+--
+ALTER TABLE `consultar_ovl`
+  ADD PRIMARY KEY (`ID_consulta`),
+  ADD KEY `id_ovl` (`id_ovl`),
+  ADD KEY `CFMV` (`CFMV`);
+
+--
+-- Indexes for table `consultar_vac`
+--
+ALTER TABLE `consultar_vac`
+  ADD PRIMARY KEY (`ID_consulta`),
+  ADD KEY `Identificacao_vac` (`Identificacao_vac`),
+  ADD KEY `CFMV` (`CFMV`);
 
 --
 -- Indexes for table `ovelhas`
@@ -439,17 +545,17 @@ ALTER TABLE `vermifugo_vac`
   ADD KEY `Identificacao_vac` (`Identificacao_vac`);
 
 --
--- Indexes for table `veterinário_ovl`
---
-ALTER TABLE `veterinário_ovl`
-  ADD PRIMARY KEY (`CFMV`);
-
---
 -- Indexes for table `veterinario_cav`
 --
 ALTER TABLE `veterinario_cav`
   ADD PRIMARY KEY (`CFMV`),
   ADD KEY `Identificacao_cav` (`Identificacao_cav`);
+
+--
+-- Indexes for table `veterinario_ovl`
+--
+ALTER TABLE `veterinario_ovl`
+  ADD PRIMARY KEY (`CFMV`);
 
 --
 -- Indexes for table `veterinario_vac`

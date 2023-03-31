@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,35 +7,33 @@
 	<link rel="stylesheet" type="text/css" href="css/js.css">
 </head>
 <body>
-=======
+
 <?php require_once 'cabecalho.php'; ?>
->>>>>>> 6212e129b8348027d204f2798c203f345a574891
+
 
 <form action="cadastrarOvelha.php" method="POST" id="cadastro">
 	<h1>&#128017; Cadastro de Ovino &#128017;</h1>
 	</br>
 	<p>Nome: 
-	<input type="text" name="nome" size="80" maxlength="80"></p>
+	<input type="text" name="nome" size="80" maxlength="80" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
 	<p>Idade: 
 	<input type="number" name="idade" size="75" maxlength="75" required></p>
 	<p>Sexo: 
    	<input type="radio" name="sexo" value="F"> Fêmea
 	<input type="radio" name="sexo" value="M"> Macho </p>
     <p>Raça: 
-    <input type="text" name="raca" size="75" maxlength="75" required></p>
+    <input type="text" name="raca" size="75" maxlength="75" pattern="[A-Za-çÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ\s]{2,30}" required></p>
     <p>Cor: 
     <input type="text" name="cor" required></p>
     <p>Peso:  
     <input type="text" name="peso" required></p>
     <p>Altura:  
     <input type="text" name="altura" required></p>
-<<<<<<< HEAD
     <br>
-    <p><input type="submit" onclick="mostra()" class="enviar" value="Cadastrar"></p>
-=======
+
     </br>
-    <h3><input type="submit" class="enviar" value="Cadastrar"></h3>
->>>>>>> 6212e129b8348027d204f2798c203f345a574891
+    <h3><input type="submit" onclick="mostra()" class="enviar" value="Cadastrar"></h3>
+
 </form>
 <div id="load">
   <div>G</div>

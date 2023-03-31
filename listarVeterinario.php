@@ -13,8 +13,6 @@ if(!$consulta){
 	echo "<th>Nome</th>";
 	echo "<th>Nascimento</th>";
 	echo "<th>Telefone</th>";
-	echo "<th>Data da Visita</th>";
-	echo "<th>Cuidados do Veterinário</th>";
 	echo "</tr>";
 
 
@@ -24,8 +22,6 @@ if(!$consulta){
 		echo "<td>".$linha['nome_vet']."</td>";
 		echo "<td>".$linha['nasc_vet']."</td>";
 		echo "<td>".$linha['tel_vet']."</td>";
-		echo "<td>".$linha['data_visita']."</td>";
-		echo "<td>".$linha['cuidados_vet']."</td>";
 		echo "</tr>";
 	}
 		echo "</table>";

@@ -5,7 +5,6 @@ require_once'./persistence/Banco.php';
 function VeterinarioVac($CFMV,$Datavisita_vac,$Nomevet_vac,$Telefonevet_vac,$nascvet_vac,$Cuidados_vac,$Casqueamento_vac,$Identificacao_vac){
 	$banco=new Banco();
 	$sql="insert into veterinario_vac values($CFMV,'$Datavisita_vac','$Nomevet_vac','$Telefonevet_vac',$nascvet_vac,'$Cuidados_vac','$Casqueamento_vac',$Identificacao_vac)";
-	echo "$sql";
 		$resp=$banco->executar($sql);
 		if (!$resp){
 			return false;
@@ -21,7 +20,7 @@ function retornaUltimoVetVac(){
 	if (!$consulta) {
 		return false;
 	}else{	
-		while ($linha=$consulta->fetch_assoc()) {
+		while ($linha=$consulta->fetch_assoc()){
 		$codigo=$linha['max(Identificacao_vac)'];
 	}
 		if ($codigo==NULL){

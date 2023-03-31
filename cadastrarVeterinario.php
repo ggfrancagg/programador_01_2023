@@ -104,7 +104,14 @@
 		<p>Cuidados: <input type="text" name="cuidadosvac" size="80" maxlength="80" required></p>
 
 		<p> Data de visita:<input type="date" name="datevisitavac" required></p>
+<?php
 
+
+
+
+
+
+?>
 		<p><input type="hidden" name="identificacaovac" value="<?php echo $_POST['nomevetvac']; ?>"></p>
 		<h3><input type="submit" onclick="mostra()" name="enviar" value="Cadastrar"></h3>
 	

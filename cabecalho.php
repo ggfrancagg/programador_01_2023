@@ -26,4 +26,6 @@
 
 
 
-<body>
+<body onload="esconde()">
+
+<script src="js/mensagem.js"></script>
