@@ -37,7 +37,24 @@
 		<p>Telefone: <input type="text" name="telovl" placeholder="(99)9999-9999" required></p>
 
 		<p>Cuidados: <input type="text" name="cuidadosovl" size="80" maxlength="80" required></p>
+<?php
 
+require_once "model/Ovelha.php";
+$ovelha=listarOvelha();
+		if (!$ovelha) {
+			echo "<h2>Não existem animais cadastrados!</h2>";
+		}else{
+			echo "<h1>Ovinos Cadastrados: </h1>";
+			echo "<p>Escolha o animal: <select name='identificacaovl'>";
+		while($linha=$ovelha->fetch_assoc()){
+			echo "<option value='".$linha['id_ovl']."'>";
+			echo $linha['nome_ovl'];
+			echo "</option>";
+		}
+			echo "</select></p>";
+	}
+
+?>
 		<h3><input type="submit" onclick="mostra()" name="enviar" value="Cadastrar"></h3>
 	
 		
@@ -61,15 +78,32 @@
 	
 
 		<p> Nome do Veterinário: <input type="text" name="nomevetcav" size="80" maxlength="80" required></p>
-		<p>Tosa: <input type="text" name="tosa" required>
-		<p>Casqueamento: <input type="text" name="casc" required> </p>
+		<p>Tosa: <input type="date" name="tosa" required>
+		<p>Casqueamento: <input type="date" name="casc" required> </p>
 		<p>Telefone: <input type="text" name="tel" placeholder="(99)9999-9999" required></p>
 
 
 		<p>Cuidados: <input type="text" name="cuidadoscav" size="80" maxlength="80" required></p>
 
 	<p> Data de visita:<input type="date" name="datevisitacav" required></p>
+<?php
 
+require_once "model/cavalo.php";
+$cavalo=listarCavalo();
+		if (!$cavalo) {
+			echo "<h2>Não existem animais cadastrados!</h2>";
+		}else{
+			echo "<h1>Equinos Cadastrados: </h1>";
+			echo "<p>Escolha o animal: <select name='identificacaocav'>";
+		while($linha=$cavalo->fetch_assoc()){
+			echo "<option value='".$linha['Identificacao_cav']."'>";
+			echo $linha['Nome_cav'];
+			echo "</option>";
+		}
+			echo "</select></p>";
+	}
+
+?>
 
 		<h3><input type="submit" onclick="mostra()" name="enviar" value="Cadastrar"></h3>
 	
@@ -97,7 +131,7 @@
 
 		<p>Nome do Veterinário: <input type="text" name="nomevetvac" size="80" maxlength="80" required></p>
 		<p>Nascimento: <input type="date" name="nascivac" required>
-		<p>Casqueamento: <input type="text" name="cascvac" required> </p>
+		<p>Casqueamento: <input type="date" name="cascvac" required> </p>
 		<p>Telefone: <input type="text" name="telvac" placeholder="(99)9999-9999" required></p>
 
 
@@ -106,13 +140,22 @@
 		<p> Data de visita:<input type="date" name="datevisitavac" required></p>
 <?php
 
-
-
-
-
+require_once "model/Vaca.php";
+$vaca=listarVaca();
+		if (!$vaca) {
+			echo "<h2>Não existem animais cadastrados!</h2>";
+		}else{
+			echo "<h1>Bovinos Cadastrados: </h1>";
+			echo "<p>Escolha o animal: <select name='identificacaovac'>";
+		while($linha=$vaca->fetch_assoc()){
+			echo "<option value='".$linha['Identificacao_vac']."'>";
+			echo $linha['Nome_vac'];
+			echo "</option>";
+		}
+			echo "</select></p>";
+	}
 
 ?>
-		<p><input type="hidden" name="identificacaovac" value="<?php echo $_POST['nomevetvac']; ?>"></p>
 		<h3><input type="submit" onclick="mostra()" name="enviar" value="Cadastrar"></h3>
 	
 		
@@ -139,12 +182,13 @@ if(isset($_POST['nomevetovl'])){
 		$data_visita=$_POST['data'];
 		$tel_ovl=$_POST['telovl'];
 		$cuidados_vet=$_POST['cuidadosovl'];
+		$Identificacao_ovl=$_POST['identificacaovl'];
 
 		require_once 'model/Veterinario.php';
 		$CFMV=retornaUltimoVet();
 	if($CFMV>=0){
 		$CFMV++;
-		$resp=Veterinario($CFMV,$nome_vet,$nasc_vet,$tel_ovl,$data_visita,$cuidados_vet);
+		$resp=Veterinario($CFMV,$nome_vet,$nasc_vet,$tel_ovl,$data_visita,$cuidados_vet, $Identificacao_ovl);
 	if(!$resp){
 		echo "<h5>Erro na tentativa de cadastro!!!</h5>";
 	}else{
@@ -166,16 +210,17 @@ if(isset($_POST['nomevetcav'])){
 
 		$nome_vetcav=$_POST['nomevetcav'];
 		$tosa_vet=$_POST['tosa'];
-		$Casqueamento_cav['casc'];
-		$tel_vet['tel'];
+		$Casqueamento_cav=$_POST['casc'];
+		$tel_vet=$_POST['tel'];
 		$cuidados_vet=$_POST['cuidadoscav'];
 		$data_visita=$_POST['datevisitacav'];
+		$Identificacao_cav=$_POST['identificacaocav'];
 
 		require_once 'model/VeterinarioCav.php';
 		$CFMV=retornaUltimoVetCav();
 	if($CFMV>=0){
 		$CFMV++;
-		$resp=VeterinarioCav($CFMV,$nome_vetcav,$tosa_vet,$Casqueamento_visita,$tel_vet,$cuidados_vet,$data_visita);
+		$resp=VeterinarioCav($CFMV,$tosa_vet,$nome_vetcav,$Casqueamento_cav,$tel_vet,$cuidados_vet,$data_visita, $Identificacao_cav);
 	if(!$resp){
 		echo "<h5>Erro na tentativa de cadastro!!!</h5>";
 	}else{

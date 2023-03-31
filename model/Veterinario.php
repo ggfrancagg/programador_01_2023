@@ -2,13 +2,11 @@
 
 require_once'./persistence/Banco.php';
 
-function Veterinario($CFMV,$nome_vet,$nasc_vet,$tel_vet,$data_visita){
+function Veterinario($CFMV,$nome_vet,$nasc_vet,$tel_vet,$data_visita, $cuidados_vet, $id_ovl){
 	$banco=new Banco();
-<<<<<<< HEAD
-	$sql="insert into veterinario_ovl values($CFMV,'$nome_vet','$nasc_vet','$tel_vet','$data_visita','$cuidados_vet')";
-=======
-	$sql="insert into veterinario_ovl values($CFMV,'$nome_vet',$nasc_vet,'$tel_vet',$data_visita)";
->>>>>>> 9b484585cda730f76cc1d0bc4f5283487c68e378
+
+	$sql="insert into veterinario_ovl values($CFMV,'$nome_vet','$nasc_vet','$tel_vet','$data_visita','$cuidados_vet', $id_ovl)";
+	
 		$resp=$banco->executar($sql);
 		if (!$resp){ //se ñ possuir resposta
 			return false;
@@ -24,13 +22,10 @@ function retornaUltimoVet(){ //retornar o ultimo veterinario :D
 	if (!$consulta) {
 		return false;
 	}else{	
-<<<<<<< HEAD
+
 		while ($linha=$consulta->fetch_assoc()) {
 		$codigo=$linha['max(CFMV)'];
-=======
-		while ($linha=$consulta->fetch_assoc()){
-		$codigo=$linha['max(id_vet)'];
->>>>>>> 9b484585cda730f76cc1d0bc4f5283487c68e378
+
 	}
 		if ($codigo==NULL){
 			$codigo=0;
@@ -43,7 +38,7 @@ function retornaUltimoVet(){ //retornar o ultimo veterinario :D
 function listarVet($ordem){
   $banco=new Banco();
 		if($ordem==""||$ordem=="id"){
-			$sql="select * from veterinario_ovl order by CFMW";
+			$sql="select * from veterinario_ovl order by CFMV";
 		}else if($ordem=="nome"){
 			$sql="select * from veterinario_ovl order by nome_vet";
 		}else if($ordem=="nasc"){
