@@ -4,7 +4,7 @@ require_once'./persistence/Banco.php';
 
 function Veterinario($CFMV,$nome_vet,$nasc_vet,$tel_vet,$data_visita,$cuidados_vet){
 	$banco=new Banco();
-	$sql="insert into veterinario_ovl values($CFMV,'$nome_vet',$nasc_vet,$tel_vet,$data_visita,'$cuidados_vet')";
+	$sql="insert into veterinario_ovl values($CFMV,'$nome_vet','$nasc_vet','$tel_vet','$data_visita','$cuidados_vet')";
 		$resp=$banco->executar($sql);
 		if (!$resp){
 			return false;
@@ -15,17 +15,18 @@ function Veterinario($CFMV,$nome_vet,$nasc_vet,$tel_vet,$data_visita,$cuidados_v
 
 function retornaUltimoVet(){
 	$banco=new Banco();
-	$sql="select max(id_vet) from veterinario";
+	$sql="select max(CFMV) from veterinario_ovl";
 	$consulta=$banco->consultar($sql);
 	if (!$consulta) {
 		return false;
 	}else{	
 		while ($linha=$consulta->fetch_assoc()) {
-		$codigo=$linha['max(id_vet)'];
+		$codigo=$linha['max(CFMV)'];
 	}
 		if ($codigo==NULL){
 			$codigo=0;
 		} 
+		echo $codigo;
 			return $codigo;
 		}
 	}
