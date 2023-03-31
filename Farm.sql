@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Mar-2023 às 18:51
+-- Generation Time: 31-Mar-2023 às 19:34
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -394,7 +394,8 @@ CREATE TABLE `veterinario_ovl` (
   `nasc_vet` date NOT NULL,
   `tel_vet` varchar(30) NOT NULL,
   `data_visita` date NOT NULL,
-  `cuidados_vet` varchar(50) NOT NULL
+  `cuidados_vet` varchar(50) NOT NULL,
+  `id_ovl` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -555,7 +556,8 @@ ALTER TABLE `veterinario_cav`
 -- Indexes for table `veterinario_ovl`
 --
 ALTER TABLE `veterinario_ovl`
-  ADD PRIMARY KEY (`CFMV`);
+  ADD PRIMARY KEY (`CFMV`),
+  ADD KEY `id_ovl` (`id_ovl`);
 
 --
 -- Indexes for table `veterinario_vac`
