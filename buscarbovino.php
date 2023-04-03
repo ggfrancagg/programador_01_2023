@@ -1,12 +1,12 @@
 <?php require_once 'cabecalho.php';
 ?>
 
-<form action="buscar.php" method="GET">
+<form action="buscarbovino.php" method="GET">
 	<h1>Buscar</h1>
 	
 	<p><fieldset>
-		<legend>Buscar Bovino:</legend>
-			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128046;</p>
+		<legend>Buscar Bovino: </legend>
+			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128017;</p>
 		
 		</fieldset>
 </p>
@@ -32,21 +32,19 @@
 		require_once 'model/Vaca.php';
 		$consulta=buscarBovino($busca);
 		if (!$consulta) {
-			echo "<h2>Nenhum bovino correspondente</h2>";
+			echo "<h5>Nenhum bovino correspondente</h5>";
 		}else{
-			echo "<table>";
-			echo "<tr class='alt'>";
-			echo "<th>Código</th>";
-			echo "<th>Nome</th>";
-			echo "<th>Raça</th>";
-			echo "<th>Peso</th>";
-			echo "<th>Data de nascimento</th>";
-			echo "<th>Raça da Mãe</th>";
-			echo "<th>Raça do Pai</th>";
-			echo "<th>Altura</th>";
-			echo "<th>Sexo</th>";
-			echo "<th>Alterar?</th>";
-			echo "</tr>";
+			echo "<table id='listarbicho'>";
+		echo "<tr>";
+		echo "<th class='ident'> Identificação </th>";
+		echo "<th class='nome'> Nome</th>";
+		echo "<th class='raça'> Raça</th>";
+		echo "<th class='sexo'> Sexo </th>";
+		echo "<th class='data'> Data de nascimento</th>";
+		echo "<th class='raça'> Raça do Mãe </th>";
+		echo "<th class='raça'> Raça da Pai </th>";
+		echo "<th class='alt'> Altura </th>";	
+		echo "<th class='peso'> Peso </th>";
 
 
 
@@ -55,15 +53,13 @@ while ($linha=$consulta->fetch_assoc()) {
 			echo "<td>".$linha['Identificacao_vac']."</td>";
 			echo "<td>".$linha['Nome_vac']."</td>";
 			echo "<td>".$linha['Raca_vac']."</td>";
-			echo "<td>".$linha['Peso_vac']."</td>";
+			cho "<td>".$linha['sexo_vac']."</td>";	
 			echo "<td>".$linha['Datanasc_vac']."</td>";
 			echo "<td>".$linha['Racamae_vac']."</td>";
 			echo "<td>".$linha['Racapai_vac']."</td>";
 			echo "<td>".$linha['Altura_vac']."</td>";
-			echo "<td>".$linha['Altura_vac']."</td>";
-			echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Identificacao_vac' 
-			value='".$linha['Identificacao_vac']."'><input id='alt' type='submit' value='sim'></form></td>";
-			echo "</tr>";
+			echo "<td>".$linha['Peso_vac']."</td>";
+		  echo "</tr>";
 			}
 			echo "</table>";
 		}

@@ -12,7 +12,7 @@ if(!$consulta){
 	echo "<th class='ident'> Identificação </th>";
 	echo "<th class='nome'> Nome </th";
 	echo "<th class='raça'> Raça </th>";
-	echo "<th  class='sexo'> Sexo </th>";
+	echo "<th class='sexo'> Sexo </th>";
 	echo "<th class='data'> Data de nascimento </th>";
 	echo "<th class='raça'> Raça da Mãe </th>";
 	echo "<th class='raça'> Raça do Pai </th>";
