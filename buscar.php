@@ -30,7 +30,7 @@
   <div>D</div>
   <div>A</div>
   <div>O</div>
-  <div>L</div>
+  <div>L</div> 
 </div>
 
 <?php
