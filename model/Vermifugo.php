@@ -141,4 +141,17 @@ function buscarVermifugoVac($busca){
 			return $consulta;
 		}
 	}
+
+
+function listarVermifEquino($inicio,$fim){
+	$banco=new Banco();
+	$sql="select * from vermifugo_cav
+	where Id_verm>=$inicio and Id_verm<=$fim order by Id_verm";
+	$consulta=$banco->consultar($sql);
+	if(!$consulta){
+		return false;
+	}else{
+		return $consulta;
+	}
+}
 ?>
