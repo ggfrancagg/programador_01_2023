@@ -1,42 +1,20 @@
 <?php require_once 'cabecalho.php';?>
 
 <form action="buscarVermifugo.php" method="GET">
-	<h1>Buscar</h1>
+<?php require_once 'cabecalho.php';
+?>
 
-	<?php	
-
-	echo "<h2> Escolha qual animal deseja informações</h2>";
-	echo "</br>";
-	echo "<p><input type='radio'id='animal' name='animal' value='cavalo'> Equino ";
-	echo "<input type='radio'id='animal' name='animal' value='ovelha'> Ovino ";
-	echo "<input type='radio'id='animal' name='animal' value='vaca'> Bovino </p>";
-	echo "</br>";
-	echo "<h3><input type='submit' value='Enviar' onclick='mostra()'></h3>";
-	echo "</form>";
-	echo "</br>";
-
-if (isset($_POST['animal'])) {
-	$animal=$_POST['animal'];
-	require_once "model/Vermifugo.php";
-	if ($animal=="cavalo") {
-		require_once "model/cavalo.php";
-			echo "<form id='vermi' action='buscarVermifugo.php' method='POST'>";
-		$cavalo=listarCavalo();
-		if (!$cavalo) {
-			echo "<h5>Não existem animais cadastrados!</h5>";
-		}else{
-			echo "<form id='animalcadas'>";
-			echo "<h2>Equinos Cadastrados: </h2>";
-			echo "<p>Escolha o animal: <select name='cavalo'>";
-		while($linha=$cavalo->fetch_assoc()){
-			echo "<option value='".$linha['Identificacao_cav']."'>";
-			echo $linha['Nome_cav'];
-			echo "</option>";
-		}
-			echo "</select></p>";
-			echo "<p><input class='subm' type='submit' value='Escolher' onclick='mostra()'></p>";
-	}echo "</form>";
-	?>
+<form action="buscarVermifugo.php" method="GET">
+	<p><fieldset>
+		<legend><h1>Buscar Vermifugação:</h1></legend>
+			<p><input id="rad" type="radio" name="tipo" value="vermifugovac" required>Vermífugo Bovinos</p>
+			<p><input id="rad" type="radio" name="tipo" value="vermifugocav" required>Vermífugo Equinos</p>
+			<p><input id="rad" type="radio" name="tipo" value="vermifugoovl" required>Vermífugo Ovinos</p>
+			
+		</fieldset>
+</p>
+	<h3><input type="submit" onclick='mostra()' value="Buscar"></h3>
+</form>
 
 <div id="load">
   <div>G</div>
@@ -50,51 +28,117 @@ if (isset($_POST['animal'])) {
 
 <?php
 	
-	if(isset($_GET['busca'])){
-	$busca=$_GET['busca'];
+	if(isset($_GET['tipo'])){
 	$tipo=$_GET['tipo'];
-	if ($tipo=="cavalo") {
-		require_once 'model/cavalo.php';
-		$consulta=buscarVermifugoCav($busca);
-		if (!$consulta) {
-			echo "<h5>Nenhum bovino correspondente</h5>";
-		}else{
-			echo "<table id='listarbicho'>";
-		echo "<tr>";
-		echo "<th class='ident'> Identificação </th>";
-		echo "<th class='nome'> Nome</th>";
-		echo "<th class='raça'> Raça</th>";
-		echo "<th class='sexo'> Sexo </th>";
-		echo "<th class='data'> Data de nascimento</th>";
-		echo "<th class='raça'> Raça do Mãe </th>";
-		echo "<th class='raça'> Raça da Pai </th>";
-		echo "<th class='alt'> Altura </th>";	
-		echo "<th class='peso'> Peso </th>";
+	if ($tipo=='vermifugovac') {
+			require_once 'model/Vermifugo.php';
+			$consulta=buscarVermifugoVac($busca);
+			if (!$consulta) {
+				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
+			}else{
+				echo "<table>";
+				echo "<tr>";
+				echo "<th class='ident'> Identificação </th>";
+						echo "<th class='nome'>Nome do vermífugo</th>";
+						echo "<th class='raça'> Marca</th>";
+						echo "<th class='raça'> Lote </th>";
+						echo "<th class='data'> Data de fabricação</th>";
+						echo "<th class='data'> Data de validade</th>";
+						echo "<th class='data'> Data da aplicação </th>";
+						echo "<th class='data'> Próxima aplicação </th>";
+				echo "</tr>";
 
-
-
-while ($linha=$consulta->fetch_assoc()) {
-			echo "<tr class='alt'>";
-			echo "<tr>";
-		echo "<td>".$linha['Identificacao_cav']."</td>";
-		echo "<td>".$linha['Nome_cav']."</td>";
-		echo "<td>".$linha['Raca_cav']."</td>";
-		echo "<td>".$linha['Sexo_cav']."</td>";
-		echo "<td>".$linha['Datanasc_cav']."</td>";
-		echo "<td>".$linha['Racamae_cav']."</td>";
-		echo "<td>".$linha['Racapai_cav']."</td>";
-		echo "<td>".$linha['Altura_cav']."</td>";
-		echo "<td>".$linha['Peso']."</td>";
-		echo "</tr>";
-		echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Identificacao_vac' 
-			value='".$linha['Identificacao_vac']."'><input id='alt' type='submit' value='sim'></form></td>";
-			echo "</tr>";
+				
+		while($linha=$consulta->fetch_assoc()) {
+				echo "<tr>";
+					echo "<td>".$linha['ID_verm']."</td>";				
+					echo "<td>".$linha['nome_verm']."</td>";
+					echo "<td>".$linha['marca_verm']."</td>";
+					echo "<td>".$linha['lote_verm']."</td>";
+					echo "<td>".$linha['fabricacao_verm']."</td>";
+					echo "<td>".$linha['validade_verm']."</td>";
+					echo "<td>".$linha['aplicacao_verm']."</td>";
+					echo "<td>".$linha['proximaapli_verm']."</td>";
+				echo "</tr>";
+				}
+				echo "</table>";
 			}
-			echo "</table>";
+	}else if ($tipo=='vermifugocav') {
+			require_once 'model/Vermifugo.php';
+
+
+			$consulta=buscarVermifugoCav($busca);
+			if (!$consulta) {
+				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
+			}else{
+
+			echo "<table>";
+				echo "<tr>";
+				echo "<th class='ident'> Identificação </th>";
+						echo "<th class='nome'>Nome do vermífugo</th>";
+						echo "<th class='raça'> Marca</th>";
+						echo "<th class='raça'> Lote </th>";
+						echo "<th class='data'> Data de fabricação</th>";
+						echo "<th class='data'> Data de validade</th>";
+						echo "<th class='data'> Data da aplicação </th>";
+						echo "<th class='data'> Próxima aplicação </th>";
+				echo "</tr>";
+
+				
+		while($linha=$consulta->fetch_assoc()) {
+				echo "<tr>";
+					echo "<td>".$linha['ID_verm']."</td>";				
+					echo "<td>".$linha['nome_verm']."</td>";
+					echo "<td>".$linha['marca_verm']."</td>";
+					echo "<td>".$linha['lote_verm']."</td>";
+					echo "<td>".$linha['fabricacao_verm']."</td>";
+					echo "<td>".$linha['validade_verm']."</td>";
+					echo "<td>".$linha['aplicacao_verm']."</td>";
+					echo "<td>".$linha['proximaapli_verm']."</td>";
+				echo "</tr>";
+				}
+				echo "</table>";
+			}
+	}else if ($tipo=='vacinasovl') {
+			require_once 'model/Vermifugo.php';
+
+
+			$consulta=buscarVermifugoOvl($busca);
+			if (!$consulta) {
+				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
+			}else{
+
+				echo "<table>";
+				echo "<tr>";
+					echo "<th class='ident'> Identificação </th>";
+						echo "<th class='nome'>Nome do vermífugo</th>";
+						echo "<th class='raça'> Marca</th>";
+						echo "<th class='raça'> Lote </th>";
+						echo "<th class='data'> Data de fabricação</th>";
+						echo "<th class='data'> Data de validade</th>";
+						echo "<th class='data'> Data da aplicação </th>";
+						echo "<th class='data'> Próxima aplicação </th>";
+				echo "</tr>";
+
+				
+		while($linha=$consulta->fetch_assoc()) {
+				echo "<tr>";
+					echo "<td>".$linha['ID_verm']."</td>";				
+					echo "<td>".$linha['nome_verm']."</td>";
+					echo "<td>".$linha['marca_verm']."</td>";
+					echo "<td>".$linha['lote_verm']."</td>";
+					echo "<td>".$linha['fabricacao_verm']."</td>";
+					echo "<td>".$linha['validade_verm']."</td>";
+					echo "<td>".$linha['aplicacao_verm']."</td>";
+					echo "<td>".$linha['proximaapli_verm']."</td>";
+				echo "</tr>";
+		
+				}
+				echo "</table>";
+			}
+			}
 		}
-	}
-}
-?>
+		?>
 <script src="js/mensagem.js"></script>
 </body>
 </html>

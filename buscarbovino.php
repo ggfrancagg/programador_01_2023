@@ -25,8 +25,8 @@
 
 <?php
 	
-	if(isset($_GET['busca'])){
-	$busca=$_GET['busca'];
+	if(isset($_GET['buscar'])){
+	$busca=$_GET['buscar'];
 	$tipo=$_GET['tipo'];
 	if ($tipo=="bovino") {
 		require_once 'model/Vaca.php';
