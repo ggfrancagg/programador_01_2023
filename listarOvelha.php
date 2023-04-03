@@ -9,14 +9,14 @@ if(!$consulta){
 
 	echo "<table id='listarbicho'>";
 	echo "<tr>";
-	echo "<th> Identificação </th>";
-	echo "<th> Nome </th>";
-	echo "<th> Idade </th>";
-	echo "<th> Raça </th>";
-	echo "<th> Sexo </th>";
-	echo "<th> Cor </th>";
-	echo "<th> Peso </th>";
-	echo "<th> Altura </th>";
+	echo "<th class='ident'> Identificação </th>";
+	echo "<th class='nome'> Nome </th>";
+	echo "<th class='data'> Idade </th>";
+	echo "<th class='raça'> Raça </th>";
+	echo "<th class='sexo'> Sexo </th>";
+	echo "<th class='raça'> Cor </th>";
+	echo "<th class='peso'> Peso </th>";
+	echo "<th class='alt'> Altura </th>";
 	echo "</tr>";
 
 
