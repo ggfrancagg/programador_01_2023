@@ -7,7 +7,7 @@
 	<p><fieldset>
 
 		<legend>Buscar Bovino: </legend>
-			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128017;</p>
+			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128046;</p>
 
 		
 		</fieldset>
