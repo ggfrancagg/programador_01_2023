@@ -15,7 +15,6 @@
 
 	if(isset($_POST['animal'])){
 		$animal=$_POST['animal'];
-	//	require_once 'model/consultaCav.php';
 		if($animal=="cavalo"){
 			require_once "model/cavalo.php";
 			echo "<form action='cadastrarConsultas.php' method='POST'>";
@@ -46,7 +45,7 @@
 					echo "<h2>ovelhas cadastradas!";
 					echo "<p> Escolha a ovelha: <select name='ovelha'>";
 					while($linha=$ovelha->fetch_assoc()){
-					echo "<option value='".$linha['id_ovl']."1>";
+					echo "<option value='".$linha['id_ovl']."'>";
 					echo $linha['nome_ovl'];
 					echo "</option>";
 				}
@@ -95,13 +94,14 @@
 			<form action="cadastrarConsultas.php" method="POST">
 
 			<p>Digite o seu CFMV:
-				<input type="text" name="cfmv" size="20" maxlength="20" required></p>
+				<input type="text" name="cfmv_ovl" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
 				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
 				<input type="time" name="horario" required></p>
 			<p>Breve histórico:
 			<input type="text" name="historico" size="50" required>	
+			<input type="hidden" name="id_ovl" value="<?php echo $_POST['ovelha'];?>">
 			<p><input type="submit" value="registrar"></p>		
 			</form> 
 			<?php
@@ -111,18 +111,19 @@
 			<form action="cadastrarConsultas.php" method="POST">
 
 			<p>Digite o seu CFMV:
-				<input type="text" name="cfmv" size="20" maxlength="20" required></p>
+				<input type="text" name="cfmv_vac" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
 				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
 				<input type="time" name="horario" required></p>
 			<p>Breve histórico:
 			<input type="text" name="historico" size="50" required>	
+			<input type="hidden" name="id_vac" value="<?php echo $_POST['vaca'];?>">
 			<p><input type="submit" value="registrar"></p>		
 			</form>
 			<?php
 		}
-		if(isset($_POST['cfmv'])){
+		if(isset($_POST['Cfmv'])){
 			$cfmv=$_POST['cfmv'];
 			$data=$_POST['data'];
 			$horario=$_POST['horario'];
@@ -140,7 +141,42 @@
 				}
 			}
 		}
-
+		else if(isset($_POST['cfmv_ovl'])){
+			$cfmv_ovl=$_POST['cfmv_ovl'];
+			$data=$_POST['data'];
+			$horario=$_POST['horario'];
+			$historico=$_POST['historico'];
+			$id_ovl=$_POST['id_ovl'];
+			require_once 'model/consultaOvl.php';
+			$codigo=retornaUltimaConsultaOvl();
+			if($codigo>=0){
+				$codigo++;
+				$resposta=cadastrarConsultaOvl($codigo,$id_ovl,$cfmv_ovl,$data,$horario,$historico);
+				if(!$resposta){
+					echo "<h5>Falha na tentativa de cadastro!</h5>";
+				}else{
+					echo "<h5>Cadastro com sucesso!";
+				}
+			}
+		}
+else if(isset($_POST['cfmv_vac'])){
+			$cfmv=$_POST['cfmv_vac'];
+			$data=$_POST['data'];
+			$horario=$_POST['horario'];
+			$historico=$_POST['historico'];
+			$id_vac=$_POST['id_vac'];
+			require_once 'model/consultarVac.php';
+			$codigo=retornaUltimaConsultaVac();
+			if($codigo>=0){
+				$codigo++;
+				$resposta=cadastrarConsultaVac($codigo,$id_vac,$cfmv,$data,$horario,$historico);
+				if(!$resposta){
+					echo "<h5>Falha na tentativa de cadastro!</h5>";
+				}else{
+					echo "<h5>Cadastro com sucesso!";
+				}
+			}
+		}
 
 
 
