@@ -5,8 +5,10 @@
 	<h1>Buscar</h1>
 	
 	<p><fieldset>
+
 		<legend>Buscar Bovino: </legend>
 			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128017;</p>
+
 		
 		</fieldset>
 </p>
@@ -27,13 +29,12 @@
 	
 	if(isset($_GET['buscar'])){
 	$busca=$_GET['buscar'];
-	$tipo=$_GET['tipo'];
-	if ($tipo=="bovino") {
 		require_once 'model/Vaca.php';
 		$consulta=buscarBovino($busca);
 		if (!$consulta) {
 			echo "<h5>Nenhum bovino correspondente</h5>";
 		}else{
+
 			echo "<table id='listarbicho'>";
 		echo "<tr>";
 		echo "<th class='ident'> Identificação </th>";
@@ -64,7 +65,7 @@ while ($linha=$consulta->fetch_assoc()) {
 			echo "</table>";
 		}
 	}
-}
+
 ?>
 <script src="js/mensagem.js"></script>
 </body>

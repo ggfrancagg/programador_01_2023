@@ -28,10 +28,10 @@
 
 <?php
 	
-	if(isset($_GET['buscar'])){
-	$busca=$_GET['buscar'];
-	$tipo=$_GET['tipo'];
-	if ($tipo=='vacinasvac') {
+			if(isset($_GET['busca'])){
+			$busca=$_GET['busca'];
+			$tipo=$_GET['tipo'];
+			if ($tipo=='vacinasvac') {
 			require_once 'model/Vacina.php';
 
 
@@ -47,8 +47,7 @@
 				echo "<th>Tipo</th>";
 				echo "<th>Data aplicação</th>";
 				echo "<th>Proxima aplicação</th>";
-				echo "<th>Código Bovino</th>";
-				echo "<th>Alterar?</th>"; 	
+				echo "<th>Código Bovino</th>"; 	
 				echo "</tr>";
 
 				
@@ -57,12 +56,9 @@
 				echo "<td>".$linha['IDvasc_vac']."</td>";				
 				echo "<td>".$linha['Nomevasc_vac']."</td>";
 				echo "<td>".$linha['Tipovasc_vac']."</td>";
-				echo "<td>".$linha['tel_vet']."</td>";
 				echo "<td>".$linha['Dataapli_vac']."</td>";
 				echo "<td>".$linha['proximaapli_vac']."</td>";
 				echo "<td>".$linha['Identificacao_vac']."</td>";
-				echo "<td><form id='alterar' action='alterar.php' method='POST'><input type='hidden' name='IDvasc_vac' 
-			value='".$linha['IDvasc_vac']."'><input id='alt' type='submit' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}
@@ -84,8 +80,7 @@
 				echo "<th>Proxima aplicação</th>";
 				echo "<th>Tipo vacina</th>";
 				echo "<th>Nome vacina</th>";				
-				echo "<th>Código Equino</th>";
-				echo "<th>Alterar?</th>"; 
+				echo "<th>Código Equino</th>"; 
 				echo "</tr>";
 
 				
@@ -97,8 +92,6 @@
 				echo "<td>".$linha['Tipovasc_cav']."</td>";
 				echo "<td>".$linha['Nomevasc_cav']."</td>";				
 				echo "<td>".$linha['Identificacao_cav']."</td>";
-				echo "<td><form id='alterar' action='alterar.php' method='POST'><input type='hidden' name='IDvac_cav' 
-			value='".$linha['IDvac_cav']."'><input id='alt' type='submit' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}
@@ -121,7 +114,6 @@
 				echo "<th>Data aplicação</th>";
 				echo "<th>Proxima aplicação</th>";								
 				echo "<th>Código Ovino</th>";
-				echo "<th>Alterar?</th>"; 
 				echo "</tr>";
 
 				
@@ -133,8 +125,6 @@
 				echo "<td>".$linha['Dataapli_ovl']."</td>";
 				echo "<td>".$linha['proximaapli_ovl']."</td>";				
 				echo "<td>".$linha['id_ovl']."</td>";
-				echo "<td><form id='alterar' action='alterar.php' method='POST'><input type='hidden' name='IDvasc_ovl' 
-			value='".$linha['IDvasc_ovl']."'><input id='alt' type='submit' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}

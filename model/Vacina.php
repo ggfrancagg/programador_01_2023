@@ -94,7 +94,7 @@ function retornaUltimaVacVaca(){
 
 function buscarVacinaVac($busca){
 		$banco=new Banco();
-		$sql="select * from vacina_vac where IDvasc_vac='$busca' or Nomevasc_vac like '%$busca%' or Tipovasc_vac='$busca' or Casqueamento_cav='$busca' or
+		$sql="select * from vacina_vac where IDvasc_vac='$busca' or Nomevasc_vac like '%$busca%' or Tipovasc_vac='$busca' or
 		Dataapli_vac='$busca' or proximaapli_vac='$busca' or Identificacao_vac='$busca'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
@@ -108,7 +108,7 @@ function buscarVacinaVac($busca){
 
 function buscarVacinaCav($busca){
 		$banco=new Banco();
-		$sql="select * from vacina_cav where IDvac_cav='$busca' or Dataapli_cav like '%$busca%' or proximaapli_cav='$busca' or Casqueamento_cav='$busca' or
+		$sql="select * from vacina_cav where IDvac_cav='$busca' or Dataapli_cav like '%$busca%' or proximaapli_cav='$busca' or 
 		Tipovasc_cav='$busca' or Nomevasc_cav='$busca' or Identificacao_cav like '%$busca%'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
@@ -116,11 +116,15 @@ function buscarVacinaCav($busca){
 		}else{
 			return $consulta;
 		}
+	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> 93ab0b6dfa178b05632a38b1190d1cc091df5bf1
 
 	function buscarVacinaOvl($busca){
 		$banco=new Banco();
-		$sql="select * from vacina_ovl where IDvasc_ovl='$busca' or Nomevasc_ovl like '%$busca%' or Tipovasc_ovl='$busca' or Casqueamento_cav='$busca' or
+		$sql="select * from vacina_ovl where IDvasc_ovl='$busca' or Nomevasc_ovl like '%$busca%' or Tipovasc_ovl='$busca' or 
 		Dataapli_ovl='$busca' or proximaapli_ovl='$busca' or id_ovl='$busca'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
@@ -129,6 +133,7 @@ function buscarVacinaCav($busca){
 			return $consulta;
 		}
 	}
+
 ?>
 
 
