@@ -132,7 +132,7 @@ function buscarVermifugoVac($busca){
 
 	function buscarVermifugoOvl($busca){
 		$banco=new Banco();
-		$sql="select * from vermifugo_cav where Id_verm='$busca' or Nome_verm like '%$busca%' or Lote_verm='$busca' or Fabricacao_verm='$busca' or
+		$sql="select * from vermifugo_ovl where Id_verm='$busca' or Nome_verm like '%$busca%' or Lote_verm='$busca' or Fabricacao_verm='$busca' or
 		Validade_verm='$busca' or aplicacao_verm='$busca' or proximaapli_verm='$busca' or id_ovl='$busca'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
