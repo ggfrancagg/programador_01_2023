@@ -31,7 +31,7 @@ $estalog=estaLogado();
 			</li>
 			<li>Buscar
 				<ol class="menu2">
-				<li><a href=".php" target="quadro">Bovinos &#128046;</a></li>
+				<li><a href="buscarbovino.php" target="quadro">Bovinos &#128046;</a></li>
 				<li><a href=".php" target="quadro">Equinos &#128052;</a></li>
 				<li><a href=".php" target="quadro">Ovinos &#128017;</a></li>
 				<li><a href=".php" target="quadro">Veterinário</a></li>
