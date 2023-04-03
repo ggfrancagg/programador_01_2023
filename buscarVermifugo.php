@@ -1,10 +1,9 @@
 <?php require_once 'cabecalho.php';?>
 
-<form action="buscarVermifugo.php" method="GET">
-<?php require_once 'cabecalho.php';
-?>
 
 <form action="buscarVermifugo.php" method="GET">
+	<h1>Buscar</h1>
+	<p><input type="search" name="busca" placeholder="Nome ou Numero de identificação" required></p>
 	<p><fieldset>
 		<legend><h1>Buscar Vermifugação:</h1></legend>
 			<p><input id="rad" type="radio" name="tipo" value="vermifugovac" required>Vermífugo Bovinos</p>
@@ -30,8 +29,10 @@
 	
 	if(isset($_GET['tipo'])){
 	$tipo=$_GET['tipo'];
+	$busca=$_GET['busca'];
 	if ($tipo=='vermifugovac') {
 			require_once 'model/Vermifugo.php';
+
 			$consulta=buscarVermifugoVac($busca);
 			if (!$consulta) {
 				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
@@ -51,12 +52,12 @@
 				
 		while($linha=$consulta->fetch_assoc()) {
 				echo "<tr>";
-					echo "<td>".$linha['ID_verm']."</td>";				
-					echo "<td>".$linha['nome_verm']."</td>";
-					echo "<td>".$linha['marca_verm']."</td>";
-					echo "<td>".$linha['lote_verm']."</td>";
-					echo "<td>".$linha['fabricacao_verm']."</td>";
-					echo "<td>".$linha['validade_verm']."</td>";
+					echo "<td>".$linha['Id_verm']."</td>";				
+					echo "<td>".$linha['Nome_verm']."</td>";
+					echo "<td>".$linha['Marca_verm']."</td>";
+					echo "<td>".$linha['Lote_verm']."</td>";
+					echo "<td>".$linha['Fabricacao_verm']."</td>";
+					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
 				echo "</tr>";
@@ -87,19 +88,19 @@
 				
 		while($linha=$consulta->fetch_assoc()) {
 				echo "<tr>";
-					echo "<td>".$linha['ID_verm']."</td>";				
-					echo "<td>".$linha['nome_verm']."</td>";
-					echo "<td>".$linha['marca_verm']."</td>";
-					echo "<td>".$linha['lote_verm']."</td>";
-					echo "<td>".$linha['fabricacao_verm']."</td>";
-					echo "<td>".$linha['validade_verm']."</td>";
+					echo "<td>".$linha['Id_verm']."</td>";				
+					echo "<td>".$linha['Nome_verm']."</td>";
+					echo "<td>".$linha['Marca_verm']."</td>";
+					echo "<td>".$linha['Lote_verm']."</td>";
+					echo "<td>".$linha['Fabricacao_verm']."</td>";
+					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
 				echo "</tr>";
 				}
 				echo "</table>";
 			}
-	}else if ($tipo=='vacinasovl') {
+	}else if ($tipo=='vermifugoovl') {
 			require_once 'model/Vermifugo.php';
 
 
@@ -123,12 +124,12 @@
 				
 		while($linha=$consulta->fetch_assoc()) {
 				echo "<tr>";
-					echo "<td>".$linha['ID_verm']."</td>";				
-					echo "<td>".$linha['nome_verm']."</td>";
-					echo "<td>".$linha['marca_verm']."</td>";
-					echo "<td>".$linha['lote_verm']."</td>";
-					echo "<td>".$linha['fabricacao_verm']."</td>";
-					echo "<td>".$linha['validade_verm']."</td>";
+						echo "<td>".$linha['Id_verm']."</td>";				
+					echo "<td>".$linha['Nome_verm']."</td>";
+					echo "<td>".$linha['Marca_verm']."</td>";
+					echo "<td>".$linha['Lote_verm']."</td>";
+					echo "<td>".$linha['Fabricacao_verm']."</td>";
+					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
 				echo "</tr>";
