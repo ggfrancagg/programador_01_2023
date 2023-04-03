@@ -6,7 +6,7 @@
 	
 	<p><fieldset>
 		<legend>Buscar Equino:</legend>
-			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128052;</p>
+			<p><input id="busca" type="search" name="busca" placeholder="Nome, ID ou raça" required> &#128052;</p>
 		
 		</fieldset>
 </p>
@@ -26,11 +26,9 @@
 <?php
 
 
-		if(isset($_GET['buscar'])){
-		$busca=$_GET['buscar'];
-		$tipo=$_GET['tipo'];
-		if ($tipo=="equino") {
-
+		if(isset($_GET['busca'])){
+		$busca=$_GET['busca'];
+	
 		require_once 'model/Cavalo.php';
 
 			$consulta=buscarCavalo($busca);
@@ -67,8 +65,6 @@ while ($linha=$consulta->fetch_assoc()) {
 		echo "</table>";
 			}
 		}
-	}
-
 
 ?>
 <script src="js/mensagem.js"></script>

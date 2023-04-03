@@ -28,8 +28,8 @@
 
 <?php
 	
-	if(isset($_GET['buscar'])){
-	$busca=$_GET['buscar'];
+	if(isset($_GET['busca'])){
+	$busca=$_GET['busca'];
 	$tipo=$_GET['tipo'];
 	if ($tipo=='veterinariocav') {
 			require_once 'model/veterinarioCav.php';

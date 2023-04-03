@@ -97,9 +97,9 @@
 			<p>Digite o seu CFMV:
 				<input type="text" name="cfmv_ovl" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
-				<input type="date" name="dataovl" max="<?php Echo date("Y-m-d"); ?>" required> </p>
+				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
-				<input type="time" name="horarioovl" required></p>
+				<input type="time" name="horario" required></p>
 			<p>Breve histórico:
 			<input type="text" name="historico" size="50" required>	
 			<input type="hidden" name="id_ovl" value="<?php echo $_POST['ovelha'];?>">
@@ -114,9 +114,9 @@
 			<p>Digite o seu CFMV:
 				<input type="text" name="cfmv_vac" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
-				<input type="date" name="datavaca" max="<?php Echo date("Y-m-d"); ?>" required> </p>
+				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
-				<input type="time" name="horariovaca" required></p>
+				<input type="time" name="horario" required></p>
 			<p>Breve histórico:
 			<input type="text" name="historico" size="50" required>	
 			<input type="hidden" name="id_vac" value="<?php echo $_POST['vaca'];?>">
@@ -124,7 +124,7 @@
 			</form>
 			<?php
 		}
-		if(isset($_POST['Cfmv'])){
+		if(isset($_POST['cfmv'])){
 			$cfmv=$_POST['cfmv'];
 			$data=$_POST['data'];
 			$horario=$_POST['horario'];
