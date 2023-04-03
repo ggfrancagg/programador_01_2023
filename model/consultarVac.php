@@ -2,9 +2,9 @@
 
 require_once'./persistence/Banco.php';
 
-function cadastrarConsultaVac($ID_consulta,$Identificacao_vac,$CFMV,$Datacolsu_vac,$Horariocons_vac){
+function cadastrarConsultaVac($ID_consulta,$Identificacao_vac,$CFMV,$Datacolsu_vac,$Horariocons_vac,$prontuario_vac){
 	$banco=new Banco();
-	$sql="insert into consultar_vac values($ID_consulta,$Identificacao_vac,'$CFMV',$Datacolsu_vac,$Horariocons_vac)";
+	$sql="insert into consultar_vac values($ID_consulta,$Identificacao_vac,'$CFMV','$Datacolsu_vac','$Horariocons_vac','$prontuario_vac')";
 		$resp=$banco->executar($sql);
 		if (!$resp){ 
 			return false;

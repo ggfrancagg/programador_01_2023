@@ -15,17 +15,17 @@
 
 	if(isset($_POST['animal'])){
 		$animal=$_POST['animal'];
-	//	require_once 'model/consultaCav.php';
+	  require_once "model/consultaCav.php";
 		if($animal=="cavalo"){
 			require_once "model/cavalo.php";
-			echo "<form action='cadastrarConsultas.php' method='POST'>";
+			echo "<form action='Cadastrarconsultas.php' method='POST'>";
 			$cavalo=listarCavalo();
 			if(!$cavalo) {
-				echo "<h2>Não tem cavalos cadastrados!</h2>";
+				echo "<h2>Não existem animais cadastrados!</h2>";
 			}else{
 				echo "<form>";
-				echo "<h2> Cavalos cadastrados!</h2>";
-				echo "<p>Escolha o Cavalo:<select name='cavalo'>";
+				echo "<h2>Equinos cadastrados:</h2>";
+				echo "<p>Escolha o animal:<select name='cavalo'>";
 				while ($linha=$cavalo->fetch_assoc()) {
 				echo "<option value='".$linha['Identificacao_cav']."'>";
 				echo $linha['Nome_cav'];
@@ -36,21 +36,21 @@
 				}echo "</form>";
 			}else if
 			($animal=="ovelha"){
-				require_once "model/ovelha.php";
-				echo "<form action='cadastrarConsultas.php' method='POST'>";
+				require_once "model/Ovelha.php";
+				echo "<form action='Cadastrarconsultas.php' method='POST'>";
 				$ovelha=listarOvelha();
 				if(!$ovelha){
-					echo "<h2> Não existen ovelhas cadastradas!</h2>";
+					echo "<h2> Não existem animais cadastrados!</h2>";
 				}else{
 					echo "<form>";
-					echo "<h2>ovelhas cadastradas!";
-					echo "<p> Escolha a ovelha: <select name='ovelha'>";
+					echo "<h2>Ovinos cadastrados:</h2>";
+					echo "<p> Escolha o animal: <select name='ovelha'>";
 					while($linha=$ovelha->fetch_assoc()){
-					echo "<option value='".$linha['id_ovl']."1>";
+					echo "<option value='".$linha['id_ovl']."'>";
 					echo $linha['nome_ovl'];
 					echo "</option>";
 				}
-				echo "</select>";
+				echo "</select></p>";
 				echo "<h3> <input type='submit' value='Escolher'></h3>";
 			}echo "</form>";
 		}else if($animal=="vaca"){
@@ -58,10 +58,11 @@
 			echo "<form action='cadastrarConsultas.php' method='POST'";
 			$vaca=listarVaca();
 			if(!$vaca){
-				echo "<h2>Não tem vacas cadastradas!";
+				echo "<h2>Não existem animais cadastrados!</h2>";
 			}else{
-				echo "<h2>Vacas cadastradas: </h2>";
-				echo "<p> Escola a vaca: <select name='vaca'>";
+				echo "<form>";
+				echo "<h2> Bovinos cadastrados: </h2>";
+				echo "<p> Escolha o animal: <select name='vaca'>";
 				while ($linha=$vaca->fetch_assoc()) {
 				echo "<option value='".$linha['Identificacao_vac']."'>";
 				echo $linha['Nome_vac'];
@@ -85,7 +86,7 @@
 				<input type="time" name="horario" required></p>
 			<p>Breve histórico:
 			<input type="text" name="historico" size="50" required>
-			<input type="hidden" name="id_cav" value="<?php echo $_POST['cavalo'];?>">	
+			<input type="hidden" name="Identificacao_cav" value="<?php echo $_POST['cavalo'];?>">	
 			<p><input type="submit" value="registrar"></p>		
 			</form>
 			<?php 
@@ -95,13 +96,14 @@
 			<form action="cadastrarConsultas.php" method="POST">
 
 			<p>Digite o seu CFMV:
-				<input type="text" name="cfmv" size="20" maxlength="20" required></p>
+				<input type="text" name="cfmvovl" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
-				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
+				<input type="date" name="dataovl" max="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
-				<input type="time" name="horario" required></p>
+				<input type="time" name="horarioovl" required></p>
 			<p>Breve histórico:
-			<input type="text" name="historico" size="50" required>	
+			<input type="text" name="historicoovl" size="50" required>
+			<input type="hidden" name="id_ovl" value="<?php echo $_POST['ovelha'];?>">		
 			<p><input type="submit" value="registrar"></p>		
 			</form> 
 			<?php
@@ -111,13 +113,14 @@
 			<form action="cadastrarConsultas.php" method="POST">
 
 			<p>Digite o seu CFMV:
-				<input type="text" name="cfmv" size="20" maxlength="20" required></p>
+				<input type="text" name="cfmvvaca" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
-				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
+				<input type="date" name="datavaca" max="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
-				<input type="time" name="horario" required></p>
+				<input type="time" name="horariovaca" required></p>
 			<p>Breve histórico:
-			<input type="text" name="historico" size="50" required>	
+			<input type="text" name="historicovaca" size="50" required>	
+			<input type="hidden" name="Identificacao_vac" value="<?php echo $_POST['vaca'];?>">	
 			<p><input type="submit" value="registrar"></p>		
 			</form>
 			<?php
@@ -127,7 +130,7 @@
 			$data=$_POST['data'];
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
-			$id_cav=$_POST['id_cav'];
+			$id_cav=$_POST['Identificacao_cav'];
 			require_once 'model/consultaCav.php';
 			$codigo=retornaUltimaConsultaCav();
 			if($codigo>=0){
@@ -141,7 +144,42 @@
 			}
 		}
 
-
+if(isset($_POST['cfmvovl'])){
+			$cfmvovl=$_POST['cfmvovl'];
+			$dataovl=$_POST['dataovl'];
+			$horarioovl=$_POST['horarioovl'];
+			$historicoovl=$_POST['historicoovl'];
+			$id_ovl=$_POST['id_ovl'];
+			require_once 'model/consultaOvl.php';
+			$codigo=retornaUltimaConsultaOvl();
+			if($codigo>=0){
+				$codigo++;
+				$resposta=cadastrarConsultaOvl($codigo,$id_ovl,$cfmvovl,$dataovl,$horarioovl,$historicoovl);
+				if(!$resposta){
+					echo "<h5>Falha na tentativa de cadastro!</h5>";
+				}else{
+					echo "<h5>Cadastro com sucesso!";
+				}
+			}
+		}
+		if(isset($_POST['cfmvvaca'])){
+			$cfmvvaca=$_POST['cfmvvaca'];
+			$datavaca=$_POST['datavaca'];
+			$horariovaca=$_POST['horariovaca'];
+			$historicovaca=$_POST['historicovaca'];
+			$Identificacao_vac=$_POST['Identificacao_vac'];
+			require_once 'model/consultarVac.php';
+			$codigo=retornaUltimaConsultaVac();
+			if($codigo>=0){
+				$codigo++;
+				$resposta=cadastrarConsultaVac($codigo,$Identificacao_vac,$cfmvvaca,$datavaca,$horariovaca,$historicovaca);
+				if(!$resposta){
+					echo "<h5>Falha na tentativa de cadastro!</h5>";
+				}else{
+					echo "<h5>Cadastro com sucesso!";
+				}
+			}
+		}
 
 
 
