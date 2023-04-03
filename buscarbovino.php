@@ -1,12 +1,12 @@
 <?php require_once 'cabecalho.php';
 ?>
 
-<form action="buscar.php" method="GET">
+<form action="buscarbovino.php" method="GET">
 	<h1>Buscar</h1>
 	
 	<p><fieldset>
 		<legend>Buscar Bovino:</legend>
-			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128046;</p>
+			<p><input id="busca" type="search" name="buscar" placeholder="Nome, ID ou raça" required> &#128046;</p>
 		
 		</fieldset>
 </p>
@@ -27,8 +27,6 @@
 	
 	if(isset($_GET['buscar'])){
 	$busca=$_GET['buscar'];
-	$tipo=$_GET['tipo'];
-	if ($tipo=="bovino") {
 		require_once 'model/Vaca.php';
 		$consulta=buscarBovino($busca);
 		if (!$consulta) {
@@ -45,7 +43,6 @@
 			echo "<th>Raça do Pai</th>";
 			echo "<th>Altura</th>";
 			echo "<th>Sexo</th>";
-			echo "<th>Alterar?</th>";
 			echo "</tr>";
 
 
@@ -61,14 +58,12 @@ while ($linha=$consulta->fetch_assoc()) {
 			echo "<td>".$linha['Racapai_vac']."</td>";
 			echo "<td>".$linha['Altura_vac']."</td>";
 			echo "<td>".$linha['Altura_vac']."</td>";
-			echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Identificacao_vac' 
-			value='".$linha['Identificacao_vac']."'><input id='alt' type='submit' value='sim'></form></td>";
 			echo "</tr>";
 			}
 			echo "</table>";
 		}
 	}
-}
+
 ?>
 <script src="js/mensagem.js"></script>
 </body>
