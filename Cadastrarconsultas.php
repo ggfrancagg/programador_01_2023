@@ -15,11 +15,7 @@
 
 	if(isset($_POST['animal'])){
 		$animal=$_POST['animal'];
-<<<<<<< HEAD
-	  require_once "model/consultaCav.php";
-=======
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
-		if($animal=="cavalo"){
+	  	if($animal=="cavalo"){
 			require_once "model/cavalo.php";
 			echo "<form action='Cadastrarconsultas.php' method='POST'>";
 			$cavalo=listarCavalo();
@@ -99,23 +95,14 @@
 			<form action="cadastrarConsultas.php" method="POST">
 
 			<p>Digite o seu CFMV:
-<<<<<<< HEAD
-				<input type="text" name="cfmvovl" size="20" maxlength="20" required></p>
-=======
 				<input type="text" name="cfmv_ovl" size="20" maxlength="20" required></p>
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
 			<p>Escolhe a data da consulta:
 				<input type="date" name="dataovl" max="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
 				<input type="time" name="horarioovl" required></p>
 			<p>Breve histórico:
-<<<<<<< HEAD
-			<input type="text" name="historicoovl" size="50" required>
-			<input type="hidden" name="id_ovl" value="<?php echo $_POST['ovelha'];?>">		
-=======
 			<input type="text" name="historico" size="50" required>	
 			<input type="hidden" name="id_ovl" value="<?php echo $_POST['ovelha'];?>">
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
 			<p><input type="submit" value="registrar"></p>		
 			</form> 
 			<?php
@@ -125,23 +112,14 @@
 			<form action="cadastrarConsultas.php" method="POST">
 
 			<p>Digite o seu CFMV:
-<<<<<<< HEAD
-				<input type="text" name="cfmvvaca" size="20" maxlength="20" required></p>
-=======
 				<input type="text" name="cfmv_vac" size="20" maxlength="20" required></p>
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
 			<p>Escolhe a data da consulta:
 				<input type="date" name="datavaca" max="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
 				<input type="time" name="horariovaca" required></p>
 			<p>Breve histórico:
-<<<<<<< HEAD
-			<input type="text" name="historicovaca" size="50" required>	
-			<input type="hidden" name="Identificacao_vac" value="<?php echo $_POST['vaca'];?>">	
-=======
 			<input type="text" name="historico" size="50" required>	
 			<input type="hidden" name="id_vac" value="<?php echo $_POST['vaca'];?>">
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
 			<p><input type="submit" value="registrar"></p>		
 			</form>
 			<?php
@@ -164,30 +142,18 @@
 				}
 			}
 		}
-<<<<<<< HEAD
 
-if(isset($_POST['cfmvovl'])){
-			$cfmvovl=$_POST['cfmvovl'];
-			$dataovl=$_POST['dataovl'];
-			$horarioovl=$_POST['horarioovl'];
-			$historicoovl=$_POST['historicoovl'];
-=======
-		else if(isset($_POST['cfmv_ovl'])){
+if(isset($_POST['cfmv_ovl'])){
 			$cfmv_ovl=$_POST['cfmv_ovl'];
 			$data=$_POST['data'];
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
 			$id_ovl=$_POST['id_ovl'];
 			require_once 'model/consultaOvl.php';
 			$codigo=retornaUltimaConsultaOvl();
 			if($codigo>=0){
 				$codigo++;
-<<<<<<< HEAD
-				$resposta=cadastrarConsultaOvl($codigo,$id_ovl,$cfmvovl,$dataovl,$horarioovl,$historicoovl);
-=======
 				$resposta=cadastrarConsultaOvl($codigo,$id_ovl,$cfmv_ovl,$data,$horario,$historico);
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
 				if(!$resposta){
 					echo "<h5>Falha na tentativa de cadastro!</h5>";
 				}else{
@@ -195,30 +161,18 @@ if(isset($_POST['cfmvovl'])){
 				}
 			}
 		}
-<<<<<<< HEAD
-		if(isset($_POST['cfmvvaca'])){
-			$cfmvvaca=$_POST['cfmvvaca'];
-			$datavaca=$_POST['datavaca'];
-			$horariovaca=$_POST['horariovaca'];
-			$historicovaca=$_POST['historicovaca'];
-			$Identificacao_vac=$_POST['Identificacao_vac'];
-=======
-else if(isset($_POST['cfmv_vac'])){
+
+		if(isset($_POST['cfmv_vac'])){
 			$cfmv=$_POST['cfmv_vac'];
 			$data=$_POST['data'];
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
 			$id_vac=$_POST['id_vac'];
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
 			require_once 'model/consultarVac.php';
 			$codigo=retornaUltimaConsultaVac();
 			if($codigo>=0){
 				$codigo++;
-<<<<<<< HEAD
-				$resposta=cadastrarConsultaVac($codigo,$Identificacao_vac,$cfmvvaca,$datavaca,$horariovaca,$historicovaca);
-=======
 				$resposta=cadastrarConsultaVac($codigo,$id_vac,$cfmv,$data,$horario,$historico);
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
 				if(!$resposta){
 					echo "<h5>Falha na tentativa de cadastro!</h5>";
 				}else{
@@ -226,14 +180,6 @@ else if(isset($_POST['cfmv_vac'])){
 				}
 			}
 		}
-<<<<<<< HEAD
-=======
-
->>>>>>> d2b64f161c7564b0179dde51697ed24139f7895d
-
-
-
-
 			?>
 
 
