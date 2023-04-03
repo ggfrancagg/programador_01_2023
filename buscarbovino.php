@@ -53,7 +53,7 @@ while ($linha=$consulta->fetch_assoc()) {
 			echo "<td>".$linha['Identificacao_vac']."</td>";
 			echo "<td>".$linha['Nome_vac']."</td>";
 			echo "<td>".$linha['Raca_vac']."</td>";
-			cho "<td>".$linha['sexo_vac']."</td>";	
+			echo "<td>".$linha['sexo_vac']."</td>";	
 			echo "<td>".$linha['Datanasc_vac']."</td>";
 			echo "<td>".$linha['Racamae_vac']."</td>";
 			echo "<td>".$linha['Racapai_vac']."</td>";
