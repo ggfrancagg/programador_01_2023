@@ -10,7 +10,7 @@ if(!$consulta){
 	echo "<table id='listarbicho'>";
 	echo "<tr>";
 	echo "<th class='ident'> Identificação </th>";
-	echo "<th class='nome'> Nome </th";
+	echo "<th class='nome'> Nome </th>";
 	echo "<th class='raça'> Raça </th>";
 	echo "<th class='sexo'> Sexo </th>";
 	echo "<th class='data'> Data de nascimento </th>";
