@@ -236,7 +236,7 @@ h2{
 	background-color: #D9985F;
 	text-align: center;
 	font-family: 'News Cycle', sans-serif;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: #593B16;
 	width: auto;
 	border: 1px inset #FF7001;
@@ -276,10 +276,11 @@ h5{
 	background-color: #D9985F;
 	text-align: center;
 	font-family: 'News Cycle', sans-serif;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: #593B16;
 	width: auto;
 	border: 1px inset #FF7001;
+	height: auto;
 }
 
 h5{
