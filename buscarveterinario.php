@@ -32,7 +32,7 @@
 	$busca=$_GET['busca'];
 	$tipo=$_GET['tipo'];
 	if ($tipo=='veterinariocav') {
-			require_once 'model/veterinarioCav.php';
+			require_once 'model/Veterinario.php';
 
 
 			$consulta=buscarVeterinarioCav($busca);
@@ -69,7 +69,7 @@
 				echo "</table>";
 			}
 	}else if ($tipo=='veterinariovac') {
-			require_once 'model/veterinarioVac.php';
+			require_once 'model/Veterinario.php';
 
 
 			$consulta=buscarVeterinarioVac($busca);
