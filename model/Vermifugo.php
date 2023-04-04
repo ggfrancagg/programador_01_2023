@@ -152,9 +152,17 @@ function listarVermifEquino($inicio,$fim){
 		return $consulta;
 	}
 }
+<<<<<<< HEAD
+
+
+function listarVermifOvino($inicio,$fim){
+	$banco=new Banco();
+	$sql="select * from vermifugo_ovl
+=======
 function listarVermiBovino($inicio,$fim){
 	$banco=new Banco();
 	$sql="select * from vermifugo_vac
+>>>>>>> 918fcd976ca78afc6e8fb717cb3493993f0a5c99
 	where Id_verm>=$inicio and Id_verm<=$fim order by Id_verm";
 	$consulta=$banco->consultar($sql);
 	if(!$consulta){
@@ -163,5 +171,8 @@ function listarVermiBovino($inicio,$fim){
 		return $consulta;
 	}
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 918fcd976ca78afc6e8fb717cb3493993f0a5c99
 ?>

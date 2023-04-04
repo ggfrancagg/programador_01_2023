@@ -1,6 +1,6 @@
 <?php require_once 'cabecalho.php'; ?>
 
-<h1>Listar vermifugo</h1>
+<h1>Listar vermífugo</h1>
 <a href="ListarVermifugoEquinos.php">Equinos</a>
 	<br>
 	<a href="ListarVermifugoBovinos.php">Bovinos</a>
