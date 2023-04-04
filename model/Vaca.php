@@ -63,6 +63,37 @@ function verificarVacinaVaca($idvasc){
 			return $consulta;
 		}
 	}
-	
 
-?>	
+	function acharBovino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vaca where Identificacao_vac=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+	
+	function alterarBovino($Identificacao_vac,$Nome_vac,$Peso_vac,$Altura_vac){
+		$banco=new Banco();
+		$sql="update vaca set Nome_vac='$Nome_vac', Peso_vac=$Peso_vac, Altura_vac='$Altura_vac' where Identificacao_vac=$Identificacao_vac";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
+ function removerBovino($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vaca where Identificacao_vac=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+?>

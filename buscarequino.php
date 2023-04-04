@@ -47,6 +47,8 @@
 				echo "<th>Raça do Pai</th>";
 				echo "<th>Altura</th>";
 				echo "<th>Raça do Mãe</th>";
+				echo "<th>Alterar?</th>";
+				echo "<th>Remover?</th>";
 				echo "</tr>";
 
 while ($linha=$consulta->fetch_assoc()) {
@@ -60,6 +62,10 @@ while ($linha=$consulta->fetch_assoc()) {
 		echo "<td>".$linha['Racapai_cav']."</td>";
 		echo "<td>".$linha['Altura_cav']."</td>";
 		echo "<td>".$linha['Racamae_cav']."</td>";
+		echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Identificacao_cav' 
+			value='".$linha['Identificacao_cav']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+		echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Identificacao_cav' 
+			value='".$linha['Identificacao_cav']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 		echo "</tr>";
 	}
 		echo "</table>";

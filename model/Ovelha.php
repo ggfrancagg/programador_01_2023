@@ -55,7 +55,7 @@ function verificarVacinaOvelha($idvasc){
 	function buscarOvino($busca){
 		$banco=new Banco();
 		$sql="select * from ovelhas where id_ovl='$busca' or nome_ovl like '%$busca%' or idade_ovl='$busca' or raca_ovl='$busca' or
-		Datanasc_cav='$busca' or Sexo_cav='$busca' or Peso like '%$busca%' or Racapai_cav like '%$busca%' or Altura_cav like '%$busca%' or sexo_ovl like '%$busca%' or cor_ovl like '%$busca%' or peso_ovl '%$busca%'";
+		sexo_ovl like '%$busca%' or cor_ovl like '%$busca%' or peso_ovl like '%$busca%' or altura_ovl like '%$busca%'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
@@ -64,5 +64,37 @@ function verificarVacinaOvelha($idvasc){
 		}
 	}
 
+function acharOvino($codigo){
+		$banco=new Banco();
+		$sql= "select * from ovelhas where id_ovl=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+	
+	function alterarOvino($id_ovl,$nome_ovl,$peso_ovl,$altura_ovl){
+		$banco=new Banco();
+		$sql="update ovelhas set nome_ovl='$nome_ovl', peso_ovl='$peso_ovl', altura_ovl='$altura_ovl' where id_ovl=$id_ovl";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	function removerOvino($id){
+ 	$banco=new Banco();
+ 	$sql="delete from ovelhas where id_ovl=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
 
 ?>
