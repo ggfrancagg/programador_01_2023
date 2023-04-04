@@ -253,6 +253,7 @@ h5{
 }
 
 
+
 #listarOve{
 	margin-left: 15vw;
 	margin-right: 15vw;
@@ -441,6 +442,7 @@ table th.peso{
 	font-size: 1.2rem;
 	text-shadow: none;
 	color: #593B16;
+	padding-top: 0.8vh;
 }
 #animalcadas p{
 	font-size: 1.2rem;
