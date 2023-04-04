@@ -252,7 +252,70 @@ h5{
 
 }
 
+
+#listarOve{
+	margin-left: 15vw;
+	margin-right: 15vw;
+	margin-top: 10vh;
+	max-width: 80vw;
+	border: 2px inset #FF7001;
+
+}
+
+#listarOve th{
+	background-color: #B64926;
+	text-align: center;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #FFC476;
+	width: auto;
+	border: 2px inset #FF7001;
+}
+
+#listarOve td{
+	background-color: #D9985F;
+	text-align: center;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 2rem;
+	color: #593B16;
+	width: auto;
+	border: 1px inset #FF7001;
+}
+
+h5{
+	font-size: 2rem;
+	font-family: 'Lexend', sans-serif;
+	color: #BF5630;
+	text-align: center;
+	text-shadow: 1px 1px 3px #FFDA00;
+	padding-top: 10vh;
+
+}
+
+
 /*TABELA AJUSTE DAS COLUNAS DE LISTAS*/
+
+table th.ident{
+	min-width: 7vw;
+}
+table th.nome{
+	min-width: 10vw;
+}
+table th.sexo{
+	min-width: 8vw;
+}
+table th.data{
+	min-width: 10vw;
+}
+table th.raça{
+	min-width: 10vw;
+}
+table th.alt{
+	min-width: 6vw;
+}
+table th.peso{
+	min-width: 6vw;
+}
 
 
 /*cadastrar animais*/
