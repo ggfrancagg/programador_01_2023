@@ -16,7 +16,7 @@
 	if(isset($_POST['animal'])){
 		$animal=$_POST['animal'];
 	  	if($animal=="cavalo"){
-			require_once "model/Cavalo.php";
+			require_once "model/cavalo.php";
 			echo "<form action='cadastrarConsultas.php' method='POST'>";
 			$cavalo=listarCavalo();
 			if(!$cavalo) {
@@ -53,7 +53,7 @@
 				echo "<h3> <input type='submit' value='Escolher'></h3>";
 			}echo "</form>";
 		}else if($animal=="vaca"){
-			require_once "model/vaca.php";
+			require_once "model/Vaca.php";
 			echo "<form action='cadastrarConsultas.php' method='POST'";
 			$vaca=listarVaca();
 			if(!$vaca){
@@ -130,7 +130,7 @@
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
 			$id_cav=$_POST['Identificacao_cav'];
-			require_once 'model/consultaCav.php';
+			require_once 'consulta.php';
 			$codigo=retornaUltimaConsultaCav();
 			if($codigo>=0){
 				$codigo++;
@@ -149,7 +149,7 @@ if(isset($_POST['cfmv_ovl'])){
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
 			$id_ovl=$_POST['id_ovl'];
-			require_once 'model/consultaOvl.php';
+			require_once 'consulta.php';
 			$codigo=retornaUltimaConsultaOvl();
 			if($codigo>=0){
 				$codigo++;
@@ -168,7 +168,7 @@ if(isset($_POST['cfmv_ovl'])){
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
 			$id_vac=$_POST['id_vac'];
-			require_once 'model/consultarVac.php';
+			require_once 'consulta.php';
 			$codigo=retornaUltimaConsultaVac();
 			if($codigo>=0){
 				$codigo++;
