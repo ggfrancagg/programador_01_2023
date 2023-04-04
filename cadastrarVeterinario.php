@@ -216,7 +216,7 @@ if(isset($_POST['nomevetcav'])){
 		$data_visita=$_POST['datevisitacav'];
 		$Identificacao_cav=$_POST['identificacaocav'];
 
-		require_once 'model/VeterinarioCav.php';
+		require_once 'model/Veterinario.php';
 		$CFMV=retornaUltimoVetCav();
 	if($CFMV>=0){
 		$CFMV++;
@@ -246,7 +246,7 @@ if(isset($_POST['nomevetvac'])){
 		$cuidados_vac=$_POST['cuidadosvac'];
 		$data_vac=$_POST['datevisitavac'];
 		$Identificacao_vac=$_POST['identificacaovac'];
-		require_once 'model/VeterinarioVac.php';
+		require_once 'model/Veterinario.php';
 		$CFMV=retornaUltimoVetVac();
 	if($CFMV>=0){
 		$CFMV++;
