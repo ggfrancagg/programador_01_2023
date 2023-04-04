@@ -37,7 +37,7 @@
 			if (!$consulta) {
 				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
 			}else{
-				echo "<table>";
+				echo "<table id='listarbicho'>";
 				echo "<tr>";
 				echo "<th class='ident'> Identificação </th>";
 						echo "<th class='nome'>Nome do vermífugo</th>";
@@ -73,7 +73,7 @@
 				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
 			}else{
 
-			echo "<table>";
+			echo "<table id='listarbicho'>";
 				echo "<tr>";
 				echo "<th class='ident'> Identificação </th>";
 						echo "<th class='nome'>Nome do vermífugo</th>";
@@ -109,7 +109,7 @@
 				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
 			}else{
 
-				echo "<table>";
+				echo "<table id='listarbicho'>";
 				echo "<tr>";
 					echo "<th class='ident'> Identificação </th>";
 						echo "<th class='nome'>Nome do vermífugo</th>";

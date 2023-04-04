@@ -22,11 +22,13 @@ $estalog=estaLogado();
 					<li><a href="cadastrarOvelha.php" target="quadro" onclick="mostra()">Ovino &#128017;</a></li>
 			</ol>
 			</li>
-			<li>Listar Animais
+			<li>Listar
 				<ol class="menu2">
 					<li><a href="listarVaca.php" target="quadro" onclick="mostra()">Bovinos &#128046;</a></li> 
 					<li><a href="listarCavalo.php" target="quadro" onclick="mostra()">Equinos &#128052;</a></li>
 					<li><a href="listarOvelha.php" target="quadro" onclick="mostra()">Ovinos &#128017;</a></li>
+					<li><a href="listarVacina.php" target="quadro" onclick="mostra()">Vacina</a></li>
+					<li><a href="listarVermifugo.php" target="quadro" onclick="mostra()">Vermifugação</a></li>
 				</ol>
 			</li>
 			<li>Buscar
