@@ -117,10 +117,7 @@ function buscarVacinaCav($busca){
 			return $consulta;
 		}
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> 93ab0b6dfa178b05632a38b1190d1cc091df5bf1
 
 	function buscarVacinaOvl($busca){
 		$banco=new Banco();
