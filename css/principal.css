@@ -604,3 +604,23 @@ hr{
 #animalcadas p input.subm{
 	margin-left: 50vw;
 }
+
+/*buscar*/
+
+fieldset{
+	border: 2px dotted #FA5D5D;
+	border-radius: 22px;
+	width: 20vw;
+	margin-left: 40vw;
+	margin-right: 40vw;
+}
+
+legend{
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: #593B16;
+	text-align: left;
+	margin-left: 2vw;
+	text-shadow: 1px 1px 2px #FF7001;
+}
