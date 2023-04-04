@@ -66,6 +66,28 @@ function buscarCavalo($busca){
 		}
 	}
 
+	function acharEquino($codigo){
+		$banco=new Banco();
+		$sql= "select * from cavalo where Identificacao_cav=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+	
+	function alterarEquino($Identificacao_cav,$Nome_cav,$Peso,$Altura_cav){
+		$banco=new Banco();
+		$sql="update cavalo set Nome_cav='$Nome_cav', Peso='$Peso', Altura_cav='$Altura_cav' where Identificacao_cav=$Identificacao_cav";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
 ?>
 </body>
 </html>

@@ -253,6 +253,7 @@ h5{
 }
 
 
+
 #listarOve{
 	margin-left: 15vw;
 	margin-right: 15vw;
@@ -423,6 +424,18 @@ table th.peso{
 	padding-bottom: 1vh;
 }
 
+#vermifugo a{
+	text-decoration: none;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	text-decoration: none;
+	color: #593B16;
+	text-align: left;
+	margin-left: 2vw;
+	text-shadow: 1px 1px 2px #FF7001;
+	margin-top: 10vh;
+}
+
 #animalcadas{
 	background: #BF7950;
 	border: 3px inset #FA5D5D;
@@ -441,6 +454,7 @@ table th.peso{
 	font-size: 1.2rem;
 	text-shadow: none;
 	color: #593B16;
+	padding-top: 0.8vh;
 }
 #animalcadas p{
 	font-size: 1.2rem;

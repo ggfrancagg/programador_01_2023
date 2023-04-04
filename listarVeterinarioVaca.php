@@ -1,10 +1,10 @@
 <?php
 require_once 'cabecalho.php';
-require_once 'model/VeterinarioVac.php';
+require_once 'model/Veterinario.php';
 
 	$consulta=listarVetVac("");
 if(!$consulta){
-	echo "<h2>Não há nenhum Veterinario cadastrado!</h2>";
+	echo "<h5>Não há nenhum Veterinario cadastrado!</h5>";
 }else{
 
 	echo "<table>";
@@ -16,7 +16,6 @@ if(!$consulta){
 	echo "<th>Nascimento</th>";
 	echo "<th>Cuidados</th>";
 	echo "<th>Casqueamento</th>";	
-
 	echo "<th>Vaca</th>";
 		
 

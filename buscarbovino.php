@@ -7,12 +7,12 @@
 	<p><fieldset>
 
 		<legend>Buscar Bovino: </legend>
-			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128046;</p>
+			<p><input id="busca" type="search" name="buscar" placeholder="Nome, ID ou raça" required> &#128046;</p>
 
-		
+		<h3><input type="submit" onclick='mostra()' value="Buscar"></h3>
 		</fieldset>
 </p>
-	<h3><input type="submit" onclick='mostra()' value="Buscar"></h3>
+	
 </form>
 
 <div id="load">
@@ -46,6 +46,9 @@
 		echo "<th class='raça'> Raça da Pai </th>";
 		echo "<th class='alt'> Altura </th>";	
 		echo "<th class='peso'> Peso </th>";
+		echo "<th class='ident'>Alterar?</th>";
+		echo "<th class='ident'>Remover?</th>";
+		echo "</tr>";
 
 
 
@@ -60,6 +63,10 @@ while ($linha=$consulta->fetch_assoc()) {
 			echo "<td>".$linha['Racapai_vac']."</td>";
 			echo "<td>".$linha['Altura_vac']."</td>";
 			echo "<td>".$linha['Peso_vac']."</td>";
+			echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Identificacao_vac' 
+				value='".$linha['Identificacao_vac']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+			echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Identificacao_vac' 
+				value='".$linha['Identificacao_vac']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 		  echo "</tr>";
 			}
 			echo "</table>";
