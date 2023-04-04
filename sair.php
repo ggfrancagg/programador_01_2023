@@ -2,5 +2,5 @@
 setcookie("usuario","");
 ?>
 <script>
-	window.open('//localhost/ProfGabriel/SistemaFarm','_top');
+	window.open('//localhost/ProfGabriel/ProjetoIntegrador','_top');
 </script>
