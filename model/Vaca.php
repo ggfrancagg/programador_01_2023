@@ -85,5 +85,15 @@ function verificarVacinaVaca($idvasc){
 			return true;
 		}
 	}
-
+	
+ function removerBovino($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vaca where Identificacao_vac=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
 ?>
