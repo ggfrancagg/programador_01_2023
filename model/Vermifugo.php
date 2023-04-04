@@ -152,4 +152,17 @@ function listarVermifEquino($inicio,$fim){
 		return $consulta;
 	}
 }
+
+
+function listarVermifOvino($inicio,$fim){
+	$banco=new Banco();
+	$sql="select * from vermifugo_ovl
+	where Id_verm>=$inicio and Id_verm<=$fim order by Id_verm";
+	$consulta=$banco->consultar($sql);
+	if(!$consulta){
+		return false;
+	}else{
+		return $consulta;
+	}
+}
 ?>
