@@ -1,10 +1,10 @@
 <?php
 require_once 'cabecalho.php';
-require_once 'model/veterinarioCav.php';
+require_once 'model/Veterinario.php';
 
 	$consulta=listarVetCav("");
 if(!$consulta){
-	echo "<h2>Não há nenhum Veterinario cadastrado!</h2>";
+	echo "<h5>Não há nenhum Veterinario cadastrado!</h5>";
 }else{
 
 	echo "<table>";
