@@ -5,7 +5,7 @@
 	
 	<p><fieldset>
 		<legend><h2>Buscar Ovino:</h2></legend>
-			<p><input id="busca" type="search" name="tipo" placeholder="Nome, ID ou raça" required> &#128017;</p>
+			<p><input id="busca" type="search" name="buscar" placeholder="Nome, ID ou raça" required> &#128017;</p>
 		
 		</fieldset>
 </p>
@@ -24,10 +24,8 @@
 
 <?php
 	
-	if(isset($_GET['busca'])){
-	$busca=$_GET['busca'];
-	$tipo=$_GET['tipo'];
-	if ($tipo=="ovino") {
+	if(isset($_GET['buscar'])){
+	$busca=$_GET['buscar'];
 		require_once 'model/Ovelha.php';
 		$consulta=buscarOvino($busca);
 		if (!$consulta) {
@@ -43,6 +41,8 @@
 			echo "<th class='raça'> Cor </th>";
 			echo "<th class='peso'> Peso </th>";
 			echo "<th class='alt'> Altura </th>";
+			echo "<th class='ident'>Alterar?</th>";
+			echo "<th class='ident'>Remover?</th>";
 		echo "</tr>";
 
 
@@ -56,10 +56,13 @@
 			echo "<td>".$linha['cor_ovl']."</td>";
 			echo "<td>".$linha['peso_ovl']."</td>";
 			echo "<td>".$linha['altura_ovl']."</td>";
-		echo "</tr>";
+			echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='id_ovl' 
+				value='".$linha['id_ovl']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+			echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='id_ovl' 
+				value='".$linha['id_ovl']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+			echo "</tr>";
 	}
-		echo "</table>";
-}
+			echo "</table>";
 }
 }
 ?>
