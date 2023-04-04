@@ -1,21 +1,19 @@
 <?php require_once 'cabecalho.php'; ?> 
 
-	<form action="cadastrarVeterinario.php" method="POST" enctype="multipart/form-data" id="veterinario">
+	<form action="cadastrarVeterinario.php" method="POST" enctype="multipart/form-data" id="vermifugo">
 		<form id="push" action="cadastrarVeterinario.php" method="POST">
 
-
+			<h1>Escolha o animal  que você atenda:</h1>
+			<br>
 			<p><select name="animal">
-			<option value="ovelha">Ovelha</option>
-			<option value="vaca">Vaca</option>
-			<option value="cavalo">Cavalo</option>
-
+			<option value="ovelha">Ovino</option>
+			<option value="vaca">Bovino</option>
+			<option value="cavalo">Equino</option></p>
+			</br>
 		</select>
+	</br>
 <h3><input type="submit" onclick="mostra()" name="enviar" value="Cadastrar"></h3>
-
-
-
-
-
+</form>
 
 
 <?php 
@@ -24,7 +22,7 @@
                   $animal=$_POST['animal'];
                   if($animal=="ovelha"){
 ?>
-<form action="cadastrarVeterinario.php" method="POST">  
+<form action="cadastrarVeterinario.php" id="cadanimal" method="POST">  
 
 		<h1>&#9877; Veterinário &#9877;</h1>
 	
@@ -70,7 +68,7 @@ $ovelha=listarOvelha();
 <?php
 }else if($animal=="cavalo"){
 ?>
-<form action="cadastrarVeterinario.php" method="POST">  
+<form action="cadastrarVeterinario.php" id="cadanimal" method="POST">  
 
 		<h1>&#9877; Veterinário &#9877;</h1>
 
@@ -122,7 +120,7 @@ $cavalo=listarCavalo();
 <?php
 }else if($animal=="vaca"){
 ?>
-<form action="cadastrarVeterinario.php" method="POST">  
+<form action="cadastrarVeterinario.php" id="cadanimal" method="POST">  
 
 		<h1>&#9877; Veterinário &#9877;</h1>
 
@@ -190,6 +188,7 @@ if(isset($_POST['nomevetovl'])){
 		$CFMV++;
 		$resp=Veterinario($CFMV,$nome_vet,$nasc_vet,$tel_ovl,$data_visita,$cuidados_vet, $Identificacao_ovl);
 	if(!$resp){
+		echo $sql;
 		echo "<h5>Erro na tentativa de cadastro!!!</h5>";
 	}else{
 		echo "<h5>Veterinario cadastrado com sucesso! :) </h5>";
@@ -222,6 +221,7 @@ if(isset($_POST['nomevetcav'])){
 		$CFMV++;
 		$resp=VeterinarioCav($CFMV,$tosa_vet,$nome_vetcav,$Casqueamento_cav,$tel_vet,$cuidados_vet,$data_visita, $Identificacao_cav);
 	if(!$resp){
+		echo $sql;
 		echo "<h5>Erro na tentativa de cadastro!!!</h5>";
 	}else{
 		echo "<h5>Veterinario cadastrado com sucesso! :) </h5>";
@@ -252,6 +252,7 @@ if(isset($_POST['nomevetvac'])){
 		$CFMV++;
 		$resp=VeterinarioVac($CFMV, $data_vac, $nome_vetvac, $tel_vac, $nasc_vetvac,$cuidados_vac, $Casqueamento_vac, $Identificacao_vac);
 	if(!$resp){
+		echo $sql;
 		echo "<h5>Erro na tentativa de cadastro!!!</h5>";
 	}else{
 		echo "<h5>Veterinario cadastrado com sucesso! :) </h5>";
