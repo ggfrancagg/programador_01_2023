@@ -1,14 +1,15 @@
 <?php require_once 'cabecalho.php'?>
 
-<form action="cadastrarConsultas.php" method="POST">
+<form id="vermifugo" action="cadastrarConsultas.php" method="POST">
 	<h1>Cadastrar consulta</h1>
 	<br>
 <?php 
 
- 	echo "<h2>Escolha o animal a consultar";
-	echo "<p><input type='radio'id='animal' name='animal' value='cavalo' required> Cavalo ";
-	echo "<input type='radio'id='animal' name='animal' value='ovelha' required> Ovelha ";
-	echo "<input type='radio'id='animal' name='animal' value='vaca' required> Vaca </p>";
+ 	echo "<h2> &#129658; Escolha o animal a consultar &#129658;</h2>";
+ 	echo "<br>";
+	echo "<p><input type='radio'id='animal' name='animal' value='cavalo' required> Equino ";
+	echo "<input type='radio'id='animal' name='animal' value='ovelha' required> Ovino ";
+	echo "<input type='radio'id='animal' name='animal' value='vaca' required> Bovino </p>";
 	echo "<br>";
 	echo "<h3><input type='submit' value='enviar'></h3>";
 	echo "</form>";
@@ -20,10 +21,10 @@
 			echo "<form action='cadastrarConsultas.php' method='POST'>";
 			$cavalo=listarCavalo();
 			if(!$cavalo) {
-				echo "<h2>Não existem animais cadastrados!</h2>";
+				echo "<h5>Não existem animais cadastrados!</h5>";
 			}else{
-				echo "<form>";
-				echo "<h2>Equinos cadastrados:</h2>";
+				echo "<form id='animalcadas'>";
+				echo "<h2>Equinos cadastrados: </h2>";
 				echo "<p>Escolha o animal:<select name='cavalo'>";
 				while ($linha=$cavalo->fetch_assoc()) {
 				echo "<option value='".$linha['Identificacao_cav']."'>";
@@ -31,7 +32,8 @@
 				echo "</option>";
 				}
 				echo "</select></p>";
-				echo "<h3><input type='submit' value='Escolher'></h3>";
+				echo "</br>";
+				echo "<p><input class='subm' type='submit' value='Escolher'></p>";
 				}echo "</form>";
 			}else if
 			($animal=="ovelha"){
@@ -39,10 +41,10 @@
 				echo "<form action='cadastrarConsultas.php' method='POST'>";
 				$ovelha=listarOvelha();
 				if(!$ovelha){
-					echo "<h2> Não existem animais cadastrados!</h2>";
+					echo "<h5> Não existem animais cadastrados!</h5>";
 				}else{
-					echo "<form>";
-					echo "<h2>Ovinos cadastrados:</h2>";
+					echo "<form id='animalcadas'>";
+					echo "<h2>Ovinos cadastrados: </h2>";
 					echo "<p> Escolha o animal: <select name='ovelha'>";
 					while($linha=$ovelha->fetch_assoc()){
 					echo "<option value='".$linha['id_ovl']."'>";
@@ -50,16 +52,17 @@
 					echo "</option>";
 				}
 				echo "</select></p>";
+				echo "</br>";
 				echo "<h3> <input type='submit' value='Escolher'></h3>";
 			}echo "</form>";
 		}else if($animal=="vaca"){
-			require_once "model/vaca.php";
+			require_once "model/Vaca.php";
 			echo "<form action='cadastrarConsultas.php' method='POST'";
 			$vaca=listarVaca();
 			if(!$vaca){
-				echo "<h2>Não existem animais cadastrados!</h2>";
+				echo "<h5>Não existem animais cadastrados!</h5>";
 			}else{
-				echo "<form>";
+				echo "<form id='animalcadas'>";
 				echo "<h2> Bovinos cadastrados: </h2>";
 				echo "<p> Escolha o animal: <select name='vaca'>";
 				while ($linha=$vaca->fetch_assoc()) {
@@ -68,14 +71,15 @@
 				echo "</option>";
 				}
 				echo "</select></p>";
-				echo "<H3><input type='submit' value='Escolher'></h3> ";
+				echo "</br>";
+				echo "<h3><input type='submit' value='Escolher'></h3> ";
 			}echo "</form>";
 		}
 	}
 	if(isset($_POST['cavalo'])){
 
 		?>
-		<form action="cadastrarConsultas.php" method="POST">
+		<form action="cadastrarConsultas.php" id="cadanimal" method="POST">
 
 			<p>Digite o seu CFMV:
 				<input type="text" name="cfmv" size="20" maxlength="20" required></p>
@@ -92,7 +96,7 @@
 		}
 		if(isset($_POST['ovelha'])){
 			?>
-			<form action="cadastrarConsultas.php" method="POST">
+			<form action="cadastrarConsultas.php" id="cadanimal" method="POST">
 
 			<p>Digite o seu CFMV:
 				<input type="text" name="cfmv_ovl" size="20" maxlength="20" required></p>
@@ -109,7 +113,7 @@
 		}
 		if(isset($_POST['vaca'])){
 			?>
-			<form action="cadastrarConsultas.php" method="POST">
+			<form action="cadastrarConsultas.php" id="cadanimal" method="POST">
 
 			<p>Digite o seu CFMV:
 				<input type="text" name="cfmv_vac" size="20" maxlength="20" required></p>
@@ -130,7 +134,7 @@
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
 			$id_cav=$_POST['Identificacao_cav'];
-			require_once 'model/consultaCav.php';
+			require_once 'consulta.php';
 			$codigo=retornaUltimaConsultaCav();
 			if($codigo>=0){
 				$codigo++;
@@ -138,7 +142,7 @@
 				if(!$resposta){
 					echo "<h5>Falha na tentativa de cadastro!</h5>";
 				}else{
-					echo "<h5>Cadastro com sucesso!";
+					echo "<h5>Cadastro com sucesso!</h5>";
 				}
 			}
 		}
@@ -149,7 +153,7 @@ if(isset($_POST['cfmv_ovl'])){
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
 			$id_ovl=$_POST['id_ovl'];
-			require_once 'model/consultaOvl.php';
+			require_once 'consulta.php';
 			$codigo=retornaUltimaConsultaOvl();
 			if($codigo>=0){
 				$codigo++;
@@ -157,7 +161,7 @@ if(isset($_POST['cfmv_ovl'])){
 				if(!$resposta){
 					echo "<h5>Falha na tentativa de cadastro!</h5>";
 				}else{
-					echo "<h5>Cadastro com sucesso!";
+					echo "<h5>Cadastro com sucesso!</h5>";
 				}
 			}
 		}
@@ -168,7 +172,7 @@ if(isset($_POST['cfmv_ovl'])){
 			$horario=$_POST['horario'];
 			$historico=$_POST['historico'];
 			$id_vac=$_POST['id_vac'];
-			require_once 'model/consultarVac.php';
+			require_once 'consulta.php';
 			$codigo=retornaUltimaConsultaVac();
 			if($codigo>=0){
 				$codigo++;
@@ -176,7 +180,7 @@ if(isset($_POST['cfmv_ovl'])){
 				if(!$resposta){
 					echo "<h5>Falha na tentativa de cadastro!</h5>";
 				}else{
-					echo "<h5>Cadastro com sucesso!";
+					echo "<h5>Cadastro com sucesso!</h5>";
 				}
 			}
 		}

@@ -7,7 +7,7 @@ if(!$consulta){
 	echo "<h5 id='texto'>Nenhuma ovelha cadastrada!</h5>";
 }else{
 
-	echo "<table id='listarbicho'>";
+	echo "<table id='listarOve'>";
 	echo "<tr>";
 	echo "<th class='ident'> Identificação </th>";
 	echo "<th class='nome'> Nome </th>";
