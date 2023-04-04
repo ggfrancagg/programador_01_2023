@@ -1,11 +1,11 @@
 <?php require_once 'cabecalho.php'?>
 
 <form id="vermifugo" action="cadastrarConsultas.php" method="POST">
-	<h1>Cadastrar consulta</h1>
+	<h1> &#129658; Cadastrar consulta &#129658;</h1>
 	<br>
 <?php 
 
- 	echo "<h2> &#129658; Escolha o animal a consultar &#129658;</h2>";
+ 	echo "<h2>  Escolha o animal a consultar </h2>";
  	echo "<br>";
 	echo "<p><input type='radio'id='animal' name='animal' value='cavalo' required> Equino ";
 	echo "<input type='radio'id='animal' name='animal' value='ovelha' required> Ovino ";
