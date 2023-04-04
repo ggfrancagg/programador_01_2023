@@ -9,7 +9,7 @@ if(isset($_GET['fim'])){
 	$inicio=1;
 	$fim=5;
 }
-$num_linhas=ultimoVermCavalo("");
+$num_linhas=ultimoVermVaca("");
 if($num_linhas<1){
 	echo "<h2>Não há Vermifugo cadastrado!</h2>";
 }else{
@@ -18,15 +18,15 @@ if($num_linhas<1){
 	echo "<tr>";
 	echo "<th>Id vermifugo</th>";
 	echo "<th>Nome do vermifugo</th>";
-	echo "<th>Marca do vermifugo</h2>";
+	echo "<th>Marca do vermifugo</th>";
 	echo "<th> Lote de vermifugo</th>";
 	echo "<th> Data de fabricaçao</th>";
 	echo "<th>Validade do vermifugo</th>";
 	echo "<th>Aplicaçao do vermifugo</th>";
 	echo "<th>Proxima aplicaçao</th>";
-	echo "<th>Identificaçao do cavalo</th>";
+	echo "<th>Identificaçao do bovino</th>";
 	echo "</tr>";
-	$consulta=listarVermifEquino($inicio,$fim);
+	$consulta=listarVermiBovino($inicio,$fim);
 	require_once 'model/Vermifugo.php';
 	while ($linha=$consulta->fetch_assoc()) {
 	echo "<tr>";
@@ -38,7 +38,7 @@ if($num_linhas<1){
 	echo "<td>".$linha['Validade_verm']."<td>";
 	echo "<td>".$linha['aplicacao_verm']."<td>";
 	echo "<td>".$linha['proximaapli_verm']."<td>";
-	echo "<td>".$linha['Identificacao_cav']."<td>";
+	echo "<td>".$linha['Identificacao_vac']."<td>";
 	echo "</tr>";
 	}
 
