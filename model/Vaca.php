@@ -63,6 +63,5 @@ function verificarVacinaVaca($idvasc){
 			return $consulta;
 		}
 	}
-	
 
 ?>	

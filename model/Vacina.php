@@ -130,6 +130,39 @@ function buscarVacinaCav($busca){
 			return $consulta;
 		}
 	}
+function listarVacinaVaca(){
+     $banco=new Banco();
+     $sql="select * from vacina_vac order by IDvasc_vac";
+     $consulta=$banco->consultar($sql);
+     if(!$consulta){
+        return false;
+     }else{
+        return $consulta;
+     }
+}
+
+function listarVacinaOvelha(){
+     $banco=new Banco();
+     $sql="select * from vacina_ovl order by id_ovl";
+     $consulta=$banco->consultar($sql);
+     if(!$consulta){
+        return false;
+     }else{
+        return $consulta;
+     }
+}
+
+function listarVacinaCavalo(){
+     $banco=new Banco();
+     $sql="select * from vacina_cav order by IDvac_cav";
+     $consulta=$banco->consultar($sql);
+     if(!$consulta){
+        return false;
+     }else{
+        return $consulta;
+     }
+}
+	
 
 ?>
 
