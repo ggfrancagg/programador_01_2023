@@ -1,7 +1,7 @@
 <?php require_once 'cabecalho.php'; ?> 
 
-	<form action="CadastrarVeterinario.php" method="POST" enctype="multipart/form-data" id="veterinario">
-		<form id="push" action="CadastrarVeterinario.php" method="POST">
+	<form action="cadastrarVeterinario.php" method="POST" enctype="multipart/form-data" id="veterinario">
+		<form id="push" action="cadastrarVeterinario.php" method="POST">
 
 
 			<p><select name="animal">
@@ -24,7 +24,7 @@
                   $animal=$_POST['animal'];
                   if($animal=="ovelha"){
 ?>
-<form action="CadastrarVeterinario.php" method="POST">  
+<form action="cadastrarVeterinario.php" method="POST">  
 
 		<h1>&#9877; Veterinário &#9877;</h1>
 	
@@ -70,7 +70,7 @@ $ovelha=listarOvelha();
 <?php
 }else if($animal=="cavalo"){
 ?>
-<form action="CadastrarVeterinario.php" method="POST">  
+<form action="cadastrarVeterinario.php" method="POST">  
 
 		<h1>&#9877; Veterinário &#9877;</h1>
 
@@ -88,7 +88,7 @@ $ovelha=listarOvelha();
 	<p> Data de visita:<input type="date" name="datevisitacav" required></p>
 <?php
 
-require_once "model/cavalo.php";
+require_once "model/Cavalo.php";
 $cavalo=listarCavalo();
 		if (!$cavalo) {
 			echo "<h2>Não existem animais cadastrados!</h2>";
@@ -122,7 +122,7 @@ $cavalo=listarCavalo();
 <?php
 }else if($animal=="vaca"){
 ?>
-<form action="CadastrarVeterinario.php" method="POST">  
+<form action="cadastrarVeterinario.php" method="POST">  
 
 		<h1>&#9877; Veterinário &#9877;</h1>
 

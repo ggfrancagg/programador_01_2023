@@ -1,7 +1,7 @@
 <?php require_once 'cabecalho.php';
 ?>
 
-<form action="buscarequino.php" method="GET">
+<form action="buscarEquino.php" method="GET">
 	<h1>Buscar</h1>
 	
 	<p><fieldset>

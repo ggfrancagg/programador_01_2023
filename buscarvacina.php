@@ -1,7 +1,7 @@
 <?php require_once 'cabecalho.php';
 ?>
 
-<form action="buscarvacina.php" method="GET">
+<form action="buscarVacina.php" method="GET">
 <h1>Buscar</h1>
 	<p><input type="search" name="busca" placeholder="Nome ou Numero de identificação" required></p>
 	<p><fieldset>

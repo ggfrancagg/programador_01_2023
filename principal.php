@@ -33,11 +33,11 @@ $estalog=estaLogado();
 			</li>
 			<li>Buscar
 				<ol class="menu2">
-				<li><a href="buscarbovino.php" target="quadro">Bovinos &#128046;</a></li>
-				<li><a href="buscarequino.php" target="quadro">Equinos &#128052;</a></li>
+				<li><a href="buscarBovino.php" target="quadro">Bovinos &#128046;</a></li>
+				<li><a href="buscarEquino.php" target="quadro">Equinos &#128052;</a></li>
 				<li><a href="buscarOvino.php" target="quadro">Ovinos &#128017;</a></li>
-				<li><a href="buscarveterinario.php" target="quadro">Veterinário</a></li>
-				<li><a href="buscarvacina.php" target="quadro">Vacina</a></li>
+				<li><a href="buscarVeterinario.php" target="quadro">Veterinário</a></li>
+				<li><a href="buscarVacina.php" target="quadro">Vacina</a></li>
 				<li><a href="buscarVermifugo.php" target="quadro">Vermífugo</a></li>
 				</ol>
 			</li>

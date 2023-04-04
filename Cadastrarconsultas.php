@@ -16,8 +16,8 @@
 	if(isset($_POST['animal'])){
 		$animal=$_POST['animal'];
 	  	if($animal=="cavalo"){
-			require_once "model/cavalo.php";
-			echo "<form action='Cadastrarconsultas.php' method='POST'>";
+			require_once "model/Cavalo.php";
+			echo "<form action='cadastrarConsultas.php' method='POST'>";
 			$cavalo=listarCavalo();
 			if(!$cavalo) {
 				echo "<h2>Não existem animais cadastrados!</h2>";
@@ -36,7 +36,7 @@
 			}else if
 			($animal=="ovelha"){
 				require_once "model/Ovelha.php";
-				echo "<form action='Cadastrarconsultas.php' method='POST'>";
+				echo "<form action='cadastrarConsultas.php' method='POST'>";
 				$ovelha=listarOvelha();
 				if(!$ovelha){
 					echo "<h2> Não existem animais cadastrados!</h2>";

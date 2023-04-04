@@ -27,7 +27,7 @@
 			$Altura_cav=$_POST['altura_cav'];
 			$Racamae_cav=$_POST['racadamae'];
 
-			require_once 'model/cavalo.php';
+			require_once 'model/Cavalo.php';
 			$codigo=retornaUltimoCodigo();
 			if($codigo>=0){
 				$codigo++;

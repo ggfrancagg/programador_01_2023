@@ -1,6 +1,6 @@
 <?php
 
-require_once './persistence/banco.php';
+require_once './persistence/Banco.php';
 
 function cadastrarCavalo($Identificacao_cav,$Nome_cav,$Raca_cav,$Datanasc_cav,$Sexo_cav,$Peso,$Racapai_cav,$Altura_cav,$Racamae_cav){
 	$banco=new banco();

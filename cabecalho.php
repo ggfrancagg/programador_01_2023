@@ -7,7 +7,7 @@
 
 			<meta charset="utf-8">
 
-			<meta name="author" content="Julia, Leoncides, Lidiane,  Priscila, Yasmim">
+			<meta name="author" content="Julia, Leoncides, Lidiane, Nataly, Priscila, Yasmim">
 
 			<meta name="keywords" content="Fazenda, fazenda, Animais, animais, Vacinas, vacinas, Exames, exames, Alimentação, alimentação, Veterinário, veterinário, Reprodução, reprodução, Raças, raças, Ficha, ficha, calendário, Calendário, gestão, Gestão">
 

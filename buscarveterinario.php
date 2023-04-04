@@ -1,7 +1,7 @@
 <?php require_once 'cabecalho.php';
 ?>
 
-<form action="buscarveterinario.php" method="GET">
+<form action="buscarVeterinario.php" method="GET">
 <h1>Buscar</h1>
 	<p><input type="search" name="busca" placeholder="Nome ou CFMV" required></p>
 	<p><fieldset>

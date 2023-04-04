@@ -1,6 +1,6 @@
 <?php
 require_once 'cabecalho.php';
-require_once 'model/VeterinarioCav.php';
+require_once 'model/veterinarioCav.php';
 
 	$consulta=listarVetCav("");
 if(!$consulta){

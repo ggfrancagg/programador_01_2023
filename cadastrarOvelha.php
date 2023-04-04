@@ -1,13 +1,3 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Cadastro</title>
-	<link rel="stylesheet" type="text/css" href="css/cadastro.css">
-	<link rel="stylesheet" type="text/css" href="css/js.css">
-</head>
-<body>
-
 <?php require_once 'cabecalho.php'; ?>
 
 
