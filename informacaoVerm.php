@@ -23,7 +23,7 @@
 	<h2 id="informa">&#128668; Links Úteis &#128668;</h2>
 	<hr id="cada">
 <p><a href="https://www.nobrenutricaoanimal.com.br/blog/importancia-do-casqueamento/">Casqueamento</a></p>
-<p><a href="https://www.cptcursospresenciais.com.br/blog/casqueamento-preventivo-quando-realizar/">Técnicas de Casqueamento</a></p>
+<p><a href="https://www.cpt.com.br/artigos/afinal-na-pratica-o-que-e-o-casqueamento-de-cavalos#:~:text=A%20t%C3%A9cnica%20de%20casqueamento%20tem,uma%20superf%C3%ADcie%20plana%20e%20dura.">Técnicas de Casqueamento</a></p>
 <p><a href="https://www.fundacaoroge.org.br/blog/10-dicas-para-o-controle-de-verminoses-em-bovinos-no-periodo-seco">Dicas sobre Vermifugação</a></p>
 <p><a href="https://cooperativa.coop.br/qual-a-importancia-da-vermifugacao/">Vermifugação</a></p>
 <p><a href="https://blog.prodap.com.br/parasitas-em-bovinos/">Parasitas</a></p>
