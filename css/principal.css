@@ -294,6 +294,42 @@ h5{
 
 }
 
+#buscaBicho{
+	margin-left: 3vw;
+	margin-right: 5vw;
+	margin-top: 10vh;
+	max-width: 90vw;
+	border: 2px inset #FF7001;
+}
+
+#buscaBicho tr{
+	margin-left: 5vw;
+	margin-right: 5vw;
+	margin-top: 10vh;
+	max-width: 90vw;
+	border: 2px inset #FF7001;
+}
+
+#buscaBicho th{
+	background-color: #B64926;
+	text-align: center;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #FFC476;
+	width: auto;
+	border: 2px inset #FF7001;
+}
+
+#buscaBicho td{
+	background-color: #D9985F;
+	text-align: center;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #593B16;
+	width: auto;
+	border: 1px inset #FF7001;
+	height: auto;
+}
 
 /*TABELA AJUSTE DAS COLUNAS DE LISTAS*/
 
@@ -637,5 +673,23 @@ legend{
 	color: #593B16;
 	text-align: left;
 	margin-left: 2vw;
+	text-shadow: 1px 1px 2px #FF7001;
+}
+
+#botbus{
+	
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	margin-left: 9vw;
+
+}
+
+fieldset p{
+	font-size: 1.5rem;
+}
+
+fieldset h2{
+	font-size: 1.5rem;
+	color: #593B16;
 	text-shadow: 1px 1px 2px #FF7001;
 }

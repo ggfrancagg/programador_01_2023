@@ -132,7 +132,7 @@ function listarVetCav($ordem){
 function buscarVeterinarioCav($busca){
 		$banco=new Banco();
 		$sql="select * from veterinario_cav where CFMV='$busca' or Tosa_cav like '%$busca%' or Nomevet_cav='$busca' or Casqueamento_cav='$busca' or
-		Telefonevet_cav='$busca' or Cuidados_cav='$busca' or Datavisi_cav '%$busca%' or Identificacao_cav like '%$busca%'";
+		Telefonevet_cav='$busca' or Cuidados_cav='$busca' or Datavisi_cav like '%$busca%' or Identificacao_cav like '%$busca%'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
@@ -214,7 +214,76 @@ function buscarVeterinarioVac($busca){
 			return $consulta;
 		}
 	}
+function acharVeterinarioBovino($codigo){
+		$banco=new Banco();
+		$sql= "select * from veterinario_vac where CFMV=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
 
-?>	
+
+	function acharVeterinarioEquino($codigo){
+		$banco=new Banco();
+		$sql= "select * from 	veterinario_cav where CFMV=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+	function acharVeterinarioOvino($codigo){
+		$banco=new Banco();
+		$sql= "select * from veterinario_ovl where CFMV=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function removerVetCav($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_cav where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVetVac($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_vac where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVetOvl($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_ovl where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+?>
+
 </body> 
 	</html>
