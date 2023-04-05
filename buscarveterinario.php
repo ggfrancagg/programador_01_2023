@@ -50,6 +50,8 @@
 				echo "<th>Cuidados</th>";
 				echo "<th>Data da visita</th>";
 				echo "<th>Código cavalo</th>";
+				echo "<th class='ident'>Alterar?</th>";
+				echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 
 				
@@ -63,6 +65,10 @@
 				echo "<td>".$linha['Cuidados_cav']."</td>";
 				echo "<td>".$linha['Datavisi_cav']."</td>";
 				echo "<td>".$linha['Identificacao_cav']."</td>";
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMV' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMV' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}
@@ -87,6 +93,8 @@
 				echo "<th>Cuidados</th>";
 				echo "<th>Casqueamento</th>";
 				echo "<th>Código vaca</th>";
+				echo "<th class='ident'>Alterar?</th>";
+				echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 				
 			
@@ -102,6 +110,10 @@
 				echo "<td>".$linha['Cuidados_vac']."</td>";
 				echo "<td>".$linha['Casqueamento_vac']."</td>";
 				echo "<td>".$linha['Identificacao_vac']."</td>";
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMV' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMV' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}
@@ -124,7 +136,9 @@
 				echo "<th>Telefone Veterinario</th>";
 				echo "<th>Data da visita</th>";
 				echo "<th>Cuidados</th>";
-				echo "<th>Código Ovelha</th>"; 
+				echo "<th>Código Ovelha</th>";
+				echo "<th class='ident'>Alterar?</th>";
+				echo "<th class='ident'>Remover?</th>"; 
 				echo "</tr>";
 
 				
@@ -137,6 +151,10 @@
 				echo "<td>".$linha['data_visita']."</td>";
 				echo "<td>".$linha['cuidados_vet']."</td>";
 				echo "<td>".$linha['id_ovl']."</td>";
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMV' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMV' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}

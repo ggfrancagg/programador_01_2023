@@ -214,7 +214,76 @@ function buscarVeterinarioVac($busca){
 			return $consulta;
 		}
 	}
+function acharVeterinarioBovino($codigo){
+		$banco=new Banco();
+		$sql= "select * from veterinario_vac where CFMV=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
 
-?>	
+
+	function acharVeterinarioEquino($codigo){
+		$banco=new Banco();
+		$sql= "select * from 	veterinario_cav where CFMV=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+	function acharVeterinarioOvino($codigo){
+		$banco=new Banco();
+		$sql= "select * from veterinario_ovl where CFMV=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function removerVetCav($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_cav where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVetVac($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_vac where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVetOvl($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_ovl where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+?>
+
 </body> 
 	</html>
