@@ -9,12 +9,12 @@ if(!$consulta){
 }else{
 	echo "<table>";
 	echo "<tr>";
-    echo "<th>ID Vacina</th>";
-    echo "<th>Nome Vacina</th>";
+    echo "<th>ID vacina</th>";
+    echo "<th>Nome vacina</th>";
     echo "<th>Tipo de Vacina</th>";
-    echo "<th>Data de Aplicação</th>";
-    echo "<th>Proxima Aplicação</th>";
-    echo "<th>Identificação Bovino</th>";
+    echo "<th>Data de aplicação</th>";
+    echo "<th>Proxima aplicação</th>";
+    echo "<th>Identificação bovino</th>";
     echo "</tr>";
 
     while($linha=$consulta->fetch_assoc()){

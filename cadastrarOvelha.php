@@ -16,9 +16,9 @@
     <p>Cor: 
     <input type="text" name="cor" required></p>
     <p>Peso:  
-    <input type="text" name="peso" required></p>
+    <input type="text" name="peso" pattern="[0-9]{1-3}[0-9]{2}"  placeholder="9.99" title="use ponto e não virgula ex:9.99" required></p>
     <p>Altura:  
-    <input type="text" name="altura" required></p>
+    <input type="text" name="altura" pattern="[0-9]{1-3}[0-9]{2}"  placeholder="9.99" title="use ponto e não virgula ex:9.99" required></p>
     <br>
 
     </br>
