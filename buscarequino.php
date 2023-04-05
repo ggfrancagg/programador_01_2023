@@ -38,8 +38,8 @@
 
 				echo "<table>";
 				echo "<tr>";
-				echo "<th>Código</th>";
-				echo "<th>Nome</th>";
+				echo "<th class='ident'>Código</th>";
+				echo "<th class='nome'>Nome</th>";
 				echo "<th>Raça</th>";
 				echo "<th>Data de nascimento</th>";
 				echo "<th>Sexo</th>";
