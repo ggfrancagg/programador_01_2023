@@ -88,6 +88,17 @@ function buscarCavalo($busca){
 		}
 	}
 
+	function removerEquino($id){
+ 	$banco=new Banco();
+ 	$sql="delete from cavalo where Identificacao_cav=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
 ?>
 </body>
 </html>

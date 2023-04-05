@@ -86,4 +86,15 @@ function acharOvino($codigo){
 		}
 	}
 
+	function removerOvino($id){
+ 	$banco=new Banco();
+ 	$sql="delete from ovelhas where id_ovl=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
 ?>
