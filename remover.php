@@ -215,6 +215,120 @@
 		}
 
 	}
+
+
+	else if (isset($_POST['CFMV'])) {
+		$CFMV=$_POST['CFMV'];
+		require_once 'model/Veterinario.php';
+		$consulta=acharVeterinarioBovino($CFMV);
+		if (!$consulta) {
+			return "<h2>Veterinario Bovino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Veterinario Bovino</h1>
+	<span>  </span>
+	<p>Nome da Veterinario Bovino:<input type="text" name="vetbov" size="40" maxlength="40" value="<?php echo $linha['nome_vet']; ?>"></p>
+		<input type="hidden" name="CFMV" value="<?php echo $linha['CFMV']; ?>">
+	<br/>
+		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vetbov'])) {
+		$nome=$_POST['vetbov'];
+		$CFMV=$_POST['CFMV'];
+
+		require_once 'model/Veterinario.php';
+		$resposta=removerVetVac($CFMV);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
+	}
+
+
+	else if (isset($_POST['CFMV'])) {
+		$CFMV=$_POST['CFMV'];
+		require_once 'model/Veterinario.php';
+		$consulta=acharVeterinarioEquino($CFMV);
+		if (!$consulta) {
+			return "<h2>Veterinario Equino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Veterinario Equino</h1>
+	<span>  </span>
+	<p>Nome da Veterinario Equino:<input type="text" name="vetcav" size="40" maxlength="40" value="<?php echo $linha['nome_vet']; ?>"></p>
+		<input type="hidden" name="CFMV" value="<?php echo $linha['CFMV']; ?>">
+	<br/>
+		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vetcav'])) {
+		$nome=$_POST['vetcav'];
+		$CFMV=$_POST['CFMV'];
+
+		require_once 'model/Veterinario.php';
+		$resposta=removerVetCav($CFMV);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
+	}
+
+
+	else if (isset($_POST['CFMV'])) {
+		$CFMV=$_POST['CFMV'];
+		require_once 'model/Veterinario.php';
+		$consulta=acharVeterinarioOvino($CFMV);
+		if (!$consulta) {
+			return "<h2>Veterinario Ovino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Veterinario Ovino</h1>
+	<span>  </span>
+	<p>Nome da Veterinario Ovino:<input type="text" name="vatovl" size="40" maxlength="40" value="<?php echo $linha['nome_vet']; ?>"></p>
+		<input type="hidden" name="CFMV" value="<?php echo $linha['CFMV']; ?>">
+	<br/>
+		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vatovl'])) {
+		$nome=$_POST['vatovl'];
+		$CFMV=$_POST['CFMV'];
+
+		require_once 'model/Veterinario.php';
+		$resposta=removerVetOvl($CFMV);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
+	}
 ?>
 <div id="load">
   <div>G</div>
