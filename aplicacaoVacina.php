@@ -88,7 +88,7 @@ if(isset($_POST['ovelha'])){
     <p>Data de aplicação: 
     <input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
-	<input type="date" name="proximaapli" required></p>
+	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idovelha" value="<?php echo $_POST['ovelha']; ?>"></p>
 
     <br>
@@ -140,7 +140,7 @@ if(isset($_POST['cavalo'])){
     <p>Data de aplicação: 
     <input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
-	<input type="date" name="proximaapli" required></p>
+	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idcav" value="<?php echo $_POST['cavalo']; ?>"></p>
 
     <br>
@@ -190,7 +190,7 @@ if(isset($_POST['vaca'])){
     <p>Data de aplicação: 
     <input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
-	<input type="date" name="proximaapli" required></p>
+	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idvac" value="<?php echo $_POST['vaca']; ?>"></p>
     <br>
     <h3><input type="submit" onclick="mostra()" value="Cadastrar" class="botao"></h3>

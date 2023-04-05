@@ -87,6 +87,8 @@ if(isset($_POST['cavalo'])){
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+<p>Data de próxima aplicação:
+	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <input type="hidden" name="Identificacao_cav" value="<?php echo $_POST['cavalo'];?>">
 <h3><input type="submit" onclick="mostra()" value="Cadastrar"></h3>
 </form>
@@ -101,11 +103,12 @@ if (isset($_POST['nomecav'])) {
 	$validade_verm=$_POST['vali'];
 	$aplicacao_verm=$_POST['apli'];
 	$Identificacao_cav=$_POST['Identificacao_cav'];
+	$proximaapli=$_POST['proximaapli'];
 	require_once "model/Vermifugo.php";
 	$ID_verm=ultimoVermCavalo();
 	if($ID_verm>=0){
 		$ID_verm++;
-		$resposta=aplicarVermCavalo($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$Identificacao_cav);
+		$resposta=aplicarVermCavalo($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proximaapli,$Identificacao_cav);
 		if (!$resposta) {
 			echo "<h5>Falha ao registrar aplicação!</h5>";
 		}else{ 
@@ -129,6 +132,8 @@ if(isset($_POST['ovelha'])){
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+<p>Data de próxima aplicação:
+	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <input type="hidden" name="id_ovl" value="<?php echo $_POST['ovelha'];?>">
 <h3><input type="submit" onclick="mostra()" value="Cadastrar"></h3>
 </form>
@@ -144,11 +149,12 @@ if (isset($_POST['nomeov'])) {
 	$validade_verm=$_POST['vali'];
 	$aplicacao_verm=$_POST['apli'];
 	$id_ovl=$_POST['id_ovl'];
+	$proximaapli=$_POST['proximaapli'];
 	require_once "model/Vermifugo.php";
 	$ID_verm=ultimoVermOvelha();
 	if($ID_verm>=0){
 		$ID_verm++;
-		$resposta=aplicarVermOvelha($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$id_ovl);
+		$resposta=aplicarVermOvelha($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proximaapli,$id_ovl);
 		if (!$resposta) {
 			echo "<h5>Falha ao registrar aplicação!</h5>";
 		}else{ 
@@ -172,6 +178,8 @@ if(isset($_POST['vaca'])){
 <p>Data de fabricação: <input type="date" name="fabri" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de validade: <input type="date" name="vali" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+<p>Data de próxima aplicação:
+	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <input type="hidden" name="Identificacao_vac" value="<?php echo $_POST['vaca'];?>">
 <h3><input type="submit" onclick="mostra()" value="Cadastrar"></h3>
 </form>
@@ -187,11 +195,12 @@ if (isset($_POST['nomeva'])) {
 	$validade_verm=$_POST['vali'];
 	$aplicacao_verm=$_POST['apli'];
 	$Identificacao_vac=$_POST['Identificacao_vac'];
+	$proximaapli=$_POST['proximaapli'];
 	require_once "model/Vermifugo.php";
 	$ID_verm=ultimoVermVaca();
 	if($ID_verm>=0){
 		$ID_verm++;
-		$resposta=aplicarVermVaca($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$Identificacao_vac);
+		$resposta=aplicarVermVaca($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proximaapli,$Identificacao_vac);
 		if (!$resposta) {
 			echo "<h5>Falha ao registrar aplicação!</h5>";
 		}else{ 
