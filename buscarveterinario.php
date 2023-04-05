@@ -5,7 +5,7 @@
 <h1>Buscar</h1>
 	<p><input type="search" name="busca" placeholder="Nome ou CFMV" required></p>
 	<p><fieldset>
-		<legend>Buscar Veterinario:</legend>
+		<legend>Buscar Veterinário:</legend>
 			
 			<input id="rad" type="radio" name="tipo" value="veterinariocav" required>Veterinario de Equino &#9877;
 			<input id="rad" type="radio" name="tipo" value="veterinariovac" required>Veterinario de Bovino &#9877;
@@ -32,12 +32,12 @@
 	$busca=$_GET['busca'];
 	$tipo=$_GET['tipo'];
 	if ($tipo=='veterinariocav') {
-			require_once 'model/veterinarioCav.php';
+			require_once 'model/Veterinario.php';
 
 
 			$consulta=buscarVeterinarioCav($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum Veterinario correspondente!</h2>";
+				echo "<h2>Nenhum Veterinário correspondente!</h2>";
 			}else{
 
 				echo "<table>";
@@ -69,12 +69,12 @@
 				echo "</table>";
 			}
 	}else if ($tipo=='veterinariovac') {
-			require_once 'model/veterinarioVac.php';
+			require_once 'model/Veterinario.php';
 
 
 			$consulta=buscarVeterinarioVac($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum Veterinario correspondente!</h2>";  	
+				echo "<h2>Nenhum Veterinário correspondente!</h2>";  	
 			}else{
 
 				echo "<table>";
@@ -111,9 +111,9 @@
 			require_once 'model/Veterinario.php';
 
 
-			$consulta=buscarOvelha($busca);
+			$consulta=buscarVeterinarioOvl($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum Veterinario correspondente!</h2>";
+				echo "<h2>Nenhum Veterinário correspondente!</h2>";
 			}else{
 
 				echo "<table>";
