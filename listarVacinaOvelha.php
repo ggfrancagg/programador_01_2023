@@ -14,7 +14,7 @@ if(!$consulta){
     echo "<th>Tipo de Vacina</th>";
     echo "<th>Data de Aplicação</th>";
     echo "<th>Proxima Aplicação</th>";
-    echo "<th>Identificação Ovelha</th>";
+    echo "<th>Identificação ovelha</th>";
     echo "</tr>";
 
     while($linha=$consulta->fetch_assoc()){
