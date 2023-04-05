@@ -108,6 +108,112 @@
 			echo "<h2>Removido com sucesso!</h2>";
 		}
 
+	}	else if (isset($_POST['IDvac_cav'])) {
+		$IDvac_cav=$_POST['IDvac_cav'];
+		require_once 'model/Vacina.php';
+		$consulta=acharVacinaEquino($IDvac_cav);
+		if (!$consulta) {
+			return "<h2>Vacina Equino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Vacina Equino</h1>
+	<span>  </span>
+	<p>Nome da Vacina Equino:<input type="text" name="vacinacav" size="40" maxlength="40" value="<?php echo $linha['Nomevasc_cav']; ?>"></p>
+	
+		<input type="hidden" name="IDvac_cav" value="<?php echo $linha['IDvac_cav']; ?>">
+	<br/>
+	<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vacinacav'])) {
+		$nome=$_POST['vacinacav'];
+		$IDvac_cav=$_POST['IDvac_cav'];
+
+		require_once 'model/Vacina.php';
+		$resposta=removerVaciCav($IDvac_cav);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
+	}	else if (isset($_POST['IDvasc_vac'])) {
+		$IDvasc_vac=$_POST['IDvasc_vac'];
+		require_once 'model/Vacina.php';
+		$consulta=acharVacinaBovino($IDvasc_vac);
+		if (!$consulta) {
+			return "<h2>Vacina Bovino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Vacina Bovino</h1>
+	<span>  </span>
+	<p>Nome da Vacina Bovino:<input type="text" name="vacinavac" size="40" maxlength="40" value="<?php echo $linha['Nomevasc_vac']; ?>"></p>
+		<input type="hidden" name="IDvasc_vac" value="<?php echo $linha['IDvasc_vac']; ?>">
+	<br/>
+	<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vacinavac'])) {
+		$nome=$_POST['vacinavac'];
+		$IDvasc_vac=$_POST['IDvasc_vac'];
+
+		require_once 'model/Vacina.php';
+		$resposta=removerVaciVac($IDvasc_vac);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
+	}else if (isset($_POST['IDvasc_ovl'])) {
+		$IDvasc_ovl=$_POST['IDvasc_ovl'];
+		require_once 'model/Vacina.php';
+		$consulta=acharVacinaOvino($IDvasc_ovl);
+		if (!$consulta) {
+			return "<h2>Vacina Ovino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Vacina Ovino</h1>
+	<span>  </span>
+	<p>Nome da Vacina Ovino:<input type="text" name="vacinaovl" size="40" maxlength="40" value="<?php echo $linha['Nomevasc_ovl']; ?>"></p>IDvasc_ovl
+		<input type="hidden" name="IDvasc_ovl" value="<?php echo $linha['IDvasc_ovl']; ?>">
+	<br/>
+		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vacinaovl'])) {
+		$nome=$_POST['vacinaovl'];
+		$IDvasc_ovl=$_POST['IDvasc_ovl'];
+
+		require_once 'model/Vacina.php';
+		$resposta=removerVaciOvl($IDvasc_ovl);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
 	}
 ?>
 <div id="load">
