@@ -65,9 +65,9 @@
 				echo "<td>".$linha['Cuidados_cav']."</td>";
 				echo "<td>".$linha['Datavisi_cav']."</td>";
 				echo "<td>".$linha['Identificacao_cav']."</td>";
-				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMV' 
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMVcav' 
 					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
-				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMV' 
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMVcav' 
 					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
@@ -110,9 +110,9 @@
 				echo "<td>".$linha['Cuidados_vac']."</td>";
 				echo "<td>".$linha['Casqueamento_vac']."</td>";
 				echo "<td>".$linha['Identificacao_vac']."</td>";
-				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMV' 
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMVvac' 
 					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
-				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMV' 
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMVvac' 
 					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
@@ -151,9 +151,9 @@
 				echo "<td>".$linha['data_visita']."</td>";
 				echo "<td>".$linha['cuidados_vet']."</td>";
 				echo "<td>".$linha['id_ovl']."</td>";
-				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMV' 
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMVovl' 
 					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
-				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMV' 
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMVovl' 
 					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
