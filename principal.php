@@ -11,7 +11,7 @@ $estalog=estaLogado();
 
 <div id="topo">
 	<div id="logo">
-		<img src="img/logo1.jpg">
+	<a href="principal.php"><img src="img/logo1.jpg"></a>
 	</div>
 	<div id="menu">
 		<ul class="nav">
