@@ -6,6 +6,7 @@ function cadastrarCavalo($Identificacao_cav,$Nome_cav,$Raca_cav,$Datanasc_cav,$S
 	$banco=new banco();
 	$sql="insert into cavalo values($Identificacao_cav,'$Nome_cav','$Raca_cav','$Datanasc_cav','$Sexo_cav',$Peso,'$Racapai_cav',$Altura_cav,'$Racamae_cav')";
 	$resposta=$banco->executar($sql);
+
 	if($resposta){
 		return true;
 }else{

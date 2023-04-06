@@ -4,13 +4,13 @@
 <form action="buscarEquino.php" method="GET">
 	<h1>Buscar</h1>
 	
-	<p><fieldset>
-		<legend>Buscar Equino:</legend>
+	<fieldset>
+		<legend>Equino:</legend>
 			<p><input id="busca" type="search" name="busca" placeholder="Nome, ID ou raça" required> &#128052;</p>
-		
+		<input   id="botbus" type="submit" onclick='mostra()' value="Buscar">
 		</fieldset>
-</p>
-	<h3><input type="submit" onclick='mostra()' value="Buscar"></h3>
+
+	
 </form>
 
 <div id="load">
@@ -33,22 +33,22 @@
 
 			$consulta=buscarCavalo($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum equino correspondente!</h2>";
+				echo "<h5>Nenhum equino correspondente!</h5>";
 			}else{
 
-				echo "<table>";
+				echo "<table id='buscaBicho'>";
 				echo "<tr>";
-				echo "<th>Código</th>";
-				echo "<th>Nome</th>";
-				echo "<th>Raça</th>";
-				echo "<th>Data de nascimento</th>";
-				echo "<th>Sexo</th>";
-				echo "<th>Peso</th>";
-				echo "<th>Raça do Pai</th>";
-				echo "<th>Altura</th>";
-				echo "<th>Raça do Mãe</th>";
-				echo "<th>Alterar?</th>";
-				echo "<th>Remover?</th>";
+				echo "<th class='ident'>Código</th>";
+				echo "<th class='nome'>Nome</th>";
+				echo "<th class='raça'>Raça</th>";
+				echo "<th class='data'>Data de nascimento</th>";
+				echo "<th class='sexo'>Sexo</th>";
+				echo "<th class='peso'>Peso</th>";
+				echo "<th class='raça'>Raça do Pai</th>";
+				echo "<th class='alt'>Altura</th>";
+				echo "<th class='raça'>Raça do Mãe</th>";
+				echo "<th class='ident'>Alterar?</th>";
+				echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 
 while ($linha=$consulta->fetch_assoc()) {

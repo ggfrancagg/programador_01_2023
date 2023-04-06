@@ -4,7 +4,6 @@ require_once './persistence/Banco.php';
 function cadastrarOvelha($id_ovl,$nome_ovl,$idade_ovl,$raca_ovl,$sexo_ovl,$cor_ovl,$peso_ovl,$altura_ovl){
 	$banco=new Banco();
 	$sql="insert into ovelhas values($id_ovl,'$nome_ovl',$idade_ovl,'$raca_ovl','$sexo_ovl','$cor_ovl',$peso_ovl,$altura_ovl)";
-	echo "$sql";
 	$resposta=$banco->executar($sql);
 	if(!$resposta){
 		return false;

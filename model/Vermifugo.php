@@ -2,9 +2,9 @@
 require_once './persistence/Banco.php'; 
 
 
-function aplicarVermVaca($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$Identificacao_vac){ 
+function aplicarVermVaca($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proximaapli_verm,$Identificacao_vac){ 
 	$banco=new Banco();
-	$sql="insert into vermifugo_vac(Id_verm,Nome_verm,Marca_verm,Lote_verm,Fabricacao_verm,Validade_verm,aplicacao_verm,Identificacao_vac) values($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm',$Identificacao_vac)";
+	$sql="insert into vermifugo_vac values($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proximaapli_verm',$Identificacao_vac)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -14,9 +14,9 @@ function aplicarVermVaca($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_
 }
 
 
-function aplicarVermCavalo($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$Identificacao_cav){ 
+function aplicarVermCavalo($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proximaapli_verm,$Identificacao_cav){ 
 	$banco=new Banco();
-	$sql="insert into vermifugo_cav(Id_verm,Nome_verm,Marca_verm,Lote_verm,Fabricacao_verm,Validade_verm,aplicacao_verm,Identificacao_cav) values ($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm',$Identificacao_cav)";
+	$sql="insert into vermifugo_cav values($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proximaapli_verm',$Identificacao_cav)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -25,9 +25,9 @@ function aplicarVermCavalo($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricaca
 	}
 }
 
-function aplicarVermOvelha($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$id_ovl){ 
+function aplicarVermOvelha($ID_verm,$nome_verm,$marca_verm,$lote_verm,$fabricacao_verm,$validade_verm,$aplicacao_verm,$proximaapli_verm,$id_ovl){ 
 	$banco=new Banco();
-	$sql="insert into vermifugo_ovl(Id_verm,Nome_verm,Marca_verm,Lote_verm,Fabricacao_verm,Validade_verm,aplicacao_verm,id_ovl) values($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm',$id_ovl)";
+	$sql="insert into vermifugo_ovl values($ID_verm,'$nome_verm','$marca_verm','$lote_verm','$fabricacao_verm','$validade_verm','$aplicacao_verm','$proximaapli_verm',$id_ovl)";
 	$resp=$banco->executar($sql);
 	if($resp){
 		return true;
@@ -174,11 +174,54 @@ function listarVermifugoOvinos(){
      }
 }
 
+<<<<<<< HEAD
 function alterarVermifugo($Id_verm,$Nome_verm,$Marca_verm,$Lote_verm,$Fabricacao_verm,$Validade_verm,$aplicacao_verm,$proximaapli_verm,$Identificacao_vac){
 		$banco=new Banco();
 		$sql="update vermifugo_vac set Nome_verm='$Nome_verm', Marca_verm='$Marca_verm', Lote_verm='$Lote_verm', Fabricacao_verm='$Fabricacao_verm', Validade_verm='$Validade_verm', aplicacao_verm='$aplicacao_verm', proximaapli_verm='$proximaapli_verm' where Id_verm=$Id_verm";
 		echo "$sql";
 		$resposta=$banco->executar($sql);
+=======
+
+function acharVermBovino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vermifugo_vac where Id_verm=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+	function acharVermEquino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vermifugo_cav where Id_verm=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+	function acharVermOvino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vermifugo_ovl where Id_verm=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function removerVermCav($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vermifugo_cav where Id_verm=$id";
+ 	$resposta=$banco->executar($sql);
+>>>>>>> 5366addf593be48cfce5e8c3e1a85ba9fe9ccee8
 		if (!$resposta) {
 			return false;
 		}else{
@@ -187,4 +230,30 @@ function alterarVermifugo($Id_verm,$Nome_verm,$Marca_verm,$Lote_verm,$Fabricacao
 	}
 
 
+<<<<<<< HEAD
+=======
+	function removerVermVac($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vermifugo_vac where Id_verm=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVermOvl($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vermifugo_ovl where Id_verm=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+>>>>>>> 5366addf593be48cfce5e8c3e1a85ba9fe9ccee8
 ?>
