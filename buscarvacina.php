@@ -5,7 +5,7 @@
 <h1>Buscar</h1>
 	
 	<fieldset>
-		<legend>Vacina:</legend>
+		<legend><h2>Vacina:</h2></legend>
 			</br>
 			<p><input type="search" name="busca" placeholder="Nome ou Numero de identificação" required></p>
 		  </br>
