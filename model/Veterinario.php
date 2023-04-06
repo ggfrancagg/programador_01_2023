@@ -286,7 +286,7 @@ function acharVeterinarioBovino($codigo){
 
 function alterarVetVac($CFMV,$nome_vet,$nasc_vet,$tel_vet){
 		$banco=new Banco();
-		$sql="update veterinario_vac set nome_vet='$nome_vet', nasc_vet='$nasc_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$sql="update veterinario_vac set Nomevet_vac='$nome_vet', nascvet_vac='$nasc_vet', Telefonevet_vac='$tel_vet' where CFMV=$CFMV";
 		$resposta=$banco->executar($sql);
 		if (!$resposta) {
 			return false;
@@ -297,7 +297,7 @@ function alterarVetVac($CFMV,$nome_vet,$nasc_vet,$tel_vet){
 
 function alterarVetCav($CFMV,$nome_vet,$tel_vet){
 		$banco=new Banco();
-		$sql="update veterinario_cav set nome_vet='$nome_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$sql="update veterinario_cav set Nomevet_cav='$nome_vet', Telefonevet_cav='$tel_vet' where CFMV=$CFMV";
 		$resposta=$banco->executar($sql);
 		if (!$resposta) {
 			return false;
@@ -308,7 +308,7 @@ function alterarVetCav($CFMV,$nome_vet,$tel_vet){
 
 function alterarVetOvl($CFMV,$nome_vet,$nasc_vet,$tel_vet){
 		$banco=new Banco();
-		$sql="update veterinario_ovl set nome_vet='$nome_vet',nasc_vet=$'nasc_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$sql="update veterinario_ovl set nome_vet='$nome_vet',nasc_vet='$nasc_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
 		$resposta=$banco->executar($sql);
 		if (!$resposta) {
 			return false;
