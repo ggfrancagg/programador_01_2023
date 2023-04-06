@@ -331,6 +331,11 @@ h5{
 	height: auto;
 }
 
+#buscaBicho table.ove{
+	margin-left: 4vw;
+	margin-right: 10vw;
+}
+
 /*TABELA AJUSTE DAS COLUNAS DE LISTAS*/
 
 table th.ident{
