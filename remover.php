@@ -108,7 +108,9 @@
 			echo "<h2>Removido com sucesso!</h2>";
 		}
 
-	}	else if (isset($_POST['IDvac_cav'])) {
+	}	
+
+	 if (isset($_POST['IDvac_cav'])) {
 		$IDvac_cav=$_POST['IDvac_cav'];
 		require_once 'model/Vacina.php';
 		$consulta=acharVacinaEquino($IDvac_cav);
@@ -144,7 +146,9 @@
 			echo "<h2>Removido com sucesso!</h2>";
 		}
 
-	}	else if (isset($_POST['IDvasc_vac'])) {
+	}	
+
+	 if (isset($_POST['IDvasc_vac'])) {
 		$IDvasc_vac=$_POST['IDvasc_vac'];
 		require_once 'model/Vacina.php';
 		$consulta=acharVacinaBovino($IDvasc_vac);
@@ -173,13 +177,15 @@
 
 		require_once 'model/Vacina.php';
 		$resposta=removerVaciVac($IDvasc_vac);
-		if (!$resposta) {
+				if (!$resposta) {
 			echo "<h2>Erro na tentativa de remover!</h2>";
 		}else{
 			echo "<h2>Removido com sucesso!</h2>";
 		}
 
-	}else if (isset($_POST['IDvasc_ovl'])) {
+	}
+
+	 if (isset($_POST['IDvasc_ovl'])) {
 		$IDvasc_ovl=$_POST['IDvasc_ovl'];
 		require_once 'model/Vacina.php';
 		$consulta=acharVacinaOvino($IDvasc_ovl);
@@ -217,8 +223,8 @@
 	}
 
 
-	else if (isset($_POST['CFMV'])) {
-		$CFMV=$_POST['CFMV'];
+	 if (isset($_POST['CFMVvac'])) {
+		$CFMV=$_POST['CFMVvac'];
 		require_once 'model/Veterinario.php';
 		$consulta=acharVeterinarioBovino($CFMV);
 		if (!$consulta) {
@@ -230,7 +236,7 @@
 <form action="remover.php" method="POST">  
 	<h1>Remover Veterinario Bovino</h1>
 	<span>  </span>
-	<p>Nome da Veterinario Bovino:<input type="text" name="vetbov" size="40" maxlength="40" value="<?php echo $linha['nome_vet']; ?>"></p>
+	<p>Nome da Veterinario Bovino:<input type="text" name="vetbov" size="40" maxlength="40" value="<?php echo $linha['Nomevet_vac']; ?>"></p>
 		<input type="hidden" name="CFMV" value="<?php echo $linha['CFMV']; ?>">
 	<br/>
 		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
@@ -252,11 +258,10 @@
 			echo "<h2>Removido com sucesso!</h2>";
 		}
 
-	}
+	}	
 
-
-	else if (isset($_POST['CFMV'])) {
-		$CFMV=$_POST['CFMV'];
+	 if (isset($_POST['CFMVcav'])) {
+		$CFMV=$_POST['CFMVcav'];
 		require_once 'model/Veterinario.php';
 		$consulta=acharVeterinarioEquino($CFMV);
 		if (!$consulta) {
@@ -268,7 +273,7 @@
 <form action="remover.php" method="POST">  
 	<h1>Remover Veterinario Equino</h1>
 	<span>  </span>
-	<p>Nome da Veterinario Equino:<input type="text" name="vetcav" size="40" maxlength="40" value="<?php echo $linha['nome_vet']; ?>"></p>
+	<p>Nome da Veterinario Equino:<input type="text" name="vetcav" size="40" maxlength="40" value="<?php echo $linha['Nomevet_cav']; ?>"></p>
 		<input type="hidden" name="CFMV" value="<?php echo $linha['CFMV']; ?>">
 	<br/>
 		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
@@ -290,11 +295,10 @@
 			echo "<h2>Removido com sucesso!</h2>";
 		}
 
-	}
+	}	
 
-
-	else if (isset($_POST['CFMV'])) {
-		$CFMV=$_POST['CFMV'];
+	if (isset($_POST['CFMVovl'])) {
+		$CFMV=$_POST['CFMVovl'];
 		require_once 'model/Veterinario.php';
 		$consulta=acharVeterinarioOvino($CFMV);
 		if (!$consulta) {
@@ -320,8 +324,121 @@
 		$nome=$_POST['vatovl'];
 		$CFMV=$_POST['CFMV'];
 
-		require_once 'model/Veterinario.php';
+		require_once 'model/Vermifugo.php';
 		$resposta=removerVetOvl($CFMV);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
+	}
+
+
+	 if (isset($_POST['Id_vermvac'])) {
+		$Id_verm=$_POST['Id_vermvac'];
+		require_once 'model/Vermifugo.php';
+		$consulta=acharVermBovino($Id_verm);
+		if (!$consulta) {
+			return "<h2>Vermifugo Bovino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Vermifugo Bovino</h1>
+	<span>  </span>
+	<p>Nome da Vermifugo Bovino:<input type="text" name="vermvac" size="40" maxlength="40" value="<?php echo $linha['Nome_verm']; ?>"></p>
+		<input type="hidden" name="Id_verm" value="<?php echo $linha['Id_verm']; ?>">
+	<br/>
+		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vermvac'])) {
+		$nome=$_POST['vermvac'];
+		$Id_verm=$_POST['Id_verm'];
+
+		require_once 'model/Vermifugo.php';
+		$resposta=removerVermVac($Id_verm);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
+	}
+
+	 if (isset($_POST['Id_vermcav'])) {
+		$Id_verm=$_POST['Id_vermcav'];
+		require_once 'model/Vermifugo.php';
+		$consulta=acharVermEquino($Id_verm);
+		if (!$consulta) {
+			return "<h2>Vermifugo Equino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Vermifugo Equino</h1>
+	<span>  </span>
+	<p>Nome da Vermifugo Equino:<input type="text" name="vermcav" size="40" maxlength="40" value="<?php echo $linha['Nome_verm']; ?>"></p>
+		<input type="hidden" name="Id_verm" value="<?php echo $linha['Id_verm']; ?>">
+	<br/>
+		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vermcav'])) {
+		$nome=$_POST['vermcav'];
+		$Id_verm=$_POST['Id_verm'];
+
+		require_once 'model/Vermifugo.php';
+		$resposta=removerVermCav($Id_verm);
+		if (!$resposta) {
+			echo "<h2>Erro na tentativa de remover!</h2>";
+		}else{
+			echo "<h2>Removido com sucesso!</h2>";
+		}
+
+	}
+
+
+	else if (isset($_POST['Id_vermovl'])) {
+		$Id_verm=$_POST['Id_vermovl'];
+		require_once 'model/Vermifugo.php';
+		$consulta=acharVermOvino($Id_verm);
+		if (!$consulta) {
+			return "<h2>Vermifugo Ovino não encontrado!</h2>";
+		}else{
+			while ($linha=$consulta->fetch_assoc()) {
+				
+?>
+<form action="remover.php" method="POST">  
+	<h1>Remover Vermifugo Ovino</h1>
+	<span>  </span>
+	<p>Nome da Vermifugo Ovino:<input type="text" name="vermovl" size="40" maxlength="40" value="<?php echo $linha['Nome_verm']; ?>"></p>
+		<input type="hidden" name="Id_verm" value="<?php echo $linha['Id_verm']; ?>">
+	<br/>
+		<p><input type="submit" onclick='mostra()' class="enviar" value="Remover"></p>
+</form>
+
+<?php
+			}
+		}
+	}
+	if (isset($_POST['vermovl'])) {
+		$nome=$_POST['vermovl'];
+		$Id_verm=$_POST['Id_verm'];
+
+		require_once 'model/Vermifugo.php';
+		$resposta=removerVermOvl($Id_verm);
 		if (!$resposta) {
 			echo "<h2>Erro na tentativa de remover!</h2>";
 		}else{
