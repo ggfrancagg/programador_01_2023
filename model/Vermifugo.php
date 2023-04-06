@@ -175,7 +175,7 @@ function listarVermifugoOvinos(){
 }
 
 
-function alterarVermifugo($Id_verm,$Nome_verm,$Marca_verm,$Lote_verm,$Fabricacao_verm,$Validade_verm,$aplicacao_verm,$proximaapli_verm,$Identificacao_vac){
+function alterarVermifugoVac($Id_verm,$Nome_verm,$Marca_verm,$Lote_verm,$Fabricacao_verm,$Validade_verm,$aplicacao_verm,$proximaapli_verm,$Identificacao_vac){
 		$banco=new Banco();
 		$sql="update vermifugo_vac set Nome_verm='$Nome_verm', Marca_verm='$Marca_verm', Lote_verm='$Lote_verm', Fabricacao_verm='$Fabricacao_verm', Validade_verm='$Validade_verm', aplicacao_verm='$aplicacao_verm', proximaapli_verm='$proximaapli_verm' where Id_verm=$Id_verm";
 		$resposta=$banco->executar($sql);
@@ -184,6 +184,30 @@ function alterarVermifugo($Id_verm,$Nome_verm,$Marca_verm,$Lote_verm,$Fabricacao
 		}else{
 			return true;
 		}
+	}
+function alterarVermifugoCav($Id_verm,$Nome_verm,$Marca_verm,$Lote_verm,$Fabricacao_verm,$Validade_verm,$aplicacao_verm,$proximaapli_verm,$Identificacao_cav){
+		$banco=new Banco();
+		$sql="update vermifugo_cav set Nome_verm='$Nome_verm', Marca_verm='$Marca_verm', Lote_verm='$Lote_verm', Fabricacao_verm='$Fabricacao_verm', Validade_verm='$Validade_verm', aplicacao_verm='$aplicacao_verm', proximaapli_verm='$proximaapli_verm' where Id_verm=$Id_verm";
+		$resposta=$banco->executar($sql);
+		if(!$resposta){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function alterarVermifugoOvl($Id_verm,$Nome_verm,$Marca_verm,$Lote_verm,$Fabricacao_verm,$Validade_verm,$aplicacao_verm,$proximaapli_verm,$Id_ovl){
+		$banco=new Banco();
+		$sql="update vermifugo_ovl set Nome_verm='$Nome_verm', Marca_verm='$Marca_verm', Lote_verm='$Lote_verm', Fabricacao_verm='$Fabricacao_verm', Validade_verm='$Validade_verm', aplicacao_verm='$aplicacao_verm', proximaapli_verm='$proximaapli_verm' where Id_verm=$Id_verm";
+		$resposta=$banco->executar($sql);
+		if(!$resposta){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
 
 
 function acharVermBovino($codigo){
@@ -258,7 +282,5 @@ function acharVermBovino($codigo){
 			return true;
 		}
 	}
-}
-
 
 ?>
