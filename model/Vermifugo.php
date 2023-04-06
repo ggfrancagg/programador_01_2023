@@ -174,4 +174,75 @@ function listarVermifugoOvinos(){
      }
 }
 
+
+function acharVermBovino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vermifugo_vac where Id_verm=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+	function acharVermEquino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vermifugo_cav where Id_verm=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+	function acharVermOvino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vermifugo_ovl where Id_verm=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function removerVermCav($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vermifugo_cav where Id_verm=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVermVac($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vermifugo_vac where Id_verm=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVermOvl($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vermifugo_ovl where Id_verm=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
 ?>

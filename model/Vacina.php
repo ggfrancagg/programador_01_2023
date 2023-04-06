@@ -209,7 +209,7 @@ function acharVacinaBovino($codigo){
 
 function removerVaciVac($id){
  	$banco=new Banco();
- 	$sql="delete from vacina_vac where IDvac_vac=$id";
+ 	$sql="delete from vacina_vac where IDvasc_vac=$id";
  	$resposta=$banco->executar($sql);
 		if (!$resposta) {
 			return false;
