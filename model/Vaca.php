@@ -43,7 +43,7 @@ function listarVaca(){
 
 function verificarVacinaVaca($idvasc){
 		$banco=new Banco();
-		$sql="select vaca.Nome_vac from vaca inner join vacina_vac where vaca.Identificacao_vac=vacina_vac.Identificacao_vac and vacina_vac.Dataapli_vac='$idvasc'";
+		$sql="select vaca.Nome_vac from vaca inner join vacina_vac where vaca.Identificacao_vac=vacina_vac.Identificacao_vac and vacina_vac.proximaapli_vac='$idvasc'";
 		$consulta=$banco->consultar($sql);
 		if(!$consulta){
 			return false;
