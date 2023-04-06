@@ -162,7 +162,72 @@ function listarVacinaCavalo(){
         return $consulta;
      }
 }
-	
+
+function acharVacinaVac($idvac){
+      $banco=new Banco();
+      $sql="select * from vacina_vac where IDvasc_vac=$idvac";
+      $consulta=$banco->consultar($sql);
+      if (!$consulta) {
+        return false;
+     }else{
+        return $consulta; 
+     }
+}
+
+function alterarVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proximaapli_vac,$Identificacao_vac){
+     $banco=new Banco();
+     $sql="update vaca set Nomevasc_vac='$Nomevasc_vac',Tipovasc_vac=$Tipovasc_vac,Dataapli_vac=$Dataapli_vac,proximaapli_vac=$proximaapli_vac,Identificacao_vac=$Identificacao_vac where IDvasc_vac=$IDvasc_vac";
+     $resposta=$banco->executar($sql);
+     if (!$resposta) {
+         return false;
+     }else{
+        return true;
+     }
+}
+
+function acharVacinaOvl($idov){
+      $banco=new Banco();
+      $sql="select * from vacina_ovl where IDvasc_ovl=$idov";
+      $consulta=$banco->consultar($sql);
+      if (!$consulta) {
+        return false;
+     }else{
+        return $consulta; 
+     }
+}
+
+function alterarOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$proximaapli_ovl,$id_ovl){
+     $banco=new Banco();
+     $sql="update ovelha set Nomevasc_ovl='$Nomevasc_ovl',Tipovasc_ovl=$Tipovasc_ovl,Dataapli_ovl=$Dataapli_ovl,proximaapli_ovl=$proximaapli_ovl,id_ovl=$id_ovl where IDvasc_ovl=$IDvasc_ovl";
+     $resposta=$banco->executar($sql);
+     if (!$resposta) {
+         return false;
+     }else{
+        return true;
+     }
+}
+
+function acharVacinaCav($idcav){
+      $banco=new Banco();
+      $sql="select * from vacina_cav where IDvac_cav=$idcav";
+      $consulta=$banco->consultar($sql);
+      if (!$consulta) {
+        return false;
+     }else{
+        return $consulta; 
+     }
+}
+
+function alterarCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$Nomevasc_cav,$Identificacao_cav){
+     $banco=new Banco();
+     $sql="update cavalo set Nomevasc_cav='$Nomevasc_cav',Tipovasc_cav=$Tipovasc_cav,Dataapli_cav=$Dataapli_cav,proximaapli_cav=$proximaapli_cav,Identificacao_cav=$Identificacao_cav where IDvac_cav=$IDvac_cav";
+     $resposta=$banco->executar($sql);
+     if (!$resposta) {
+         return false;
+     }else{
+        return true;
+     }
+}
 
 ?>
 
