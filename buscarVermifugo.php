@@ -47,6 +47,8 @@
 						echo "<th class='data'> Data de validade</th>";
 						echo "<th class='data'> Data da aplicação </th>";
 						echo "<th class='data'> Próxima aplicação </th>";
+						echo "<th class='ident'>Alterar?</th>";
+						echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 
 				
@@ -60,6 +62,10 @@
 					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
+					echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Id_vermvac' 
+							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+					echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Id_vermvac' 
+							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 				}
 				echo "</table>";
@@ -83,6 +89,8 @@
 						echo "<th class='data'> Data de validade</th>";
 						echo "<th class='data'> Data da aplicação </th>";
 						echo "<th class='data'> Próxima aplicação </th>";
+						echo "<th class='ident'>Alterar?</th>";
+						echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 
 				
@@ -96,6 +104,10 @@
 					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
+					echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Id_vermcav' 
+							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+					echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Id_vermcav' 
+							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 				}
 				echo "</table>";
@@ -119,6 +131,8 @@
 						echo "<th class='data'> Data de validade</th>";
 						echo "<th class='data'> Data da aplicação </th>";
 						echo "<th class='data'> Próxima aplicação </th>";
+						echo "<th class='ident'>Alterar?</th>";
+						echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 
 				
@@ -132,6 +146,10 @@
 					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
+					echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Id_vermovl' 
+							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+					echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Id_vermovl' 
+							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}
