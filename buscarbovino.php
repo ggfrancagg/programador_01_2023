@@ -6,7 +6,7 @@
 	
 	<fieldset>
 
-		<legend>Bovino: </legend>
+		<legend><h2>Bovino:</h2></legend>
 			<p><input id="busca" type="search" name="buscar" placeholder="Nome, ID ou raça" required> &#128046;</p>
 		<input   id="botbus" type="submit" onclick='mostra()' value="Buscar">
 		</fieldset>

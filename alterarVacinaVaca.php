@@ -10,13 +10,13 @@ if(isset($_POST['IDvasc_vac'])){
    }else{
    	  while($linha=$consulta->fetch_assoc()){ 
 ?>
-<form action="alterarVacina.php" method="POST">
+<form action="alterarVacinaVaca.php" method="POST">
 	<h1>Alterar Vacina</h1>
 	<p>Nome da Vacina<input type="text" name="nome" size="40" maxlength="40" value="<?php echo $linha['Nomevasc_vac']; ?>"></p>
 	<p>Tipo da Vacina<input type="text" name="tipo" size="40" maxlength="40" value="<?php echo $linha['Tipovasc_vac']; ?>"></p>
 	<p>Data da Aplicação<input type="date" name="data" value="<?php echo $linha['Dataapli_vac']; ?>"></p>
 	<p>Proxima Aplicação<input type="date" name="proxima" value="<?php echo $linha['proximaapli_vac']; ?>"></p>
-  <p>Identificação Bovino<input type="text" size="30" maxlength="30" value="<?php echo $linha['Identificacao_vac']; ?>"></p>
+  <p>Identificação Bovino<input type="text" name="identificacao" size="30" maxlength="30" value="<?php echo $linha['Identificacao_vac']; ?>"></p>
 		
        <input type="hidden" name="IDvasc_vac" value="<?php echo $linha['IDvasc_vac']; ?>">
 	   <p><input type="submit" onclick='mostra()' class="enviar" name="Cadastrar"></p>
@@ -46,7 +46,7 @@ if (isset($_POST['nome'])) {
     	$IDvasc_vac=$_POST['IDvasc_vac'];
 
     	require_once 'model/Vacina.php';
-    	$resposta=alterarVaca($IDvasc_vac,$nome,$tipo,$data,$proxima,$identificacao);
+    	$resposta=alterarVacinaVaca($IDvasc_vac,$nome,$tipo,$data,$proxima,$identificacao);
     	if (!$resposta) {
     		echo "<h2>Erro na tentativa de alterar!</h2>";
     	}else{
