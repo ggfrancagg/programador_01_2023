@@ -8,12 +8,14 @@
 		<legend>Vacina:</legend>
 			</br>
 			<p><input type="search" name="busca" placeholder="Nome ou Numero de identificação" required></p>
+		  </br>
 			<p><input type="radio" name="tipo" value="vacinasvac" required> Vacinas Bovinos</p>
 			<p><input  type="radio" name="tipo" value="vacinascav" required> Vacinas Equinos</p>
 			<p><input  type="radio" name="tipo" value="vacinasovl" required> Vacinas Ovinos</p>
 			</br>
+			<h3><input id="botbus" type="submit" onclick='mostra()' value="Buscar"></h3>
 		</fieldset>
-	<h3><input id="botbus" type="submit" onclick='mostra()' value="Buscar"></h3>
+	
 </form>
 
 <div id="load">
@@ -37,20 +39,19 @@
 
 			$consulta=buscarVacinaVac($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhuma Vacina correspondente!</h2>";
+				echo "<h5>Nenhuma Vacina correspondente!</h5>";
 			}else{
 
-				echo "<table>";
+				echo "<table id='buscaVacina'>";
 				echo "<tr>";
-				echo "<th>Código</th>";				
-				echo "<th>Nome</th>";
-				echo "<th>Tipo</th>";
-				echo "<th>Data aplicação</th>";
-				echo "<th>Proxima aplicação</th>";
-				echo "<th>Código Bovino</th>";
+				echo "<th class='ident'>Código</th>";				
+				echo "<th class='nome'>Nome</th>";
+				echo "<th class='nome'>Tipo</th>";
+				echo "<th class='data'>Data aplicação</th>";
+				echo "<th class='data'>Proxima aplicação</th>";
+				echo "<th class='ident'>Código Bovino</th>";
 				echo "<th class='ident'>Alterar?</th>";
 				echo "<th class='ident'>Remover?</th>"; 	
-
 				echo "</tr>";
 
 				
@@ -78,29 +79,29 @@
 
 			$consulta=buscarVacinaCav($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum Vacina correspondente!</h2>";
+				echo "<h5>Nenhum Vacina correspondente!</h5>";
 			}else{
 
-				echo "<table>";
+				echo "<table id='buscaVacina'>";
 				echo "<tr>";
-				echo "<th>Código</th>";				
-				echo "<th>Data aplicação</th>";
-				echo "<th>Proxima aplicação</th>";
-				echo "<th>Tipo vacina</th>";
-				echo "<th>Nome vacina</th>";				
-				echo "<th>Código Equino</th>";
+				echo "<th class='ident'>Código</th>";	
+				echo "<th class='nome'>Nome vacina</th>";		
+				echo "<th class='nome'>Tipo vacina</th>";		
+				echo "<th class='data'>Data aplicação</th>";
+				echo "<th class='data'>Proxima aplicação</th>";	
+				echo "<th class='ident'>Código Equino</th>";
 				echo "<th class='ident'>Alterar?</th>";
-			    echo "<th class='ident'>Remover?</th>";
+			  echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 
 				
 		while($linha=$consulta->fetch_assoc()) {
 				echo "<tr>";
-				echo "<td>".$linha['IDvac_cav']."</td>";				
-				echo "<td>".$linha['Dataapli_cav']."</td>";
-				echo "<td>".$linha['proximaapli_cav']."</td>";
+				echo "<td>".$linha['IDvac_cav']."</td>";
+				echo "<td>".$linha['Nomevasc_cav']."</td>";
 				echo "<td>".$linha['Tipovasc_cav']."</td>";
-				echo "<td>".$linha['Nomevasc_cav']."</td>";				
+				echo "<td>".$linha['Dataapli_cav']."</td>";
+				echo "<td>".$linha['proximaapli_cav']."</td>";		
 				echo "<td>".$linha['Identificacao_cav']."</td>";
 				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='IDvac_cav' 
 					value='".$linha['IDvac_cav']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
@@ -117,19 +118,20 @@
 
 			$consulta=buscarVacinaOvl($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum Vacina correspondente!</h2>";
+				echo "<h5>Nenhum Vacina correspondente!</h5>";
 			}else{
 
-				echo "<table>";
+
+				echo "<table id='buscaVacina'>";
 				echo "<tr>";
-				echo "<th>Código</th>";				
-				echo "<th>Nome vacina</th>";
-				echo "<th>Tipo vacina</th>";
-				echo "<th>Data aplicação</th>";
-				echo "<th>Proxima aplicação</th>";								
-				echo "<th>Código Ovino</th>";
+				echo "<th class='ident'>Código</th>";	
+				echo "<th class='nome'>Nome vacina</th>";		
+				echo "<th class='nome'>Tipo vacina</th>";		
+				echo "<th class='data'>Data aplicação</th>";
+				echo "<th class='data'>Proxima aplicação</th>";	
+				echo "<th class='ident'>Código Ovino</th>";
 				echo "<th class='ident'>Alterar?</th>";
-			    echo "<th class='ident'>Remover?</th>";
+			  echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 
 				
@@ -139,7 +141,7 @@
 				echo "<td>".$linha['Nomevasc_ovl']."</td>";
 				echo "<td>".$linha['Tipovasc_ovl']."</td>";
 				echo "<td>".$linha['Dataapli_ovl']."</td>";
-				echo "<td>".$linha['proximaapli_ovl']."</td>";				
+				echo "<td>".$linha['proximaapli_ovl']."</td>";
 				echo "<td>".$linha['id_ovl']."</td>";
 				echo "<td><form id='alte' action='alterarVacinaOvelha.php' method='POST'><input type='hidden' name='IDvasc_ovl' 
 				value='".$linha['IDvasc_ovl']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
