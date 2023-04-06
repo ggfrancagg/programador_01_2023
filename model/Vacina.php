@@ -162,7 +162,7 @@ function listarVacinaCavalo(){
         return $consulta;
      }
 }
-<<<<<<< HEAD
+
 
 function acharVacinaVac($idvac){
       $banco=new Banco();
@@ -229,8 +229,7 @@ function alterarCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$
         return true;
      }
 }
-=======
->>>>>>> d0fbde732ca5df2db22c133c340832500e7edca4
+
 
 function acharVacinaBovino($codigo){
 		$banco=new Banco();
