@@ -16,7 +16,7 @@ if(isset($_POST['IDvasc_ovl'])){
 	<p>Tipo da Vacina<input type="text" name="tipo" size="40" maxlength="40" value="<?php echo $linha['Tipovasc_ovl']; ?>"></p>
 	<p>Data da Aplicação<input type="date" name="data" value="<?php echo $linha['Dataapli_ovl']; ?>"></p>
 	<p>Proxima Aplicação<input type="date" name="proxima" value="<?php echo $linha['proximaapli_ovl']; ?>"></p>
-  <p>Identificação Ovino<input type="text" name="identificacao"> size="30" maxlength="30" value="<?php echo $linha['id_ovl']; ?>"></p>
+  <p>Identificação Ovino<input type="text" name="identificacao" size="30" maxlength="30" value="<?php echo $linha['id_ovl']; ?>"></p>
 		
        <input type="hidden" name="IDvasc_ovl" value="<?php echo $linha['IDvasc_ovl']; ?>">
 	   <p><input type="submit" onclick='mostra()' class="enviar" name="Cadastrar"></p>
@@ -41,7 +41,8 @@ if (isset($_POST['nome'])) {
 	    $nome=$_POST['nome'];
     	$tipo=$_POST['tipo'];
     	$data=$_POST['data'];
-    	$proxima=$_POST['proxima'];      
+    	$proxima=$_POST['proxima'];
+        $identificacao=$_POST['identificacao'];      
     	$IDvasc_ovl=$_POST['IDvasc_ovl'];
 
     	require_once 'model/Vacina.php';

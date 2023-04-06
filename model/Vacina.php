@@ -186,7 +186,7 @@ function alterarVacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac
      }
 }
 
-function alterarVacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$Nomevasc_cav,$Identificacao_cav){
+function alterarVacinaCavalo($IDvac_cav,$Nomevasc_cav,$Tipovasc_cav,$Dataapli_cav,$proximaapli_cav,$Identificacao_cav){
      $banco=new Banco();
      $sql="update vacina_cav set Dataapli_cav='$Dataapli_cav',proximaapli_cav='$proximaapli_cav',Tipovasc_cav='$Tipovasc_cav',Nomevasc_cav='$Nomevasc_cav',Identificacao_cav=$Identificacao_cav where IDvac_cav=$IDvac_cav"; 
      $resposta=$banco->executar($sql);
