@@ -324,7 +324,7 @@
 		$nome=$_POST['vatovl'];
 		$CFMV=$_POST['CFMV'];
 
-		require_once 'model/Vermifugo.php';
+		require_once 'model/Veterinario.php';
 		$resposta=removerVetOvl($CFMV);
 		if (!$resposta) {
 			echo "<h2>Erro na tentativa de remover!</h2>";

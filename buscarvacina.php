@@ -103,7 +103,7 @@
 				echo "<td>".$linha['Dataapli_cav']."</td>";
 				echo "<td>".$linha['proximaapli_cav']."</td>";		
 				echo "<td>".$linha['Identificacao_cav']."</td>";
-				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='IDvac_cav' 
+				echo "<td><form id='alte' action='alterarVacinaCavalo.php' method='POST'><input type='hidden' name='IDvac_cav' 
 					value='".$linha['IDvac_cav']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='IDvac_cav' 
 					value='".$linha['IDvac_cav']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
