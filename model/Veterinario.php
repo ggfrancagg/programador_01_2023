@@ -283,7 +283,41 @@ function acharVeterinarioBovino($codigo){
 			return true;
 		}
 	}
-?>
+
+function alterarVetVac($CFMV,$nome_vet,$nasc_vet,$tel_vet){
+		$banco=new Banco();
+		$sql="update veterinario_vac set nome_vet='$nome_vet', nasc_vet='$nasc_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+function alterarVetCav($CFMV,$nome_vet,$tel_vet){
+		$banco=new Banco();
+		$sql="update veterinario_cav set nome_vet='$nome_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+function alterarVetOvl($CFMV,$nome_vet,$nasc_vet,$tel_vet){
+		$banco=new Banco();
+		$sql="update veterinario_ovl set nome_vet='$nome_vet',nasc_vet=$'nasc_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}	
+
+	?>
 
 </body> 
 	</html>
