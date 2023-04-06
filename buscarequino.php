@@ -5,7 +5,7 @@
 	<h1>Buscar</h1>
 	
 	<fieldset>
-		<legend>Equino:</legend>
+		<legend><h2>Equino:</h2></legend>
 			<p><input id="busca" type="search" name="busca" placeholder="Nome, ID ou raça" required> &#128052;</p>
 		<input   id="botbus" type="submit" onclick='mostra()' value="Buscar">
 		</fieldset>

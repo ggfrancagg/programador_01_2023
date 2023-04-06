@@ -163,6 +163,7 @@ function listarVacinaCavalo(){
      }
 }
 
+
 function acharVacinaVac($idvac){
       $banco=new Banco();
       $sql="select * from vacina_vac where IDvasc_vac=$idvac";
@@ -250,6 +251,7 @@ function alterarCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$
         return true;
      }
 }
+
 
 ?>
 

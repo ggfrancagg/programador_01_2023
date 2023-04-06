@@ -133,7 +133,7 @@ if(isset($_POST['ovelha'])){
 <p>Data de validade: <input type="date" name="vali" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de próxima aplicação:
-	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+	<input type="date" name="proximaapli" min="<?php echo date("Y-m-d"); ?>" required></p>
 <input type="hidden" name="id_ovl" value="<?php echo $_POST['ovelha'];?>">
 <h3><input type="submit" onclick="mostra()" value="Cadastrar"></h3>
 </form>
@@ -179,7 +179,7 @@ if(isset($_POST['vaca'])){
 <p>Data de validade: <input type="date" name="vali" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de próxima aplicação:
-	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+	<input type="date" name="proximaapli" min="<?php echo date("Y-m-d"); ?>" required></p>
 <input type="hidden" name="Identificacao_vac" value="<?php echo $_POST['vaca'];?>">
 <h3><input type="submit" onclick="mostra()" value="Cadastrar"></h3>
 </form>
