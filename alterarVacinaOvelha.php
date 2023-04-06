@@ -19,10 +19,18 @@ if(isset($_POST['IDvasc_ovl'])){
   <p>Identificação Ovino<input type="text" size="30" maxlength="30" value="<?php echo $linha['id_ovl']; ?>"></p>
 		
        <input type="hidden" name="IDvasc_ovl" value="<?php echo $linha['IDvasc_ovl']; ?>">
-	   <p><input type="submit" class="enviar" name="Cadastrar"></p>
+	   <p><input type="submit" onclick='mostra()' class="enviar" name="Cadastrar"></p>
 </form>	
 
-
+<div id="load">
+  <div>G</div>
+  <div>N</div>
+  <div>I</div>
+  <div>D</div>
+  <div>A</div>
+  <div>O</div>
+  <div>L</div> 
+</div>
 
 <?php 
       }	
@@ -46,5 +54,7 @@ if (isset($_POST['nome'])) {
     	}
 }
 ?>
+
+<script src="js/mensagem.js"></script>
 </body>
 </html>
