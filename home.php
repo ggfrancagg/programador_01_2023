@@ -1,6 +1,6 @@
 <?php require_once 'cabecalho.php';
 echo "</br>";
-echo "<h1>Home - Inicio</h1>";
+echo "<h1>Home - Início</h1>";
 echo "</br>";
 echo "<p>Hoje é ".date("d/m/Y")."</p>";
 echo "</br>";
@@ -19,6 +19,7 @@ if (!$consulta1&&!$consulta2&&!$consulta3) {
 	echo "</div>";
 }else{
 	
+	if($consulta1){
 	while ($linha=$consulta1->fetch_assoc()) {
 		echo "<div id='push'>";
 		echo "<h2>Hoje tem vacina para ".$linha['Nome_cav']."</h2>";
@@ -26,7 +27,8 @@ if (!$consulta1&&!$consulta2&&!$consulta3) {
 		echo "<p>Vacine</p>";
 		echo "</div>";
 	}
-
+}
+	if($consulta2){
 	while ($linha=$consulta2->fetch_assoc()) {
 		echo "<div id='push'>";
 		echo "<h2>Hoje tem vacina para ".$linha['Nome_vac']."</h2>";
@@ -34,15 +36,16 @@ if (!$consulta1&&!$consulta2&&!$consulta3) {
 		echo "<p>Vacine</p>";
 		echo "</div>";
 	}
-
+}
+	if($consulta3){
 	while ($linha=$consulta3->fetch_assoc()) {
 		echo "<div id='push'>";
-		echo "<h2>Hoje tem vacina para ".$linha['nome_olv']."</h2>";
+		echo "<h2>Hoje tem vacina para ".$linha['nome_ovl']."</h2>";
 		echo "</br>";
 		echo "<p>Vacine</p>";
 		echo "</div>";
 	}
-	
+	}
 		
 }
 ?>
