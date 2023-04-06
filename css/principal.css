@@ -331,6 +331,44 @@ h5{
 	height: auto;
 }
 
+#buscaBichoOve{
+	margin-left: 8vw;
+	margin-right: 8vw;
+	margin-top: 10vh;
+	max-width: 90vw;
+	border: 2px inset #FF7001;
+}
+
+#buscaBichoOve tr{
+	margin-left: 5vw;
+	margin-right: 5vw;
+	margin-top: 10vh;
+	max-width: 90vw;
+	border: 2px inset #FF7001;
+}
+
+#buscaBichoOve th{
+	background-color: #B64926;
+	text-align: center;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #FFC476;
+	width: auto;
+	border: 2px inset #FF7001;
+}
+
+#buscaBichoOve td{
+	background-color: #D9985F;
+	text-align: center;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #593B16;
+	width: auto;
+	border: 1px inset #FF7001;
+	height: auto;
+}
+
+
 /*TABELA AJUSTE DAS COLUNAS DE LISTAS*/
 
 table th.ident{
