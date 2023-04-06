@@ -162,6 +162,7 @@ function listarVacinaCavalo(){
         return $consulta;
      }
 }
+<<<<<<< HEAD
 
 function acharVacinaVac($idvac){
       $banco=new Banco();
@@ -228,7 +229,75 @@ function alterarCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$
         return true;
      }
 }
+=======
+>>>>>>> d0fbde732ca5df2db22c133c340832500e7edca4
 
+function acharVacinaBovino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vacina_vac where IDvasc_vac=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+	
+	function acharVacinaEquino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vacina_cav where IDvac_cav=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function acharVacinaOvino($codigo){
+		$banco=new Banco();
+		$sql= "select * from vacina_ovl where IDvasc_ovl=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function removerVaciCav($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vacina_cav where IDvac_cav=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+function removerVaciVac($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vacina_vac where IDvasc_vac=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVaciOvl($id){
+ 	$banco=new Banco();
+ 	$sql="delete from vacina_ovl where IDvasc_ovl=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
 ?>
 
 

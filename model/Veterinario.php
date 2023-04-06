@@ -58,7 +58,7 @@ function listarVet($ordem){
 
 function buscarVeterinarioOvl($busca){
 		$banco=new Banco();
-		$sql="select * from veterinario_vac where CFMV='$busca' or nome_vet like '%$busca%' or nasc_vet='$busca' or tel_vet='$busca' or
+		$sql="select * from veterinario_ovl where CFMV='$busca' or nome_vet like '%$busca%' or nasc_vet='$busca' or tel_vet='$busca' or
 		data_visita='$busca' or cuidados_vet='$busca' or id_ovl like '%$busca%'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
@@ -132,7 +132,7 @@ function listarVetCav($ordem){
 function buscarVeterinarioCav($busca){
 		$banco=new Banco();
 		$sql="select * from veterinario_cav where CFMV='$busca' or Tosa_cav like '%$busca%' or Nomevet_cav='$busca' or Casqueamento_cav='$busca' or
-		Telefonevet_cav='$busca' or Cuidados_cav='$busca' or Datavisi_cav '%$busca%' or dentificacao_cav like '%$busca%'";
+		Telefonevet_cav='$busca' or Cuidados_cav='$busca' or Datavisi_cav like '%$busca%' or Identificacao_cav like '%$busca%'";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
@@ -205,8 +205,18 @@ function listarVetVac($ordem){
 
 function buscarVeterinarioVac($busca){
 		$banco=new Banco();
-		$sql="select * from veterinario_vac where CFMV='$busca' or Datavisita_vac like '%$busca%' or Nomevet_vac='$busca' or Casqueamento_cav='$busca' or
-		Telefonevet_vac='$busca' or nascvet_vac='$busca' or Casqueamento_vac like '%$busca%' or dentificacao_vac like '%$busca%'";
+		$sql="select * from veterinario_vac where CFMV='$busca' or Datavisita_vac like '%$busca%' or Nomevet_vac='$busca' or Casqueamento_vac='$busca' or
+		Telefonevet_vac='$busca' or nascvet_vac='$busca' or Identificacao_vac like '%$busca%'";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+function acharVeterinarioBovino($codigo){
+		$banco=new Banco();
+		$sql= "select * from veterinario_vac where CFMV=$codigo";
 		$consulta=$banco->consultar($sql);
 		if (!$consulta) {
 			return false;
@@ -215,6 +225,99 @@ function buscarVeterinarioVac($busca){
 		}
 	}
 
-?>	
+
+	function acharVeterinarioEquino($codigo){
+		$banco=new Banco();
+		$sql= "select * from 	veterinario_cav where CFMV=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+
+	function acharVeterinarioOvino($codigo){
+		$banco=new Banco();
+		$sql= "select * from veterinario_ovl where CFMV=$codigo";
+		$consulta=$banco->consultar($sql);
+		if (!$consulta) {
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	function removerVetCav($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_cav where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVetVac($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_vac where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+
+	function removerVetOvl($id){
+ 	$banco=new Banco();
+ 	$sql="delete from veterinario_ovl where CFMV=$id";
+ 	$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+function alterarVetVac($CFMV,$nome_vet,$nasc_vet,$tel_vet){
+		$banco=new Banco();
+		$sql="update veterinario_vac set nome_vet='$nome_vet', nasc_vet='$nasc_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+function alterarVetCav($CFMV,$nome_vet,$tel_vet){
+		$banco=new Banco();
+		$sql="update veterinario_cav set nome_vet='$nome_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+function alterarVetOvl($CFMV,$nome_vet,$nasc_vet,$tel_vet){
+		$banco=new Banco();
+		$sql="update veterinario_ovl set nome_vet='$nome_vet',nasc_vet=$'nasc_vet', tel_vet='$tel_vet' where CFMV=$CFMV";
+		$resposta=$banco->executar($sql);
+		if (!$resposta) {
+			return false;
+		}else{
+			return true;
+		}
+	}	
+
+	?>
+
 </body> 
 	</html>

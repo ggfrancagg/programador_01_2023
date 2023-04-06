@@ -4,14 +4,12 @@
 <form action="buscarBovino.php" method="GET">
 	<h1>Buscar</h1>
 	
-	<p><fieldset>
+	<fieldset>
 
-		<legend>Buscar Bovino: </legend>
+		<legend>Bovino: </legend>
 			<p><input id="busca" type="search" name="buscar" placeholder="Nome, ID ou raça" required> &#128046;</p>
-
-		<h3><input type="submit" onclick='mostra()' value="Buscar"></h3>
+		<input   id="botbus" type="submit" onclick='mostra()' value="Buscar">
 		</fieldset>
-</p>
 	
 </form>
 
@@ -35,7 +33,7 @@
 			echo "<h5>Nenhum bovino correspondente</h5>";
 		}else{
 
-			echo "<table id='listarbicho'>";
+			echo "<table id='buscaBicho'>";
 		echo "<tr>";
 		echo "<th class='ident'> Identificação </th>";
 		echo "<th class='nome'> Nome</th>";

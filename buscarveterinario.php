@@ -5,7 +5,7 @@
 <h1>Buscar</h1>
 	<p><input type="search" name="busca" placeholder="Nome ou CFMV" required></p>
 	<p><fieldset>
-		<legend>Buscar Veterinario:</legend>
+		<legend>Buscar Veterinário:</legend>
 			
 			<input id="rad" type="radio" name="tipo" value="veterinariocav" required>Veterinario de Equino &#9877;
 			<input id="rad" type="radio" name="tipo" value="veterinariovac" required>Veterinario de Bovino &#9877;
@@ -32,12 +32,12 @@
 	$busca=$_GET['busca'];
 	$tipo=$_GET['tipo'];
 	if ($tipo=='veterinariocav') {
-			require_once 'model/veterinarioCav.php';
+			require_once 'model/Veterinario.php';
 
 
 			$consulta=buscarVeterinarioCav($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum Veterinario correspondente!</h2>";
+				echo "<h2>Nenhum Veterinário correspondente!</h2>";
 			}else{
 
 				echo "<table>";
@@ -50,6 +50,8 @@
 				echo "<th>Cuidados</th>";
 				echo "<th>Data da visita</th>";
 				echo "<th>Código cavalo</th>";
+				echo "<th class='ident'>Alterar?</th>";
+				echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 
 				
@@ -63,18 +65,22 @@
 				echo "<td>".$linha['Cuidados_cav']."</td>";
 				echo "<td>".$linha['Datavisi_cav']."</td>";
 				echo "<td>".$linha['Identificacao_cav']."</td>";
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMVcav' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMVcav' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}
 				echo "</table>";
 			}
 	}else if ($tipo=='veterinariovac') {
-			require_once 'model/veterinarioVac.php';
+			require_once 'model/Veterinario.php';
 
 
 			$consulta=buscarVeterinarioVac($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum Veterinario correspondente!</h2>";  	
+				echo "<h2>Nenhum Veterinário correspondente!</h2>";  	
 			}else{
 
 				echo "<table>";
@@ -87,6 +93,8 @@
 				echo "<th>Cuidados</th>";
 				echo "<th>Casqueamento</th>";
 				echo "<th>Código vaca</th>";
+				echo "<th class='ident'>Alterar?</th>";
+				echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
 				
 			
@@ -102,6 +110,10 @@
 				echo "<td>".$linha['Cuidados_vac']."</td>";
 				echo "<td>".$linha['Casqueamento_vac']."</td>";
 				echo "<td>".$linha['Identificacao_vac']."</td>";
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMVvac' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMVvac' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}
@@ -111,9 +123,9 @@
 			require_once 'model/Veterinario.php';
 
 
-			$consulta=buscarOvelha($busca);
+			$consulta=buscarVeterinarioOvl($busca);
 			if (!$consulta) {
-				echo "<h2>Nenhum Veterinario correspondente!</h2>";
+				echo "<h2>Nenhum Veterinário correspondente!</h2>";
 			}else{
 
 				echo "<table>";
@@ -124,7 +136,9 @@
 				echo "<th>Telefone Veterinario</th>";
 				echo "<th>Data da visita</th>";
 				echo "<th>Cuidados</th>";
-				echo "<th>Código Ovelha</th>"; 
+				echo "<th>Código Ovelha</th>";
+				echo "<th class='ident'>Alterar?</th>";
+				echo "<th class='ident'>Remover?</th>"; 
 				echo "</tr>";
 
 				
@@ -137,6 +151,10 @@
 				echo "<td>".$linha['data_visita']."</td>";
 				echo "<td>".$linha['cuidados_vet']."</td>";
 				echo "<td>".$linha['id_ovl']."</td>";
+				echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='CFMVovl' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+				echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='CFMVovl' 
+					value='".$linha['CFMV']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
 		
 				}
