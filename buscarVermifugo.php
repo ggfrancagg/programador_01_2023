@@ -48,8 +48,12 @@
 						echo "<th class='data'> Data da aplicação </th>";
 						echo "<th class='data'> Próxima aplicação </th>";
 						echo "<th class='ident'>Alterar?</th>";
+<<<<<<< HEAD
+						echo "</tr>";
+=======
 						echo "<th class='ident'>Remover?</th>";
 				echo "</tr>";
+>>>>>>> 5366addf593be48cfce5e8c3e1a85ba9fe9ccee8
 
 				
 		while($linha=$consulta->fetch_assoc()) {
@@ -62,13 +66,19 @@
 					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
+<<<<<<< HEAD
+
+					echo "<td><form action='alterarVermifugo.php' method='POST'><input type='hidden' name='Id_vermVac' value='".$linha['Id_verm']."'><input type='submit' value='sim'></form></td>";
+					echo "</tr>";
+=======
 					echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Id_vermvac' 
 							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 					echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Id_vermvac' 
 							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
+>>>>>>> 5366addf593be48cfce5e8c3e1a85ba9fe9ccee8
 				}
-				echo "</table>";
+					echo "</table>";
 			}
 	}else if ($tipo=='vermifugocav') {
 			require_once 'model/Vermifugo.php';
@@ -90,7 +100,10 @@
 						echo "<th class='data'> Data da aplicação </th>";
 						echo "<th class='data'> Próxima aplicação </th>";
 						echo "<th class='ident'>Alterar?</th>";
+<<<<<<< HEAD
+=======
 						echo "<th class='ident'>Remover?</th>";
+>>>>>>> 5366addf593be48cfce5e8c3e1a85ba9fe9ccee8
 				echo "</tr>";
 
 				
@@ -104,10 +117,14 @@
 					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
+<<<<<<< HEAD
+					echo "<td><form action='alterarVermifugo.php' method='POST'><input type='hidden' name='Id_vermCav' value='".$linha['Id_verm']."'><input type='submit' value='sim'></form></td>";
+=======
 					echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Id_vermcav' 
 							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 					echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Id_vermcav' 
 							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+>>>>>>> 5366addf593be48cfce5e8c3e1a85ba9fe9ccee8
 				echo "</tr>";
 				}
 				echo "</table>";
@@ -132,7 +149,10 @@
 						echo "<th class='data'> Data da aplicação </th>";
 						echo "<th class='data'> Próxima aplicação </th>";
 						echo "<th class='ident'>Alterar?</th>";
+<<<<<<< HEAD
+=======
 						echo "<th class='ident'>Remover?</th>";
+>>>>>>> 5366addf593be48cfce5e8c3e1a85ba9fe9ccee8
 				echo "</tr>";
 
 				
@@ -146,10 +166,14 @@
 					echo "<td>".$linha['Validade_verm']."</td>";
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
+<<<<<<< HEAD
+					echo "<td><form action='alterarVermifugo.php' method='POST'><input type='hidden' name='Id_vermOvl' value='".$linha['Id_verm']."'><input type='submit' value='sim'></form></td>";
+=======
 					echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='Id_vermovl' 
 							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 					echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Id_vermovl' 
 							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
+>>>>>>> 5366addf593be48cfce5e8c3e1a85ba9fe9ccee8
 				echo "</tr>";
 		
 				}
