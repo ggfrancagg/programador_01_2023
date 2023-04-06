@@ -175,6 +175,17 @@ function listarVermifugoOvinos(){
 }
 
 
+function alterarVermifugo($Id_verm,$Nome_verm,$Marca_verm,$Lote_verm,$Fabricacao_verm,$Validade_verm,$aplicacao_verm,$proximaapli_verm,$Identificacao_vac){
+		$banco=new Banco();
+		$sql="update vermifugo_vac set Nome_verm='$Nome_verm', Marca_verm='$Marca_verm', Lote_verm='$Lote_verm', Fabricacao_verm='$Fabricacao_verm', Validade_verm='$Validade_verm', aplicacao_verm='$aplicacao_verm', proximaapli_verm='$proximaapli_verm' where Id_verm=$Id_verm";
+		$resposta=$banco->executar($sql);
+		if(!$resposta){
+			return false;
+		}else{
+			return true;
+		}
+
+
 function acharVermBovino($codigo){
 		$banco=new Banco();
 		$sql= "select * from vermifugo_vac where Id_verm=$codigo";
@@ -214,12 +225,15 @@ function acharVermBovino($codigo){
  	$banco=new Banco();
  	$sql="delete from vermifugo_cav where Id_verm=$id";
  	$resposta=$banco->executar($sql);
+
 		if (!$resposta) {
 			return false;
 		}else{
 			return true;
 		}
 	}
+
+
 
 
 	function removerVermVac($id){
@@ -244,5 +258,7 @@ function acharVermBovino($codigo){
 			return true;
 		}
 	}
+}
+
 
 ?>
