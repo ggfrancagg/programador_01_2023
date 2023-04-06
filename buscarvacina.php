@@ -3,17 +3,17 @@
 
 <form action="buscarVacina.php" method="GET">
 <h1>Buscar</h1>
-	<p><input type="search" name="busca" placeholder="Nome ou Numero de identificação" required></p>
-	<p><fieldset>
-		<legend>Buscar Vacina:</legend>
-			
-			<input id="rad" type="radio" name="tipo" value="vacinasvac" required>Vacinas Bovinos
-			<input id="rad" type="radio" name="tipo" value="vacinascav" required>Vacinas Equinos
-			<input id="rad" type="radio" name="tipo" value="vacinasovl" required>Vacinas Ovinos
-			
+	
+	<fieldset>
+		<legend>Vacina:</legend>
+			</br>
+			<p><input type="search" name="busca" placeholder="Nome ou Numero de identificação" required></p>
+			<p><input type="radio" name="tipo" value="vacinasvac" required> Vacinas Bovinos</p>
+			<p><input  type="radio" name="tipo" value="vacinascav" required> Vacinas Equinos</p>
+			<p><input  type="radio" name="tipo" value="vacinasovl" required> Vacinas Ovinos</p>
+			</br>
 		</fieldset>
-</p>
-	<h3><input type="submit" onclick='mostra()' value="Buscar"></h3>
+	<h3><input id="botbus" type="submit" onclick='mostra()' value="Buscar"></h3>
 </form>
 
 <div id="load">
