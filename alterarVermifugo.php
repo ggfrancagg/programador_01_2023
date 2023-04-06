@@ -64,7 +64,7 @@ if(isset($_POST['nome'])){
 			echo "<h2>Alterado com sucesso!</h2>";
 		}
 
-}else if(isset($_POST['Id_vermCav'])){
+}if(isset($_POST['Id_vermCav'])){
 	$Id_vermCav=$_POST['Id_vermCav'];
 	require_once 'model/vermifugo.php';
 	$consulta=buscarVermifugoCav($Id_vermCav);
