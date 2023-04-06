@@ -174,9 +174,31 @@ function acharVacinaVac($idvac){
      }
 }
 
-function alterarVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proximaapli_vac,$Identificacao_vac){
+function alterarVacinaVaca($IDvasc_vac,$Nomevasc_vac,$Tipovasc_vac,$Dataapli_vac,$proximaapli_vac,$Identificacao_vac){
      $banco=new Banco();
-     $sql="update vaca set Nomevasc_vac='$Nomevasc_vac',Tipovasc_vac=$Tipovasc_vac,Dataapli_vac=$Dataapli_vac,proximaapli_vac=$proximaapli_vac,Identificacao_vac=$Identificacao_vac where IDvasc_vac=$IDvasc_vac";
+     $sql="update vacina_vac set Nomevasc_vac='$Nomevasc_vac',Tipovasc_vac='$Tipovasc_vac',Dataapli_vac='$Dataapli_vac',proximaapli_vac='$proximaapli_vac',Identificacao_vac=$Identificacao_vac where IDvasc_vac=$IDvasc_vac"; 
+     $resposta=$banco->executar($sql);
+     if (!$resposta) {
+         return false;
+     }else{
+        return true;
+     }
+}
+
+function alterarVacinaCavalo($IDvac_cav,$Dataapli_cav,$proximaapli_cav,$Tipovasc_cav,$Nomevasc_cav,$Identificacao_cav){
+     $banco=new Banco();
+     $sql="update vacina_cav set Dataapli_cav='$Dataapli_cav',proximaapli_cav='$proximaapli_cav',Tipovasc_cav='$Tipovasc_cav',Nomevasc_cav='$Nomevasc_cav',Identificacao_cav=$Identificacao_cav where IDvac_cav=$IDvac_cav"; 
+     $resposta=$banco->executar($sql);
+     if (!$resposta) {
+         return false;
+     }else{
+        return true;
+     }
+}
+
+function alterarVacinaOvelha($IDvasc_ovl,$Nomevasc_ovl,$Tipovasc_ovl,$Dataapli_ovl,$proximaapli_ovl,$id_ovl){
+     $banco=new Banco();
+     $sql="update vacina_ovl set Nomevasc_ovl='$Nomevasc_ovl',Tipovasc_ovl='$Tipovasc_ovl',Dataapli_ovl='$Dataapli_ovl',proximaapli_ovl='$proximaapli_ovl',id_ovl=$id_ovl where IDvasc_ovl=$IDvasc_ovl"; 
      $resposta=$banco->executar($sql);
      if (!$resposta) {
          return false;
