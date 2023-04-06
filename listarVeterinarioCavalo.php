@@ -8,16 +8,16 @@ if(!$consulta){
 }else{
 
 	echo "<table id=listarbicho>";
-	echo "<tr>";
-	echo "<th class='ident'>CFMV</th>";
-	echo "<th class='nome'>Nome</th>";	
-	echo "<th class='data'>Telefone</th>";
-	echo "<th class='ident'>Equino</th>";
-	echo "<th class='data'>Data de Visita</th>";
-	echo "<th class='data'>Tosa</th>";
-	echo "<th class='data'>Casqueamento</th>";
-	echo "<th class='nome'>Cuidados</th>";	
-	echo "</tr>";
+		echo "<tr>";
+			echo "<th class='ident'>CFMV</th>";
+			echo "<th class='nome'>Nome</th>";	
+			echo "<th class='data'>Telefone</th>";
+			echo "<th class='ident'>Equino</th>";
+			echo "<th class='data'>Data de Visita</th>";
+			echo "<th class='data'>Tosa</th>";
+			echo "<th class='data'>Casqueamento</th>";
+			echo "<th class='nome'>Cuidados</th>";	
+		echo "</tr>";
 
 
 	while ($linha=$consulta->fetch_assoc()){

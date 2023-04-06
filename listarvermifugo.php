@@ -1,11 +1,21 @@
 <?php require_once 'cabecalho.php'; ?>
 
-<h1>Listar vermífugo</h1>
-<a href="ListarVermifugoEquinos.php">Equinos</a>
+
+<h1>&#128138; Listar vermífugo &#128138; </h1>
+</br>
+<fieldset class="listarVer">
+
+<legend><h2>Animal:</h2></legend>
+<br>
+	<p><a href="ListarVermifugoBovinos.php">Bovino &#128046;</a></p>
 	<br>
-	<a href="ListarVermifugoBovinos.php">Bovinos</a>
+	<p><a href="ListarVermifugoEquinos.php">Equino &#128052;</a></p>
 	<br>
-	<a href="ListarVermifugoOvinos.php">Ovinos</a>
+	
+	<p><a href="ListarVermifugoOvinos.php">Ovino &#128017;</a></p>
 	<br>
+
+</fieldset>
+
 	</body>
 	</html>

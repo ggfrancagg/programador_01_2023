@@ -294,6 +294,37 @@ h5{
 
 }
 
+
+#listarVacina{
+	margin-left: 22vw;
+	margin-right: 22vw;
+	margin-top: 10vh;
+	max-width: 80vw;
+	border: 2px inset #FF7001;
+
+}
+
+#listarVacina th{
+	background-color: #B64926;
+	text-align: center;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #FFC476;
+	width: auto;
+	border: 2px inset #FF7001;
+}
+
+#listarVacina td{
+	background-color: #D9985F;
+	text-align: center;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 1.5rem;
+	color: #593B16;
+	width: auto;
+	border: 1px inset #FF7001;
+	height: auto;
+}
+
 #buscaBicho{
 	margin-left: 3vw;
 	margin-right: 5vw;
@@ -741,6 +772,7 @@ fieldset{
 	margin-right: 40vw;
 }
 
+
 legend{
 	font-family: 'News Cycle', sans-serif;
 	font-size: 1.5rem;
@@ -769,5 +801,25 @@ fieldset h2{
 	font-size: 1.5rem;
 	color: #593B16;
 	text-shadow: 1px 1px 2px #FF7001;
+}
+
+fieldset.listarVer{
+	height: 30vh;
+
+}
+
+fieldset.listarVer a{
+
+	font-size: 1.5rem;
+	color: #593B16;
+	text-shadow: 1px 1px 2px #FF7001;
+	text-decoration: none;
+
+}
+
+fieldset.listarVer a:hover{
+
+	color: #FFFE57;
+	text-shadow: 0px 0px 2px #FFFE57;
 }
 
