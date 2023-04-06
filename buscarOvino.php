@@ -30,7 +30,7 @@
 		if (!$consulta) {
 			echo "<h5>Nenhum ovino correspondente</h5>";
 		}else{
-		echo "<table id='listarOve'>";
+		echo "<table id='buscaBichoOve'>";
 			echo "<tr>";
 			echo "<th class='ident'> Identificação </th>";
 			echo "<th class='nome'> Nome </th>";
