@@ -88,7 +88,7 @@ if(isset($_POST['cavalo'])){
 <p>Data de validade: <input type="date" name="vali" required></p>
 <p>Data da aplicação: <input type="date" name="apli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <p>Data de próxima aplicação:
-	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+	<input type="date" name="proximaapli" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 <input type="hidden" name="Identificacao_cav" value="<?php echo $_POST['cavalo'];?>">
 <h3><input type="submit" onclick="mostra()" value="Cadastrar"></h3>
 </form>
