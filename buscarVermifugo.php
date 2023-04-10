@@ -42,7 +42,7 @@
 			if (!$consulta) {
 				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
 			}else{
-				echo "<table id='listarbicho'>";
+				echo "<table id='vermibusca'>";
 				echo "<tr>";
 				echo "<th class='ident'> Identificação </th>";
 						echo "<th class='nome'>Nome do vermífugo</th>";
@@ -69,7 +69,6 @@
 					echo "<td>".$linha['aplicacao_verm']."</td>";
 					echo "<td>".$linha['proximaapli_verm']."</td>";
 					echo "<td><form action='alterarVermifugo.php' method='POST'><input type='hidden' name='Id_vermVac' value='".$linha['Id_verm']."'><input type='submit' value='sim'></form></td>";
-					echo "</tr>";
 					echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='Id_vermvac' 
 							value='".$linha['Id_verm']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 				echo "</tr>";
@@ -85,7 +84,7 @@
 				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
 			}else{
 
-			echo "<table id='listarbicho'>";
+			echo "<table id='vermibusca'>";
 				echo "<tr>";
 				echo "<th class='ident'> Identificação </th>";
 						echo "<th class='nome'>Nome do vermífugo</th>";
@@ -126,7 +125,7 @@
 				echo "<h5>Nenhuma vermifugação correspondente!</h5>";
 			}else{
 
-				echo "<table id='listarbicho'>";
+				echo "<table id='vermibusca'>";
 				echo "<tr>";
 					echo "<th class='ident'> Identificação </th>";
 						echo "<th class='nome'>Nome do vermífugo</th>";
