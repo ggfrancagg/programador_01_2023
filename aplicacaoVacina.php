@@ -20,28 +20,29 @@ if(isset($_POST['animal'])){
 	require_once "model/Vacina.php";
 	if ($animal=="cavalo") {
 		require_once "model/cavalo.php";
-			echo "<form id='vac' action='aplicacaoVacina.php' method='POST'>";
+			echo "<form id='animalcadas' action='aplicacaoVacina.php' method='POST'>";
 		$cavalo=listarCavalo();
 		if (!$cavalo) {
 			echo "<h5>Não existem animais cadastrados!</h5>";
 		}else{
 			echo "<form id='animalcadas'>";
 			echo "<h2>Equinos Cadastrados: </h2>";
-			echo "<p>Escolha o Cavalo: <select name='cavalo'>";
+			echo "<p>Escolha o Cavalo: <select name='cavalo'></p>";
 		while($linha=$cavalo->fetch_assoc()){
 			echo "<option value='".$linha['Identificacao_cav']."'>";
 			echo $linha['Nome_cav'];
 			echo "</option>";
 		}
 			echo "</select></p>";
-			echo "<p><input class='subm' type='submit' value='Escolher'></p>";
+			echo "</br>";
+			echo "<h3><input class='subm' type='submit' value='Escolher'></h3>";
 			}echo "</form>";
 	}else if ($animal=="ovelha"){
 		require_once "model/Ovelha.php";
-			echo "<form id='vac' action='aplicacaoVacina.php' method='POST'>";
+			echo "<form id='animalcadas' action='aplicacaoVacina.php' method='POST'>";
 		$ovelha=listarOvelha();
 		if (!$ovelha) {
-			echo "<h2>Não existem animais cadastrados!</h2>";
+			echo "<h5>Não existem animais cadastrados!</h5>";
 		}else{
 			echo "<form id='animalcadas'>";
 			echo "<h2>Ovinos Cadastrados: </h2>";
@@ -52,14 +53,15 @@ if(isset($_POST['animal'])){
 			echo "</option>";
 		}
 		echo "</select></p>";
-		echo "<p><input class='subm' type='submit' value='Escolher'></p>";
+		echo "</br>";
+		echo "<h3><input class='subm' type='submit' value='Escolher'></h3>";
 	}echo "</form>";
 	}else if ($animal=="vaca") {
 		require_once "model/Vaca.php";
-			echo "<form id='vac' action='aplicacaoVacina.php' method='POST'>";
+			echo "<form id='animalcadas' action='aplicacaoVacina.php' method='POST'>";
 		$vaca=listarVaca();
 		if (!$vaca) {
-			echo "<h2>Não existem animais cadastrados!</h2>";
+			echo "<h5>Não existem animais cadastrados!</h5>";
 		}else{
 			echo "<h2>Bovinos Cadastrados: </h2>";
 			echo "<p>Escolha o animal: <select name='vaca'>";
@@ -69,7 +71,8 @@ if(isset($_POST['animal'])){
 			echo "</option>";
 		}
 			echo "</select></p>";
-			echo "<p><input class='subm' type='submit' value='Escolher'></p>";
+			echo "</br>";
+			echo "<h3><input class='subm' type='submit' value='Escolher'></h3>";
 		}echo "</form>";
 	}
 }
@@ -79,21 +82,21 @@ if(isset($_POST['ovelha'])){
 <form action="aplicacaoVacina.php" method="POST">
 
 
-    <p>Nome da Vacina: <select name="nomevacovl" required></p>
+<p>Nome da Vacina: <select name="nomevacovl" required></p>
 		<option value="raiva">Raiva</option>
 		<option value="clostridiose">Clostridiose</option>
 		<option value="linfa">Linfadenite Caseosa</option>
 		</select></p>
 		<p>Tipo da Vacina: 
 	<input type="text" name="tipo" size="80" maxlength="80"></p>
-    <p>Data de aplicação: 
-    <input type="date" name="aplicacao" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+<p>Data de aplicação: 
+<input type="date" name="aplicacao" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
 	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idovelha" value="<?php echo $_POST['ovelha']; ?>"></p>
 
-    <br>
-    <h3><input type="submit" onclick="mostra()" value="Cadastrar" class="botao"></h3>
+<br>
+<h3><input type="submit" onclick="mostra()" value="Cadastrar" class="botao"></h3>
 
 </form>
 
@@ -129,7 +132,7 @@ if(isset($_POST['cavalo'])){
 <form id="cadanimal" action="aplicacaoVacina.php" method="POST">
 
 	
-    <p>Nome da Vacina: <select name="nomevaccav" required></p>
+<p>Nome da Vacina: <select name="nomevaccav" required></p>
 		<option value="raiva">Raiva</option>
 		<option value="tetano">Tétano</option>
 		<option value="influenza">Influenza</option>
@@ -139,14 +142,14 @@ if(isset($_POST['cavalo'])){
 		</select></p>
 		<p>Tipo da Vacina:
 	<input type="text" name="tipo" size="80" maxlength="80"></p>
-    <p>Data de aplicação: 
-    <input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+<p>Data de aplicação: 
+<input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
 	<input type="date" name="proximaapli"  min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idcav" value="<?php echo $_POST['cavalo']; ?>"></p>
 
-    <br>
-    <h3><input type="submit" onclick="mostra()" value="Cadastrar" class="botao"></h3>
+<br>
+<h3><input type="submit" onclick="mostra()" value="Cadastrar" class="botao"></h3>
 </form>
 
 <?php
@@ -179,7 +182,7 @@ if(isset($_POST['vaca'])){
 <form id="cadanimal" action="aplicacaoVacina.php" method="POST">
 
 	
-    <p>Nome da Vacina: <select name="nomevacvaca" required></p>
+<p>Nome da Vacina: <select name="nomevacvaca" required></p>
 		<option value="raiva">Raiva</option>
 		<option value="aftosa">Febre Aftosa</option>
 		<option value="b19">B19: Brucelose</option>
@@ -190,13 +193,13 @@ if(isset($_POST['vaca'])){
 		</select></p>
 		<p>Tipo da Vacina: 
 	<input type="text" name="tipo" size="80" maxlength="80"></p>
-    <p>Data de aplicação: 
-    <input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+<p>Data de aplicação: 
+<input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
 	<input type="date" name="proximaapli" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idvac" value="<?php echo $_POST['vaca']; ?>"></p>
-    <br>
-    <h3><input type="submit" onclick="mostra()" value="Cadastrar" class="botao"></h3>
+<br>
+<h3><input type="submit" onclick="mostra()" value="Cadastrar" class="botao"></h3>
 	
 </form>
 

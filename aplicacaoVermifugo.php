@@ -20,7 +20,7 @@ if (isset($_POST['animal'])) {
 	require_once "model/Vermifugo.php";
 	if ($animal=="cavalo") {
 		require_once "model/cavalo.php";
-			echo "<form id='vermi' action='aplicacaoVermifugo.php' method='POST'>";
+			echo "<form id='animalcadas' action='aplicacaoVermifugo.php' method='POST'>";
 		$cavalo=listarCavalo();
 		if (!$cavalo) {
 			echo "<h5>Não existem animais cadastrados!</h5>";
@@ -34,11 +34,12 @@ if (isset($_POST['animal'])) {
 			echo "</option>";
 		}
 			echo "</select></p>";
-			echo "<p><input class='subm' type='submit' value='Escolher'></p>";
+			echo "</br>";
+			echo "<h3><input class='subm' type='submit' value='Escolher'></h3>";
 	}echo "</form>";
 	}else if ($animal=="ovelha") {
 		require_once "model/Ovelha.php";
-			echo "<form id='vermi' action='aplicacaoVermifugo.php' method='POST'>";
+			echo "<form id='animalcadas' action='aplicacaoVermifugo.php' method='POST'>";
 		$ovelha=listarOvelha();
 		if (!$ovelha) {
 			echo "<h5>Não existem animais cadastrados!</h5>";
@@ -52,11 +53,12 @@ if (isset($_POST['animal'])) {
 			echo "</option>";
 		}
 		echo "</select></p>";
-		echo "<p><input class='subm' type='submit' value='Escolher'></p>";
+			echo "</br>";
+		echo "<h3><input class='subm' type='submit' value='Escolher'></h3>";
 	}echo "</form>";
 	}else if ($animal=="vaca") {
 		require_once "model/Vaca.php";
-			echo "<form id='vermi' action='aplicacaoVermifugo.php' method='POST'>";
+			echo "<form id='animalcadas' action='aplicacaoVermifugo.php' method='POST'>";
 		$vaca=listarVaca();
 		if (!$vaca) {
 			echo "<h5>Não existem animais cadastrados!</h5>";
@@ -70,7 +72,8 @@ if (isset($_POST['animal'])) {
 			echo "</option>";
 		}
 			echo "</select></p>";
-			echo "<p><input class='subm' type='submit' value='Escolher'></p>";;
+				echo "</br>";
+			echo "<h3><input class='subm' type='submit' value='Escolher'></h3>";;
 		}echo "</form>";
 	}
 }
