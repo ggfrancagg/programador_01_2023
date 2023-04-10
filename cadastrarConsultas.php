@@ -24,7 +24,6 @@
 				echo "<h5>Não existem animais cadastrados!</h5>";
 			}else{
 				echo "<h2>Equinos cadastrados: </h2>";
-				echo "<br>";
 				echo "<p>Escolha o animal: <select name='cavalo'>";
 				while ($linha=$cavalo->fetch_assoc()) {
 				echo "<option value='".$linha['Identificacao_cav']."'>";
@@ -34,6 +33,7 @@
 				echo "</select></p>";
 				echo "</br>";
 				echo "<h3><input type='submit' value='Escolher'></h3>";
+				echo "</br>";
 				}echo "</form>";
 			}else if
 			($animal=="ovelha"){
@@ -44,7 +44,6 @@
 					echo "<h5> Não existem animais cadastrados!</h5>";
 				}else{
 					echo "<h2>Ovinos cadastrados: </h2>";
-					echo "<br>";
 					echo "<p> Escolha o animal: <select name='ovelha'>";
 					while($linha=$ovelha->fetch_assoc()){
 					echo "<option value='".$linha['id_ovl']."'>";
@@ -54,6 +53,7 @@
 				echo "</select></p>";
 				echo "</br>";
 				echo "<h3> <input type='submit' value='Escolher'></h3>";
+				echo "</br>";
 			}echo "</form>";
 		}else if($animal=="vaca"){
 			require_once "model/Vaca.php";
@@ -63,7 +63,6 @@
 				echo "<h5>Não existem animais cadastrados!</h5>";
 			}else{
 				echo "<h2>Bovinos cadastrados: </h2>";
-				echo "<br>";
 				echo "<p> Escolha o animal: <select name='vaca'>";
 				while ($linha=$vaca->fetch_assoc()) {
 				echo "<option value='".$linha['Identificacao_vac']."'>";
@@ -73,6 +72,7 @@
 				echo "</select></p>";
 				echo "</br>";
 				echo "<h3><input type='submit' value='Escolher'></h3> ";
+				echo "</br>";
 			}echo "</form>";
 		}
 	}
