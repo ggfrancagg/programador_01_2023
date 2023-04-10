@@ -84,7 +84,7 @@
 ?>
 <form action="remover.php" method="POST">  
 	<h1>Remover Ovino</h1>
-	<span> &#128052; </span>
+	<span> &#128017; </span>
 	<p>Nome do Ovino:<input type="text" name="nomeovl" size="40" maxlength="40" value="<?php echo $linha['nome_ovl']; ?>"></p>
 	
 		<input type="hidden" name="id_ovl" value="<?php echo $linha['id_ovl']; ?>">
