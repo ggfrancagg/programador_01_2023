@@ -5,28 +5,28 @@ if(isset($_POST['Id_vermVac'])){
 		require_once 'model/Vermifugo.php';
 		$consulta=buscarVermifugoVac($Id_vermVac);
 		if(!$consulta){
-			return "<h2>Não tem vermifugo cadastrado!</h2>";
+			return "<h5>Não tem vermifugo cadastrado!</h5>";
 		}else{
 			while ($linha=$consulta->fetch_assoc()) {
 ?>
 
-	<form action="alterarVermifugo.php" method="POST">  
-	<h1>Alterar Vermifugo</h1>
-	<span> &#128046; </span>
-	<p>Nome do vermifugo:<input type="text" name="nome" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Nome_verm']; ?>"></p>
+	<form id="cadanimal"  action="alterarVermifugo.php" method="POST">  
+	<h2>Alterar Vermifugo &#128046;</h2>
+</br>
+	<p>Nome do vermifugo: <input type="text" name="nomeVac" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Nome_verm']; ?>"></p>
 	<p>Marca do vermifugo: <input type="text" name="marca" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Marca_verm']; ?>"></p>
 	<p>Lote: <input type="text" name="lote" size="40" maxlength="40" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Lote_verm'] ; ?>"></p>
-	<p>Fabricação:<input type="date" name="fabricacao" min='2000-01-01' max='2023-03-12'> </p>
+	<p>Fabricação: <input type="date" name="fabricacao" min='2000-01-01' max='2023-03-12'> </p>
 
-	<p>Validade:<input type="date" name="validade" min='2000-01-01' max='2023-03-12'></p>
+	<p>Validade: <input type="date" name="validade" min='2000-01-01' max='2023-03-12'></p>
 
-	<p>Aplicação:<input type="date" name="aplicacao" min='2000-01-01' max='2023-03-12'></p>
-	<p>Proxima aplicação:<input type="date" name="proximaapli" min='2000-01-01' max='2023-03-12'></p>
+	<p>Aplicação: <input type="date" name="aplicacao" min='2000-01-01' max='2023-03-12'></p>
+	<p>Proxima aplicação: <input type="date" name="proximaapli" min='2000-01-01' max='2023-03-12'></p>
 
 		<input type="hidden" name="Id_verm" value="<?php echo $linha['Id_verm']; ?>">
 		<input type="hidden" name="Identificacao_vac" value="<?php echo $linha['Identificacao_vac']; ?>">
 	<br/>
-	<p><input type="submit" onclick='mostra()' class="enviar" value="Alterar"></p>
+	<h3><input type="submit" onclick='mostra()' class="enviar" value="Alterar"></h3>
 </form>	
 <div id="load">
   <div>G</div>
@@ -45,8 +45,8 @@ if(isset($_POST['Id_vermVac'])){
 	}
 }
 
-if(isset($_POST['nome'])){
-	$nome=$_POST['nome'];
+if(isset($_POST['nomeVac'])){
+	$nome=$_POST['nomeVac'];
 	$marca=$_POST['marca'];
 	$lote=$_POST['lote'];
 	$fabricacao=$_POST['fabricacao'];
@@ -57,11 +57,11 @@ if(isset($_POST['nome'])){
 	$Identificacao_vac=$_POST['Identificacao_vac'];
 
 	require_once 'model/vermifugo.php';
-	$resposta=alterarVermifugoVac($Id_verm,$nome,$marca,$lote,$fabricacao,$validade,$aplicacao,$proximaapli,$Identificacao_vac);
+	$resposta=alterarVermifugoVac($Id_verm,$nomeVac,$marca,$lote,$fabricacao,$validade,$aplicacao,$proximaapli,$Identificacao_vac);
 	if (!$resposta) {
-			echo "<h2>Erro na tentativa de alterar!</h2>";
+			echo "<h5>Erro na tentativa de alterar!</h5>";
 		}else{
-			echo "<h2>Alterado com sucesso!</h2>";
+			echo "<h5>Alterado com sucesso!</h5>";
 		}
 
 
@@ -70,29 +70,29 @@ if(isset($_POST['nome'])){
 	require_once 'model/vermifugo.php';
 	$consulta=buscarVermifugoCav($Id_vermCav);
 	if(!$consulta){
-			return "<h2>Não tem vermifugo cadastrado!</h2>";
+			return "<h5>Não tem vermifugo cadastrado!</h5>";
 		}else{
 			while ($linha=$consulta->fetch_assoc()) {
 
 ?>
 
-<form action="alterarVermifugo.php" method="POST">  
-	<h1>Alterar Vermifugo</h1>
-	<span> &#128046; </span>
-	<p>Nome do vermifugo:<input type="text" name="nomeVer" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Nome_verm']; ?>"></p>
+<form id="cadanimal"  action="alterarVermifugo.php" method="POST">  
+	<h2>Alterar Vermifugo &#128046; </h2>
+</br>
+	<p>Nome do vermifugo: <input type="text" name="nomeVer" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Nome_verm']; ?>"></p>
 	<p>Marca do vermifugo: <input type="text" name="marca" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Marca_verm']; ?>"></p>
 	<p>Lote: <input type="text" name="lote" size="40" maxlength="40" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Lote_verm'] ; ?>"></p>
-	<p>Fabricação:<input type="date" name="fabricacao" min='2000-01-01' max='2023-03-12'> </p>
+	<p>Fabricação: <input type="date" name="fabricacao" min='2000-01-01' max='2023-03-12'> </p>
 
-	<p>Validade:<input type="date" name="validade" min='2000-01-01' max='2023-03-12'></p>
+	<p>Validade: <input type="date" name="validade" min='2000-01-01' max='2023-03-12'></p>
 
-	<p>Aplicação:<input type="date" name="aplicacao" min='2000-01-01' max='2023-03-12'></p>
-	<p>Proxima aplicação:<input type="date" name="proximaapli" min='2000-01-01' max='2023-03-12'></p>
+	<p>Aplicação: <input type="date" name="aplicacao" min='2000-01-01' max='2023-03-12'></p>
+	<p>Proxima aplicação: <input type="date" name="proximaapli" min='2000-01-01' max='2023-03-12'></p>
 
 		<input type="hidden" name="Id_verm" value="<?php echo $linha['Id_verm']; ?>">
 		<input type="hidden" name="Identificacao_cav" value="<?php echo $linha['Identificacao_cav']; ?>">
 	<br/>
-	<p><input type="submit" onclick='mostra()' class="enviar" value="Alterar"></p>
+	<h3><input type="submit" onclick='mostra()' class="enviar" value="Alterar"></h3>
 </form>
 
 <div id="load">
@@ -122,9 +122,9 @@ $nomeVer=$_POST['nomeVer'];
 	require_once 'model/vermifugo.php';
 	$resposta=alterarVermifugoCav($Id_verm,$nomeVer,$marca,$lote,$fabricacao,$validade,$aplicacao,$proximaapli,$Identificacao_cav);
 	if (!$resposta) {
-			echo "<h2>Erro na tentativa de alterar!</h2>";
+			echo "<h5>Erro na tentativa de alterar!</h5>";
 		}else{
-			echo "<h2>Alterado com sucesso!</h2>";
+			echo "<h5>Alterado com sucesso!</h5>";
 		}
 	}
 
@@ -133,30 +133,30 @@ $nomeVer=$_POST['nomeVer'];
 	require_once 'model/vermifugo.php';
 	$consulta=buscarVermifugoOvl($Id_vermOvl);
 	if(!$consulta){
-			return "<h2>Não tem vermifugo cadastrado!</h2>";
+			return "<h5>Não tem vermifugo cadastrado!</h5>";
 		}else{
 			while ($linha=$consulta->fetch_assoc()) {
 
 
 ?>
 
-<form action="alterarVermifugo.php" method="POST">  
-	<h1>Alterar Vermifugo</h1>
-	<span> &#128046; </span>
-	<p>Nome do vermifugo:<input type="text" name="nomeOvl" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Nome_verm']; ?>"></p>
+<form id="cadanimal" action="alterarVermifugo.php" method="POST">  
+	<h1>Alterar Vermifugo &#128046;</h1>
+	</br>
+	<p>Nome do vermifugo: <input type="text" name="nomeOvl" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Nome_verm']; ?>"></p>
 	<p>Marca do vermifugo: <input type="text" name="marca" size="30" maxlength="30" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Marca_verm']; ?>"></p>
 	<p>Lote: <input type="text" name="lote" size="40" maxlength="40" pattern="[A-Za-zçÇáÁãÃâÂàÀêÊéÉèÈíÍìÌóÓôÔòÒõÕ0-9\s]{2,30}" value="<?php echo $linha['Lote_verm'] ; ?>"></p>
-	<p>Fabricação:<input type="date" name="fabricacao" min='2000-01-01' max='2023-03-12'> </p>
+	<p>Fabricação: <input type="date" name="fabricacao" min='2000-01-01' max='2023-03-12'> </p>
 
-	<p>Validade:<input type="date" name="validade" min='2000-01-01' max='2023-03-12'></p>
+	<p>Validade: <input type="date" name="validade" min='2000-01-01' max='2023-03-12'></p>
 
-	<p>Aplicação:<input type="date" name="aplicacao" min='2000-01-01' max='2023-03-12'></p>
-	<p>Proxima aplicação:<input type="date" name="proximaapli" min='2000-01-01' max='2023-03-12'></p>
+	<p>Aplicação: <input type="date" name="aplicacao" min='2000-01-01' max='2023-03-12'></p>
+	<p>Proxima aplicação: <input type="date" name="proximaapli" min='2000-01-01' max='2023-03-12'></p>
 
 		<input type="hidden" name="Id_verm" value="<?php echo $linha['Id_verm']; ?>">
 		<input type="hidden" name="Id_ovl" value="<?php echo $linha['Id_ovl']; ?>">
 	<br/>
-	<p><input type="submit" onclick='mostra()' class="enviar" value="Alterar"></p>
+	<h3><input type="submit" onclick='mostra()' class="enviar" value="Alterar"></h3>
 </form>
 
 <div id="load">
@@ -186,9 +186,9 @@ if(isset($_POST['nomeOvl'])){
 require_once 'model/vermifugo.php';
 	$resposta=alterarVermifugoOvl($Id_verm,$nomeOvl,$marca,$lote,$fabricacao,$validade,$aplicacao,$proximaapli,$Id_ovl);
 	if (!$resposta) {
-			echo "<h2>Erro na tentativa de alterar!</h2>";
+			echo "<h5>Erro na tentativa de alterar!</h5>";
 		}else{
-			echo "<h2>Alterado com sucesso!</h2>";
+			echo "<h5>Alterado com sucesso!</h5>";
 		}
 	}
 
