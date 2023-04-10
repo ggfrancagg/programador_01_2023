@@ -2,17 +2,22 @@
 
 
 <form action="buscarVermifugo.php" method="GET">
+
+
 	<h1>Buscar</h1>
+
+	<fieldset>
 	<p><input type="search" name="busca" placeholder="Nome ou Numero de identificação" required></p>
-	<p><fieldset>
-		<legend><h1>Buscar Vermifugação:</h1></legend>
-			<p><input id="rad" type="radio" name="tipo" value="vermifugovac" required>Vermífugo Bovinos</p>
-			<p><input id="rad" type="radio" name="tipo" value="vermifugocav" required>Vermífugo Equinos</p>
-			<p><input id="rad" type="radio" name="tipo" value="vermifugoovl" required>Vermífugo Ovinos</p>
-			
+
+		<legend><h2>Buscar Vermifugação:</h2></legend>
+		</br>
+			<p><input type="radio" name="tipo" value="vermifugovac" required>Vermífugo Bovinos</p>
+			<p><input type="radio" name="tipo" value="vermifugocav" required>Vermífugo Equinos</p>
+			<p><input type="radio" name="tipo" value="vermifugoovl" required>Vermífugo Ovinos</p>
+			<input id="botbus" type="submit" onclick='mostra()' value="Buscar">
 		</fieldset>
 </p>
-	<h3><input type="submit" onclick='mostra()' value="Buscar"></h3>
+	
 </form>
 
 <div id="load">
