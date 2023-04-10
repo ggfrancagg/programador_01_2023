@@ -84,7 +84,7 @@
 			<p>Digite o seu CFMV:
 				<input type="text" name="cfmv" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
-				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
+				<input type="date" name="data" min="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
 				<input type="time" name="horario" required></p>
 			<p>Breve histórico:
@@ -102,7 +102,7 @@
 			<p>Digite o seu CFMV:
 				<input type="text" name="cfmv_ovl" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
-				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
+				<input type="date" name="data" min="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
 				<input type="time" name="horario" required></p>
 			<p>Breve histórico:
@@ -120,7 +120,7 @@
 			<p>Digite o seu CFMV:
 				<input type="text" name="cfmv_vac" size="20" maxlength="20" required></p>
 			<p>Escolhe a data da consulta:
-				<input type="date" name="data" max="<?php Echo date("Y-m-d"); ?>" required> </p>
+				<input type="date" name="data" min="<?php Echo date("Y-m-d"); ?>" required> </p>
 			<p>Digite o horario:
 				<input type="time" name="horario" required></p>
 			<p>Breve histórico:
