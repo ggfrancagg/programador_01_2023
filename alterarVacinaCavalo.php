@@ -6,12 +6,13 @@ if(isset($_POST['IDvac_cav'])){
    require_once 'model/Vacina.php';
    $consulta=acharVacinaCav($IDvac_cav);
    if (!$consulta){
-   	   return "<h2>Vacina não encontrada!</h2>";
+   	   return "<h5>Vacina não encontrada!</h5>";
    }else{
    	  while($linha=$consulta->fetch_assoc()){ 
 ?>
-<form action="alterarVacinaCavalo.php" method="POST">
-	<h1>Alterar Vacina</h1>
+<form id="cadanimal" action="alterarVacinaCavalo.php" method="POST">
+	<h2>Alterar Vacina</h2>
+</br>
 	<p>Nome da Vacina<input type="text" name="nome" size="40" maxlength="40" value="<?php echo $linha['Nomevasc_cav']; ?>"></p>
 	<p>Tipo da Vacina<input type="text" name="tipo" size="40" maxlength="40" value="<?php echo $linha['Tipovasc_cav']; ?>"></p>
 	<p>Data da Aplicação<input type="date" name="data" value="<?php echo $linha['Dataapli_cav']; ?>"></p>
@@ -19,7 +20,7 @@ if(isset($_POST['IDvac_cav'])){
   <p>Identificação Equino<input type="text" name="identificacao" size="30" maxlength="30" value="<?php echo $linha['Identificacao_cav']; ?>"></p>
 		
        <input type="hidden" name="IDvac_cav" value="<?php echo $linha['IDvac_cav']; ?>">
-	   <p><input type="submit" onclick='mostra()' class="enviar" name="Cadastrar"></p>
+	   <h3><input type="submit" onclick='mostra()' class="enviar" name="Cadastrar"></h3>
 </form>	
 
 <div id="load">
@@ -48,9 +49,9 @@ if (isset($_POST['nome'])) {
     	require_once 'model/Vacina.php';
     	$resposta=alterarVacinaCavalo($IDvac_cav,$nome,$tipo,$data,$proxima,$identificacao);
     	if (!$resposta) {
-    		echo "<h2>Erro na tentativa de alterar!</h2>";
+    		echo "<h5>Erro na tentativa de alterar!</h5>";
     	}else{
-    		echo "<h2>Alterado com sucesso!</h2>";
+    		echo "<h5>Alterado com sucesso!</h5>";
     	}
 }
 ?>
