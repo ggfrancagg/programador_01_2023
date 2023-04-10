@@ -261,11 +261,6 @@ if(isset($_POST['nomevetvac'])){
 	}
 }
 
-
-
-
-
-
 		
 ?>
 

@@ -78,15 +78,16 @@ if(isset($_POST['ovelha'])){
 ?>
 <form action="aplicacaoVacina.php" method="POST">
 
-<p>Nome da Vacina: 
-	<input type="text" name="nomevacovl" size="80" maxlength="80"></p>
-    <p>Tipo da Vacina: <select name="tipo" required></p>
+
+    <p>Nome da Vacina: <select name="nomevacovl" required></p>
 		<option value="raiva">Raiva</option>
 		<option value="clostridiose">Clostridiose</option>
 		<option value="linfa">Linfadenite Caseosa</option>
 		</select></p>
+		<p>Tipo da Vacina: 
+	<input type="text" name="tipo" size="80" maxlength="80"></p>
     <p>Data de aplicação: 
-    <input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+    <input type="date" name="aplicacao" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
 	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idovelha" value="<?php echo $_POST['ovelha']; ?>"></p>
@@ -127,9 +128,8 @@ if(isset($_POST['cavalo'])){
 
 <form id="cadanimal" action="aplicacaoVacina.php" method="POST">
 
-	<p>Nome da Vacina: 
-	<input type="text" name="nomevaccav" size="80" maxlength="80"></p>
-    <p>Tipo da Vacina: <select name="tipo" required></p>
+	
+    <p>Nome da Vacina: <select name="nomevaccav" required></p>
 		<option value="raiva">Raiva</option>
 		<option value="tetano">Tétano</option>
 		<option value="influenza">Influenza</option>
@@ -137,10 +137,12 @@ if(isset($_POST['cavalo'])){
 		<option value="herpes">Herpes Vírus</option>
 		<option value="garrotilho">Garrotilho</option>
 		</select></p>
+		<p>Tipo da Vacina:
+	<input type="text" name="tipo" size="80" maxlength="80"></p>
     <p>Data de aplicação: 
     <input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
-	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+	<input type="date" name="proximaapli"  min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idcav" value="<?php echo $_POST['cavalo']; ?>"></p>
 
     <br>
@@ -176,9 +178,8 @@ if(isset($_POST['vaca'])){
 
 <form id="cadanimal" action="aplicacaoVacina.php" method="POST">
 
-	<p>Nome da Vacina: 
-	<input type="text" name="nomevacvaca" size="80" maxlength="80"></p>
-    <p>Tipo da Vacina: <select name="tipo" required></p>
+	
+    <p>Nome da Vacina: <select name="nomevacvaca" required></p>
 		<option value="raiva">Raiva</option>
 		<option value="aftosa">Febre Aftosa</option>
 		<option value="b19">B19: Brucelose</option>
@@ -187,10 +188,12 @@ if(isset($_POST['vaca'])){
 		<option value="mastite">Mastite</option>
 		<option value="pneumoenterite">Pneumoenterite</option>
 		</select></p>
+		<p>Tipo da Vacina: 
+	<input type="text" name="tipo" size="80" maxlength="80"></p>
     <p>Data de aplicação: 
     <input type="date" name="aplicacao" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p>Data de próxima aplicação:
-	<input type="date" name="proximaapli" max="<?php echo date("Y-m-d"); ?>" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
+	<input type="date" name="proximaapli" min="<?php echo criarMinimo(date("Y-m-d"));?>" required></p>
 	<p><input type="hidden" name="idvac" value="<?php echo $_POST['vaca']; ?>"></p>
     <br>
     <h3><input type="submit" onclick="mostra()" value="Cadastrar" class="botao"></h3>
