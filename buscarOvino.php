@@ -54,8 +54,7 @@
 			echo "<td>".$linha['sexo_ovl']."</td>";
 			echo "<td>".$linha['cor_ovl']."</td>";
 			echo "<td>".$linha['peso_ovl']."</td>";
-			echo "<td>".$linha['altura_ovl']."</td>";
-			
+			echo "<td>".$linha['altura_ovl']."</td>";			
 			echo "<td><form id='alte' action='alterar.php' method='POST'><input type='hidden' name='id_ovl' 
 				value='".$linha['id_ovl']."'><input id='alt' type='submit' onclick='mostra()' value='sim'></form></td>";
 			echo "<td><form id='alte' action='remover.php' method='POST'><input type='hidden' name='id_ovl' 
